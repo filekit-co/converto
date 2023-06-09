@@ -11,7 +11,15 @@
 ## init
 
 ```bash
-pnpm create svelte@latest converto
+# alias pn=pnpm
+pn create svelte@latest converto
 ```
+
+## dev
+
+```bash
+pn run dev
+```
+
 
 
