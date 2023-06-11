@@ -26,6 +26,13 @@ npx tailwindcss init -p
 pn run dev
 ```
 
+## refs
+
+- [DaisyUI website](https://github.com/saadeghi/daisyui/tree/master/src/docs)
+- [SvelteKit website](https://github.com/sveltejs/kit/tree/master/sites/kit.svelte.dev)
+- [RealWorld Example with SvelteKit](https://github.com/sveltejs/realworld)
+- [devjaewon.com](https:j//github.com/devjaewon/devjaewon.com)
+
 ## i18n
 
 [svelte-i18n](https://github.com/kaisermann/svelte-i18n/blob/main/docs/Svelte-Kit.md)
