@@ -33,6 +33,12 @@ pn run dev
 - [RealWorld Example with SvelteKit](https://github.com/sveltejs/realworld)
 - [devjaewon.com](https:j//github.com/devjaewon/devjaewon.com)
 
+- file uploader
+    - [filedrop-svelte](https://github.com/chanced/filedrop-svelte)
+    - [tailwind component 1](https://tailwindcomponents.com/component/file-upload-with-drop-on-and-preview)
+    - [tailwind component 2](https://tailwindcomponents.com/component/dragdrop-sortable-file-upload)
+    
+
 ## i18n
 
 [svelte-i18n](https://github.com/kaisermann/svelte-i18n/blob/main/docs/Svelte-Kit.md)

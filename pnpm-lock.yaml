@@ -17,6 +17,12 @@ devDependencies:
   daisyui:
     specifier: ^3.0.20
     version: 3.0.20(postcss@8.4.24)
+  filedrop-svelte:
+    specifier: ^0.1.2
+    version: 0.1.2
+  filesize:
+    specifier: ^10.0.7
+    version: 10.0.7
   svelte:
     specifier: ^3.54.0
     version: 3.59.1
@@ -635,6 +641,25 @@ packages:
       reusify: 1.0.4
     dev: true
 
+  /file-selector@0.2.4:
+    resolution: {integrity: sha512-ZDsQNbrv6qRi1YTDOEWzf5J2KjZ9KMI1Q2SGeTkCJmNNW25Jg4TW4UMcmoqcg4WrAyKRcpBXdbWRxkfrOzVRbA==}
+    engines: {node: '>= 10'}
+    dependencies:
+      tslib: 2.5.3
+    dev: true
+
+  /filedrop-svelte@0.1.2:
+    resolution: {integrity: sha512-S0Z+zCO2dy/g3tRjswD8pLEcorj78olkLWvhKEp511gwHUI6x+uWjXacuvFmRQnjbCCPByXzGlC5Asb9nPzUKw==}
+    dependencies:
+      file-selector: 0.2.4
+      pretty-bytes: 6.1.0
+    dev: true
+
+  /filesize@10.0.7:
+    resolution: {integrity: sha512-iMRG7Qo9nayLoU3PNCiLizYtsy4W1ClrapeCwEgtiQelOAOuRJiw4QaLI+sSr8xr901dgHv+EYP2bCusGZgoiA==}
+    engines: {node: '>= 10.4.0'}
+    dev: true
+
   /fill-range@7.0.1:
     resolution: {integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==}
     engines: {node: '>=8'}
@@ -1005,6 +1030,11 @@ packages:
       nanoid: 3.3.6
       picocolors: 1.0.0
       source-map-js: 1.0.2
+    dev: true
+
+  /pretty-bytes@6.1.0:
+    resolution: {integrity: sha512-Rk753HI8f4uivXi4ZCIYdhmG1V+WKzvRMg/X+M42a6t7D07RcmopXJMDNk6N++7Bl75URRGsb40ruvg7Hcp2wQ==}
+    engines: {node: ^14.13.1 || >=16.0.0}
     dev: true
 
   /queue-microtask@1.2.3:

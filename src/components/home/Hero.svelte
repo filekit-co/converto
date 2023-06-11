@@ -1,16 +1,22 @@
-<div class="hero py-32 bg-base-200">
-  <div class="hero-content max-w-5xl flex-col lg:flex-row-reverse">
+<div class="hero min-h-screen py-32 bg-base-200">
+  <div class="hero-content flex-col lg:flex-row-reverse">
     <img
       src="/images/paper_folder.png"
-      class="max-w-sm rounded-lg"
+      class="rounded-lg sm:max-w-md"
       alt="hero"
     />
-    <div>
-      <h1 class="text-5xl font-bold">File Converter</h1>
-      <p class="py-6">Convert your files to any format</p>
+
+    <div class="text-center lg:text-left">
+      <h1 class="text-5xl font-black">File Converter</h1>
+      <p class="py-6 font-title">
+        Converto is a browser-based file converter with support for over 300
+        formats, providing extensive conversions, fast processing times, and
+        customizable settings while ensuring data security and compatibility
+        across all devices.
+      </p>
       <a
         href="/convert"
-        class="btn btn-accent md:btn-lg md:btn-wide px-12 normal-case"
+        class="btn btn-accent btn-lg btn-wide px-12 normal-case"
       >
         Convert file
         <svg
