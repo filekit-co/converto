@@ -15,7 +15,6 @@
 pn create svelte@latest converto
 pn i -D tailwindcss postcss autoprefixer daisyui
 npx tailwindcss init -p
-pn i flowbite flowbite-svelte classnames @popperjs/core
 ```
 
 - [Docs: Install Tailwind CSS with SvelteKit](https://tailwindcss.com/docs/guides/sveltekit)
