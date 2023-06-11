@@ -2,11 +2,13 @@
   <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
     <div class="max-w-screen-md mb-8 lg:mb-16">
       <h2 class="mb-4 text-4xl tracking-tight font-extrabold">
-        Designed for business teams like yours
+        Lorem ipsum dolor sit amet consectetur
       </h2>
       <p class="sm:text-xl">
-        Here at Flowbite we focus on markets where technology, innovation, and
-        capital can unlock long-term value and drive economic growth.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur
+        corrupti obcaecati quas saepe ea quis alias ducimus aliquid,
+        necessitatibus doloribus! Voluptatum obcaecati molestias aspernatur
+        fugiat sunt unde itaque placeat molestiae.
       </p>
     </div>
     <div
