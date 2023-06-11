@@ -1,13 +1,13 @@
 <script lang="ts">
   import { Dropdown, DropdownItem } from "flowbite-svelte";
   import { i, language, languages, switchLanguage } from "@inlang/sdk-js";
-  import De from "./flags/De.svelte";
-  import Es from "./flags/Es.svelte";
-  import It from "./flags/It.svelte";
-  import Ja from "./flags/Ja.svelte";
-  import Kr from "./flags/Kr.svelte";
-  import No from "./flags/No.svelte";
-  import Us from "./flags/Us.svelte";
+  import De from "../../utils/flags/De.svelte";
+  import Es from "../../utils/flags/Es.svelte";
+  import It from "../../utils/flags/It.svelte";
+  import Ja from "../../utils/flags/Ja.svelte";
+  import Kr from "../../utils/flags/Kr.svelte";
+  import No from "../../utils/flags/No.svelte";
+  import Us from "../../utils/flags/Us.svelte";
 
   async function handleLanguageChange(lang: string) {
     await switchLanguage(lang);

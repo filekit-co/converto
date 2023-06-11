@@ -1,9 +1,6 @@
 <script>
-  import Heading from "./heading.svelte";
-  import Logos from "./customer_logos.svelte";
-  import Footer from "./footer.svelte";
-  import Features from "./feature.svelte";
-
+  import Nav from "@components/common/Nav.svelte";
+  import Footer from "@components/common/Footer.svelte";
   import "../app.css";
 </script>
 
@@ -11,10 +8,6 @@
   <title>Converto</title>
   <link rel="icon" href="https://fav.farm/📂" />
 </svelte:head> -->
-<Heading />
+<Nav />
 <slot />
-<div class="divider bg-base-200 mb-0 mt-0" />
-<Features />
-<div class="divider bg-base-200 mb-0 mt-0" />
-<Logos />
 <Footer />
