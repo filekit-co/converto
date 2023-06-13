@@ -30,6 +30,31 @@
       ];
     }
   }
+
+  async function submitFiles() {
+    if (!(files && files.accepted.length > 0)) {
+      return;
+    }
+
+    const formData = new FormData();
+    files.accepted.forEach((file) => {
+      formData.append("files", file);
+    });
+    // TODO: handle url with env
+    // TODO: .env
+    const response = await fetch("http://localhost:8080/file", {
+      method: "POST",
+      body: formData,
+      // enctype: "multipart/form-data",
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log("Success:", result);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }
 </script>
 
 {#if files}
@@ -76,8 +101,9 @@
           <td class="font-black">Total file size:</td>
           <td>{filesize(totalFileSizes)}</td>
           <td colspan="2">
-            <button class="btn btn-accent btn-sm sm:btn-block sm:btn-lg"
-              >Submit</button
+            <button
+              class="btn btn-accent btn-sm sm:btn-block sm:btn-lg"
+              on:click={submitFiles}>Submit</button
             >
           </td>
         </tr>
