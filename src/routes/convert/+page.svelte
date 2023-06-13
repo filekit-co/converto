@@ -5,7 +5,7 @@
 <div class="w-full px-2 py-32 lg:px-10">
   <div class="text-center">
     <h2
-      class="relative z-[2] mx-auto text-[clamp(2rem,6vw,4.5rem)] font-black leading-none max-[1280px]:!tracking-normal"
+      class="mx-auto text-[clamp(2rem,6vw,4.5rem)] font-black leading-none max-[1280px]:!tracking-normal"
     >
       File Converter
       <br />
