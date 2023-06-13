@@ -16,13 +16,10 @@
       </h2>
     </h2>
     <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">
-      daisyUI adds class names to Tailwind CSS
-      <a target="_blank" href="/components/button/" class="link">btn</a>
-      ,
-      <a target="_blank" href="/components/card/" class="link">card</a>
-      ,
-      <a target="_blank" href="/components/toggle/" class="link">toggle</a>
-      and many more
+      Please <span class="underline underline-offset-4">drag & drop</span> files
+      anywhere on the screen or click the
+      <span class="underline underline-offset-4">dropzone</span>
+      below.
     </p>
 
     <div class="h-12" />
