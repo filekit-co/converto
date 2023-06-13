@@ -38,7 +38,7 @@ pn run dev
 - [DaisyUI website](https://github.com/saadeghi/daisyui/tree/master/src/docs)
 - [SvelteKit website](https://github.com/sveltejs/kit/tree/master/sites/kit.svelte.dev)
 - [RealWorld Example with SvelteKit](https://github.com/sveltejs/realworld)
-- [devjaewon.com](https:j//github.com/devjaewon/devjaewon.com)
+- [devjaewon.com](https:github.com/devjaewon/devjaewon.com)
 
 - file uploader
     - [filedrop-svelte](https://github.com/chanced/filedrop-svelte)
