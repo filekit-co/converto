@@ -91,15 +91,6 @@
   on:filedrop={(e) => {
     addFiles(e.detail.files);
   }}
-  on:windowfiledragenter={(e) => {
-    // console.log(e);
-  }}
-  on:windowfiledragover={(e) => {
-    // console.log(e);
-  }}
-  on:windowfiledragleave={(e) => {
-    // console.log(e);
-  }}
   class="filedrop focus:border-accent focus:border-accent"
 >
   <svg
