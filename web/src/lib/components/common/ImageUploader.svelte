@@ -38,7 +38,9 @@
       formData.append('images', image);
     });
 
-    // console.log(formData);
+    for (var pair of formData.entries()) {
+      console.log(pair[1]);
+    }
 
     const response = await fetch('http://localhost:8080/remove', {
       method: 'POST',
