@@ -7,10 +7,11 @@ license = "Apache-2.0"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.10,<3.12"
 uvicorn = {extras = ["standard"], version = "^0.22.0"}
 fastapi = "^0.97.0"
 python-dotenv = "^1.0.0"
+rembg = "^2.0.43"
 
 
 [build-system]

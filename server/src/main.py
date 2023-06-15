@@ -1,10 +1,9 @@
 
 import uvicorn
+from app.api import background, greet
+from app.config import get_config
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
-from src.app.api import greet
-from src.app.config import get_config
 
 app = FastAPI(title='Converto api server')
 
@@ -21,6 +20,7 @@ app.add_middleware(
 
 routers = [
     greet.router,
+    background.router,
 ]
 for router in routers:
     app.include_router(router)
@@ -29,5 +29,4 @@ for router in routers:
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="localhost", port=8080, reload=True)
-
 

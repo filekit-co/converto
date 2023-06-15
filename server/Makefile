@@ -1,7 +1,7 @@
 .PHONY: dev build up down destroy shell deploy info p-info
 
 dev:
-	poetry run uvicorn src.main:app --reload
+	poetry run uvicorn main:app --reload
 
 build:
 	docker compose build
