@@ -2,27 +2,31 @@
   import type {Files} from 'filedrop-svelte';
   import {filedrop} from 'filedrop-svelte';
   import {filesize} from 'filesize';
-
   let files: Files;
   let options = {multiple: true};
   $: totalFileSizes =
     files && files.accepted
       ? files.accepted.reduce((sum, file) => sum + file.size, 0)
       : 0;
-
   function imageName(imageName: string) {
     return imageName.substring(0, 7) + '...';
   }
-
+  let rawFiles: string[] =[];
   let images: any[] = [];
   let fileinput: HTMLInputElement;
 
   const onFileSelected = e => {
     const data = e.target.files[0];
+
     const reader = new FileReader();
     reader.readAsDataURL(data);
+    rawFiles = rawFiles.concat(data);
     reader.onload = e => {
-      images = images.concat(e.target?.result);
+      if (e.target?.result === undefined) {
+        return;
+      }
+      let b64Image = e.target?.result as string
+      images = images.concat(b64Image);
     };
   };
 
@@ -30,19 +34,11 @@
     if (!(images && images.length > 0)) {
       return;
     }
-
     const formData = new FormData();
     // console.log(formData);
-
-    images.forEach(image => {
-      formData.append('images', image);
-    });
-
-    for (var pair of formData.entries()) {
-      console.log(pair[1]);
-    }
-
-    const response = await fetch('http://localhost:8080/remove', {
+    formData.append('image', rawFiles[0]);
+    // console.log(formData);
+    const response = await fetch('http://localhost:8000/bg/remove', {
       method: 'POST',
       body: formData,
       mode: 'cors'
@@ -106,7 +102,6 @@
     justify-content: center;
     align-items: center;
   }
-
   .filedrop {
     background-color: #f0f0f0;
     height: 200px;
@@ -121,13 +116,11 @@
     outline-offset: -1.3em;
     padding: 0.475em;
   }
-
   .filedrop p,
   .filedrop svg {
     transition: color 0.1s;
     transition: fill 0.1s;
   }
-
   .filedrop:hover p,
   .filedrop:hover svg {
     color: #3abef7;

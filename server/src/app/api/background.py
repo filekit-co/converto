@@ -27,11 +27,8 @@ async def im_without_bg(content: bytes) -> Response:
         status_code=status.HTTP_200_OK,
         )
 async def remove_background(
-        images: List[UploadFile]=File(...),
+        image: UploadFile=File(...),
     ):
-    file = images[0]
-    logging.error(file)
-
-    file_bytes = await file.read()
+    file_bytes = await image.read()
     logging.error(file_bytes)
     return await im_without_bg(file_bytes)
