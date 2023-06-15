@@ -133,6 +133,7 @@
   <p>Drag &amp; drop files</p>
 </div>
 
+
 <style>
   .filedrop {
     background-color: #f0f0f0;
