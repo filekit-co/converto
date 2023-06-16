@@ -27,6 +27,7 @@ RUN apt-get update && \
 COPY --from=requirements-stage /tmp/requirements.txt /src/requirements.txt
 
 RUN pip install --no-cache-dir --upgrade -r /src/requirements.txt
+RUN python -c 'from rembg.sessions.u2net import U2netSession; U2netSession.download_models()'
 
 
 EXPOSE 80
