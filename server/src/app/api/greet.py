@@ -1,10 +1,8 @@
-import logging
-import os
 from datetime import datetime
 
-from app.config import get_config
 from fastapi import APIRouter, Request, status
-from fastapi.responses import FileResponse
+
+from app.config import get_config
 
 router = APIRouter()
 cfg = get_config()

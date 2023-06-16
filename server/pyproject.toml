@@ -12,6 +12,8 @@ uvicorn = {extras = ["standard"], version = "^0.22.0"}
 fastapi = "^0.97.0"
 python-dotenv = "^1.0.0"
 rembg = "^2.0.43"
+asyncer = "^0.0.2"
+
 
 
 [build-system]
