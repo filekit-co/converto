@@ -1,5 +1,3 @@
-import logging
-
 import cv2
 import numpy as np
 from asyncer import asyncify
@@ -41,5 +39,4 @@ async def remove_background(
     ):
     file_bytes = await image.read()
     processed_image =  await asyncify(im_without_bg)(file_bytes)
-    logging.error(processed_image)
     return Response(processed_image, media_type="image/png")
