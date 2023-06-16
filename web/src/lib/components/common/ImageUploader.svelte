@@ -1,16 +1,10 @@
 <script lang="ts">
-import { useState } from "@store/hooks";
+    import { filedrop } from "filedrop-svelte";
 
-  const [imageState, setImageState] = useState(true)
   let rawFiles: string[] =[];
   let images: any[] = [];
   let fileinput: HTMLInputElement;
-  let resultImage;
-  let link;
-
-  const handleImageState = (e: any) => {
-    setImageState((e) => !e);
-  }
+  let resultImage: any;
 
   const onFileSelected = e => {
     const data = e.target.files[0];
@@ -39,53 +33,32 @@ import { useState } from "@store/hooks";
       body: formData,
       mode: 'cors'
     })
-    const blob = await response.blob();
-    const newBlob = new Blob([blob])
+      .then(response => response.blob())
+      .then(blob => {
+        resultImage = URL.createObjectURL(blob)
+      })
+      .catch(error => {
+        console.error(error);
+      })
 
-    const blobUrl = window.URL.createObjectURL(newBlob)
-
-    const link = document.createElement('a');
-    link.href = blobUrl;
-    link.setAttribute('download', `${filename}.${extension}`);
-    document.body.appendChild(link);
-    link.click();
-    link.parentNode.removeChild(link);
-
-    // clean up Url
-    window.URL.revokeObjectURL(blobUrl);
-    
-
-      // .then(response => response 
-      // )
-      // .then(result => {
-      //   console.log('Success: ', result);
-      // })
-      // .catch(error => {
-      //   console.error('Error: ', error);
-      // });
   }
 </script>
 
-<div>
-  <button class="btn btn-ghost" on:click={handleImageState}>원본</button>
-  <button class="btn btn-ghost" on:click={handleImageState}>수정</button>
-</div>
-
 <div id="app">
-  {#if images}
-    {#each images as image, i}
-      <img class="image" src={image} alt="image" />
-    {/each}
+  {#if resultImage}
+    <img style={{paddingBottom: 20}} src={resultImage} alt="image"/>
   {/if}
 </div>
 
+
 <div
-  class="dropzone-enabled w-full flex flex-col sm:justify-center sm:items-center sm:gap-8 sm:pt-36 sm:pb-16 rounded-4xl bg-white shadow-2xl"
+  on:filedrop={(e) => onFileSelected(e)}
+  class="filedrop focus:border-accent focus:border-accent w-full flex flex-col sm:justify-center sm:items-center sm:gap-8 sm:pt-36 sm:pb-16 rounded-4xl bg-white shadow-2xl"
 >
-  <button on:click={() => fileinput.click()} type="button" class="!border !border-transparent rounded-full font-bold transition ease-in-out text-center font-body no-underline hover:no-underline inline-flex items-center justify-center text-2xl px-8 py-2.5 text-white !bg-primary hover:!bg-primary-hover active:!bg-primary-hover active:scale-[0.98] focus:outline-none focus-visible:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover">
+
+  <button on:click={removeBackground} type="button" class="!border !border-transparent rounded-full font-bold transition ease-in-out text-center font-body no-underline hover:no-underline inline-flex items-center justify-center text-2xl px-8 py-2.5 text-white !bg-primary hover:!bg-primary-hover active:!bg-primary-hover active:scale-[0.98] focus:outline-none focus-visible:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover">
     이미지 업로드
   </button>
-  <button on:click={removeBackground}>remove</button>
 
   <div class="hidden sm:flex flex-col gap-1.5">
     <p class="m-0 font-bold text-xl text-typo-secondary">또는 파일 놓기,</p>
@@ -95,6 +68,7 @@ import { useState } from "@store/hooks";
       </a>  
     </span>
   </div>
+
   <input
     style="display:none"
     type="file"
@@ -103,6 +77,7 @@ import { useState } from "@store/hooks";
     bind:this={fileinput}
   />
 </div>
+
 
 
 <style>
