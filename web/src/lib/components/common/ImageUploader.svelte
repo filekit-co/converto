@@ -1,61 +1,42 @@
 <script lang="ts">
-  import type {Files} from 'filedrop-svelte';
-  import {filedrop} from 'filedrop-svelte';
-  import {filesize} from 'filesize';
-
-  let files: Files;
-  let options = {multiple: true};
-  $: totalFileSizes =
-    files && files.accepted
-      ? files.accepted.reduce((sum, file) => sum + file.size, 0)
-      : 0;
-
-  function imageName(imageName: string) {
-    return imageName.substring(0, 7) + '...';
-  }
-
+import { useState } from "@store/hooks";
+  const [imageState, setImageState] = useState(true)
+  let rawFiles: string[] =[];
   let images: any[] = [];
   let fileinput: HTMLInputElement;
-
+  let resultImage;
+  const handleImageState = (e: any) => {
+    setImageState((e) => !e);
+  }
   const onFileSelected = e => {
     const data = e.target.files[0];
     const reader = new FileReader();
     reader.readAsDataURL(data);
+    rawFiles = rawFiles.concat(data);
     reader.onload = e => {
-      images = images.concat(e.target?.result);
+      if (e.target?.result === undefined) {
+        return;
+      }
+      let b64Image = e.target?.result as string
+      images = images.concat(b64Image);
     };
   };
-
   async function removeBackground() {
     if (!(images && images.length > 0)) {
       return;
     }
-
     const formData = new FormData();
-<<<<<<< HEAD
+    // console.log(formData);
     formData.append('image', rawFiles[0]);
+    console.log(formData);
 
     const response = await fetch('http://localhost:8000/bg/remove', {
-=======
-    // console.log(formData);
-
-    images.forEach(image => {
-      formData.append('images', image);
-    });
-
-    // console.log(formData);
-
-    const response = await fetch('http://localhost:8080/remove', {
->>>>>>> ff3cde7fd7228403e821bdb4c4e6c4a1734c4166
       method: 'POST',
       body: formData,
       mode: 'cors'
     })
-<<<<<<< HEAD
-      .then(response => response)
-=======
-      .then(response => response.json())
->>>>>>> ff3cde7fd7228403e821bdb4c4e6c4a1734c4166
+      .then(response => response 
+      )
       .then(result => {
         console.log('Success: ', result);
       })
@@ -65,55 +46,28 @@
   }
 </script>
 
-<<<<<<< HEAD
 <div>
   <button class="btn btn-ghost" on:click={handleImageState}>원본</button>
   <button class="btn btn-ghost" on:click={handleImageState}>수정</button>
 </div>
 
-=======
->>>>>>> ff3cde7fd7228403e821bdb4c4e6c4a1734c4166
 <div id="app">
   {#if images}
     {#each images as image, i}
       <img class="image" src={image} alt="image" />
     {/each}
   {/if}
-<<<<<<< HEAD
-=======
-  <!-- 업로드 된 이미지가 없을 때 -->
->>>>>>> ff3cde7fd7228403e821bdb4c4e6c4a1734c4166
 </div>
+
 
 <div
-  on:click={() => fileinput.click()}
-  class="w-full flex flex-col sm:justify-center sm:items-center sm:gap-8 sm:pt-36 sm:pb-16 rounded-4xl bg-white shadow-2xl"
+  class="dropzone-enabled w-full flex flex-col sm:justify-center sm:items-center sm:gap-8 sm:pt-36 sm:pb-16 rounded-4xl bg-white shadow-2xl"
 >
-<button on:click={() => fileinput.click()} type="button" class="!border !border-transparent rounded-full font-bold transition ease-in-out text-center font-body no-underline hover:no-underline inline-flex items-center justify-center text-2xl px-8 py-2.5 text-white !bg-primary hover:!bg-primary-hover active:!bg-primary-hover active:scale-[0.98] focus:outline-none focus-visible:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover">
-  이미지 업로드
-</button>
-<div class="hidden sm:flex flex-col gap-1.5">
-  <p class="m-0 font-bold text-xl text-typo-secondary">또는 파일 놓기,</p>
-  <span class="text-xs text-typo-secondary text-center">이미지 붙여넣기 또는 
-    <a href="#" class="text-typo-secondary select-photo-url-btn underline">
-      URL
-    </a>  
-  </span>
-</div>
-</div>
-
-<input
-  style="display:none"
-  type="file"
-  accept=".jpg, .jpeg, .png"
-  on:change={e => onFileSelected(e)}
-  bind:this={fileinput}
-/>
-
-<!-- <div class="w-full flex flex-col sm:justify-center sm:items-center sm:gap-8 sm:pt-36 sm:pb-16 rounded-4xl bg-white shadow-2xl">
   <button on:click={() => fileinput.click()} type="button" class="!border !border-transparent rounded-full font-bold transition ease-in-out text-center font-body no-underline hover:no-underline inline-flex items-center justify-center text-2xl px-8 py-2.5 text-white !bg-primary hover:!bg-primary-hover active:!bg-primary-hover active:scale-[0.98] focus:outline-none focus-visible:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover">
     이미지 업로드
   </button>
+  <button on:click={removeBackground}>remove</button>
+
   <div class="hidden sm:flex flex-col gap-1.5">
     <p class="m-0 font-bold text-xl text-typo-secondary">또는 파일 놓기,</p>
     <span class="text-xs text-typo-secondary text-center">이미지 붙여넣기 또는 
@@ -122,7 +76,15 @@
       </a>  
     </span>
   </div>
-</div> -->
+  <input
+    style="display:none"
+    type="file"
+    accept=".jpg, .jpeg, .png"
+    on:change={e => onFileSelected(e)}
+    bind:this={fileinput}
+  />
+</div>
+
 
 <style>
   #app {
