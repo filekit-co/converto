@@ -1,13 +1,17 @@
 <script lang="ts">
 import { useState } from "@store/hooks";
+
   const [imageState, setImageState] = useState(true)
   let rawFiles: string[] =[];
   let images: any[] = [];
   let fileinput: HTMLInputElement;
   let resultImage;
+  let link;
+
   const handleImageState = (e: any) => {
     setImageState((e) => !e);
   }
+
   const onFileSelected = e => {
     const data = e.target.files[0];
     const reader = new FileReader();
@@ -21,6 +25,7 @@ import { useState } from "@store/hooks";
       images = images.concat(b64Image);
     };
   };
+  
   async function removeBackground() {
     if (!(images && images.length > 0)) {
       return;
@@ -28,21 +33,36 @@ import { useState } from "@store/hooks";
     const formData = new FormData();
     // console.log(formData);
     formData.append('image', rawFiles[0]);
-    console.log(formData);
 
     const response = await fetch('http://localhost:8000/bg/remove', {
       method: 'POST',
       body: formData,
       mode: 'cors'
     })
-      .then(response => response 
-      )
-      .then(result => {
-        console.log('Success: ', result);
-      })
-      .catch(error => {
-        console.error('Error: ', error);
-      });
+    const blob = await response.blob();
+    const newBlob = new Blob([blob])
+
+    const blobUrl = window.URL.createObjectURL(newBlob)
+
+    const link = document.createElement('a');
+    link.href = blobUrl;
+    link.setAttribute('download', `${filename}.${extension}`);
+    document.body.appendChild(link);
+    link.click();
+    link.parentNode.removeChild(link);
+
+    // clean up Url
+    window.URL.revokeObjectURL(blobUrl);
+    
+
+      // .then(response => response 
+      // )
+      // .then(result => {
+      //   console.log('Success: ', result);
+      // })
+      // .catch(error => {
+      //   console.error('Error: ', error);
+      // });
   }
 </script>
 
@@ -58,7 +78,6 @@ import { useState } from "@store/hooks";
     {/each}
   {/if}
 </div>
-
 
 <div
   class="dropzone-enabled w-full flex flex-col sm:justify-center sm:items-center sm:gap-8 sm:pt-36 sm:pb-16 rounded-4xl bg-white shadow-2xl"
