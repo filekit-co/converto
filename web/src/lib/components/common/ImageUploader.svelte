@@ -31,19 +31,14 @@
     }
 
     const formData = new FormData();
-    // console.log(formData);
     formData.append('image', rawFiles[0]);
-    // console.log(formData);
+
     const response = await fetch('http://localhost:8000/bg/remove', {
       method: 'POST',
       body: formData,
       mode: 'cors'
     })
-      .then(response => {
-        resultImage = response.json()
-        console.log(resultImage)
-      }  
-      )
+      .then(response => response)
       .then(result => {
         console.log('Success: ', result);
       })
@@ -57,36 +52,32 @@
   <button class="btn btn-ghost" on:click={handleImageState}>원본</button>
   <button class="btn btn-ghost" on:click={handleImageState}>수정</button>
 </div>
+
 <div id="app">
   {#if images}
     {#each images as image, i}
       <img class="image" src={image} alt="image" />
     {/each}
-    <button
-      class="btn btn-accent btn-sm sm:btn-block sm:btn-lg"
-      on:click={removeBackground}>Remove</button
-    >
   {/if}
-
-  <!-- 업로드 된 이미지가 없을 때 -->
 </div>
+
 <div
   on:click={() => fileinput.click()}
-  class="filedrop focus:border-accent focus:border-accent"
+  class="w-full flex flex-col sm:justify-center sm:items-center sm:gap-8 sm:pt-36 sm:pb-16 rounded-4xl bg-white shadow-2xl"
 >
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    width="48"
-    height="48"
-    ><path fill="none" d="M0 0h24v24H0z" />
-    <path
-      d="M1 14.5a6.496 6.496 0 0 1 3.064-5.519 8.001 8.001 0 0 1 15.872 0 6.5 6.5 0 0 1-2.936 12L7 21c-3.356-.274-6-3.078-6-6.5zm15.848 4.487a4.5 4.5 0 0 0 2.03-8.309l-.807-.503-.12-.942a6.001 6.001 0 0 0-11.903 0l-.12.942-.805.503a4.5 4.5 0 0 0 2.029 8.309l.173.013h9.35l.173-.013zM13 13v4h-2v-4H8l4-5 4 5h-3z"
-    />
-  </svg>
-  <p>Click me or</p>
-  <p>Drag &amp; drop files</p>
+<button on:click={() => fileinput.click()} type="button" class="!border !border-transparent rounded-full font-bold transition ease-in-out text-center font-body no-underline hover:no-underline inline-flex items-center justify-center text-2xl px-8 py-2.5 text-white !bg-primary hover:!bg-primary-hover active:!bg-primary-hover active:scale-[0.98] focus:outline-none focus-visible:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover">
+  이미지 업로드
+</button>
+<div class="hidden sm:flex flex-col gap-1.5">
+  <p class="m-0 font-bold text-xl text-typo-secondary">또는 파일 놓기,</p>
+  <span class="text-xs text-typo-secondary text-center">이미지 붙여넣기 또는 
+    <a href="#" class="text-typo-secondary select-photo-url-btn underline">
+      URL
+    </a>  
+  </span>
 </div>
+</div>
+
 <input
   style="display:none"
   type="file"
@@ -94,6 +85,20 @@
   on:change={e => onFileSelected(e)}
   bind:this={fileinput}
 />
+
+<!-- <div class="w-full flex flex-col sm:justify-center sm:items-center sm:gap-8 sm:pt-36 sm:pb-16 rounded-4xl bg-white shadow-2xl">
+  <button on:click={() => fileinput.click()} type="button" class="!border !border-transparent rounded-full font-bold transition ease-in-out text-center font-body no-underline hover:no-underline inline-flex items-center justify-center text-2xl px-8 py-2.5 text-white !bg-primary hover:!bg-primary-hover active:!bg-primary-hover active:scale-[0.98] focus:outline-none focus-visible:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover">
+    이미지 업로드
+  </button>
+  <div class="hidden sm:flex flex-col gap-1.5">
+    <p class="m-0 font-bold text-xl text-typo-secondary">또는 파일 놓기,</p>
+    <span class="text-xs text-typo-secondary text-center">이미지 붙여넣기 또는 
+      <a href="#" class="text-typo-secondary select-photo-url-btn underline">
+        URL
+      </a>  
+    </span>
+  </div>
+</div> -->
 
 <style>
   #app {
