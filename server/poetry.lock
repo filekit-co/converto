@@ -706,14 +706,14 @@ tqdm = ["tqdm"]
 
 [[package]]
 name = "gradio"
-version = "3.34.0"
+version = "3.35.2"
 description = "Python library for easily interacting with trained machine learning models"
 category = "main"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "gradio-3.34.0-py3-none-any.whl", hash = "sha256:1cd8b25b598d983561d64f0a039af819382f1376c676aa9f84972c46b6875741"},
-    {file = "gradio-3.34.0.tar.gz", hash = "sha256:fd7fa7257ffc749f9dc7c297eba554eaa1e5acd1a5f9c973250b2080932d6a41"},
+    {file = "gradio-3.35.2-py3-none-any.whl", hash = "sha256:6dc42dedaab583198dbbecc605759cbb154f6066f4f0515b26cf976331786c9a"},
+    {file = "gradio-3.35.2.tar.gz", hash = "sha256:72bafe6e0278e28df0a7ce729b5e4ad8cdb2e07f3cac853b0a73463f38d63bbb"},
 ]
 
 [package.dependencies]
@@ -722,7 +722,7 @@ aiohttp = "*"
 altair = ">=4.2.0"
 fastapi = "*"
 ffmpy = "*"
-gradio-client = ">=0.2.6"
+gradio-client = ">=0.2.7"
 httpx = "*"
 huggingface-hub = ">=0.14.0"
 jinja2 = "*"
@@ -741,7 +741,6 @@ python-multipart = "*"
 pyyaml = "*"
 requests = "*"
 semantic-version = "*"
-typing-extensions = "*"
 uvicorn = ">=0.14.0"
 websockets = ">=10.0"
 
@@ -2849,4 +2848,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10,<3.12"
-content-hash = "87ce790c45e86185636be0f54eead1f350d0ccde867029ce0aa9f7219756bb5f"
+content-hash = "1122c5fcd12d2a286e2d764be6fd7911fb3b8bfc4338bd382e553c8cf3e3bac5"

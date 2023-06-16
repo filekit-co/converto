@@ -1,27 +1,28 @@
 <script lang="ts">
-  import { useState } from "@store/hooks";
-  const [imageState, setImageState] = useState(true)
-  let rawFiles: string[] =[];
+  import type {Files} from 'filedrop-svelte';
+  import {filedrop} from 'filedrop-svelte';
+  import {filesize} from 'filesize';
+
+  let files: Files;
+  let options = {multiple: true};
+  $: totalFileSizes =
+    files && files.accepted
+      ? files.accepted.reduce((sum, file) => sum + file.size, 0)
+      : 0;
+
+  function imageName(imageName: string) {
+    return imageName.substring(0, 7) + '...';
+  }
+
   let images: any[] = [];
   let fileinput: HTMLInputElement;
-  let resultImage;
-
-  const handleImageState = (e: any) => {
-    setImageState((e) => !e);
-  }
 
   const onFileSelected = e => {
     const data = e.target.files[0];
     const reader = new FileReader();
     reader.readAsDataURL(data);
-    rawFiles = rawFiles.concat(data);
-
     reader.onload = e => {
-      if (e.target?.result === undefined) {
-        return;
-      }
-      let b64Image = e.target?.result as string
-      images = images.concat(b64Image);
+      images = images.concat(e.target?.result);
     };
   };
 
@@ -31,14 +32,30 @@
     }
 
     const formData = new FormData();
+<<<<<<< HEAD
     formData.append('image', rawFiles[0]);
 
     const response = await fetch('http://localhost:8000/bg/remove', {
+=======
+    // console.log(formData);
+
+    images.forEach(image => {
+      formData.append('images', image);
+    });
+
+    // console.log(formData);
+
+    const response = await fetch('http://localhost:8080/remove', {
+>>>>>>> ff3cde7fd7228403e821bdb4c4e6c4a1734c4166
       method: 'POST',
       body: formData,
       mode: 'cors'
     })
+<<<<<<< HEAD
       .then(response => response)
+=======
+      .then(response => response.json())
+>>>>>>> ff3cde7fd7228403e821bdb4c4e6c4a1734c4166
       .then(result => {
         console.log('Success: ', result);
       })
@@ -48,17 +65,24 @@
   }
 </script>
 
+<<<<<<< HEAD
 <div>
   <button class="btn btn-ghost" on:click={handleImageState}>원본</button>
   <button class="btn btn-ghost" on:click={handleImageState}>수정</button>
 </div>
 
+=======
+>>>>>>> ff3cde7fd7228403e821bdb4c4e6c4a1734c4166
 <div id="app">
   {#if images}
     {#each images as image, i}
       <img class="image" src={image} alt="image" />
     {/each}
   {/if}
+<<<<<<< HEAD
+=======
+  <!-- 업로드 된 이미지가 없을 때 -->
+>>>>>>> ff3cde7fd7228403e821bdb4c4e6c4a1734c4166
 </div>
 
 <div
@@ -112,6 +136,7 @@
     justify-content: center;
     align-items: center;
   }
+
   .filedrop {
     background-color: #f0f0f0;
     height: 200px;
@@ -126,11 +151,13 @@
     outline-offset: -1.3em;
     padding: 0.475em;
   }
+
   .filedrop p,
   .filedrop svg {
     transition: color 0.1s;
     transition: fill 0.1s;
   }
+
   .filedrop:hover p,
   .filedrop:hover svg {
     color: #3abef7;
