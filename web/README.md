@@ -4,7 +4,7 @@
 
 |          Landing Page           |          Convert Page           |
 | :-----------------------------: | :-----------------------------: |
-| ![landing](/static/landing.png) | ![convert](/static/convert.png) |
+| ![landing](./static/landing.png) | ![convert](./static/convert.png) |
 
  
 
