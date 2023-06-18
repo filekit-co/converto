@@ -1,32 +1,24 @@
 <script lang="ts">
-    import { filedrop } from "filedrop-svelte";
+  import { filedrop } from "filedrop-svelte";
 
   let rawFiles: string[] =[];
   let images: any[] = [];
   let fileinput: HTMLInputElement;
+  
+  let droppedFiles = []
+  let downloadedFile: any = null;
+  let selectedFile: any = null;
   let resultImage: any;
 
-  const onFileSelected = e => {
-    const data = e.target.files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(data);
-    rawFiles = rawFiles.concat(data);
-    reader.onload = e => {
-      if (e.target?.result === undefined) {
-        return;
-      }
-      let b64Image = e.target?.result as string
-      images = images.concat(b64Image);
-    };
-  };
-  
-  async function removeBackground() {
-    if (!(images && images.length > 0)) {
-      return;
-    }
+  async function handleDrop(event) {
+    event.preventDefault();
+    const fileList = event.dataTransfer.files;
+    droppedFiles = Array.from(fileList);
+
     const formData = new FormData();
-    // console.log(formData);
-    formData.append('image', rawFiles[0]);
+    droppedFiles.forEach((file) => {
+      formData.append('image', file)
+    });
 
     const response = await fetch('http://localhost:8000/bg/remove', {
       method: 'POST',
@@ -35,48 +27,96 @@
     })
       .then(response => response.blob())
       .then(blob => {
+        const file = new File([blob], 'downloaded_Image', {type: blob.type})
+        downloadedFile = URL.createObjectURL(file);
+
         resultImage = URL.createObjectURL(blob)
       })
       .catch(error => {
         console.error(error);
       })
+  }
 
+  function handleDragOver(event) {
+    event.preventDefault();
+  }
+
+  function handleDragLeave(event) {
+    event.preventDefault();
+    droppedFiles = [];
+  }
+
+  function handleFileChange(event) {
+    selectedFile = event.target.files[0]
+  }
+
+  async function handleClick(event) {
+    if (selectedFile) {
+      const formData = new FormData();
+      formData.append('image', selectedFile)
+      
+      const response = await fetch('http://localhost:8000/bg/remove', {
+        method: 'POST',
+        body: formData,
+        mode: 'cors'
+      })
+      .then(response => response.blob())
+      .then(blob => {
+        const file = new File([blob], 'downloaded_Image', {type: blob.type})
+        downloadedFile = URL.createObjectURL(file);
+
+        resultImage = URL.createObjectURL(blob)
+      })
+      .catch(error => {
+        console.error(error);
+      })
+    }
   }
 </script>
 
 <div id="app">
-  {#if resultImage}
-    <img style={{paddingBottom: 20}} src={resultImage} alt="image"/>
+
+  {#if resultImage && downloadedFile}
+    <img class="image" src={resultImage} alt="image"/>
+    <a class="btn btn-primary btn-download mr-2 mr-md-0" target="_blank" rel="noopener" href={downloadedFile} download="downloaded_Image">다운로드</a>
+
+    
+  {:else}
+  <div
+    class="drop-zone w-full flex flex-col sm:justify-center sm:items-center sm:gap-8 sm:pt-36 sm:pb-16 rounded-4xl bg-white shadow-2xl"
+    on:drop={handleDrop}
+    on:dragover={handleDragOver}
+    on:dragleave={handleDragLeave}
+    >
+
+    <form>
+
+      <input
+        type="file"
+        accept=".jpg, .jpeg, .png"
+        on:change={handleFileChange}
+        bind:this={fileinput}
+      />
+      <button on:click={handleClick} type="button" class="!border !border-transparent rounded-full font-bold transition ease-in-out text-center font-body no-underline hover:no-underline inline-flex items-center justify-center text-2xl px-8 py-2.5 text-white !bg-primary hover:!bg-primary-hover active:!bg-primary-hover active:scale-[0.98] focus:outline-none focus-visible:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover">
+        이미지 업로드
+      </button>
+    </form>
+
+
+    <div class="hidden sm:flex flex-col gap-1.5">
+      <p class="m-0 font-bold text-xl text-typo-secondary">또는 파일 놓기,</p>
+      <span class="text-xs text-typo-secondary text-center">이미지 붙여넣기 또는 
+        <a href="#" class="text-typo-secondary select-photo-url-btn underline">
+          URL
+        </a>  
+      </span>
+    </div>
+  </div>
+
   {/if}
 </div>
 
 
-<div
-  on:filedrop={(e) => onFileSelected(e)}
-  class="filedrop focus:border-accent focus:border-accent w-full flex flex-col sm:justify-center sm:items-center sm:gap-8 sm:pt-36 sm:pb-16 rounded-4xl bg-white shadow-2xl"
->
-
-  <button on:click={removeBackground} type="button" class="!border !border-transparent rounded-full font-bold transition ease-in-out text-center font-body no-underline hover:no-underline inline-flex items-center justify-center text-2xl px-8 py-2.5 text-white !bg-primary hover:!bg-primary-hover active:!bg-primary-hover active:scale-[0.98] focus:outline-none focus-visible:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover">
-    이미지 업로드
-  </button>
-
-  <div class="hidden sm:flex flex-col gap-1.5">
-    <p class="m-0 font-bold text-xl text-typo-secondary">또는 파일 놓기,</p>
-    <span class="text-xs text-typo-secondary text-center">이미지 붙여넣기 또는 
-      <a href="#" class="text-typo-secondary select-photo-url-btn underline">
-        URL
-      </a>  
-    </span>
-  </div>
-
-  <input
-    style="display:none"
-    type="file"
-    accept=".jpg, .jpeg, .png"
-    on:change={e => onFileSelected(e)}
-    bind:this={fileinput}
-  />
-</div>
 
 
 
@@ -91,6 +131,11 @@
     padding-bottom: 20px;
     justify-content: center;
     align-items: center;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
   }
 
   .filedrop {

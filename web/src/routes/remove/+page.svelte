@@ -1,5 +1,4 @@
 <script>
-    import FileUploader from "@components/common/FileUploader.svelte";
   import ImageUploader from "@components/common/ImageUploader.svelte";
 </script>
 
@@ -26,7 +25,6 @@
     <div class="h-12" />
 
     <div class="mx-10">
-      <!-- <FileUploader /> -->
       <ImageUploader />
     </div>
   </div>
