@@ -1,10 +1,10 @@
+import aiohttp
 import cv2
 import numpy as np
-from asyncer import asyncify
-from fastapi import APIRouter, File, Response, UploadFile, status
-from rembg import new_session, remove
-
 from app.config import get_config
+from asyncer import asyncify
+from fastapi import APIRouter, File, Query, Response, UploadFile, status
+from rembg import new_session, remove
 
 router = APIRouter(prefix='/bg')
 
@@ -20,12 +20,32 @@ def preprocess(file_bytes):
 def im_without_bg(file_bytes) -> Response:
     # 파일 객체에서 바이트 데이터 추출
     preprocessed_img = preprocess(file_bytes)
-    img = remove(preprocessed_img,alpha_matting=True, session=new_session(_cfg.image_model))
+    img = remove(preprocessed_img, post_process_mask=True, alpha_matting=True, session=new_session(_cfg.image_model))
     
     # 이미지를 PNG로 인코딩하여 바이트로 변환
     _, img_encoded = cv2.imencode(".png", img)
     return img_encoded.tobytes()
             
+
+
+@router.get(
+        path="/remove",
+        tags=["Background Removal"],
+        summary="Remove from URL",
+        description="Removes the background from an image obtained by retrieving an URL.",
+    )
+async def get_index(
+        url: str = Query(
+            default=..., description="URL of the image that has to be processed."
+        ),
+    ):
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as response:
+            file_bytes = await response.read()
+            processed_image = await asyncify(im_without_bg)(file_bytes)
+            return Response(processed_image, media_type="image/png")
+
+
 
 
 @router.post(
