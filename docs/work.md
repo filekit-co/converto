@@ -106,6 +106,6 @@
       - [ ] compress pdf
       - [ ] images to pdf
     - 세현
-      - [ ] file drop event 함수 작성
-      - [ ] file drop event ui 만들기
-      - [ ] image download button
+      - [x] file drop event 함수 작성
+      - [x] file drop event ui 만들기
+      - [x] image download button
