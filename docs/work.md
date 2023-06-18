@@ -86,10 +86,26 @@
         - [x] api list file 받기
     - 세현
         - [ ] 다운로드 / 미리 보기
-- 17dlf
+- 17일
     - 민욱
       - [ ] x to text api 붙이기
       - [ ] pdf api 붙이기
     - 세현
       - [ ] 이미지 업로드 컴포넌트 이벤트 구현
-      - [ ] 이미지 다운로드 => 페이지 라우팅해서
+      - [ ] 이미지 다운로드 => 페이지 라우팅해서   
+- 18일
+    - 민욱
+      - [x] url to image remove
+      - [ ] x to text
+         - pdf to text
+         - doc to text
+         - csv to text
+         - image to text
+         - md to text
+      - [ ] merge pdf
+      - [ ] compress pdf
+      - [ ] images to pdf
+    - 세현
+      - [ ] file drop event 함수 작성
+      - [ ] file drop event ui 만들기
+      - [ ] image download button
