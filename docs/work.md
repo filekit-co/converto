@@ -115,7 +115,7 @@
     - [ ] image -> pdf
     - [ ] pdf comporess
   - 세현
-    - [ ] image URL 파일 데이터 입/출력
+    - [x] image URL 파일 데이터 입/출력
     - [ ] 파일 업로드(버튼 액션 설정) - input 없이 button으로만 파일 선택, 서버에서 데이터 받아오도록 수정
     - [ ] git action 설정
     - [ ] i18n 동작 구현
