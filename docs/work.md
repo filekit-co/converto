@@ -111,9 +111,27 @@
       - [x] image download button
 - 19일
   - 민욱
-    - [ ] pdf -> document
-    - [ ] image -> pdf
-    - [ ] pdf comporess
+    - [x] pdf -> document
+        - to-doc
+            - [x] /epub-to-doc
+            - [x] /pdf-to-doc
+            - [x] /xps-to-doc
+        - to-docx
+            - [x] /epub-to-docx
+            - [x] /pdf-to-docx
+            - [x] /xps-to-docx
+
+    - x -> pdf
+        - [x] /xps-to-pdf
+        - [x] /epub-to-pdf
+        - [x] /oxps-to-pdf
+        - [x] /cbz-to-pdf
+        - [x] /fb2-to-pdf
+    - [ ] images -> pdf
+    - [ ] pdf -> images
+    - [ ] file comporess / decompress
+    - [ ] pdf encrypt / decrypt
+    - [ ] pdf merge, delete, arrange
   - 세현
     - [x] image URL 파일 데이터 입/출력
     - [x] 파일 업로드(버튼 액션 설정) - input 없이 button으로만 파일 선택, 서버에서 데이터 받아오도록 수정
