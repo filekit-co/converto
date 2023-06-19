@@ -1,5 +1,6 @@
 import base64
 import io
+import logging
 import mimetypes
 from typing import Annotated, Optional
 
@@ -27,22 +28,20 @@ async def to_docx(
         password:  Annotated[Optional[str], Form()]=None,
     ):
     file_bytes = await file.read()
+    docx_bytes = io.BytesIO()
     
     with DocxConverter(
         file_name=file.filename, 
         pdf_file=file_bytes, 
+        path_or_stream=docx_bytes,
         password=password
     ) as cv:
-        docx_bytes = io.BytesIO()
         cv.convert()
-        docx, docx_filename = cv.make_docx()
-        docx.save(docx_bytes)
-        encoded = base64.b64encode(docx_bytes.getvalue())
-
+        filename=cv.docx_name
         return Response(
-            content=encoded,
+            content=docx_bytes.getvalue(),
             headers={
-                'Content-Disposition': f'attachment; filename={docx_filename}'
+                'Content-Disposition': f'attachment; filename={filename}'
             },
-            # media_type=docx_mimetype,
+            media_type=docx_mimetype,
         )
