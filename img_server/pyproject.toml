@@ -1,16 +1,19 @@
 [tool.poetry]
-name = "converto"
+name = "converto-img"
 version = "0.1.0"
-description = "convert files"
+description = "convert images"
 authors = ["minkj1992 <minkj1992@gmail.com>"]
 license = "Apache-2.0"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.10,<3.12"
 uvicorn = {extras = ["standard"], version = "^0.22.0"}
 fastapi = "^0.97.0"
 python-dotenv = "^1.0.0"
+rembg = "^2.0.43"
+asyncer = "^0.0.2"
+
 
 
 [build-system]

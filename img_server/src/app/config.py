@@ -7,6 +7,7 @@ from pydantic import BaseSettings
 class Cfg(BaseSettings):
     phase: str
     base_url: str
+    image_model: str = "u2net"
 
     def log_level(self):
         if self.phase in ('PROD', 'DEV'):

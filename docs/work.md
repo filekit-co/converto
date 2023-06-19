@@ -41,7 +41,7 @@
         - 2차: x to y (pdf + pdf -> pdf)
     - [remove background](https://www.remove.bg/) (image edit)
     - `i18n`
-        -  미국
+        - 미국
         - 중국
         - 인도
         - 한국 / 일본

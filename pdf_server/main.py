@@ -3,13 +3,10 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from src.app.api import greet
-from src.app.config import get_config
+from api import pdf
 
-app = FastAPI(title='Converto api server')
+app = FastAPI(title='Converto pdf api server')
 
-
-cfg = get_config()
 
 app.add_middleware(
     CORSMiddleware,
@@ -20,14 +17,14 @@ app.add_middleware(
 )
 
 routers = [
-    greet.router,
+    pdf.router,
 ]
+
 for router in routers:
     app.include_router(router)
 
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="localhost", port=8080, reload=True)
-
+    uvicorn.run("main:app", host="localhost", port=8001, reload=True)
 

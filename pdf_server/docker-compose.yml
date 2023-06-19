@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  app:
+    restart: always
+    container_name: pdf-api
+    build: .
+    volumes:
+      - ./:/src
+    command: uvicorn main:app --host=0.0.0.0 --port 8001 --reload
+    ports:
+      - "8001:8001"
+    env_file:
+      - .env

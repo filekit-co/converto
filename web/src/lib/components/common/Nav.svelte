@@ -32,7 +32,7 @@
             <li><a>Submenu 2</a></li>
           </ul>
         </li>
-        <li><a>Item 3</a></li>
+        <li><a href="/remove">Remove</a></li>
       </ul>
     </div>
     <img
@@ -54,7 +54,7 @@
           </ul>
         </details>
       </li>
-      <li><a>Item 3</a></li>
+      <li><a href="/remove">Remove</a></li>
     </ul>
   </div>
   <div class="navbar-end" />
