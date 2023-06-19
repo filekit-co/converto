@@ -30,7 +30,6 @@ async def convert(file_bytes: bytes, file_name:str, password: Optional[str], is_
 
 
 
-
 @router.post(
         path="/to-docx",
         summary="Convert to docx file from PDF",
