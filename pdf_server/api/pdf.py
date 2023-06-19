@@ -1,9 +1,9 @@
+import base64
 import io
 import mimetypes
-from typing import Annotated, List, Optional
+from typing import Annotated, Optional
 
 from fastapi import APIRouter, File, Form, Response, UploadFile, status
-from fastapi.responses import FileResponse, StreamingResponse
 
 from infra import DocxConverter
 
@@ -37,11 +37,12 @@ async def to_docx(
         cv.convert()
         docx, docx_filename = cv.make_docx()
         docx.save(docx_bytes)
+        encoded = base64.b64encode(docx_bytes.getvalue())
 
         return Response(
-            content=docx_bytes,
+            content=encoded,
             headers={
                 'Content-Disposition': f'attachment; filename={docx_filename}'
             },
-            media_type=docx_mimetype,
+            # media_type=docx_mimetype,
         )
