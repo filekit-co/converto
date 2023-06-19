@@ -94,6 +94,7 @@
 </script>
 
 <div id="app">
+  <!-- 백그라운드 사라진 이미지가 있을 때  -->
   {#if resultImage && downloadedFile}
     <img class="image" src={resultImage} alt="image"/>
     <a class="btn btn-primary btn-download mr-2 mr-md-0" target="_blank" rel="noopener" href={downloadedFile} download="downloaded_Image">Download</a>
