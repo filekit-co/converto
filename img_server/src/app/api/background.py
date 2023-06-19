@@ -1,11 +1,10 @@
 import aiohttp
 import cv2
 import numpy as np
+from app.config import get_config
 from asyncer import asyncify
 from fastapi import APIRouter, File, Query, Response, UploadFile, status
 from rembg import new_session, remove
-
-from app.config import get_config
 
 router = APIRouter(prefix='/bg')
 
