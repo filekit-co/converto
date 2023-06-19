@@ -5,6 +5,8 @@ from docx import Document
 from pdf2docx import Converter
 from pdf2docx.page.Pages import Pages
 
+from utils import out_filename
+
 
 class DocxConverter(Converter):
     """pdf2docx converter adding with statement."""
@@ -34,11 +36,12 @@ class DocxConverter(Converter):
 
     @property
     def docx_name(self):
-        return f'{self.filename_pdf[0:-len(".pdf")]}.docx'
+        return out_filename(self.filename_pdf, '.pdf', '.docx')
+        
 
     @property
     def doc_name(self):
-        return f'{self.filename_pdf[0:-len(".pdf")]}.doc'
+        return out_filename(self.filename_pdf, '.pdf', '.doc')
 
     def convert(self, docx_filename:str=None, start:int=0, end:int=None, pages:list=None, **kwargs):
         """Convert specified PDF pages to docx file.
@@ -110,3 +113,14 @@ class ConversionException(Exception):
 
 class MakedocxException(ConversionException): 
     pass
+
+
+
+def convert_bytes_to_pdf(stream: bytes, input_type: str):
+    """
+    You can access files with extensions like .xps, .oxps, .cbz, .fb2 or .epub
+
+    ref: https://pymupdf.readthedocs.io/en/latest/document.html#Document.convert_to_pdf
+    """
+    doc  = fitz.Document(stream=stream, filetype=input_type)
+    return doc.convert_to_pdf()
