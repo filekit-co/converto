@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "converto"
+name = "converto-img"
 version = "0.1.0"
-description = "convert files"
+description = "convert images"
 authors = ["minkj1992 <minkj1992@gmail.com>"]
 license = "Apache-2.0"
 readme = "README.md"

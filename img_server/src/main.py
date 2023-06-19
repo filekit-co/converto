@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api import background, greet
 from app.config import get_config
 
-app = FastAPI(title='Converto api server')
+app = FastAPI(title='Converto img server')
 
 
 cfg = get_config()
