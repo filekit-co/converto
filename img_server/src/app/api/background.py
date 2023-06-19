@@ -20,7 +20,7 @@ def preprocess(file_bytes):
 def im_without_bg(file_bytes) -> Response:
     # 파일 객체에서 바이트 데이터 추출
     preprocessed_img = preprocess(file_bytes)
-    img = remove(preprocessed_img, post_process_mask=True, alpha_matting=True, session=new_session(_cfg.image_model))
+    img = remove(preprocessed_img, alpha_matting=True, session=new_session(_cfg.image_model))
     
     # 이미지를 PNG로 인코딩하여 바이트로 변환
     _, img_encoded = cv2.imencode(".png", img)

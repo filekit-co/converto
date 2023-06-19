@@ -57,7 +57,7 @@
     - 애드센스 신청
     - 새로운 프로젝트 시작
 
-### 6월
+# 6월
 
 - 3쨰주(15 - 17)
     - back
@@ -76,7 +76,47 @@
 - 5째주 (25 - 30)
     - 프론트 배포
     - 백앤드 배포
-    - https
+    - httpsㄴ
     - nginx(?)
 
-
+## 3째주
+- 16일
+    - 민욱
+        - [ ] x to text api 붙이기
+        - [x] api list file 받기
+    - 세현
+        - [ ] 다운로드 / 미리 보기
+- 17일
+    - 민욱
+      - [ ] x to text api 붙이기
+      - [ ] pdf api 붙이기
+    - 세현
+      - [ ] 이미지 업로드 컴포넌트 이벤트 구현
+      - [ ] 이미지 다운로드 => 페이지 라우팅해서   
+- 18일
+    - 민욱
+      - [x] url to image remove
+      - [ ] x to text
+         - pdf to text
+         - doc to text
+         - csv to text
+         - image to text
+         - md to text
+      - [ ] merge pdf
+      - [ ] compress pdf
+      - [ ] images to pdf
+    - 세현
+      - [x] file drop event 함수 작성
+      - [x] file drop event ui 만들기
+      - [x] image download button
+- 19일
+  - 민욱
+    - [ ] pdf -> document
+    - [ ] image -> pdf
+    - [ ] pdf comporess
+  - 세현
+    - [x] image URL 파일 데이터 입/출력
+    - [x] 파일 업로드(버튼 액션 설정) - input 없이 button으로만 파일 선택, 서버에서 데이터 받아오도록 수정
+    - [ ] 파일 업로드 이후(사진, 다운로드) ui 수정
+    - [ ] git action 설정
+    - [ ] i18n 동작 구현

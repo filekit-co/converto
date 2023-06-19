@@ -1,9 +1,8 @@
 
 import uvicorn
+from api import cbz_doc, epub_doc, oxps_doc, pdf_doc, xps_doc
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
-from api import cbz_doc, epub_doc, oxps_doc, pdf_doc, xps_doc
 
 app = FastAPI(title='Converto pdf api server')
 
