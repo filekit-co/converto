@@ -4,6 +4,7 @@
   let selectedFile: any = null;
   let resultImage: any;
   let imageURL: any = null;
+  let fileInput: any = null;
 
   async function handleDrop(event) {
     event.preventDefault();
@@ -41,15 +42,13 @@
     droppedFiles = [];
   }
 
-  function handleFileChange(event) {
+  async function handleFileChange(event) {
     selectedFile = event.target.files[0]
-  }
 
-  async function handleClick() {
     if (selectedFile) {
       const formData = new FormData();
-      formData.append('image', selectedFile)
-      
+      formData.append('image', selectedFile);
+
       const response = await fetch('http://localhost:8000/bg/remove', {
         method: 'POST',
         body: formData,
@@ -66,6 +65,10 @@
         console.error(error);
       })
     }
+  }
+
+  function handleClick(event) {
+    fileInput.click();
   }
 
   function handleURLChange(event) {
@@ -104,45 +107,36 @@
     >
 
     <form>
-
-      <!-- <input
+      <input
         type="file"
         class="file-input file-input-bordered file-input-primary w-full max-w-xs"
+        style="display:none"
         accept=".jpg, .jpeg, .png"
         on:change={handleFileChange}
-        bind:this={fileinput}
-      /> -->
-      <button on:click={handleClick} on:change={handleFileChange}
+        bind:this={fileInput}
+      />
+      <button on:click={handleClick}
         type="button" 
         class="!border !border-transparent rounded-full font-bold transition ease-in-out text-center font-body no-underline hover:no-underline inline-flex items-center justify-center text-2xl px-8 py-2.5 text-white !bg-primary hover:!bg-primary-hover active:!bg-primary-hover active:scale-[0.98] focus:outline-none focus-visible:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover">
         Upload
       </button>
     </form>
 
-
     <div class="hidden sm:flex flex-col gap-1.5">
       <p class="m-0 font-bold text-xl text-typo-secondary">Or Drag a File,</p>
       <span class="text-xs text-typo-secondary text-center">Insert Image or, 
-
         <button class="btn btn-active btn-ghost" on:click={()=>window.my_modal_5.showModal()}>URL</button>
         <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-
           <form method="dialog" class="modal-box">
             <h3 class="font-bold text-lg">Type Image URL and Press Submit Button</h3>
             <br/>
-
             <input on:change={handleURLChange} type="text" placeholder="Type here" class="input input-bordered input-accent w-full max-w-xs" />
-
             <button on:click={handleURLSubmit} class="btn btn-active btn-primary">Submit</button>
-
           </form>
-
           <form method="dialog" class="modal-backdrop">
             <button>close</button>
           </form>
-
         </dialog>
-
       </span>
     </div>
   </div>
