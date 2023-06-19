@@ -4,7 +4,6 @@ version = "0.1.0"
 description = ""
 authors = ["minkj1992 <minkj1992@gmail.com>"]
 readme = "README.md"
-packages = [{include = "pdf_server"}]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.12"
