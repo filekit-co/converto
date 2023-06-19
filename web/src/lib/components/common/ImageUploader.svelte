@@ -1,14 +1,9 @@
-<script lang="ts">
-  import { filedrop } from "filedrop-svelte";
-
-  let rawFiles: string[] =[];
-  let images: any[] = [];
-  let fileinput: HTMLInputElement;
-  
+<script lang="ts">  
   let droppedFiles = []
   let downloadedFile: any = null;
   let selectedFile: any = null;
   let resultImage: any;
+  let imageURL: any = null;
 
   async function handleDrop(event) {
     event.preventDefault();
@@ -50,7 +45,7 @@
     selectedFile = event.target.files[0]
   }
 
-  async function handleClick(event) {
+  async function handleClick() {
     if (selectedFile) {
       const formData = new FormData();
       formData.append('image', selectedFile)
@@ -72,15 +67,34 @@
       })
     }
   }
+
+  function handleURLChange(event) {
+    imageURL = event.target.value;
+  }
+
+  async function handleURLSubmit() {
+    const response = await fetch(`http://localhost:8000/bg/remove?url=${imageURL}`, {
+      method: 'GET',
+      mode: 'cors'
+    })
+    .then(response => response.blob())
+    .then(blob => {
+      const file = new File([blob], 'downloaded_Image', {type: blob.type})
+        downloadedFile = URL.createObjectURL(file);
+
+        resultImage = URL.createObjectURL(blob)
+    })
+    .catch(error => {
+      console.error(error)
+    })
+  }
 </script>
 
 <div id="app">
-
   {#if resultImage && downloadedFile}
     <img class="image" src={resultImage} alt="image"/>
-    <a class="btn btn-primary btn-download mr-2 mr-md-0" target="_blank" rel="noopener" href={downloadedFile} download="downloaded_Image">다운로드</a>
+    <a class="btn btn-primary btn-download mr-2 mr-md-0" target="_blank" rel="noopener" href={downloadedFile} download="downloaded_Image">Download</a>
 
-    
   {:else}
   <div
     class="drop-zone w-full flex flex-col sm:justify-center sm:items-center sm:gap-8 sm:pt-36 sm:pb-16 rounded-4xl bg-white shadow-2xl"
@@ -91,34 +105,50 @@
 
     <form>
 
-      <input
+      <!-- <input
         type="file"
+        class="file-input file-input-bordered file-input-primary w-full max-w-xs"
         accept=".jpg, .jpeg, .png"
         on:change={handleFileChange}
         bind:this={fileinput}
-      />
-      <button on:click={handleClick} type="button" class="!border !border-transparent rounded-full font-bold transition ease-in-out text-center font-body no-underline hover:no-underline inline-flex items-center justify-center text-2xl px-8 py-2.5 text-white !bg-primary hover:!bg-primary-hover active:!bg-primary-hover active:scale-[0.98] focus:outline-none focus-visible:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover">
-        이미지 업로드
+      /> -->
+      <button on:click={handleClick} on:change={handleFileChange}
+        type="button" 
+        class="!border !border-transparent rounded-full font-bold transition ease-in-out text-center font-body no-underline hover:no-underline inline-flex items-center justify-center text-2xl px-8 py-2.5 text-white !bg-primary hover:!bg-primary-hover active:!bg-primary-hover active:scale-[0.98] focus:outline-none focus-visible:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover">
+        Upload
       </button>
     </form>
 
 
     <div class="hidden sm:flex flex-col gap-1.5">
-      <p class="m-0 font-bold text-xl text-typo-secondary">또는 파일 놓기,</p>
-      <span class="text-xs text-typo-secondary text-center">이미지 붙여넣기 또는 
-        <a href="#" class="text-typo-secondary select-photo-url-btn underline">
-          URL
-        </a>  
+      <p class="m-0 font-bold text-xl text-typo-secondary">Or Drag a File,</p>
+      <span class="text-xs text-typo-secondary text-center">Insert Image or, 
+
+        <button class="btn btn-active btn-ghost" on:click={()=>window.my_modal_5.showModal()}>URL</button>
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+
+          <form method="dialog" class="modal-box">
+            <h3 class="font-bold text-lg">Type Image URL and Press Submit Button</h3>
+            <br/>
+
+            <input on:change={handleURLChange} type="text" placeholder="Type here" class="input input-bordered input-accent w-full max-w-xs" />
+
+            <button on:click={handleURLSubmit} class="btn btn-active btn-primary">Submit</button>
+
+          </form>
+
+          <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+          </form>
+
+        </dialog>
+
       </span>
     </div>
   </div>
 
   {/if}
 </div>
-
-
-
-
 
 <style>
   #app {
@@ -131,6 +161,8 @@
     padding-bottom: 20px;
     justify-content: center;
     align-items: center;
+    width: 500px;
+    height: 500px;
   }
   .container {
     display: flex;
