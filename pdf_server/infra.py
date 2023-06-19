@@ -9,7 +9,7 @@ from pdf2docx.page.Pages import Pages
 class DocxConverter(Converter):
     """pdf2docx converter adding with statement."""
     
-    def __init__(self, file_name:str, pdf_file:bytes, path_or_stream: bytes, password:str=None):
+    def __init__(self, file_name:str, input_file_type:str, input_file:bytes, path_or_stream: bytes, password:str=None):
         '''Initialize fitz object with given pdf file path.
 
         Args:
@@ -19,7 +19,7 @@ class DocxConverter(Converter):
         # fitz object
         self.filename_pdf = file_name
         self.password = str(password or '')
-        self._fitz_doc = fitz.Document(stream=pdf_file)
+        self._fitz_doc = fitz.Document(stream=input_file, filetype=input_file_type)
         self.path_or_stream = path_or_stream
 
         # initialize empty pages container

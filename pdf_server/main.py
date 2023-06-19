@@ -3,7 +3,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from api import docx
+from api import pdf_doc, xps_doc
 
 app = FastAPI(title='Converto pdf api server')
 
@@ -17,7 +17,9 @@ app.add_middleware(
 )
 
 routers = [
-    docx.router,
+    pdf_doc.router,
+    xps_doc.router,
+    
 ]
 
 for router in routers:
