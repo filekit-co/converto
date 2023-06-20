@@ -108,12 +108,37 @@ async def add_logo(
 
 
 
-@router.post(
-        path="/",
-        summary="",
-        status_code=status.HTTP_200_OK,
-        )
-async def combine_pdfs(
+
+async def merge_pdfs(
         pdf_files: Annotated[UploadFile, File(..., media_type=get_mimetype('.pdf'))],
     ):
+    # https://pymupdf.readthedocs.io/en/latest/the-basics.html#merging-pdf-files
+    # https://github.com/pymupdf/PyMuPDF-Utilities/tree/master/examples/combine-pages
+    # https://github.com/pymupdf/PyMuPDF-Utilities/blob/master/examples/join-documents/join.py
     ...
+
+
+async def split_to_pdfs(
+        pdf_file,
+    ):
+    # https://github.com/pymupdf/PyMuPDF-Utilities/tree/master/examples/split-document
+    ...
+
+async def split_to_images():
+    # https://github.com/pymupdf/PyMuPDF-Utilities/tree/master/examples/convert-image
+    ...    
+
+
+async def anonymize_pdf():
+    # https://github.com/pymupdf/PyMuPDF-Utilities/tree/master/examples/anonymize-document
+    ...
+
+
+
+async def rotate_pdf():
+    # https://pymupdf.readthedocs.io/en/latest/the-basics.html#rotating-a-pdf
+    ...
+
+async def extract_text():
+
+    # https://github.com/pymupdf/PyMuPDF-Utilities/tree/master/text-extraction
