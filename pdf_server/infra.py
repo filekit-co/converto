@@ -171,6 +171,40 @@ def decrypt_pdf(file_bytes: bytes, password:str):
         return out_bytes.getvalue()
 
 
+def add_a_watermark(pdf_bytes: bytes, watermark_bytes: bytes, overlay):
+    out_bytes = io.BytesIO()
+    img_xref = 0 # reuse image
+    with fitz.Document(stream=pdf_bytes, filetype='pdf') as doc:
+        for i in range(len(doc)):
+            page = doc[i]
+            # https://pymupdf.readthedocs.io/en/latest/page.html#Page.insert_image
+            img_xref = page.insert_image(
+                rect=page.bound(), 
+                stream=watermark_bytes,
+                overlay=overlay,
+                xref=img_xref,
+            )
+
+        doc.save(out_bytes)
+        return out_bytes.getvalue()
+
+
+
+def add_a_logo(pdf_bytes: bytes, logo_bytes: bytes):
+    out_bytes = io.BytesIO()
+    img_xref = 0 # reuse image
+
+    with fitz.Document(stream=pdf_bytes, filetype='pdf') as doc:
+        for i in range(len(doc)):
+            page = doc[i]
+            img_xref = page.insert_image(
+                fitz.Rect(0,0,50,50),
+                stream=logo_bytes,
+                xref=img_xref, 
+                overlay=True
+            )
+        doc.save(out_bytes)
+        return out_bytes.getvalue()
 
 
 class ConversionException(Exception): 
