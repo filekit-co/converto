@@ -19,7 +19,10 @@
     - [ ] /images-to-pdf
 - [PyMuPDF](https://github.com/pymupdf/PyMuPDF-Utilities/tree/master/examples)
     - [ ] pdf to images
-    - [ ] join pdfs
-    - [ ] extract pages
-
+    - [x] join pdfs
+    - [x] extract pages
+    - [x] encrypt pdf
+    - [x] decrypt pdf
+    - [x] add log to pdf
+    - [x] add watermark to pdf
 
