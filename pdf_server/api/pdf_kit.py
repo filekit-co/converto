@@ -1,10 +1,11 @@
 import asyncio
-from typing import Annotated, Optional
+from typing import Annotated, List, Optional
 
 from fastapi import APIRouter, File, Form, Response, UploadFile, status
 
 import infra
 from consts import get_mimetype
+from exceptions import NotEnoughFiles
 
 router = APIRouter(prefix='/pdf', tags=["pdf-utils"])
 
@@ -108,14 +109,31 @@ async def add_logo(
 
 
 
-
+@router.post(
+        path="/merge",
+        summary="Merge pdfs into a pdf",
+        status_code=status.HTTP_200_OK,
+        )
 async def merge_pdfs(
-        pdf_files: Annotated[UploadFile, File(..., media_type=get_mimetype('.pdf'))],
+        pdf_files: List[UploadFile] = File(..., media_type=get_mimetype('.pdf')),
     ):
-    # https://pymupdf.readthedocs.io/en/latest/the-basics.html#merging-pdf-files
-    # https://github.com/pymupdf/PyMuPDF-Utilities/tree/master/examples/combine-pages
-    # https://github.com/pymupdf/PyMuPDF-Utilities/blob/master/examples/join-documents/join.py
-    ...
+    if len(pdf_files) <= 1:
+        raise NotEnoughFiles()
+    
+    file_name = 'merged.pdf'
+    files = await asyncio.gather(
+        *(f.read() for f in pdf_files)
+    )
+    out_bytes = await infra.merge_pdfs(files)
+
+    return Response(
+        content=out_bytes,
+        headers={
+            'Content-Disposition': f'attachment; filename={file_name}'
+            },
+        media_type=get_mimetype('.pdf'),        
+    )
+
 
 
 async def split_to_pdfs(
@@ -140,5 +158,6 @@ async def rotate_pdf():
     ...
 
 async def extract_text():
-
     # https://github.com/pymupdf/PyMuPDF-Utilities/tree/master/text-extraction
+    ...
+    

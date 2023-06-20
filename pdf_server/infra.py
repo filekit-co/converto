@@ -1,6 +1,7 @@
+import asyncio
 import io
 import logging
-from typing import Optional
+from typing import List, Optional
 
 import fitz
 from docx import Document
@@ -205,6 +206,33 @@ def add_a_logo(pdf_bytes: bytes, logo_bytes: bytes):
             )
         doc.save(out_bytes)
         return out_bytes.getvalue()
+
+
+async def adocument(stream: bytes, filetype:str):
+    return fitz.Document(stream=stream, filetype=filetype)
+
+
+async def merge_pdfs(files: List[bytes]):
+    out_bytes = io.BytesIO()
+    docs = await asyncio.gather(
+        *(adocument(fb, 'pdf') for fb in files)
+    )
+
+    try:
+        if len(docs) == 1:
+            docs[0].save(out_bytes)
+            return out_bytes.getvalue()
+
+        start_doc = docs[0]
+        for d in docs[1:]:
+            start_doc.insert_pdf(d)
+        start_doc.save(out_bytes)
+        return out_bytes.getvalue()
+    
+    finally:
+        for doc in docs:
+            if not getattr(doc, "is_closed", True):
+                doc.close()
 
 
 class ConversionException(Exception): 
