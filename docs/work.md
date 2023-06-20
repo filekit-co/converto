@@ -147,10 +147,19 @@
     - [ ] svelte file convert page
     - [x] 스크럼 아침 7시
   - 세현
-    - [ ] 각 컴포넌트, 페이지 SEO 적용(p, h, meta 적극 활용)
-    - [ ] 파일 업로드 이후(사진, 다운로드) css 수정
+    - [x] 각 컴포넌트, 페이지 SEO 적용(p, h, meta 적극 활용)
+    - [x] 파일 업로드 이후(사진, 다운로드) css 수정
     - [ ] git action 설정
     - [ ] i18n 동작 구현
   - 재원
-    - [ ] [youtube to mp3](https://www.y2mate.com/en625)
+    - [x] [youtube to mp3](https://www.y2mate.com/en625)
     - [ ] Research (금요일 부터 시작)
+- 21일
+  - 민욱
+    - [ ] svelte file convert page
+    - [ ] pdf to image
+  - 세현
+    - [ ] 페이지 별로 seo 적용
+    - [ ] css 마무리
+  - 재원
+    - [ ] rgba to rgb
