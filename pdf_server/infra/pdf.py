@@ -137,5 +137,5 @@ async def split_pdf(doc: fitz.Document, start: int, end: int):
     with fitz.Document() as splitted_pdf:
         splitted_pdf.insert_pdf(doc, from_page=start, to_page=end)
         splitted_pdf.save(out_bytes)
-        return out_bytes
+        return out_bytes.getvalue()
 
