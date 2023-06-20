@@ -1,4 +1,7 @@
 <script lang="ts">
+  import { afterUpdate, onMount } from "svelte";
+  import ImageDetail from "./ImageDetail.svelte";
+
   let droppedFiles = [];
   let downloadedFile: any = null;
   let selectedFile: any = null;
@@ -94,19 +97,27 @@
         console.error(error);
       });
   }
+
+  // onMount(() => {
+  //   redirectToUploadPage();
+  // });
+
+  // afterUpdate(() => {
+  //   redirectToUploadPage();
+  // });
+
+  // function redirectToUploadPage() {
+  //   if (resultImage && downloadedFile) {
+  //     const url = 'http://localhost:5173/remove/upload';
+  //     window.location.href = url;
+  //   }
+  // }
 </script>
 
 <div id="app">
-  <!-- 백그라운드 사라진 이미지가 있을 때  -->
   {#if resultImage && downloadedFile}
-    <img class="image" src={resultImage} alt="image" />
-    <a
-      class="btn btn-primary btn-download mr-2 mr-md-0"
-      target="_blank"
-      rel="noopener"
-      href={downloadedFile}
-      download="downloaded_Image">Download</a
-    >
+    <ImageDetail resultImage={resultImage} downloadedFile={downloadedFile} />
+
   {:else}
     <div
       class="drop-zone w-full flex flex-col sm:justify-center sm:items-center sm:gap-8 sm:pt-36 sm:pb-16 rounded-4xl bg-white shadow-2xl"
@@ -126,6 +137,7 @@
         <button
           on:click={handleClick}
           type="button"
+          style="width: 300px; height: 80px;"
           class="!border !border-transparent rounded-full font-bold transition ease-in-out text-center font-body no-underline hover:no-underline inline-flex items-center justify-center text-2xl px-8 py-2.5 text-white !bg-primary hover:!bg-primary-hover active:!bg-primary-hover active:scale-[0.98] focus:outline-none focus-visible:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover"
         >
           Upload
@@ -138,6 +150,7 @@
           >Insert Image or,
           <button
             class="btn btn-active btn-ghost"
+            style="background:none"
             on:click={() => window.my_modal_5.showModal()}>URL</button
           >
           <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
@@ -174,49 +187,6 @@
     justify-content: center;
     flex-flow: column;
   }
-  .image {
-    padding-bottom: 20px;
-    justify-content: center;
-    align-items: center;
-    width: 500px;
-    height: 500px;
-  }
-  .container {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-  }
 
-  .filedrop {
-    background-color: #f0f0f0;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.375rem;
-    border: 0.1em dashed #c3c3c3;
-    outline: 1em solid #f0f0f0;
-    transition: border 0.3s ease-in-out;
-    outline-offset: -1.3em;
-    padding: 0.475em;
-  }
 
-  .filedrop p,
-  .filedrop svg {
-    transition: color 0.1s;
-    transition: fill 0.1s;
-  }
-
-  .filedrop:hover p,
-  .filedrop:hover svg {
-    color: #3abef7;
-    fill: #3abef7;
-  }
-  p {
-    color: #373737;
-    font-size: 1.2em;
-    cursor: default;
-    align-content: center;
-  }
 </style>
