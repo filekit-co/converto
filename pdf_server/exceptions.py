@@ -13,3 +13,19 @@ class NotEnoughFiles(HTTPException):
             detail=f"Should give more than two pdf files",
             headers=headers
         )
+
+
+
+class ConversionException(Exception): 
+    pass
+
+class MakedocxException(ConversionException): 
+    pass
+
+class InvalidPasswordException(ConversionException):
+    pass
+
+
+class AlreadyEncryptException(ConversionException):
+    pass
+

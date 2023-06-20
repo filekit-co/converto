@@ -1,7 +1,7 @@
 import io
-from typing import Optional
+from typing import List, Optional, Tuple
 
-from infra import DocxConverter
+from infra.docx import DocxConverter
 
 
 async def convert_to_doc(file_bytes: bytes, file_name:str, input_file_type:str, password: Optional[str]):

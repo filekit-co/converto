@@ -1,11 +1,13 @@
 import asyncio
+from enum import Enum, auto
 from typing import Annotated, List, Optional
 
 from fastapi import APIRouter, File, Form, Response, UploadFile, status
 
-import infra
 from consts import get_mimetype
 from exceptions import NotEnoughFiles
+from infra import pdf
+from services import split_pdf_ranges
 
 router = APIRouter(prefix='/pdf', tags=["pdf-utils"])
 
@@ -22,7 +24,7 @@ async def encrypt_pdf(
     ):
     
     file_bytes = await file.read()
-    pdf_bytes = infra.encrypt_pdf(file_bytes, ro_password=password, rw_password=password)
+    pdf_bytes = pdf.encrypt_pdf(file_bytes, ro_password=password, rw_password=password)
     
     return Response(
         content=pdf_bytes,
@@ -46,7 +48,7 @@ async def decrypt_pdf(
     ):
     
     file_bytes = await file.read()
-    pdf_bytes = infra.decrypt_pdf(file_bytes, password)
+    pdf_bytes = pdf.decrypt_pdf(file_bytes, password)
     
     return Response(
         content=pdf_bytes,
@@ -73,7 +75,7 @@ async def add_watermark(
         watermark_file.read()
     )
 
-    out_bytes = infra.add_a_watermark(pdf_bytes, watermark_bytes, overlay)
+    out_bytes = pdf.add_a_watermark(pdf_bytes, watermark_bytes, overlay)
     return Response(
         content=out_bytes,
         headers={
@@ -98,7 +100,7 @@ async def add_logo(
         logo_file.read()
     )
 
-    out_bytes = infra.add_a_logo(pdf_bytes, logo_bytes)
+    out_bytes = pdf.add_a_logo(pdf_bytes, logo_bytes)
     return Response(
         content=out_bytes,
         headers={
@@ -124,7 +126,7 @@ async def merge_pdfs(
     files = await asyncio.gather(
         *(f.read() for f in pdf_files)
     )
-    out_bytes = await infra.merge_pdfs(files)
+    out_bytes = await pdf.merge_pdfs(files)
 
     return Response(
         content=out_bytes,
