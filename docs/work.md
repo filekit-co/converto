@@ -140,10 +140,12 @@
     - [ ] i18n 동작 구현
 - 20일
   - 민욱
-    - [ ] pdf encrypt / decrypt
-    - [ ] pdf logo / watermark
+    - [x] pdf encrypt / decrypt
+    - [x] pdf logo / watermark
+    - [x] join pdfs
+    - [x] extract pages
     - [ ] svelte file convert page
-    - [ ] 스크럼 아침 7시
+    - [x] 스크럼 아침 7시
   - 세현
     - [ ] 각 컴포넌트, 페이지 SEO 적용(p, h, meta 적극 활용)
     - [ ] 파일 업로드 이후(사진, 다운로드) css 수정
