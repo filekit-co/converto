@@ -8,9 +8,6 @@ from app.config import get_config
 
 app = FastAPI(title='Converto img server')
 
-
-cfg = get_config()
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
