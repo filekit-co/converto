@@ -115,14 +115,15 @@
         <button
           on:click={handleClick}
           type="button"
+          style="width: 300px; height: 80px;"
           class="!border !border-transparent rounded-full font-bold transition ease-in-out text-center font-body no-underline hover:no-underline inline-flex items-center justify-center text-2xl px-8 py-2.5 text-white !bg-primary hover:!bg-primary-hover active:!bg-primary-hover active:scale-[0.98] focus:outline-none focus-visible:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover"
         >
-          Upload
+            Upload
         </button>
       </form>
 
       <div class="hidden sm:flex flex-col gap-1.5">
-        <p class="m-0 font-bold text-xl text-typo-secondary">Or Drag a File,</p>
+        <p class="m-0 font-bold text-xl text-typo-secondary font-weight: 800">Or Drag a File,</p>
         <span class="text-xs text-typo-secondary text-center"
           >Insert Image or,
           <button
@@ -156,31 +157,32 @@
     </div>
 
 <div class="container">
-    <div class="upload-list">
-        <div class="upload d-flex flex-column" data-v-38fa4bd8>
-            <div data-v-38fa4bd8 style="flex: 1 1 0%;">
-                <div class="row" data-v-38fa4bd8 style="height: 100%; min-height: 245px;">
-                    <div class="col-md-8" data-v-38fa4bd8>
-                        <ul class="nav" data-v-38fa4bd8 style="margin-left: -8px;">
-                            <button class="btn btn-active btn-ghost" style="background:none">Origin</button>
-                            <button class="btn btn-active btn-ghost" style="background:none">Result</button>
-                        </ul>
-                        <div class='upload-tabs' data-v-38fa4bd8>
-                            <img class="image" src={resultImage} alt="image" />
-                        </div>
+    <div class=upload-list>
+        <div class="upload d-flex flex-column">
+            <div style="flex: 1 1 0%">
+                <div class="row" style="height: 100%; min-height: 245px;">
+                    <div class="col-md-8">
+                        <img class="image" src={resultImage} alt="image" />
                     </div>
-                        <div class="d-flex flex-grow-1 flex-shrink-1 flex-column align-items-center justify-content-center download-buttons" data-v-38fa4bd8>
-                            <div class="d-flex flex-md-column right-column" data-v-38fa4bd8>
-                                <a
-                                    class="btn btn-primary btn-download mr-2 mr-md-0"
-                                    target="_blank"
-                                    rel="noopener"
-                                    href={downloadedFile}
-                                    download="downloaded_Image">Download</a
-                                >
-                            </div>
-                        </div>
+                    <div class="col-md-4 py-md-3 d-flex flex-column align-items-center justify-content-center text-center">
+                        <a
+                            class="btn btn-primary"
+                            style="height: 60px;
+                            width: 100%;
+                            margin-top: 16px;
+                            margin-bottom: 16px;"
+                            target="_blank"
+                            rel="noopener"
+                            href={downloadedFile}
+                            download="downloaded_Image">download</a
+                        >
+                        <button class="btn btn-primary"                             
+                        style="height: 60px;
+                        width: 100%;
+                        margin-top: 16px;
+                        margin-bottom: 16px;">share</button>
                     </div>
+                </div>
             </div>
         </div>
     </div>
@@ -193,7 +195,7 @@
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
-    width: 100%
+    width: 100%;
 }
 
 @media(min-width: 576px) {
@@ -256,150 +258,22 @@
     box-sizing: border-box;
 }
 
-.upload[data-v-38fa4bd8] {
+@media(min-width: 576px) {
+    .upload {
+        margin-bottom: 40px;
+        margin-top: 40px;
+        padding: 20px 30px;
+    }
+}
+
+.upload {
     background: #fff;
     border-radius: 2px;
-    box-shadow: 0 0 3px rgba(0,0,0,.161);
+    box-shadow: 0 0 3px rgba(0, 0, 0, .161);
     margin: 20px auto;
     max-width: 990px;
-    min-height: 300px;
     padding: 15px;
-    position: relative
-}
-
-.right-column[data-v-38fa4bd8] {
-    width: 100%
-}
-
-@media(min-width: 768px) {
-    .right-column[data-v-38fa4bd8] {
-        width:200px
-    }
-}
-
-@media(max-width: 767px) {
-    .download-buttons div[data-v-38fa4bd8],.download-buttons[data-v-38fa4bd8] {
-        width:100%
-    }
-}
-
-.btn-download[data-v-38fa4bd8] {
-    width: 100%
-}
-
-@media(min-width: 768px) {
-    .btn-download[data-v-38fa4bd8] {
-        min-width:190px
-    }
-}
-
-.ph-button[data-v-38fa4bd8] {
-    height: 40px;
-    width: 100%
-}
-
-@media(min-width: 768px) {
-    .ph-button[data-v-38fa4bd8] {
-        width:190px
-    }
-}
-
-.ph-info[data-v-38fa4bd8] {
-    height: 19px;
-    width: 100%
-}
-
-@media(min-width: 768px) {
-    .ph-info[data-v-38fa4bd8] {
-        width:190px
-    }
-}
-
-@media(min-width: 576px) {
-    .upload[data-v-38fa4bd8] {
-        margin-bottom:40px;
-        margin-top: 40px;
-        padding: 20px 30px
-    }
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -15px;
-    margin-right: -15px
-}
-
-.col-md-8 {
-    padding-left: 15px;
-    padding-right: 15px;
     position: relative;
-    width: 100%
-}
-
-@media(min-width: 768px) {
-    .col-md-8 {
-        flex: 0 0 66.6666666667%;
-        max-width: 66.6666666667%
-    }
-    .pb-md-3,.py-md-3 {
-        padding-bottom: 1rem!important
-    }
-    .col-md-4 {
-    flex: 0 0 33.3333333333%;
-    max-width: 33.3333333333%;
-    }
-    .mt-md-0,.my-md-0 {
-        margin-top: 0!important
-    }
-}
-
-@media(min-width: 768px) {
-    .flex-md-row {
-        flex-direction:row!important
-    }
-
-    .flex-md-column {
-        flex-direction: column!important;
-    }
-}
-
-.upload-tabs[data-v-38fa4bd8] {
-    display: flex;
-    flex-flow: row nowrap;
-    margin-top: 10px
-}
-
-.nav {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    margin-bottom: 0;
-    padding-left: 0;
-}
-
-.fade-in-on-render[data-v-38fa4bd8] {
-    -webkit-animation: fadeInOnRender-38fa4bd8 .3s;
-    animation: fadeInOnRender-38fa4bd8 .3s;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    opacity: 0
-}
-
-.text-center {
-    text-align: center!important;
-}
-
-.align-items-center {
-    align-items: center!important
-}
-
-.align-items-center {
-    align-items: center!important;
-}
-
-.justify-content-center {
-    justify-content: center!important;
 }
 
 .flex-column {
@@ -410,34 +284,44 @@
     display: flex!important;
 }
 
-.flex-shrink-1 {
-    flex-shrink: 1!important;
-}
-
-.flex-grow-1 {
-    flex-grow: 1!important;
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
 }
 
 @media(min-width: 768px) {
-    .right-column[data-v-38fa4bd8] {
-        width:200px
+    .col-md-8 {
+        flex: 0 0 66.6666666667%;
+        max-width: 66.6666666667%;
+    }
+    .col-md-4 {
+        flex: 0 0 33.3333333333%;
+        max-width: 33.3333333333%;
+    }
+    .py-md-3 {
+        padding-top: 1rem!important;
     }
 }
 
-.right-column[data-v-38fa4bd8] {
-    width: 100%
+.col-md-4, .col-md-8 {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
 }
 
-.flex-row {
-    flex-direction: row!important
+.justify-content-center {
+    justify-content: center!important;
 }
 
-.w-100 {
-    width: 100%!important;
+.align-items-center {
+    align-items: center!important;
 }
 
-.mb-1,.my-1 {
-    margin-bottom: .25rem!important
+.text-center {
+    text-align: center!important;
 }
+
 
 </style>
