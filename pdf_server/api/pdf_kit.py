@@ -1,10 +1,13 @@
 import asyncio
-from typing import Annotated, Optional
+import logging
+from typing import Annotated, List
 
 from fastapi import APIRouter, File, Form, Response, UploadFile, status
 
-import infra
 from consts import get_mimetype
+from exceptions import NotEnoughFiles
+from infra import pdf, zzip
+from services import split_pdf_ranges
 
 router = APIRouter(prefix='/pdf', tags=["pdf-utils"])
 
@@ -21,7 +24,7 @@ async def encrypt_pdf(
     ):
     
     file_bytes = await file.read()
-    pdf_bytes = infra.encrypt_pdf(file_bytes, ro_password=password, rw_password=password)
+    pdf_bytes = pdf.encrypt_pdf(file_bytes, ro_password=password, rw_password=password)
     
     return Response(
         content=pdf_bytes,
@@ -45,7 +48,7 @@ async def decrypt_pdf(
     ):
     
     file_bytes = await file.read()
-    pdf_bytes = infra.decrypt_pdf(file_bytes, password)
+    pdf_bytes = pdf.decrypt_pdf(file_bytes, password)
     
     return Response(
         content=pdf_bytes,
@@ -72,7 +75,7 @@ async def add_watermark(
         watermark_file.read()
     )
 
-    out_bytes = infra.add_a_watermark(pdf_bytes, watermark_bytes, overlay)
+    out_bytes = pdf.add_a_watermark(pdf_bytes, watermark_bytes, overlay)
     return Response(
         content=out_bytes,
         headers={
@@ -97,7 +100,7 @@ async def add_logo(
         logo_file.read()
     )
 
-    out_bytes = infra.add_a_logo(pdf_bytes, logo_bytes)
+    out_bytes = pdf.add_a_logo(pdf_bytes, logo_bytes)
     return Response(
         content=out_bytes,
         headers={
@@ -109,11 +112,79 @@ async def add_logo(
 
 
 @router.post(
-        path="/",
-        summary="",
+        path="/merge",
+        summary="Merge pdfs into a pdf",
         status_code=status.HTTP_200_OK,
         )
-async def combine_pdfs(
-        pdf_files: Annotated[UploadFile, File(..., media_type=get_mimetype('.pdf'))],
+async def merge_pdfs(
+        pdf_files: List[UploadFile] = File(..., media_type=get_mimetype('.pdf')),
     ):
+    if len(pdf_files) <= 1:
+        raise NotEnoughFiles()
+    
+    file_name = 'merged.pdf'
+    files = await asyncio.gather(
+        *(f.read() for f in pdf_files)
+    )
+    out_bytes = await pdf.merge_pdfs(files)
+
+    return Response(
+        content=out_bytes,
+        headers={
+            'Content-Disposition': f'attachment; filename={file_name}'
+            },
+        media_type=get_mimetype('.pdf'),        
+    )
+
+@router.post(
+        path="/split",
+        summary="Split a pdf to list of pdfs",
+        status_code=status.HTTP_200_OK,
+        )
+async def split_to_pdfs(
+        pdf_file: Annotated[UploadFile, File(..., media_type=get_mimetype('.pdf'))],
+        page_range: str = Form(...),
+    ):
+    # 1. parse input
+    file_byte = await pdf_file.read()
+    splitted_page_range: List[str] = page_range.split(',') 
+    ranges = await split_pdf_ranges(splitted_page_range)
+
+    # 2. split pdf to pdfs
+    doc = await pdf.adocument(file_byte, 'pdf')
+    out_files: List[bytes] = await asyncio.gather(
+        *(pdf.split_pdf(doc, start, end) for (start, end) in ranges)
+    )
+    doc.close()
+
+    # 3. zip pdfs bytes
+    zip_file_bytes = await zzip.zip_files(out_files, file_names=splitted_page_range)
+    file_name = f'{pdf_file.filename}.zip'
+    return Response(
+        content=zip_file_bytes,
+        headers={
+            'Content-Disposition': f'attachment; filename={file_name}'
+            },
+        media_type=get_mimetype('.zip'),
+    )
+
+
+async def split_to_images():
+    # https://github.com/pymupdf/PyMuPDF-Utilities/tree/master/examples/convert-image
+    ...    
+
+
+async def anonymize_pdf():
+    # https://github.com/pymupdf/PyMuPDF-Utilities/tree/master/examples/anonymize-document
     ...
+
+
+
+async def rotate_pdf():
+    # https://pymupdf.readthedocs.io/en/latest/the-basics.html#rotating-a-pdf
+    ...
+
+async def extract_text():
+    # https://github.com/pymupdf/PyMuPDF-Utilities/tree/master/text-extraction
+    ...
+    
