@@ -159,7 +159,14 @@
     - [ ] svelte file convert page
     - [ ] pdf to image
   - 세현
-    - [ ] 페이지 별로 seo 적용
-    - [ ] css 마무리
+    - [x] 페이지 별로 seo 적용
+    - [x] css 마무리
   - 재원
     - [ ] rgba to rgb
+- 22일
+  - 민욱
+    - [ ] 
+  - 세현
+    - [ ] 배포
+  - 재원
+    - [ ]
