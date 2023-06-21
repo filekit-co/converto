@@ -1,15 +1,12 @@
 import aiohttp
 import cv2
 import numpy as np
-from app.config import get_config
 from asyncer import asyncify
 from fastapi import APIRouter, File, Query, Response, UploadFile, status
 from rembg import new_session, remove
+from consts import IMAGE_MODEL
 
 router = APIRouter(prefix='/bg')
-
-
-_cfg = get_config()
 
 def preprocess(file_bytes):
     # 파일 바이트를 numpy 배열로 변환
@@ -20,7 +17,7 @@ def preprocess(file_bytes):
 def im_without_bg(file_bytes) -> Response:
     # 파일 객체에서 바이트 데이터 추출
     preprocessed_img = preprocess(file_bytes)
-    img = remove(preprocessed_img, alpha_matting=True, session=new_session(_cfg.image_model))
+    img = remove(preprocessed_img, alpha_matting=True, session=new_session(IMAGE_MODEL))
     
     # 이미지를 PNG로 인코딩하여 바이트로 변환
     _, img_encoded = cv2.imencode(".png", img)
