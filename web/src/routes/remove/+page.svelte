@@ -13,7 +13,7 @@
   <meta name="author" content="filekit.co" />
   <meta
     property="og:title"
-    content="File convert, Background Image remove - filekit.co"
+    content="Remove Background from Any Image in 3 Seconds for Free - Best background image removal software - filekit.co"
   />
   <meta property="og:image" content="" />
   <meta property="twitter:image" content="" />
@@ -21,18 +21,28 @@
   <meta property="og:site_name" content="filekit.co" />
   <meta
     property="og:description"
-    content="Convert files, remove backgrounds, compress and decompress files, encrypt and decrypt PDFs, merge and arrange PDFs, and more – all for free in just 5 seconds. PDF to document, document to PDF, image to PDF, PDF to image conversions, and easy removal of background images."
+    content="We offer a free online service that allows you to remove the background from any image in just 3 seconds. 
+    Our service is easy to use and requires no registration or sign-in. 
+    Simply upload your image, click the Remove Background button, and your image will be processed instantly. 
+    Your image will be returned with a transparent background, which you can then use for any purpose.
+    Our service is perfect for a variety of tasks, including - Create product mockups - Designing social media graphics - Editing photos - filekit.co
+    "
   />
   <meta
     property="twitter:title"
-    content="File convert, Background Image remove - filekit.co"
+    content="Remove Background from Any Image in 3 Seconds for Free - Best background image removal software - filekit.co"
   />
   <meta property="twitter:url" content="https://www.filekit.co" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="%sveltekit.assets%/favicon.ico" />
   <meta
     name="description"
-    content="Convert files, remove backgrounds, compress and decompress files, encrypt and decrypt PDFs, merge and arrange PDFs, and more – all for free in just 5 seconds. PDF to document, document to PDF, image to PDF, PDF to image conversions, and easy removal of background images."
+    content="We offer a free online service that allows you to remove the background from any image in just 3 seconds. 
+    Our service is easy to use and requires no registration or sign-in. 
+    Simply upload your image, click the Remove Background button, and your image will be processed instantly. 
+    Your image will be returned with a transparent background, which you can then use for any purpose.
+    Our service is perfect for a variety of tasks, including - Create product mockups - Designing social media graphics - Editing photos - filekit.co
+    "
   />
   <link
     rel="apple-touch-icon"
@@ -63,6 +73,7 @@
     rel="stylesheet"
   />
 </svelte:head>
+
 
 <div class="w-full px-2 py-32 lg:px-10">
   <div class="text-center">
