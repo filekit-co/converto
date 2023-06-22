@@ -13,7 +13,7 @@
   <meta name="author" content="filekit.co" />
   <meta
     property="og:title"
-    content="Every files can convert - all for free - one click - within 5 seconds - filekit.co"
+    content="Every files can convert - all for free - one click - within 5 seconds - best file compression software - filekit.co"
   />
   <meta property="og:image" content="" />
   <meta property="twitter:image" content="" />
@@ -21,18 +21,26 @@
   <meta property="og:site_name" content="filekit.co" />
   <meta
     property="og:description"
-    content="Convert files, remove backgrounds, compress and decompress files, encrypt and decrypt PDFs, merge and arrange PDFs, and more – all for free in just 5 seconds. PDF to document, document to PDF, image to PDF, PDF to image conversions, and easy removal of background images."
+    content="Best file compression software. File Conversion and Compression Services.
+    Convert documents, images, and PDFs to any format. Compress files to reduce their size. Encrypt and decrypt PDFs. Merge, delete, and arrange PDFs.
+    We offer a wide range of file conversion and compression services to meet your needs. Whether you need to convert a document to PDF, compress a large file, or encrypt a PDF, we can help.
+    Our services are easy to use and affordable. You can convert, compress, and encrypt files online or through our desktop app.
+    Try our file conversion and compression services today and see the difference."
   />
   <meta
     property="twitter:title"
-    content="File convert, Background Image remove - filekit.co"
+    content="Every files can convert - all for free - one click - within 5 seconds - best file compression software - filekit.co"
   />
   <meta property="twitter:url" content="https://www.filekit.co" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="%sveltekit.assets%/favicon.ico" />
   <meta
     name="description"
-    content="Convert files, remove backgrounds, compress and decompress files, encrypt and decrypt PDFs, merge and arrange PDFs, and more – all for free in just 5 seconds. PDF to document, document to PDF, image to PDF, PDF to image conversions, and easy removal of background images."
+    content="Best file compression software. File Conversion and Compression Services
+    Convert documents, images, and PDFs to any format. Compress files to reduce their size. Encrypt and decrypt PDFs. Merge, delete, and arrange PDFs.    
+    We offer a wide range of file conversion and compression services to meet your needs. Whether you need to convert a document to PDF, compress a large file, or encrypt a PDF, we can help.    
+    Our services are easy to use and affordable. You can convert, compress, and encrypt files online or through our desktop app.    
+    Try our file conversion and compression services today and see the difference."
   />
   <link
     rel="apple-touch-icon"
