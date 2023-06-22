@@ -149,8 +149,7 @@
         <span class="text-xs text-typo-secondary text-center"
           >Insert Image or,
           <button
-            class="btn btn-active btn-ghost"
-            style="background:none"
+            class="btn btn-active btn-ghost url-button"
             on:click={() => window.my_modal_5.showModal()}>URL</button
           >
           <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
@@ -188,5 +187,24 @@
     flex-flow: column;
   }
 
+  .text-2xl {
+    font-size: 2.5rem;
+    line-height: 2rem;
+  }
+
+  .text-xl {
+    font-size: 2rem;
+    line-height: 1.75rem;
+  }
+
+  .text-xs {
+    font-size: 1.25rem;
+    line-height: 1rem;
+  }
+
+  .url-button {
+    background: none;
+    font-size: 1.5rem;
+  }
 
 </style>
