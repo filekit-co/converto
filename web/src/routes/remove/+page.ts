@@ -1,10 +1,8 @@
 import type { UpdateHeaderProps } from '$lib/types';
 import type { PageLoad } from './$types';
 
-export const load = (({ }) => {
+export const load = () => {
   const headerProps: UpdateHeaderProps = {
-    titleContent:
-      'Remove Background from Any Image in 3 Seconds for Free - Best background image removal software - filekit.co',
     description: `We offer a free online service that allows you to remove the background from any image in just 3 seconds. 
     Our service is easy to use and requires no registration or sign-in. 
     Simply upload your image, click the Remove Background button, and your image will be processed instantly. 

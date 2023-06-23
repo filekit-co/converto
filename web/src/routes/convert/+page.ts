@@ -1,10 +1,8 @@
 import type { UpdateHeaderProps } from '$lib/types';
 import type { PageLoad } from './$types';
 
-export const load = (({ }) => {
+export const load = (() => {
   const headerProps: UpdateHeaderProps = {
-    titleContent:
-      'Every files can convert - all for free - one click - within 5 seconds - best file compression software - filekit.co',
     description: `Best file compression software. File Conversion and Compression Services.
     Convert documents, images, and PDFs to any format. Compress files to reduce their size. Encrypt and decrypt PDFs. Merge, delete, and arrange PDFs.
     We offer a wide range of file conversion and compression services to meet your needs. Whether you need to convert a document to PDF, compress a large file, or encrypt a PDF, we can help.
