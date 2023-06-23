@@ -2,7 +2,7 @@
   import type {Files} from 'filedrop-svelte';
   import {filedrop} from 'filedrop-svelte';
   import {filesize} from 'filesize';
-  import {VITE_FILE_API_URL} from '$lib/variables';
+  import {PUBLIC_FILE_API_URL} from '$env/static/public';
 
   let files: Files;
   let options = {multiple: true};
@@ -41,7 +41,7 @@
     files.accepted.forEach(file => {
       formData.append('files', file);
     });
-    const response = await fetch(`${VITE_FILE_API_URL}/file`, {
+    const response = await fetch(`${PUBLIC_FILE_API_URL}/file`, {
       method: 'POST',
       body: formData
       // enctype: "multipart/form-data",

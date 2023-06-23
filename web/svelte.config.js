@@ -18,6 +18,11 @@ const config = {
       '@src': path.resolve('/src'),
       '@components': path.resolve('src/lib/components'),
       '@store': path.resolve('src/lib/store')
+    },
+    // refs: https://kit.svelte.dev/docs/configuration#env
+    env: {
+      dir: ".",
+      publicPrefix: "PUBLIC_",
     }
   }
 };

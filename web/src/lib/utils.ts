@@ -1,4 +1,3 @@
+import {PUBLIC_BASE_URL} from '$env/static/public';
 
-import {VITE_BASE_URL} from '$lib/variables';
-
-export const canonicalUrl = (route:string) => `${VITE_BASE_URL}${route}`
+export const canonicalUrl = (route:string) => `${PUBLIC_BASE_URL}${route}`

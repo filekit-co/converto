@@ -1,6 +1,6 @@
 <script lang="ts">
   import ImageDetail from './ImageDetail.svelte';
-  import {VITE_IMG_API_URL} from '$lib/variables';
+  import {PUBLIC_IMG_API_URL} from '$env/static/public';
 
   let droppedFiles = [];
   let downloadedFile: any = null;
@@ -19,7 +19,7 @@
       formData.append('image', file);
     });
 
-    const response = await fetch(`${VITE_IMG_API_URL}/bg/remove`, {
+    const response = await fetch(`${PUBLIC_IMG_API_URL}/bg/remove`, {
       method: 'POST',
       body: formData,
       mode: 'cors'
@@ -52,7 +52,7 @@
       const formData = new FormData();
       formData.append('image', selectedFile);
 
-      const response = await fetch(`${VITE_IMG_API_URL}/bg/remove`, {
+      const response = await fetch(`${PUBLIC_IMG_API_URL}/bg/remove`, {
         method: 'POST',
         body: formData,
         mode: 'cors'
@@ -80,7 +80,7 @@
 
   async function handleURLSubmit() {
     const response = await fetch(
-      `${VITE_IMG_API_URL}/bg/remove?url=${imageURL}`,
+      `${PUBLIC_IMG_API_URL}/bg/remove?url=${imageURL}`,
       {
         method: 'GET',
         mode: 'cors'
