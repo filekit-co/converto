@@ -1,16 +1,27 @@
 <section class="bg-base-200">
   <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-    <div class="max-w-screen-md mb-8 lg:mb-16">
+    <div class=" mb-8 lg:mb-16">
       <h2 class="mb-4 text-4xl tracking-tight font-extrabold">
-        Lorem ipsum dolor sit amet consectetur
+        File Conversion, Compression, and Background Removal Services
+      </h2>
+
+      <h2 class="mb-4 text-4xl tracking-tight font-extrabold">
+        Best file conversion and Image removal software
       </h2>
       <p class="sm:text-xl">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur
-        corrupti obcaecati quas saepe ea quis alias ducimus aliquid,
-        necessitatibus doloribus! Voluptatum obcaecati molestias aspernatur
-        fugiat sunt unde itaque placeat molestiae.
+        We offer a wide range of file conversion, compression, and background removal services to meet your needs. 
+      </p>
+      <p class="sm:text-xl">
+        Whether you need to convert a document to PDF, compress a large file, or remove the background from an image, we can help.
+      </p>
+      <p class="sm:text-xl">
+        Our services are easy to use and affordable. 
+      </p>
+      <p class="sm:text-xl">
+        You can convert, compress, and remove backgrounds online or through our desktop app. - file conversion, file compression, background removal, document to PDF, PDF to document, image to PDF, PDF to image, file compress, PDF encrypt, PDF decrypt, PDF merge, PDF delete, PDF arrage
       </p>
     </div>
+
     <div
       class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0"
     >
