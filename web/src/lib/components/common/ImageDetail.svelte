@@ -1,10 +1,13 @@
-<script lang='ts'>
-    export let resultImage;
-    export let downloadedFile;
-    let droppedFiles = [];
-    let selectedFile: any = null;
-    let imageURL: any = null;
-    let fileInput: any = null;
+<script lang="ts">
+  import {VITE_IMG_API_URL} from '$lib/variables';
+
+  export let resultImage;
+  export let downloadedFile;
+
+  let droppedFiles = [];
+  let selectedFile: any = null;
+  let imageURL: any = null;
+  let fileInput: any = null;
 
   async function handleDrop(event) {
     event.preventDefault();
@@ -16,7 +19,7 @@
       formData.append('image', file);
     });
 
-    const response = await fetch('http://localhost:8000/bg/remove', {
+    const response = await fetch('/bg/remove', {
       method: 'POST',
       body: formData,
       mode: 'cors'
@@ -49,7 +52,7 @@
       const formData = new FormData();
       formData.append('image', selectedFile);
 
-      const response = await fetch('http://localhost:8000/bg/remove', {
+      const response = await fetch(`${VITE_IMG_API_URL}/bg/remove`, {
         method: 'POST',
         body: formData,
         mode: 'cors'
@@ -77,7 +80,7 @@
 
   async function handleURLSubmit() {
     const response = await fetch(
-      `http://localhost:8000/bg/remove?url=${imageURL}`,
+      `${variables.VITE_IMG_API_URL}/bg/remove?url=${imageURL}`,
       {
         method: 'GET',
         mode: 'cors'
@@ -94,7 +97,6 @@
         console.error(error);
       });
   }
-
 </script>
 
 <div
@@ -103,7 +105,7 @@
   on:drop={handleDrop}
   on:dragover={handleDragOver}
   on:dragleave={handleDragLeave}
-  >
+>
   <form>
     <input
       type="file"
@@ -143,9 +145,8 @@
             placeholder="Type here"
             class="input input-bordered input-accent w-full max-w-xs"
           />
-          <button
-            on:click={handleURLSubmit}
-            class="btn btn-active btn-primary">Submit</button
+          <button on:click={handleURLSubmit} class="btn btn-active btn-primary"
+            >Submit</button
           >
         </form>
         <form method="dialog" class="modal-backdrop">
@@ -157,173 +158,191 @@
 </div>
 
 <div class="container">
-    <div class=upload-list>
-        <div class="upload d-flex flex-column">
-            <div style="flex: 1 1 0%">
-                <div class="row" style="height: 100%; min-height: 245px;">
-                    <div class="col-md-8">
-                        <img class="image" src={resultImage} alt="image" />
-                    </div>
-                    <div class="col-md-4 py-md-3 d-flex flex-column align-items-center justify-content-center text-center">
-                        <a
-                            class="btn btn-primary text-white text-xs"
-                            style="height: 60px;
+  <div class="upload-list">
+    <div class="upload d-flex flex-column">
+      <div style="flex: 1 1 0%">
+        <div class="row" style="height: 100%; min-height: 245px;">
+          <div class="col-md-8">
+            <img class="image" src={resultImage} alt="image" />
+          </div>
+          <div
+            class="col-md-4 py-md-3 d-flex flex-column align-items-center justify-content-center text-center"
+          >
+            <a
+              class="btn btn-primary text-white text-xs"
+              style="height: 60px;
                             width: 100%;
                             margin-top: 16px;
                             margin-bottom: 16px;"
-                            target="_blank"
-                            rel="noopener"
-                            href={downloadedFile}
-                            download="downloaded_Image">download</a
-                        >
-                        <button class="btn btn-primary text-white text-xs"                             
-                        style="height: 60px;
+              target="_blank"
+              rel="noopener"
+              href={downloadedFile}
+              download="downloaded_Image">download</a
+            >
+            <button
+              class="btn btn-primary text-white text-xs"
+              style="height: 60px;
                         width: 100%;
                         margin-top: 16px;
-                        margin-bottom: 16px;">share</button>
-                    </div>
-                </div>
-            </div>
+                        margin-bottom: 16px;">share</button
+            >
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 
-
 <style>
-.container {
+  .container {
     margin-left: auto;
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
     width: 100%;
-}
+  }
 
-@media(min-width: 576px) {
+  @media (min-width: 576px) {
     .container {
-        max-width:540px
+      max-width: 540px;
     }
-}
+  }
 
-@media(min-width: 768px) {
+  @media (min-width: 768px) {
     .container {
-        max-width:720px
+      max-width: 720px;
     }
-}
+  }
 
-@media(min-width: 992px) {
+  @media (min-width: 992px) {
     .container {
-        max-width:960px
+      max-width: 960px;
     }
-}
+  }
 
-@media(min-width: 1200px) {
+  @media (min-width: 1200px) {
     .container {
-        max-width:1140px
+      max-width: 1140px;
     }
-}
+  }
 
-.container-fluid,.container-lg,.container-md,.container-sm,.container-xl {
+  .container-fluid,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
     margin-left: auto;
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
-    width: 100%
-}
+    width: 100%;
+  }
 
-@media(min-width: 576px) {
-    .container,.container-sm {
-        max-width:540px
+  @media (min-width: 576px) {
+    .container,
+    .container-sm {
+      max-width: 540px;
     }
-}
+  }
 
-@media(min-width: 768px) {
-    .container,.container-md,.container-sm {
-        max-width:720px
+  @media (min-width: 768px) {
+    .container,
+    .container-md,
+    .container-sm {
+      max-width: 720px;
     }
-}
+  }
 
-@media(min-width: 992px) {
-    .container,.container-lg,.container-md,.container-sm {
-        max-width:960px
+  @media (min-width: 992px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm {
+      max-width: 960px;
     }
-}
+  }
 
-@media(min-width: 1200px) {
-    .container,.container-lg,.container-md,.container-sm,.container-xl {
-        max-width:1140px
+  @media (min-width: 1200px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+      max-width: 1140px;
     }
-}
+  }
 
-.upload-list {
+  .upload-list {
     box-sizing: border-box;
-}
+  }
 
-@media(min-width: 576px) {
+  @media (min-width: 576px) {
     .upload {
-        margin-bottom: 40px;
-        margin-top: 40px;
-        padding: 20px 30px;
+      margin-bottom: 40px;
+      margin-top: 40px;
+      padding: 20px 30px;
     }
-}
+  }
 
-.upload {
+  .upload {
     background: #fff;
     border-radius: 2px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, .161);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.161);
     margin: 20px auto;
     max-width: 990px;
     padding: 15px;
     position: relative;
-}
+  }
 
-.flex-column {
-    flex-direction: column!important;
-}
+  .flex-column {
+    flex-direction: column !important;
+  }
 
-.d-flex {
-    display: flex!important;
-}
+  .d-flex {
+    display: flex !important;
+  }
 
-.row {
+  .row {
     display: flex;
     flex-wrap: wrap;
     margin-left: -15px;
-}
+  }
 
-@media(min-width: 768px) {
+  @media (min-width: 768px) {
     .col-md-8 {
-        flex: 0 0 66.6666666667%;
-        max-width: 66.6666666667%;
+      flex: 0 0 66.6666666667%;
+      max-width: 66.6666666667%;
     }
     .col-md-4 {
-        flex: 0 0 33.3333333333%;
-        max-width: 33.3333333333%;
+      flex: 0 0 33.3333333333%;
+      max-width: 33.3333333333%;
     }
     .py-md-3 {
-        padding-top: 1rem!important;
+      padding-top: 1rem !important;
     }
-}
+  }
 
-.col-md-4, .col-md-8 {
+  .col-md-4,
+  .col-md-8 {
     padding-left: 15px;
     padding-right: 15px;
     position: relative;
     width: 100%;
-}
+  }
 
-.justify-content-center {
-    justify-content: center!important;
-}
+  .justify-content-center {
+    justify-content: center !important;
+  }
 
-.align-items-center {
-    align-items: center!important;
-}
+  .align-items-center {
+    align-items: center !important;
+  }
 
-.text-center {
-    text-align: center!important;
-}
+  .text-center {
+    text-align: center !important;
+  }
 
-.text-2xl {
+  .text-2xl {
     font-size: 2.5rem;
     line-height: 2rem;
   }
@@ -342,5 +361,4 @@
     background: none;
     font-size: 1.5rem;
   }
-
 </style>

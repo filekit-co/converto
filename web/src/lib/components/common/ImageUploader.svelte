@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { afterUpdate, onMount } from "svelte";
-  import ImageDetail from "./ImageDetail.svelte";
+  import ImageDetail from './ImageDetail.svelte';
+  import {VITE_IMG_API_URL} from '$lib/variables';
 
   let droppedFiles = [];
   let downloadedFile: any = null;
@@ -19,7 +19,7 @@
       formData.append('image', file);
     });
 
-    const response = await fetch('http://localhost:8000/bg/remove', {
+    const response = await fetch(`${VITE_IMG_API_URL}/bg/remove`, {
       method: 'POST',
       body: formData,
       mode: 'cors'
@@ -52,7 +52,7 @@
       const formData = new FormData();
       formData.append('image', selectedFile);
 
-      const response = await fetch('http://localhost:8000/bg/remove', {
+      const response = await fetch(`${VITE_IMG_API_URL}/bg/remove`, {
         method: 'POST',
         body: formData,
         mode: 'cors'
@@ -80,7 +80,7 @@
 
   async function handleURLSubmit() {
     const response = await fetch(
-      `http://localhost:8000/bg/remove?url=${imageURL}`,
+      `${VITE_IMG_API_URL}/bg/remove?url=${imageURL}`,
       {
         method: 'GET',
         mode: 'cors'
@@ -97,13 +97,11 @@
         console.error(error);
       });
   }
-
 </script>
 
 <div id="app">
   {#if resultImage && downloadedFile}
-    <ImageDetail resultImage={resultImage} downloadedFile={downloadedFile} />
-
+    <ImageDetail {resultImage} {downloadedFile} />
   {:else}
     <div
       class="drop-zone w-full flex flex-col sm:justify-center sm:items-center sm:gap-8 sm:pt-36 sm:pb-16 rounded-4xl bg-white shadow-2xl"
@@ -192,5 +190,4 @@
     background: none;
     font-size: 1.5rem;
   }
-
 </style>

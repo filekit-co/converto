@@ -1,17 +1,18 @@
 <script lang="ts">
-  import type { Files } from "filedrop-svelte";
-  import { filedrop } from "filedrop-svelte";
-  import { filesize } from "filesize";
+  import type {Files} from 'filedrop-svelte';
+  import {filedrop} from 'filedrop-svelte';
+  import {filesize} from 'filesize';
+  import {VITE_FILE_API_URL} from '$lib/variables';
 
   let files: Files;
-  let options = { multiple: true };
+  let options = {multiple: true};
   $: totalFileSizes =
     files && files.accepted
       ? files.accepted.reduce((sum, file) => sum + file.size, 0)
       : 0;
 
   function fileName(filename: string) {
-    return filename.substring(0, 7) + "...";
+    return filename.substring(0, 7) + '...';
   }
 
   function addFiles(newFiles: Files) {
@@ -26,7 +27,7 @@
     if (files && index >= 0 && index < files.accepted.length) {
       files.accepted = [
         ...files.accepted.slice(0, index),
-        ...files.accepted.slice(index + 1),
+        ...files.accepted.slice(index + 1)
       ];
     }
   }
@@ -37,22 +38,20 @@
     }
 
     const formData = new FormData();
-    files.accepted.forEach((file) => {
-      formData.append("files", file);
+    files.accepted.forEach(file => {
+      formData.append('files', file);
     });
-    // TODO: handle url with env
-    // TODO: .env
-    const response = await fetch("http://localhost:8080/file", {
-      method: "POST",
-      body: formData,
+    const response = await fetch(`${VITE_FILE_API_URL}/file`, {
+      method: 'POST',
+      body: formData
       // enctype: "multipart/form-data",
     })
-      .then((response) => response.json())
-      .then((result) => {
-        console.log("Success:", result);
+      .then(response => response.json())
+      .then(result => {
+        console.log('Success:', result);
       })
-      .catch((error) => {
-        console.error("Error:", error);
+      .catch(error => {
+        console.error('Error:', error);
       });
   }
 </script>
@@ -114,7 +113,7 @@
 
 <div
   use:filedrop={options}
-  on:filedrop={(e) => {
+  on:filedrop={e => {
     addFiles(e.detail.files);
   }}
   class="filedrop focus:border-accent focus:border-accent"
@@ -132,7 +131,6 @@
   <p>Click me or</p>
   <p>Drag &amp; drop files</p>
 </div>
-
 
 <style>
   .filedrop {

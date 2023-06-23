@@ -5,20 +5,20 @@
         File Conversion, Compression, and Background Removal Services
       </h2>
 
-      <h2 class="mb-4 text-4xl tracking-tight font-extrabold">
-        Best file conversion and Image removal software
-      </h2>
       <p class="sm:text-xl">
-        We offer a wide range of file conversion, compression, and background removal services to meet your needs. 
+        We offer a wide range of file conversion, compression, and background
+        removal services to meet your needs.
       </p>
       <p class="sm:text-xl">
-        Whether you need to convert a document to PDF, compress a large file, or remove the background from an image, we can help.
+        Whether you need to convert a document to PDF, compress a large file, or
+        remove the background from an image, we can help.
       </p>
+      <p class="sm:text-xl">Our services are easy to use and affordable.</p>
       <p class="sm:text-xl">
-        Our services are easy to use and affordable. 
-      </p>
-      <p class="sm:text-xl">
-        You can convert, compress, and remove backgrounds online or through our desktop app. - file conversion, file compression, background removal, document to PDF, PDF to document, image to PDF, PDF to image, file compress, PDF encrypt, PDF decrypt, PDF merge, PDF delete, PDF arrage
+        You can convert, compress, and remove backgrounds online or through our
+        desktop app. - file conversion, file compression, background removal,
+        document to PDF, PDF to document, image to PDF, PDF to image, file
+        compress, PDF encrypt, PDF decrypt, PDF merge, PDF delete, PDF arrage
       </p>
     </div>
 
