@@ -175,4 +175,7 @@
     - [ ] api 별 프론트 작업
     - [ ] 서버 배포
   - 세현
-    - 메인 페이지 ( features) i18n 적용
+    - [ ] 메인 페이지 ( features) i18n 적용
+- 24일
+  - 세현
+    - [ ] i18n 마무리(html lang 변경 hook - getlang 함수 구현)
