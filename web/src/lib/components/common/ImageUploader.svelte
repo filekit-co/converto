@@ -98,20 +98,6 @@
       });
   }
 
-  // onMount(() => {
-  //   redirectToUploadPage();
-  // });
-
-  // afterUpdate(() => {
-  //   redirectToUploadPage();
-  // });
-
-  // function redirectToUploadPage() {
-  //   if (resultImage && downloadedFile) {
-  //     const url = 'http://localhost:5173/remove/upload';
-  //     window.location.href = url;
-  //   }
-  // }
 </script>
 
 <div id="app">
