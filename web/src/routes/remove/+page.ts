@@ -1,11 +1,5 @@
 import type { UpdateHeaderProps } from '$lib/types';
 import type { PageLoad } from './$types';
-import type { Config } from '@sveltejs/adapter-vercel';
-
-
-export const config:Config = {
-  runtime: 'edge'
-};
 
 export const load = (({ }) => {
   const headerProps: UpdateHeaderProps = {
