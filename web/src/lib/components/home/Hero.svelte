@@ -1,3 +1,7 @@
+<script>
+  import {t } from '../../i18n/i18n';
+</script>
+
 <div class="hero min-h-screen py-32 bg-base-200">
   <div class="hero-content flex-col lg:flex-row-reverse">
     <img
@@ -9,10 +13,7 @@
     <div class="text-center lg:text-left">
       <h1 class="text-5xl font-black">File Converter</h1>
       <p class="py-6 font-title">
-        Converto is a browser-based file converter with support for over 300
-        formats, providing extensive conversions, fast processing times, and
-        customizable settings while ensuring data security and compatibility
-        across all devices.
+        {@html $t("Description")}
       </p>
       <a
         href="/convert"
