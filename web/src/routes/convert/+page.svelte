@@ -1,7 +1,5 @@
 <script lang="ts">
   import FileUploader from '@components/common/FileUploader.svelte';
-
-  import Header from '@components/common/Header.svelte';
 </script>
 
 <div class="w-full px-2 py-32 lg:px-10">
