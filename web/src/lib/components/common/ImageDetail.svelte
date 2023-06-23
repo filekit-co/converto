@@ -19,7 +19,7 @@
       formData.append('image', file);
     });
 
-    const response = await fetch('/bg/remove', {
+    const response = await fetch(`${VITE_IMG_API_URL}/bg/remove`, {
       method: 'POST',
       body: formData,
       mode: 'cors'
@@ -80,7 +80,7 @@
 
   async function handleURLSubmit() {
     const response = await fetch(
-      `${variables.VITE_IMG_API_URL}/bg/remove?url=${imageURL}`,
+      `${VITE_IMG_API_URL}/bg/remove?url=${imageURL}`,
       {
         method: 'GET',
         mode: 'cors'
