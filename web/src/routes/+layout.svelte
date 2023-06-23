@@ -1,14 +1,12 @@
-<script>
-  import Nav from "@components/common/Nav.svelte";
-  import Footer from "@components/common/Footer.svelte";
-  import "../app.css";
-  import DragDropBackground from "@components/common/DragDropBackground.svelte";
+<script lang="ts">
+  import '../app.css';
+  import Nav from '@components/common/Nav.svelte';
+  import Footer from '@components/common/Footer.svelte';
+  import DragDropBackground from '@components/common/DragDropBackground.svelte';
+  import Header from '@components/common/Header.svelte';
 </script>
 
-<!-- <svelte:head>
-  <title>Converto</title>
-  <link rel="icon" href="https://fav.farm/📂" />
-</svelte:head> -->
+<Header />
 <DragDropBackground />
 <Nav />
 <slot />
