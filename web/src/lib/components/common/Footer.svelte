@@ -1,3 +1,8 @@
+<script>
+
+    import { t } from "$lib/i18n/i18n";
+
+</script>
 <footer class="footer p-10 bg-base-200 text-base-content">
   <div>
     <svg
@@ -15,23 +20,23 @@
     <p>ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
   </div>
   <div>
-    <span class="footer-title">Services</span>
-    <a class="link link-hover">Branding</a>
-    <a class="link link-hover">Design</a>
-    <a class="link link-hover">Marketing</a>
-    <a class="link link-hover">Advertisement</a>
+    <span class="footer-title">{@html $t('Services')}</span>
+    <a class="link link-hover">{@html $t('Branding')}</a>
+    <a class="link link-hover">{@html $t('Design')}</a>
+    <a class="link link-hover">{@html $t('Marketing')}</a>
+    <a class="link link-hover">{@html $t('Advertisement')}</a>
   </div>
   <div>
-    <span class="footer-title">Company</span>
-    <a class="link link-hover">About us</a>
-    <a class="link link-hover">Contact</a>
-    <a class="link link-hover">Jobs</a>
-    <a class="link link-hover">Press kit</a>
+    <span class="footer-title">{@html $t('Company')}</span>
+    <a class="link link-hover">{@html $t('About us')}</a>
+    <a class="link link-hover">{@html $t('Contact')}</a>
+    <a class="link link-hover">{@html $t('Jobs')}</a>
+    <a class="link link-hover">{@html $t('Press kit')}</a>
   </div>
   <div>
-    <span class="footer-title">Legal</span>
-    <a class="link link-hover">Terms of use</a>
-    <a class="link link-hover">Privacy policy</a>
-    <a class="link link-hover">Cookie policy</a>
+    <span class="footer-title">{@html $t('Legal')}</span>
+    <a class="link link-hover">{@html $t('Terms of use')}</a>
+    <a class="link link-hover">{@html $t('Privacy policy')}</a>
+    <a class="link link-hover">{@html $t('Cookie policy')}</a>
   </div>
 </footer>
