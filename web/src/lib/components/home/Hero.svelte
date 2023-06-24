@@ -11,7 +11,7 @@
     />
 
     <div class="text-center lg:text-left">
-      <h1 class="text-5xl font-black">File Converter</h1>
+      <h1 class="text-5xl font-black"></h1>
       <p class="py-6 font-title">
         {@html $t("Description")}
       </p>
@@ -19,7 +19,8 @@
         href="/convert"
         class="btn btn-accent btn-lg btn-wide px-12 normal-case"
       >
-        Convert file
+        <!-- Convert file -->
+        {@html $t('Convert file')}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
