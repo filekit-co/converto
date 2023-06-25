@@ -1,7 +1,7 @@
 <script>
 
-    import { t } from "$lib/i18n/i18n";
-
+// import { t } from '@store/i18n';
+  import {_} from 'svelte-i18n'
 </script>
 
 <section class="bg-base-200">
@@ -9,10 +9,10 @@
     <h2
       class="mb-4 lg:mb-10 font-extrabold tracking-tight leading-tight text-center text-gray-900 dark:text-white md:text-4xl"
     >
-      {@html $t('Trusted by over 1 million users every month')}
+      {@html $_('Trusted by over 1 million users every month')}
     </h2>
     <h4 class="leading-tight text-center mb-20 lg:mb-40">
-      {@html $t('Employees of large and small companies all over the world use our service')}
+      {@html $_('Employees of large and small companies all over the world use our service')}
     </h4>
     <div
       class="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 md:grid-cols-3 lg:grid-cols-6 dark:text-gray-400"

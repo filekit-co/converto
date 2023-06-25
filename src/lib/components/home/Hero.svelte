@@ -1,5 +1,6 @@
 <script>
-  import {t} from '../../i18n/i18n';
+  // import {t} fro../../store/i18n;
+  import { _ } from 'svelte-i18n'
 </script>
 
 <div class="hero min-h-screen py-32 bg-base-200">
@@ -13,14 +14,14 @@
     <div class="text-center lg:text-left">
       <h1 class="text-5xl font-black">File Converter</h1>
       <p class="py-6 font-title">
-        {@html $t('Description')}
+        {@html $_('Description')}
       </p>
       <a
         href="/pdf/unlock"
         class="btn btn-accent btn-lg btn-wide px-12 normal-case"
       >
         <!-- Convert file -->
-        {@html $t('Convert file')}
+        {@html $_('Convert file')}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

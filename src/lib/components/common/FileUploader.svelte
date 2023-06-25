@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {t} from '$lib/i18n/i18n';
+  import {t} from '@store/i18n';
   import type {FileDropOptions, Files} from 'filedrop-svelte';
   import {filedrop} from 'filedrop-svelte';
   import {filesize} from 'filesize';
