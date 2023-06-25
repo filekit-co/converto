@@ -1,5 +1,5 @@
 <script>
-  import {t } from '../../i18n/i18n';
+  import {t} from '../../i18n/i18n';
 </script>
 
 <div class="hero min-h-screen py-32 bg-base-200">
@@ -11,12 +11,12 @@
     />
 
     <div class="text-center lg:text-left">
-      <h1 class="text-5xl font-black"></h1>
+      <h1 class="text-5xl font-black">File Converter</h1>
       <p class="py-6 font-title">
-        {@html $t("Description")}
+        {@html $t('Description')}
       </p>
       <a
-        href="/convert"
+        href="/pdf/unlock"
         class="btn btn-accent btn-lg btn-wide px-12 normal-case"
       >
         <!-- Convert file -->
