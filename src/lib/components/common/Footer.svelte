@@ -1,6 +1,7 @@
 <script>
 
-    import { t } from "$lib/i18n/i18n";
+    // import { t } from "@store/i18n";
+    import {_} from 'svelte-i18n'
 
 </script>
 <footer class="footer p-10 bg-base-200 text-base-content">
@@ -20,23 +21,23 @@
     <p>ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
   </div>
   <div>
-    <span class="footer-title">{@html $t('Services')}</span>
-    <a class="link link-hover">{@html $t('Branding')}</a>
-    <a class="link link-hover">{@html $t('Design')}</a>
-    <a class="link link-hover">{@html $t('Marketing')}</a>
-    <a class="link link-hover">{@html $t('Advertisement')}</a>
+    <span class="footer-title">{@html $_('Services')}</span>
+    <a class="link link-hover">{@html $_('Branding')}</a>
+    <a class="link link-hover">{@html $_('Design')}</a>
+    <a class="link link-hover">{@html $_('Marketing')}</a>
+    <a class="link link-hover">{@html $_('Advertisement')}</a>
   </div>
   <div>
-    <span class="footer-title">{@html $t('Company')}</span>
-    <a class="link link-hover">{@html $t('About us')}</a>
-    <a class="link link-hover">{@html $t('Contact')}</a>
-    <a class="link link-hover">{@html $t('Jobs')}</a>
-    <a class="link link-hover">{@html $t('Press kit')}</a>
+    <span class="footer-title">{@html $_('Company')}</span>
+    <a class="link link-hover">{@html $_('About us')}</a>
+    <a class="link link-hover">{@html $_('Contact')}</a>
+    <a class="link link-hover">{@html $_('Jobs')}</a>
+    <a class="link link-hover">{@html $_('Press kit')}</a>
   </div>
   <div>
-    <span class="footer-title">{@html $t('Legal')}</span>
-    <a class="link link-hover">{@html $t('Terms of use')}</a>
-    <a class="link link-hover">{@html $t('Privacy policy')}</a>
-    <a class="link link-hover">{@html $t('Cookie policy')}</a>
+    <span class="footer-title">{@html $_('Legal')}</span>
+    <a class="link link-hover">{@html $_('Terms of use')}</a>
+    <a class="link link-hover">{@html $_('Privacy policy')}</a>
+    <a class="link link-hover">{@html $_('Cookie policy')}</a>
   </div>
 </footer>

@@ -1,35 +1,36 @@
 <script>
-  import {t} from '$lib/i18n/i18n';
+  // import {t} from '@store/i18n';
+  import { _ } from 'svelte-i18n';
 </script>
 
 <section class="bg-base-200">
   <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
     <div class=" mb-8 lg:mb-16">
       <h2 class="mb-4 text-4xl tracking-tight font-extrabold">
-        {@html $t(
+        {@html $_(
           'File Conversion, Compression, and Background Removal Services'
         )}
       </h2>
 
       <h2 class="mb-4 text-4xl tracking-tight font-extrabold">
-        {@html $t('Best file conversion and Image removal software')}
+        {@html $_('Best file conversion and Image removal software')}
       </h2>
       <p class="sm:text-xl">
-        {@html $t(
+        {@html $_(
           'We offer a wide range of file conversion, compression, and background removal services to meet your needs.'
         )}
       </p>
       <p class="sm:text-xl">
-        {@html $t(
+        {@html $_(
           'Whether you need to convert a document to PDF, compress a large file, or remove the background from an image, we can help.'
         )}
       </p>
       <p class="sm:text-xl">
-        {@html $t('Our services are easy to use and affordable.')}
+        {@html $_('Our services are easy to use and affordable.')}
       </p>
       <p class="sm:text-xl">Our services are easy to use and affordable.</p>
       <p class="sm:text-xl">
-        {@html $t(
+        {@html $_(
           'You can convert, compress, and remove backgrounds online or through our desktop app. - file conversion, file compression, background removal, document to PDF, PDF to document, image to PDF, PDF to image, file compress, PDF encrypt, PDF decrypt, PDF merge, PDF delete, PDF arrage'
         )}
       </p>
@@ -55,10 +56,10 @@
           >
         </div>
         <h3 class="mb-2 text-xl font-bold dark:text-white">
-          {@html $t('Marketing')}
+          {@html $_('Marketing')}
         </h3>
         <p class="text-gray-500 dark:text-gray-400">
-          {@html $t(
+          {@html $_(
             'Plan it, create it, launch it. Collaborate seamlessly with all the organization and hit your marketing goals every month with our marketing plan.'
           )}
         </p>
@@ -78,10 +79,10 @@
           >
         </div>
         <h3 class="mb-2 text-xl font-bold dark:text-white">
-          {@html $t('Legal')}
+          {@html $_('Legal')}
         </h3>
         <p class="text-gray-500 dark:text-gray-400">
-          {@html $t(
+          {@html $_(
             'Protect your organization, devices and stay compliant with our structured workflows and custom permissions made for you.'
           )}
         </p>
@@ -105,10 +106,10 @@
           >
         </div>
         <h3 class="mb-2 text-xl font-bold dark:text-white">
-          {@html $t('Business Automation')}
+          {@html $_('Business Automation')}
         </h3>
         <p class="text-gray-500 dark:text-gray-400">
-          {@html $t(
+          {@html $_(
             'Auto-assign tasks, send Slack messages, and much more. Now power up with hundreds of new templates to help you get started.'
           )}
         </p>
@@ -132,10 +133,10 @@
           >
         </div>
         <h3 class="mb-2 text-xl font-bold dark:text-white">
-          {@html $t('Finance')}
+          {@html $_('Finance')}
         </h3>
         <p class="text-gray-500 dark:text-gray-400">
-          {@html $t(
+          {@html $_(
             'Audit-proof software built for critical financial operations like month-end close and quarterly budgeting.'
           )}
         </p>
@@ -155,10 +156,10 @@
           >
         </div>
         <h3 class="mb-2 text-xl font-bold dark:text-white">
-          {@html $t('Enterprice Design')}
+          {@html $_('Enterprice Design')}
         </h3>
         <p class="text-gray-500 dark:text-gray-400">
-          {@html $t(
+          {@html $_(
             'Craft beautiful, delightful experiences for both marketing and product with real cross-company collaboration.'
           )}
         </p>
@@ -180,10 +181,10 @@
           >
         </div>
         <h3 class="mb-2 text-xl font-bold dark:text-white">
-          {@html $t('Operations')}
+          {@html $_('Operations')}
         </h3>
         <p class="text-gray-500 dark:text-gray-400">
-          {@html $t(
+          {@html $_(
             'Keep your company’s lights on with customizable, iterative, and structured workflows built for all efficient teams and individuals.'
           )}
         </p>

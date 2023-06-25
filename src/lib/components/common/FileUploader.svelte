@@ -1,10 +1,10 @@
 <script lang="ts">
-  import {t} from '$lib/i18n/i18n';
   import type {FileDropOptions, Files} from 'filedrop-svelte';
   import {filedrop} from 'filedrop-svelte';
   import {filesize} from 'filesize';
   import {PUBLIC_FILE_API_URL} from '$env/static/public';
   import {onMount} from 'svelte';
+  import {_} from 'svelte-i18n';
 
   export let fileDropOptions: FileDropOptions;
   const formId: string = fileDropOptions.id!;
@@ -74,9 +74,9 @@
         <!-- head -->
         <thead>
           <tr>
-            <th>Password</th>
-            <th>File Name</th>
-            <th>Size</th>
+            <th>{@html $_('Password')}</th>
+            <th>{@html $_('File Name')}</th>
+            <th>{@html $_('Size')}</th>
             <th />
           </tr>
         </thead>
@@ -122,12 +122,12 @@
             </tr>
           {/each}
           <tr>
-            <td class="font-black">Total file size:</td>
+            <td class="font-black">{@html $_('Total file size:')}</td>
             <td>{filesize(totalFileSizes)}</td>
             <td colspan="2">
               <button
                 class="btn btn-accent btn-md sm:btn-block sm:btn-lg"
-                on:click={submitFiles}>Submit</button
+                on:click={submitFiles}>{@html $_('Submit')}</button
               >
             </td>
           </tr>
@@ -148,7 +148,7 @@
       />
     </svg>
     <p>
-      Click or Drag &amp; drop {fileDropOptions.multiple ? 'files' : 'flie'}
+      {@html $_('Click or Drag & Drop')} {fileDropOptions.multiple ? 'files' : 'file'}
     </p>
     <p>{fileDropOptions.accept}</p>
     <input type="file" hidden />

@@ -2,7 +2,8 @@
 <!-- svelte-ignore a11y-missing-attribute -->
 <!-- svelte-ignore a11y-label-has-associated-control -->
 <script>
-  import {t, langs, setLang } from '../../i18n/i18n';
+  import {langs, setLang } from '@store/i18n';
+  import { _ } from 'svelte-i18n';
 </script>
 
 <div class="navbar bg-base-300 drop-shadow-lg">
@@ -28,7 +29,7 @@
         tabindex="0"
         class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
       >
-        <li><a href="/">{@html $t("Home")}</a></li>
+        <li><a href="/">{@html $_("Home")}</a></li>
         <li>
           <a>Parent</a>
           <ul class="p-2">
@@ -36,7 +37,7 @@
             <li><a>Submenu 2</a></li>
           </ul>
         </li>
-        <li><a href="/remove">{@html $t("Remove")}</a></li>
+        <li><a href="/remove">{@html $_("Remove")}</a></li>
       </ul>
     </div>
     <img
@@ -48,17 +49,17 @@
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
-      <li><a href="/">{@html $t("Home")}</a></li>
+      <li><a href="/">{@html $_("Home")}</a></li>
       <li tabindex="0">
         <details>
-          <summary>{@html $t("Convert")}</summary>
+          <summary>{@html $_("Convert")}</summary>
           <ul class="p-2">
             <li><a>Submenu 1</a></li>
             <li><a>Submenu 2</a></li>
           </ul>
         </details>
       </li>
-      <li><a href="/remove">{@html $t("Remove")}</a></li>
+      <li><a href="/remove">{@html $_("Remove")}</a></li>
     </ul>
   </div>
 

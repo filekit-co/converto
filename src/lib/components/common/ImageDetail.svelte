@@ -1,6 +1,6 @@
 
 <script lang="ts">
-  import { t } from "$lib/i18n/i18n";
+  import {_} from 'svelte-i18n'
   import {PUBLIC_IMG_API_URL} from '$env/static/public';
 
   export let resultImage;
@@ -123,14 +123,14 @@
       style="width: 300px; height: 80px;"
       class="!border !border-transparent rounded-full font-bold transition ease-in-out text-center font-body no-underline hover:no-underline inline-flex items-center justify-center text-2xl px-8 py-2.5 text-white !bg-primary hover:!bg-primary-hover active:!bg-primary-hover active:scale-[0.98] focus:outline-none focus-visible:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover"
     >
-      {@html $t('Upload')}
+      {@html $_('Upload')}
     </button>
   </form>
 
   <div class="hidden sm:flex flex-col gap-1.5">
-    <p class="m-0 font-bold text-xl text-typo-secondary">{@html $t('Or Drag a File,')}</p>
+    <p class="m-0 font-bold text-xl text-typo-secondary">{@html $_('Or Drag a File,')}</p>
     <span class="text-xs text-typo-secondary text-center"
-      >{@html $t('Insert Image or,')}
+      >{@html $_('Insert Image or,')}
       <button
         class="btn btn-active btn-ghost url-button"
         on:click={() => window.my_modal_5.showModal()}>URL</button
@@ -138,7 +138,7 @@
       <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
         <form method="dialog" class="modal-box">
           <h3 class="font-bold text-lg">
-            {@html $t('Type Image URL and Press Submit Button')}
+            {@html $_('Type Image URL and Press Submit Button')}
           </h3>
           <br />
           <input
@@ -149,11 +149,11 @@
           />
           <button
             on:click={handleURLSubmit}
-            class="btn btn-active btn-primary">{@html $t('Submit')}</button
+            class="btn btn-active btn-primary">{@html $_('Submit')}</button
           >
         </form>
         <form method="dialog" class="modal-backdrop">
-          <button>{@html $t('close')}</button>
+          <button>{@html $_('close')}</button>
         </form>
       </dialog>
     </span>
@@ -180,7 +180,7 @@
                             target="_blank"
                             rel="noopener"
                             href={downloadedFile}
-                            download="downloaded_Image">{@html $t('Download')}</a
+                            download="downloaded_Image">{@html $_('Download')}</a
                         >
                         <!-- <button class="btn btn-primary text-white text-xs"                             
                         style="height: 60px;
@@ -193,7 +193,7 @@
         </div>
       </div>
     </div>
-  </div>
+  <div>
 </div>
 
 <style>
