@@ -4,7 +4,7 @@ import {locale, waitLocale} from 'svelte-i18n';
 import type {Config} from '@sveltejs/adapter-vercel';
 
 export const config: Config = {
-  runtime: 'edge'
+  runtime: 'nodejs18.x'
 };
 
 export const load = async () => {
