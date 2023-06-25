@@ -179,3 +179,9 @@
 - 24일
   - 세현
     - [ ] i18n 마무리(html lang 변경 hook - getlang 함수 구현)
+- 25일
+  - 민욱
+    - cloud run server 2개 배포
+    - (시간 남을 경우) download page
+  - 세현
+    - i18n ssr 적용
