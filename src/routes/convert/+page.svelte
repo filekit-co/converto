@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { _ } from '@store/i18n';
+  import {_} from 'svelte-i18n';
   import FileUploader from '@components/common/FileUploader.svelte';
 </script>
 
