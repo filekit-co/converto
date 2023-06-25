@@ -1,13 +1,14 @@
 <script lang="ts">
+  import {_} from 'svelte-i18n';
+  import type {FileWithPath} from '$lib/types';
   import type {FileDropOptions, Files} from 'filedrop-svelte';
   import {filedrop} from 'filedrop-svelte';
   import {filesize} from 'filesize';
+
   import {PUBLIC_FILE_API_URL} from '$env/static/public';
-  import {onMount} from 'svelte';
-  import {_} from 'svelte-i18n';
+  import {DEFAULT_FILE_NAME} from '$lib/consts';
 
   export let fileDropOptions: FileDropOptions;
-  const formId: string = fileDropOptions.id!;
 
   let files: Files = {
     accepted: [],
@@ -15,6 +16,7 @@
   };
 
   // TODO delete if fin
+  // import {onMount} from 'svelte';
   // onMount(async () => {
   //   files.accepted = [new File([''], 'fortest', {type: 'text/html'})];
   // });
@@ -45,32 +47,79 @@
     ];
   }
 
-  async function submitFiles(e: any) {
-    console.log('submitFiles');
+  async function fetchUnlocks(data: [FileWithPath, string][]) {
+    const responses = await Promise.all(
+      data.map(([file, password]) => {
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('password', password);
+
+        return fetch(`${PUBLIC_FILE_API_URL}/pdf/decrypt`, {
+          method: 'POST',
+          body: formData
+        });
+      })
+    );
+
+    responses.forEach(async (response, index) => {
+      if (response.ok) {
+        const blob = await response.blob();
+
+        // 첨부 파일 이름을 추출합니다.
+        const contentDisposition = response.headers.get('content-disposition');
+        const filename = contentDisposition
+          ? contentDisposition
+              .split(';')
+              .find(part => part.trim().startsWith('filename='))
+              ?.split('=')[1]
+              ?.trim() || DEFAULT_FILE_NAME
+          : DEFAULT_FILE_NAME;
+
+        // 다운로드 링크를 생성합니다.
+        const downloadLink = document.createElement('a');
+        downloadLink.href = URL.createObjectURL(blob);
+        downloadLink.download = filename;
+        downloadLink.textContent = 'Download';
+
+        // 다운로드 버튼을 추가합니다.
+        const downloadContainer = document.createElement('div');
+        downloadContainer.appendChild(downloadLink);
+
+        // 원하는 위치에 다운로드 버튼을 추가하세요.
+        // 예를 들어, 특정 테이블 셀에 추가하려면 해당 셀을 선택하고 아래와 같은 방식으로 추가할 수 있습니다.
+        // const cell = document.getElementById(`cell_${index}`);
+
+        // TODO: refactor and style
+        const cell = document.getElementById('DownloadCell') as HTMLDivElement;
+        cell.appendChild(downloadContainer);
+      } else {
+        // 처리 실패 시의 로직을 작성하세요.
+      }
+    });
+  }
+
+  function submitFiles() {
     if (files.accepted.length <= 0) {
       throw new Error("There's no files to submit");
     }
 
-    const form = document.getElementById(formId) as HTMLFormElement;
-
-    const formData = new FormData(form);
-    console.log(formData);
-
-    // files.accepted.forEach(file => {
-    //   formData.append('files', file);
-    // });
-
-    const response = await fetch(`${PUBLIC_FILE_API_URL}/file`, {
-      method: 'POST',
-      body: formData
+    const data: [FileWithPath, string][] = files.accepted.map((file, i) => {
+      const passwordInput = document.getElementById(
+        `password_${i}`
+      ) as HTMLInputElement;
+      return [file, passwordInput.value];
     });
+
+    fetchUnlocks(data);
   }
 </script>
 
+<div id="DownloadCell" />
+
 {#if files.accepted.length > 0}
   <div class="overflow-y-auto my-7">
-    <form id={formId}>
-      <table class="table border-y-4 table-auto">
+    <form>
+      <table class="table border-y-4">
         <!-- head -->
         <thead>
           <tr>
@@ -85,7 +134,7 @@
             <tr>
               <td class="w-0"
                 ><input
-                  id="password-{i}"
+                  id="password_{i}"
                   type="password"
                   placeholder="*******"
                   class="input input-bordered input-warning text-sm max-w-xs"
@@ -127,7 +176,8 @@
             <td colspan="2">
               <button
                 class="btn btn-accent btn-md sm:btn-block sm:btn-lg"
-                on:click={submitFiles}>{@html $_('Submit')}</button
+                on:click|preventDefault={submitFiles}
+                >{@html $_('Submit')}</button
               >
             </td>
           </tr>
@@ -148,7 +198,8 @@
       />
     </svg>
     <p>
-      {@html $_('Click or Drag & Drop')} {fileDropOptions.multiple ? 'files' : 'file'}
+      {@html $_('Click or Drag & Drop')}
+      {fileDropOptions.multiple ? 'files' : 'file'}
     </p>
     <p>{fileDropOptions.accept}</p>
     <input type="file" hidden />

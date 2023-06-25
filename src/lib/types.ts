@@ -9,3 +9,8 @@ export interface HeaderProps {
 }
 
 export type UpdateHeaderProps = Partial<HeaderProps>
+
+export interface FileWithPath extends Blob {
+  readonly path?: string;
+  readonly webkitRelativePath: string;
+}
