@@ -1,24 +1,37 @@
+<script>
+  import {t} from '$lib/i18n/i18n';
+</script>
+
 <section class="bg-base-200">
   <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
     <div class=" mb-8 lg:mb-16">
       <h2 class="mb-4 text-4xl tracking-tight font-extrabold">
-        File Conversion, Compression, and Background Removal Services
+        {@html $t(
+          'File Conversion, Compression, and Background Removal Services'
+        )}
       </h2>
 
+      <h2 class="mb-4 text-4xl tracking-tight font-extrabold">
+        {@html $t('Best file conversion and Image removal software')}
+      </h2>
       <p class="sm:text-xl">
-        We offer a wide range of file conversion, compression, and background
-        removal services to meet your needs.
+        {@html $t(
+          'We offer a wide range of file conversion, compression, and background removal services to meet your needs.'
+        )}
       </p>
       <p class="sm:text-xl">
-        Whether you need to convert a document to PDF, compress a large file, or
-        remove the background from an image, we can help.
+        {@html $t(
+          'Whether you need to convert a document to PDF, compress a large file, or remove the background from an image, we can help.'
+        )}
+      </p>
+      <p class="sm:text-xl">
+        {@html $t('Our services are easy to use and affordable.')}
       </p>
       <p class="sm:text-xl">Our services are easy to use and affordable.</p>
       <p class="sm:text-xl">
-        You can convert, compress, and remove backgrounds online or through our
-        desktop app. - file conversion, file compression, background removal,
-        document to PDF, PDF to document, image to PDF, PDF to image, file
-        compress, PDF encrypt, PDF decrypt, PDF merge, PDF delete, PDF arrage
+        {@html $t(
+          'You can convert, compress, and remove backgrounds online or through our desktop app. - file conversion, file compression, background removal, document to PDF, PDF to document, image to PDF, PDF to image, file compress, PDF encrypt, PDF decrypt, PDF merge, PDF delete, PDF arrage'
+        )}
       </p>
     </div>
 
@@ -41,11 +54,13 @@
             /></svg
           >
         </div>
-        <h3 class="mb-2 text-xl font-bold dark:text-white">Marketing</h3>
+        <h3 class="mb-2 text-xl font-bold dark:text-white">
+          {@html $t('Marketing')}
+        </h3>
         <p class="text-gray-500 dark:text-gray-400">
-          Plan it, create it, launch it. Collaborate seamlessly with all the
-          organization and hit your marketing goals every month with our
-          marketing plan.
+          {@html $t(
+            'Plan it, create it, launch it. Collaborate seamlessly with all the organization and hit your marketing goals every month with our marketing plan.'
+          )}
         </p>
       </div>
       <div>
@@ -62,10 +77,13 @@
             /></svg
           >
         </div>
-        <h3 class="mb-2 text-xl font-bold dark:text-white">Legal</h3>
+        <h3 class="mb-2 text-xl font-bold dark:text-white">
+          {@html $t('Legal')}
+        </h3>
         <p class="text-gray-500 dark:text-gray-400">
-          Protect your organization, devices and stay compliant with our
-          structured workflows and custom permissions made for you.
+          {@html $t(
+            'Protect your organization, devices and stay compliant with our structured workflows and custom permissions made for you.'
+          )}
         </p>
       </div>
       <div>
@@ -87,11 +105,12 @@
           >
         </div>
         <h3 class="mb-2 text-xl font-bold dark:text-white">
-          Business Automation
+          {@html $t('Business Automation')}
         </h3>
         <p class="text-gray-500 dark:text-gray-400">
-          Auto-assign tasks, send Slack messages, and much more. Now power up
-          with hundreds of new templates to help you get started.
+          {@html $t(
+            'Auto-assign tasks, send Slack messages, and much more. Now power up with hundreds of new templates to help you get started.'
+          )}
         </p>
       </div>
       <div>
@@ -112,10 +131,13 @@
             /></svg
           >
         </div>
-        <h3 class="mb-2 text-xl font-bold dark:text-white">Finance</h3>
+        <h3 class="mb-2 text-xl font-bold dark:text-white">
+          {@html $t('Finance')}
+        </h3>
         <p class="text-gray-500 dark:text-gray-400">
-          Audit-proof software built for critical financial operations like
-          month-end close and quarterly budgeting.
+          {@html $t(
+            'Audit-proof software built for critical financial operations like month-end close and quarterly budgeting.'
+          )}
         </p>
       </div>
       <div>
@@ -133,11 +155,12 @@
           >
         </div>
         <h3 class="mb-2 text-xl font-bold dark:text-white">
-          Enterprise Design
+          {@html $t('Enterprice Design')}
         </h3>
         <p class="text-gray-500 dark:text-gray-400">
-          Craft beautiful, delightful experiences for both marketing and product
-          with real cross-company collaboration.
+          {@html $t(
+            'Craft beautiful, delightful experiences for both marketing and product with real cross-company collaboration.'
+          )}
         </p>
       </div>
       <div>
@@ -156,10 +179,13 @@
             /></svg
           >
         </div>
-        <h3 class="mb-2 text-xl font-bold dark:text-white">Operations</h3>
+        <h3 class="mb-2 text-xl font-bold dark:text-white">
+          {@html $t('Operations')}
+        </h3>
         <p class="text-gray-500 dark:text-gray-400">
-          Keep your company’s lights on with customizable, iterative, and
-          structured workflows built for all efficient teams and individual.
+          {@html $t(
+            'Keep your company’s lights on with customizable, iterative, and structured workflows built for all efficient teams and individuals.'
+          )}
         </p>
       </div>
     </div>

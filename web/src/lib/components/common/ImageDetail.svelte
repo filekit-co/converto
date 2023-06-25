@@ -1,4 +1,6 @@
+
 <script lang="ts">
+  import { t } from "$lib/i18n/i18n";
   import {PUBLIC_IMG_API_URL} from '$env/static/public';
 
   export let resultImage;
@@ -121,14 +123,14 @@
       style="width: 300px; height: 80px;"
       class="!border !border-transparent rounded-full font-bold transition ease-in-out text-center font-body no-underline hover:no-underline inline-flex items-center justify-center text-2xl px-8 py-2.5 text-white !bg-primary hover:!bg-primary-hover active:!bg-primary-hover active:scale-[0.98] focus:outline-none focus-visible:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover"
     >
-      Upload
+      {@html $t('Upload')}
     </button>
   </form>
 
   <div class="hidden sm:flex flex-col gap-1.5">
-    <p class="m-0 font-bold text-xl text-typo-secondary">Or Drag a File,</p>
+    <p class="m-0 font-bold text-xl text-typo-secondary">{@html $t('Or Drag a File,')}</p>
     <span class="text-xs text-typo-secondary text-center"
-      >Insert Image or,
+      >{@html $t('Insert Image or,')}
       <button
         class="btn btn-active btn-ghost url-button"
         on:click={() => window.my_modal_5.showModal()}>URL</button
@@ -136,7 +138,7 @@
       <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
         <form method="dialog" class="modal-box">
           <h3 class="font-bold text-lg">
-            Type Image URL and Press Submit Button
+            {@html $t('Type Image URL and Press Submit Button')}
           </h3>
           <br />
           <input
@@ -145,12 +147,13 @@
             placeholder="Type here"
             class="input input-bordered input-accent w-full max-w-xs"
           />
-          <button on:click={handleURLSubmit} class="btn btn-active btn-primary"
-            >Submit</button
+          <button
+            on:click={handleURLSubmit}
+            class="btn btn-active btn-primary">{@html $t('Submit')}</button
           >
         </form>
         <form method="dialog" class="modal-backdrop">
-          <button>close</button>
+          <button>{@html $t('close')}</button>
         </form>
       </dialog>
     </span>
@@ -174,19 +177,19 @@
                             width: 100%;
                             margin-top: 16px;
                             margin-bottom: 16px;"
-              target="_blank"
-              rel="noopener"
-              href={downloadedFile}
-              download="downloaded_Image">download</a
-            >
-            <button
-              class="btn btn-primary text-white text-xs"
-              style="height: 60px;
+                            target="_blank"
+                            rel="noopener"
+                            href={downloadedFile}
+                            download="downloaded_Image">{@html $t('Download')}</a
+                        >
+                        <!-- <button class="btn btn-primary text-white text-xs"                             
+                        style="height: 60px;
                         width: 100%;
                         margin-top: 16px;
-                        margin-bottom: 16px;">share</button
-            >
-          </div>
+                        margin-bottom: 16px;">share</button> -->
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
     </div>
