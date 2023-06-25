@@ -1,7 +1,7 @@
 <script lang="ts">
   import ImageDetail from '@components/common/ImageDetail.svelte';
   import {PUBLIC_IMG_API_URL} from '$env/static/public';
-  import {_} from '@store/i18n';
+  import {_} from 'svelte-i18n'
 
   let droppedFiles = [];
   let downloadedFile: any = null;

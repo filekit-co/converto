@@ -1,5 +1,6 @@
 <script>
   import FileUploader from '@components/common/FileUploader.svelte';
+  import {_} from 'svelte-i18n';
 </script>
 
 <div class="w-full px-2 py-32 sm:px-20 lg:px-32 text-center mx-auto">
@@ -15,13 +16,13 @@
       />
     </svg>
     <h2 class="text-[clamp(2rem,6vw,4.5rem)] font-black join-item">
-      Unlock <span class="text-accent">PDF</span>
+      {@html $_('Unlock')} <span class="text-accent">PDF</span>
     </h2>
   </div>
   <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">
-    An easy-to-use online tool to <span class="underline underline-offset-4"
-      >remove passwords</span
-    > from PDFs.
+    {@html $_('An easy-to-use online tool to')}<span class="underline underline-offset-4"
+      >{@html $_('remove passwords')}</span
+    >{@html $_('from PDFs.')}
   </p>
 
   <div class="h-1" />
