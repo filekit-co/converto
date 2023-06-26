@@ -185,3 +185,12 @@
     - (시간 남을 경우) download page
   - 세현
     - i18n ssr 적용
+-26일
+  - 민욱
+    - [ ] lock pdf, pdf converter, pdf compress 페이지 만들기
+    - [ ] 파일 변환 페이지 마다 html decription 작성
+    - [ ] header, footer 정리
+  - 세현
+    - [ ] 드래그 앤 드롭 영상 참고해서 css 정리
+    - [ ] 다운로드 페이지 ( 이밎 결과물 왔을 때 네비게이션으로 다른 페이지 보여주고 + 다운로드 )
+    - [ ] 
