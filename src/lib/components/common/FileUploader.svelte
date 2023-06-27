@@ -6,7 +6,8 @@
   import {filesize} from 'filesize';
 
   import {PUBLIC_FILE_API_URL} from '$env/static/public';
-  import {DEFAULT_FILE_NAME} from '$lib/consts';
+
+  import {fileNameFromHeaders} from '$lib/utils';
 
   export let fileDropOptions: FileDropOptions;
 
@@ -48,7 +49,7 @@
   }
 
   async function fetchUnlocks(data: [FileWithPath, string][]) {
-    const responses = await Promise.all(
+    return await Promise.all(
       data.map(([file, password]) => {
         const formData = new FormData();
         formData.append('file', file);
@@ -60,20 +61,13 @@
         });
       })
     );
+  }
 
-    responses.forEach(async (response, index) => {
+  function handleDownloads(responses: Response[]) {
+    responses.forEach(async response => {
       if (response.ok) {
         const blob = await response.blob();
-
-        // 첨부 파일 이름을 추출합니다.
-        const contentDisposition = response.headers.get('content-disposition');
-        const filename = contentDisposition
-          ? contentDisposition
-              .split(';')
-              .find(part => part.trim().startsWith('filename='))
-              ?.split('=')[1]
-              ?.trim() || DEFAULT_FILE_NAME
-          : DEFAULT_FILE_NAME;
+        const filename = fileNameFromHeaders(response.headers);
 
         // 다운로드 링크를 생성합니다.
         const downloadLink = document.createElement('a');
@@ -98,7 +92,7 @@
     });
   }
 
-  function submitFiles() {
+  async function submitFiles() {
     if (files.accepted.length <= 0) {
       throw new Error("There's no files to submit");
     }
@@ -110,7 +104,8 @@
       return [file, passwordInput.value];
     });
 
-    fetchUnlocks(data);
+    const responses = await fetchUnlocks(data);
+    handleDownloads(responses);
   }
 </script>
 
