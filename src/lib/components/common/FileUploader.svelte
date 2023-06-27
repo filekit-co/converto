@@ -4,23 +4,17 @@
   import type {FileDropOptions, Files} from 'filedrop-svelte';
   import {filedrop} from 'filedrop-svelte';
   import {filesize} from 'filesize';
-
+  import {IconPdf, IconX, IconSquareRoundedPlus} from '@tabler/icons-svelte';
   import {PUBLIC_FILE_API_URL} from '$env/static/public';
 
   import {fileNameFromHeaders} from '$lib/utils';
 
   export let fileDropOptions: FileDropOptions;
-
+  const formId = 'formId';
   let files: Files = {
     accepted: [],
     rejected: []
   };
-
-  // TODO delete if fin
-  // import {onMount} from 'svelte';
-  // onMount(async () => {
-  //   files.accepted = [new File([''], 'fortest', {type: 'text/html'})];
-  // });
 
   $: totalFileSizes =
     files && files.accepted
@@ -28,7 +22,7 @@
       : 0;
 
   function fileName(filename: string) {
-    return filename.substring(0, 7) + '...';
+    return filename.length > 10 ? filename.substring(0, 10) + '...' : filename;
   }
 
   function addFiles(e: any) {
@@ -46,6 +40,13 @@
       ...files.accepted.slice(0, index),
       ...files.accepted.slice(index + 1)
     ];
+  }
+
+  function clearFiles(): void {
+    files = {
+      accepted: [],
+      rejected: []
+    } as Files;
   }
 
   async function fetchUnlocks(data: [FileWithPath, string][]) {
@@ -92,7 +93,7 @@
     });
   }
 
-  async function submitFiles() {
+  async function submitFiles(e: any) {
     if (files.accepted.length <= 0) {
       throw new Error("There's no files to submit");
     }
@@ -112,74 +113,57 @@
 <div id="DownloadCell" />
 
 {#if files.accepted.length > 0}
-  <div class="overflow-y-auto my-7">
-    <form>
-      <table class="table border-y-4">
-        <!-- head -->
-        <thead>
-          <tr>
-            <th>{@html $_('Password')}</th>
-            <th>{@html $_('File Name')}</th>
-            <th>{@html $_('Size')}</th>
-            <th />
-          </tr>
-        </thead>
-        <tbody>
-          {#each files.accepted as file, i}
-            <tr>
-              <td class="w-0"
-                ><input
-                  id="password_{i}"
-                  type="password"
-                  placeholder="*******"
-                  class="input input-bordered input-warning text-sm max-w-xs"
-                  on:keydown={e => {
-                    if (e.key === 'Enter') e.preventDefault();
-                  }}
-                  required
-                />
-              </td>
-              <td>{fileName(file.name)}</td>
-              <td>{filesize(file.size)}</td>
-              <th>
-                <button
-                  class="btn btn-sm sm:btn-md btn-circle"
-                  on:click={() => {
-                    removeFile(i);
-                  }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-3 w-3"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    ><path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    /></svg
-                  >
-                </button>
-              </th>
-            </tr>
-          {/each}
-          <tr>
-            <td class="font-black">{@html $_('Total file size:')}</td>
-            <td>{filesize(totalFileSizes)}</td>
-            <td colspan="2">
-              <button
-                class="btn btn-accent btn-md sm:btn-block sm:btn-lg"
-                on:click|preventDefault={submitFiles}
-                >{@html $_('Submit')}</button
-              >
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </form>
-  </div>
+  <form
+    id={formId}
+    class="border shadow-2xl shadow-slate-500 overflow-x-auto"
+    on:submit|once|preventDefault={submitFiles}
+  >
+    <div class="flex flex-col md:px-10">
+      {#each files.accepted as file, i}
+        <div class="flex flex-row items-center border-b-2 h-20 space-x-4">
+          <div class="hidden sm:block">
+            <IconPdf size={30} />
+          </div>
+          <!-- -row sm:flex-row -->
+          <div class="flex-auto flex flex-col sm:flex-row">
+            <div class="flex-initial md:flex-auto">{fileName(file.name)}</div>
+
+            <input
+              id="password_{i}"
+              type="password"
+              placeholder="type a password"
+              class="input text-sm h-4 max-w-xs text-center"
+              on:keydown={e => {
+                if (e.key === 'Enter') e.preventDefault();
+              }}
+              required
+            />
+          </div>
+          <div class="flex-initial">{filesize(file.size)}</div>
+          <button
+            class="btn btn-xs sm:btn-md btn-ghost"
+            on:click={() => {
+              removeFile(i);
+            }}
+          >
+            <IconX />
+          </button>
+        </div>
+      {/each}
+      <div class="mb-2 sm:mb-6" />
+      <div class="join mb-2 md:relative join-horizontal">
+        <button
+          form={formId}
+          on:click={clearFiles}
+          class="flex-auto btn btn-ghost p-0 uppercase"
+          >Clear
+        </button>
+        <button form={formId} class="flex-auto btn btn-accent"
+          >{@html $_('Submit')}
+        </button>
+      </div>
+    </div>
+  </form>
 {:else}
   <div class="filedrop" use:filedrop={fileDropOptions} on:filedrop={addFiles}>
     <svg
@@ -196,7 +180,7 @@
       {@html $_('Click or Drag & Drop')}
       {fileDropOptions.multiple ? 'files' : 'file'}
     </p>
-    <p>{fileDropOptions.accept}</p>
+    <p>({fileDropOptions.accept})</p>
     <input type="file" hidden />
   </div>
 {/if}
