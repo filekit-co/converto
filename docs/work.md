@@ -82,27 +82,21 @@
 ## 3째주
 - 16일
     - 민욱
-        - [ ] x to text api 붙이기
+        - ~~[] x to text api 붙이기~~
         - [x] api list file 받기
     - 세현
-        - [ ] 다운로드 / 미리 보기
+        - [x] 다운로드 / 미리 보기
 - 17일
     - 민욱
-      - [ ] x to text api 붙이기
-      - [ ] pdf api 붙이기
+      - [x] pdf api 붙이기
     - 세현
-      - [ ] 이미지 업로드 컴포넌트 이벤트 구현
-      - [ ] 이미지 다운로드 => 페이지 라우팅해서   
+      - [x] 이미지 업로드 컴포넌트 이벤트 구현
+      - [x] 이미지 다운로드 => ~~페이지 라우팅~~
 - 18일
     - 민욱
       - [x] url to image remove
-      - [ ] x to text
-         - pdf to text
-         - doc to text
-         - csv to text
-         - image to text
-         - md to text
-      - [ ] merge pdf
+      - ~~[ ] x to text~~
+      - [x] merge pdf
       - [ ] compress pdf
       - [ ] images to pdf
     - 세현
@@ -127,70 +121,74 @@
         - [x] /oxps-to-pdf
         - [x] /cbz-to-pdf
         - [x] /fb2-to-pdf
-    - [ ] images -> pdf
     - [ ] pdf -> images
     - [ ] file comporess / decompress
-    - [ ] pdf encrypt / decrypt
-    - [ ] pdf merge, delete, arrange
+    - [x] pdf encrypt / decrypt
+    - [x] pdf merge ~~delete, arrange~~
   - 세현
     - [x] image URL 파일 데이터 입/출력
     - [x] 파일 업로드(버튼 액션 설정) - input 없이 button으로만 파일 선택, 서버에서 데이터 받아오도록 수정
-    - [ ] 파일 업로드 이후(사진, 다운로드) ui 수정
+    - [x] 파일 업로드 이후(사진, 다운로드) ui 수정
     - [ ] git action 설정
-    - [ ] i18n 동작 구현
+    - [x] i18n 동작 구현
 - 20일
   - 민욱
     - [x] pdf encrypt / decrypt
     - [x] pdf logo / watermark
     - [x] join pdfs
     - [x] extract pages
-    - [ ] svelte file convert page
+    - [x] UI: svelte file convert page
     - [x] 스크럼 아침 7시
   - 세현
     - [x] 각 컴포넌트, 페이지 SEO 적용(p, h, meta 적극 활용)
     - [x] 파일 업로드 이후(사진, 다운로드) css 수정
     - [ ] git action 설정
-    - [ ] i18n 동작 구현
+    - [x] i18n 동작 구현
   - 재원
     - [x] [youtube to mp3](https://www.y2mate.com/en625)
-    - [ ] Research (금요일 부터 시작)
+    - [x] Research (금요일 부터 시작)
 - 21일
   - 민욱
-    - [ ] svelte file convert page
-    - [ ] pdf to image
+    - [x] svelte file convert page
+    - [ ] API: pdf to image
   - 세현
     - [x] 페이지 별로 seo 적용
     - [x] css 마무리
   - 재원
-    - [ ] rgba to rgb
+    - ~~[ ] rgba to rgb~~
 - 22일
-  - 민욱
-    - [ ] 
   - 세현
     - [x] 배포
-  - 재원
-    - [ ]
 - 23일
   - 민욱
     - [ ] api 별 프론트 작업
-    - [ ] 서버 배포
+    - [x] 서버 배포
   - 세현
-    - [ ] 메인 페이지 ( features) i18n 적용
+    - [x] 메인 페이지 ( features) i18n 적용
 - 24일
   - 세현
-    - [ ] i18n 마무리(html lang 변경 hook - getlang 함수 구현)
+    - [x] i18n 마무리(html lang 변경 hook - getlang 함수 구현)
 - 25일
   - 민욱
-    - cloud run server 2개 배포
-    - (시간 남을 경우) download page
+    - [x] cloud run server 2개 배포
+    - [x] download page
   - 세현
-    - i18n ssr 적용
+    - [x] i18n ssr 적용
 -26일
   - 민욱
     - [ ] lock pdf, pdf converter, pdf compress 페이지 만들기
     - [ ] 파일 변환 페이지 마다 html decription 작성
     - [ ] header, footer 정리
   - 세현
-    - [ ] 드래그 앤 드롭 영상 참고해서 css 정리
-    - [ ] 다운로드 페이지 ( 이밎 결과물 왔을 때 네비게이션으로 다른 페이지 보여주고 + 다운로드 )
-    - [ ] 
+    - [x] 드래그 앤 드롭 영상 참고해서 css 정리
+    - [ ] ~~다운로드 페이지 ( 이밎 결과물 왔을 때 네비게이션으로 다른 페이지 보여주고 + 다운로드 )~~
+- 27일
+    - 민욱
+        - [ ] api 리팩토링
+        - [x] unlcok ui
+        - [ ] UI: lock pdf, pdf converter, pdf compress 페이지 만들기
+        - [ ] header, footer 정리
+    - 세현
+        - [ ] sitemap.xml
+        - [ ] 파일 변환 페이지 마다 html decription 작성
+        - [ ] +page.ts remove/bg 용 만들기
