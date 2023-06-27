@@ -34,6 +34,7 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltejs/adapter-vercel": "^3.0.1",
+		"@tabler/icons-svelte": "^2.23.0",
 		"svelte-i18n": "^3.6.0",
 		"svelte-preprocess": "^5.0.4"
 	}

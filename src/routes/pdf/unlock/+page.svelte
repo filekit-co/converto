@@ -27,13 +27,12 @@
     </h2>
   </div>
   <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">
-    {@html $_('An easy-to-use online tool to')}<span class="underline underline-offset-4"
-      >{@html $_('remove passwords')}</span
+    {@html $_('An easy-to-use online tool to')}<span
+      class="underline underline-offset-4">{@html $_('remove passwords')}</span
     >{@html $_('from PDFs.')}
   </p>
 
-  <div class="h-1" />
-  <div class="mx-10">
+  <section class="pt-4 mx-0 sm:mx-10">
     <FileUploader {fileDropOptions} />
-  </div>
+  </section>
 </div>

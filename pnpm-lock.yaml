@@ -1,4 +1,4 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
 
 settings:
   autoInstallPeers: true
@@ -8,6 +8,9 @@ dependencies:
   '@sveltejs/adapter-vercel':
     specifier: ^3.0.1
     version: 3.0.1(@sveltejs/kit@1.20.4)
+  '@tabler/icons-svelte':
+    specifier: ^2.23.0
+    version: 2.23.0(svelte@3.59.2)
   svelte-i18n:
     specifier: ^3.6.0
     version: 3.6.0(svelte@3.59.2)
@@ -512,6 +515,19 @@ packages:
       vitefu: 0.2.4(vite@4.3.9)
     transitivePeerDependencies:
       - supports-color
+
+  /@tabler/icons-svelte@2.23.0(svelte@3.59.2):
+    resolution: {integrity: sha512-vFOxzcKWXTLGgCFwJbbQgmXb6PGTwZtWVKRTkBY7ah09R2xIeddwhRprn4zt9DmS36n4GSGMllpk/leIPCYFiA==}
+    peerDependencies:
+      svelte: ^3.49.0
+    dependencies:
+      '@tabler/icons': 2.23.0
+      svelte: 3.59.2
+    dev: false
+
+  /@tabler/icons@2.23.0:
+    resolution: {integrity: sha512-dU54aBwaxG0H+jQ4BdrqtYFN5L7PZevvlnzyL6XeOZgfDS3+sVNCtuG3JmpTEqQSwGLYC1IEwogPGA/Iit2bOA==}
+    dev: false
 
   /@types/cookie@0.5.1:
     resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
