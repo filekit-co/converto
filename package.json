@@ -35,6 +35,7 @@
 	"dependencies": {
 		"@sveltejs/adapter-vercel": "^3.0.1",
 		"@tabler/icons-svelte": "^2.23.0",
+		"jszip": "^3.10.1",
 		"svelte-i18n": "^3.6.0",
 		"svelte-loading-spinners": "^0.3.4",
 		"svelte-preprocess": "^5.0.4"
