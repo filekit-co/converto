@@ -4,13 +4,13 @@
   import {loading} from '@components/common/loading';
   import {fileNameFromHeaders} from '$lib/utils';
   import {PUBLIC_FILE_API_URL} from '$env/static/public';
-  import {IconCircleXFilled, IconDownload, IconPdf} from '@tabler/icons-svelte';
+  import {IconDownload, IconPdf} from '@tabler/icons-svelte';
   import {filesize} from 'filesize';
+  import JSZip from 'jszip';
 
   export let uploadData: any;
 
   $: $loading;
-  $: errorMsg = undefined;
 
   interface DownloadItem {
     fileName: string;
@@ -18,11 +18,12 @@
     downloadUrl: string;
   }
 
-  let downloadList: DownloadItem[];
+  let downloadList: DownloadItem[] = [];
+  let zipDownloadLink: HTMLAnchorElement | undefined;
 
   // TODO: seperate it
   async function fetchUnlocks(data: [FileWithPath, string][]) {
-    return await Promise.all(
+    const results = await Promise.all(
       data.map(([file, password]) => {
         const formData = new FormData();
         formData.append('file', file);
@@ -30,29 +31,54 @@
 
         return fetch(`${PUBLIC_FILE_API_URL}/pdf/decrypt`, {
           method: 'POST',
+          headers: {
+            'Access-Control-Expose-Headers': 'Content-Disposition'
+          },
           body: formData
         });
       })
     );
+    return results;
   }
 
   async function buildDownloadList(responses: Response[]) {
-    const downloadItems = await Promise.all(
+    const downloadItems: DownloadItem[] = [];
+    const blobs: Blob[] = [];
+
+    await Promise.all(
       responses
         .filter(response => response.ok)
-        .map(async response => await buildDownloadItem(response))
+        .map(async response => {
+          const {blob, ...downloadItem} = await buildDownloadItem(response);
+          blobs.push(blob);
+          downloadItems.push(downloadItem as DownloadItem);
+        })
     );
+
+    const zip = new JSZip();
+    downloadItems.forEach(({fileName}, i) => {
+      zip.file(fileName, blobs[i]);
+    });
+
+    const zipContent = await zip.generateAsync({
+      type: 'blob'
+    });
+    zipDownloadLink = document.createElement('a');
+    zipDownloadLink.href = URL.createObjectURL(zipContent);
+    zipDownloadLink.download = 'download.zip';
 
     return downloadItems;
   }
 
   async function buildDownloadItem(response: Response) {
     const blob = await response.blob();
+
     return {
       fileName: fileNameFromHeaders(response.headers),
       fileSize: blob.size,
-      downloadUrl: URL.createObjectURL(blob)
-    } as DownloadItem;
+      downloadUrl: URL.createObjectURL(blob),
+      blob
+    };
   }
 
   function handleDownload(filename: string, url: string) {
@@ -66,7 +92,17 @@
     }
   }
 
-  function handleDownloadAll(items: DownloadItem[]) {}
+  async function handleDownloadAll() {
+    try {
+      if (zipDownloadLink) {
+        zipDownloadLink.click();
+      } else {
+        console.log('ZIP is undefined');
+      }
+    } catch (error: any) {
+      console.error('Failed to download all files:', error);
+    }
+  }
 
   function handleGoBack() {}
 
@@ -76,22 +112,21 @@
     try {
       const responses = await fetchUnlocks(uploadData);
       downloadList = await buildDownloadList(responses);
-    } catch (error: any) {
-      $errorMsg = error?.message ? error?.messages : '500 Server Error';
+    } catch (e) {
+      console.error(e);
     } finally {
       $loading = false;
     }
   });
 
-  onDestroy(() => {});
+  onDestroy(() => {
+    if (zipDownloadLink) {
+      URL.revokeObjectURL(zipDownloadLink.href);
+      zipDownloadLink = undefined;
+    }
+    downloadList.forEach(({downloadUrl}) => URL.revokeObjectURL(downloadUrl));
+  });
 </script>
-
-{#if !!errorMsg}
-  <div class="alert alert-error">
-    <IconCircleXFilled />
-    <span>{errorMsg}</span>
-  </div>
-{/if}
 
 <div class="border rounded-2xl shadow-2xl shadow-slate-500 overflow-x-auto">
   <div class="flex flex-col md:px-10">
