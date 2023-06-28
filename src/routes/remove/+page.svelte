@@ -1,6 +1,7 @@
 <script lang="ts">
     import { _ } from 'svelte-i18n';
   import ImageUploader from '@components/common/ImageUploader.svelte';
+    import RemoveImageFeature from '@components/pages/RemoveImageFeature.svelte';
 </script>
 
 <div class="w-full px-2 py-32 lg:px-10">
@@ -22,6 +23,7 @@
       <span class="underline underline-offset-4">{@html $_('dropzone')}</span>
       {@html $_('below.')}
     </p>
+    
     <div class="mx-10">
       <ImageUploader />
     </div>
