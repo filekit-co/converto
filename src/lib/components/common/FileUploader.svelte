@@ -4,15 +4,11 @@
   import type {FileDropOptions, Files} from 'filedrop-svelte';
   import {filedrop} from 'filedrop-svelte';
   import {filesize} from 'filesize';
-  import {IconPdf, IconX, IconSquareRoundedPlus} from '@tabler/icons-svelte';
-  import {PUBLIC_FILE_API_URL} from '$env/static/public';
+  import {IconPdf, IconX} from '@tabler/icons-svelte';
 
-  import {fileNameFromHeaders} from '$lib/utils';
   import Downloader from './Downloader.svelte';
 
   export let fileDropOptions: FileDropOptions;
-  import {loading} from '@components/common/loading';
-  import FileConvertFeature from '@components/pages/FileConvertFeature.svelte';
 
   const formId = 'formId';
   let uploadData: [FileWithPath, string][];
@@ -22,7 +18,8 @@
     rejected: []
   };
 
-  $: idDownloading = $loading;
+  $: isDownloading = false;
+
   $: totalFileSizes =
     files && files.accepted
       ? files.accepted.reduce((sum, file) => sum + file.size, 0)
@@ -56,50 +53,6 @@
     } as Files;
   }
 
-  async function fetchUnlocks(data: [FileWithPath, string][]) {
-    return await Promise.all(
-      data.map(([file, password]) => {
-        const formData = new FormData();
-        formData.append('file', file);
-        formData.append('password', password);
-
-        return fetch(`${PUBLIC_FILE_API_URL}/pdf/decrypt`, {
-          method: 'POST',
-          body: formData
-        });
-      })
-    );
-  }
-
-  function handleDownloads(responses: Response[]) {
-    responses.forEach(async response => {
-      if (response.ok) {
-        const blob = await response.blob();
-        const filename = fileNameFromHeaders(response.headers);
-
-        // 다운로드 링크를 생성합니다.
-        const downloadLink = document.createElement('a');
-        downloadLink.href = URL.createObjectURL(blob);
-        downloadLink.download = filename;
-        downloadLink.textContent = 'Download';
-
-        // 다운로드 버튼을 추가합니다.
-        const downloadContainer = document.createElement('div');
-        downloadContainer.appendChild(downloadLink);
-
-        // 원하는 위치에 다운로드 버튼을 추가하세요.
-        // 예를 들어, 특정 테이블 셀에 추가하려면 해당 셀을 선택하고 아래와 같은 방식으로 추가할 수 있습니다.
-        // const cell = document.getElementById(`cell_${index}`);
-
-        // TODO: refactor and style
-        const cell = document.getElementById('DownloadCell') as HTMLDivElement;
-        cell.appendChild(downloadContainer);
-      } else {
-        // 처리 실패 시의 로직을 작성하세요.
-      }
-    });
-  }
-
   async function submitFiles(e: any) {
     if (files.accepted.length <= 0) {
       throw new Error("There's no files to submit");
@@ -112,66 +65,59 @@
       return [file, passwordInput.value];
     });
 
-    $loading = true;
-
-    // const responses = await fetchUnlocks(data);
-    // handleDownloads(responses);
+    isDownloading = true;
   }
 </script>
 
-<div id="DownloadCell" />
-
-{#if idDownloading}
+{#if isDownloading}
   <Downloader {uploadData} />
 {:else if files.accepted.length > 0}
-  <form
-    id={formId}
-    class="border rounded-2xl shadow-2xl shadow-slate-500 overflow-x-auto"
-    on:submit|once|preventDefault={submitFiles}
-  >
-    <div class="flex flex-col md:px-10">
-      {#each files.accepted as file, i}
-        <div class="flex flex-row items-center border-b-2 h-20 space-x-4">
-          <div class="hidden sm:block">
-            <IconPdf size={30} />
-          </div>
-          <!-- -row sm:flex-row -->
-          <div class="flex-auto flex flex-col sm:flex-row">
-            <div class="flex-initial md:flex-auto">{fileName(file.name)}</div>
+  <form id={formId} on:submit|once|preventDefault={submitFiles}>
+    <div class="border rounded-2xl shadow-2xl shadow-slate-500 overflow-x-auto">
+      <div class="flex flex-col md:px-10">
+        {#each files.accepted as file, i}
+          <div class="flex flex-row items-center border-b-2 h-20 space-x-4">
+            <div class="hidden sm:block">
+              <IconPdf size={30} />
+            </div>
+            <!-- -row sm:flex-row -->
+            <div class="flex-auto flex flex-col sm:flex-row">
+              <div class="flex-initial md:flex-auto">{fileName(file.name)}</div>
 
-            <input
-              id="password_{i}"
-              type="password"
-              placeholder="type a password"
-              class="input text-sm h-4 max-w-xs text-center"
-              on:keydown={e => {
-                if (e.key === 'Enter') e.preventDefault();
+              <input
+                id="password_{i}"
+                type="password"
+                placeholder="type a password"
+                class="input text-sm h-4 max-w-xs text-center"
+                on:keydown={e => {
+                  if (e.key === 'Enter') e.preventDefault();
+                }}
+                required
+              />
+            </div>
+            <div class="flex-initial">{filesize(file.size)}</div>
+            <button
+              class="btn btn-xs sm:btn-md btn-ghost"
+              on:click={() => {
+                removeFile(i);
               }}
-              required
-            />
+            >
+              <IconX />
+            </button>
           </div>
-          <div class="flex-initial">{filesize(file.size)}</div>
+        {/each}
+        <div class="mb-2 sm:mb-6" />
+        <div class="join mb-2 md:relative join-horizontal">
           <button
-            class="btn btn-xs sm:btn-md btn-ghost"
-            on:click={() => {
-              removeFile(i);
-            }}
-          >
-            <IconX />
+            form={formId}
+            on:click={clearFiles}
+            class="flex-auto btn btn-ghost p-0 uppercase"
+            >Clear
+          </button>
+          <button form={formId} class="flex-auto btn btn-accent"
+            >{@html $_('Submit')}
           </button>
         </div>
-      {/each}
-      <div class="mb-2 sm:mb-6" />
-      <div class="join mb-2 md:relative join-horizontal">
-        <button
-          form={formId}
-          on:click={clearFiles}
-          class="flex-auto btn btn-ghost p-0 uppercase"
-          >Clear
-        </button>
-        <button form={formId} class="flex-auto btn btn-accent"
-          >{@html $_('Submit')}
-        </button>
       </div>
     </div>
   </form>

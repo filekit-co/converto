@@ -1,9 +1,7 @@
 <script lang="ts">
   import {Circle3} from 'svelte-loading-spinners';
-  import {loading} from '@components/common/loading';
 </script>
 
-<!-- <div class="flex justify-center items-center h-screen"> -->
 <div class="fixed w-full h-full z-10 in:fade={{duration: 150}}">
   <div
     class="absolute w-full h-full bg-white dark:bg-cyan-800 opacity-50 z-10"
