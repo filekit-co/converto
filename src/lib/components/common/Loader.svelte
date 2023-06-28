@@ -1,8 +1,14 @@
 <script lang="ts">
-  import {Jumper} from 'svelte-loading-spinners';
+  import {Circle3} from 'svelte-loading-spinners';
   import {loading} from '@components/common/loading';
 </script>
 
-<div class="z-100 flex justify-center items-center h-screen">
-  <Jumper size="60" color="#FF3E00" unit="px" duration="1s" />
+<!-- <div class="flex justify-center items-center h-screen"> -->
+<div class="fixed w-full h-full z-10 in:fade={{duration: 150}}">
+  <div
+    class="absolute w-full h-full bg-white dark:bg-cyan-800 opacity-50 z-10"
+  />
+  <div class="absolute w-full h-full flex justify-center items-center z-20">
+    <Circle3 />
+  </div>
 </div>
