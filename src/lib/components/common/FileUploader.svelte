@@ -8,14 +8,19 @@
   import {PUBLIC_FILE_API_URL} from '$env/static/public';
 
   import {fileNameFromHeaders} from '$lib/utils';
+  import Downloader from './Downloader.svelte';
 
   export let fileDropOptions: FileDropOptions;
+  import {loading} from '@components/common/loading';
   const formId = 'formId';
+  let uploadData: [FileWithPath, string][];
+
   let files: Files = {
     accepted: [],
     rejected: []
   };
 
+  $: idDownloading = $loading;
   $: totalFileSizes =
     files && files.accepted
       ? files.accepted.reduce((sum, file) => sum + file.size, 0)
@@ -98,24 +103,28 @@
       throw new Error("There's no files to submit");
     }
 
-    const data: [FileWithPath, string][] = files.accepted.map((file, i) => {
+    uploadData = files.accepted.map((file, i) => {
       const passwordInput = document.getElementById(
         `password_${i}`
       ) as HTMLInputElement;
       return [file, passwordInput.value];
     });
 
-    const responses = await fetchUnlocks(data);
-    handleDownloads(responses);
+    $loading = true;
+
+    // const responses = await fetchUnlocks(data);
+    // handleDownloads(responses);
   }
 </script>
 
 <div id="DownloadCell" />
 
-{#if files.accepted.length > 0}
+{#if idDownloading}
+  <Downloader {uploadData} />
+{:else if files.accepted.length > 0}
   <form
     id={formId}
-    class="border shadow-2xl shadow-slate-500 overflow-x-auto"
+    class="border rounded-2xl shadow-2xl shadow-slate-500 overflow-x-auto"
     on:submit|once|preventDefault={submitFiles}
   >
     <div class="flex flex-col md:px-10">
