@@ -11,7 +11,7 @@
     >
       {@html $_('Trusted by over 1 million users every month')}
     </h2>
-    <h4 class="leading-tight text-center mb-20 lg:mb-40">
+    <h4 class="leading-tight text-center mb-20 lg:mb-40 text-xl">
       {@html $_('Employees of large and small companies all over the world use our service')}
     </h4>
     <div

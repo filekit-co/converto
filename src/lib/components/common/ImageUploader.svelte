@@ -165,7 +165,7 @@
 </script>
 
 <div class="py-12 px-4">
-  <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+  <div class=" max-w-8xl mx-auto sm:px-6 lg:px-8 ">
     <div 
       on:drop={handleDrop}
       on:dragover={handleDragOver}

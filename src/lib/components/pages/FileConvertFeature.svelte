@@ -14,30 +14,18 @@
     <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
       <div class=" mb-8 lg:mb-16">
         <h2 class="mb-4 text-4xl tracking-tight font-extrabold">
-            Best file conversion Software
+            {@html $_('Best file conversion Software')}
         </h2>
 
         <h2 class="mb-4 text-4xl tracking-tight font-extrabold">
-          File conversion, compression, encrypt & decrypt, merge.
+          {@html $_('File conversion, compression, encrypt & decrypt, merge.')}
         </h2>
 
-        <p class="sm:text-xl">
-          {@html $_(
-            'We offer a wide range of file conversion, compression, and background removal services to meet your needs.'
-          )}
+        <p class="my-2 sm:text-xl">
+          {@html $_('You can convert, compress, and remove backgrounds online or through our browser')}
         </p>
-        <p class="sm:text-xl">
-          {@html $_(
-            'Whether you need to convert a document to PDF, compress a large file, or remove the background from an image, we can help.'
-          )}
-        </p>
-        <p class="sm:text-xl">
-          {@html $_('Our services are easy to use and affordable.')}
-        </p>
-        <p class="sm:text-xl">
-          {@html $_(
-            'You can convert, compress, and remove backgrounds online or through our desktop app. - file conversion, file compression, background removal, document to PDF, PDF to document, image to PDF, PDF to image, file compress, PDF encrypt, PDF decrypt, PDF merge, PDF delete, PDF arrage'
-          )}
+        <p class="my-2 sm:text-xl">
+          {@html $_('File conversion, file compression, background removal, document to PDF, PDF to document, image to PDF, PDF to image, file compress, PDF encrypt, PDF decrypt, PDF merge, PDF delete, PDF arrange')}
         </p>
       </div>
   
@@ -51,10 +39,10 @@
             <IconTransform size={100} />
           </div>
           <h3 class="mb-2 text-xl font-bold dark:text-white">
-            어떠한 파일도 변환 가능
+            {@html $_('All types of files are convertible.')}
           </h3>
           <p class="text-gray-500 dark:text-gray-400">
-            저희는 모든 파일 간의 변환, pdf 비밀번호 제거, 압축, 통합을 지원합니다. 다른 어떤 변환기보다 편리합니다.
+            {@html $_('We support conversions between all file types, PDF encryption & decryption, compression, and merging. We are more convenient than any other converters.')}
           </p>
         </div>
         <div>
@@ -65,10 +53,10 @@
             
           </div>
           <h3 class="mb-2 text-xl font-bold dark:text-white">
-            편리한 이용 방법
+            {@html $_('Convenient to use')}
           </h3>
           <p class="text-gray-500 dark:text-gray-400">
-            이쁘고, 눈에 잘 띄는 인터페이스로 구성되어 있어 문서 변환에 관한 전문 지식이 필요 없습니다. 
+            {@html $_('It is designed with a beautiful and visually appealing interface, so no specialized knowledge is required for document conversion.')}
           </p>
         </div>
         <div>
@@ -78,10 +66,10 @@
             <IconDownload size={100} />
           </div>
           <h3 class="mb-2 text-xl font-bold dark:text-white">
-            바로 사용
+            {@html $_('Ready to use')}
           </h3>
           <p class="text-gray-500 dark:text-gray-400">
-            소프트웨어를 설치할 필요 없이 바로 사용할 수 있습니다.
+            {@html $_('You can use it instantly without the need to install any software.')}
           </p>
         </div>
         <div>
@@ -91,10 +79,10 @@
             <IconCashOff size={100} />
           </div>
           <h3 class="mb-2 text-xl font-bold dark:text-white">
-            완전 무료
+            {@html $_('Completely free')}
           </h3>
           <p class="text-gray-500 dark:text-gray-400">
-            모든 파일 변환, 암호화 & 복호화, 파일 결합 & 삭제는 완전히 무료입니다.
+            {@html $_('All file conversions, encryption & decryption, file merging & deletion are completely free.')}
           </p>
         </div>
         <div>
@@ -104,10 +92,10 @@
             <IconShieldLock size={100}/>
           </div>
           <h3 class="mb-2 text-xl font-bold dark:text-white">
-              보안
+              {@html $_('Security')}
           </h3>
           <p class="text-gray-500 dark:text-gray-400">
-            저희는 사용자가 업로드 한 파일을 데이터베이스에 저장하지 않아 안전합니다. 
+            {@html $_('We do not store the files uploaded by users in the database, ensuring safety.')}
           </p>
         </div>
         <div>
@@ -117,10 +105,10 @@
             <IconDeviceMobile size={100} />
           </div>
           <h3 class="mb-2 text-xl font-bold dark:text-white">
-            모든 기기 지원
+            {@html $_('Support for All Devices')}
           </h3>
           <p class="text-gray-500 dark:text-gray-400">
-            어떠한 운영체제에서도 소프트웨어를 이용할 수 있습니다.
+            {@html $_('The software can be used on any operating system.')}
           </p>
         </div>
       </div>
