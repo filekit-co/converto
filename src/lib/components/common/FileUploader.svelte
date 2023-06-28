@@ -12,6 +12,8 @@
 
   export let fileDropOptions: FileDropOptions;
   import {loading} from '@components/common/loading';
+  import FileConvertFeature from '@components/pages/FileConvertFeature.svelte';
+
   const formId = 'formId';
   let uploadData: [FileWithPath, string][];
 

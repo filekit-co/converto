@@ -1,5 +1,6 @@
 <script lang="ts">
   import FileUploader from '@components/common/FileUploader.svelte';
+    import FileConvertFeature from '@components/pages/FileConvertFeature.svelte';
   import type {FileDropOptions} from 'filedrop-svelte';
   import {_} from 'svelte-i18n';
 
@@ -35,4 +36,5 @@
   <section class="pt-4 mx-0 sm:mx-10">
     <FileUploader {fileDropOptions} />
   </section>
+  <FileConvertFeature />
 </div>

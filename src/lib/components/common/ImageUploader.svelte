@@ -1,8 +1,8 @@
 <script lang="ts">
-  import ImageDetail from '@components/common/ImageDetail.svelte';
   import {PUBLIC_IMG_API_URL} from '$env/static/public';
   import {_} from 'svelte-i18n';
   import { writable } from 'svelte/store';
+  import RemoveImageFeature from '@components/pages/RemoveImageFeature.svelte';
 
   let droppedFiles: File[] = [];
   let selectedFile: any = null;
@@ -116,20 +116,6 @@
       const file = new File([blob], 'Result_Image', { type: blob.type });
       resultImage = URL.createObjectURL(blob)
       resultFile = URL.createObjectURL(file)
-
-      // console.log(resultImage)
-      // console.log(resultFile)
-
-      // .then(response => response.blob())
-      // .then(blob => {
-      //   const file = new File([blob], 'Result_Image', {type: blob.type});
-      //   resultImage = URL.createObjectURL(blob);
-      //   resultFile = URL.createObjectURL(file);
-
-      // })
-      // .catch(error => {
-      //   console.error(error);
-      // });
     }
   }
 
@@ -290,7 +276,10 @@
   </ul>
   {/if}
 
+  <RemoveImageFeature />
+
 </div>
+
 
 
 <style>
