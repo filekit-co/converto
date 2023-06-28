@@ -7,6 +7,7 @@
   import {IconDownload, IconPdf} from '@tabler/icons-svelte';
   import {filesize} from 'filesize';
   import JSZip from 'jszip';
+  import {invalidate} from '$app/navigation';
 
   export let uploadData: any;
 
@@ -92,6 +93,10 @@
     }
   }
 
+  function handleRetry() {
+    location.reload();
+  }
+
   async function handleDownloadAll() {
     try {
       if (zipDownloadLink) {
@@ -103,8 +108,6 @@
       console.error('Failed to download all files:', error);
     }
   }
-
-  function handleGoBack() {}
 
   onMount(async () => {
     $loading = true;
@@ -153,7 +156,7 @@
     <div class="mb-2 sm:mb-6" />
     <div class="join mb-2 md:relative join-horizontal">
       <button
-        on:click={handleGoBack}
+        on:click={handleRetry}
         class="flex-auto btn btn-ghost p-0 uppercase"
         >Retry
       </button>
