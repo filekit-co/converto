@@ -20,11 +20,6 @@
 
   $: isDownloading = false;
 
-  $: totalFileSizes =
-    files && files.accepted
-      ? files.accepted.reduce((sum, file) => sum + file.size, 0)
-      : 0;
-
   function fileName(filename: string) {
     return filename.length > 10 ? filename.substring(0, 10) + '...' : filename;
   }
