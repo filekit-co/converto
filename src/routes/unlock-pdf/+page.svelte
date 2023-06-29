@@ -1,7 +1,11 @@
 <script lang="ts">
   import FileUploader from '@components/common/FileUploader.svelte';
-    import FileConvertFeature from '@components/pages/FileConvertFeature.svelte';
-  import type {FileDropOptions} from 'filedrop-svelte';
+  import DragDrop from '@components/common/DragDrop.svelte';
+  import {onDestroy} from 'svelte';
+  import type {FileDropOptions, Files} from 'filedrop-svelte';
+
+  import FileConvertFeature from '@components/pages/FileConvertFeature.svelte';
+
   import {_} from 'svelte-i18n';
 
   let fileDropOptions: FileDropOptions = {
@@ -10,6 +14,18 @@
     hideInput: true,
     multiple: true
   };
+  let files: Files = {
+    accepted: [],
+    rejected: []
+  };
+  $: isFileExist = files.accepted.length > 0;
+
+  onDestroy(() => {
+    files = {
+      accepted: [],
+      rejected: []
+    };
+  });
 </script>
 
 <div class="w-full px-2 py-32 sm:px-20 lg:px-32 text-center mx-auto">
@@ -34,7 +50,12 @@
   </p>
 
   <section class="pt-4 mx-0 sm:mx-10">
-    <FileUploader {fileDropOptions} />
+    {#if isFileExist}
+      <FileUploader bind:files />
+    {:else}
+      <DragDrop bind:files {fileDropOptions} />
+    {/if}
   </section>
+
   <FileConvertFeature />
 </div>
