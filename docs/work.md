@@ -192,3 +192,12 @@
         - [ ] sitemap.xml
         - [ ] 파일 변환 페이지 마다 html decription 작성
         - [ ] +page.ts remove/bg 용 만들기
+- 29일
+  - 민욱
+    - [ ] api 별 페이지
+    - [ ] vercel 구매 및 배포
+    - [ ] https 적용
+  - 세현
+    - [ ] features 컴포넌트 템플릿으로 변환 -> props에 따라서
+    - [ ] 다이나믹 라우팅 -> remove/jgp-to-png 이런식으로
+    - [ ] 네비게이션, footer
