@@ -2,6 +2,7 @@
   import {_} from 'svelte-i18n';
   import ImageUploader from '@components/common/ImageUploader.svelte';
   import Feature from '@components/home/Feature.svelte';
+  import ImgExample from '@components/common/ImgExample.svelte';
 </script>
 
 <div class="w-full px-2 py-32 lg:px-10">
@@ -31,6 +32,7 @@
       <ImageUploader />
     </div>
 
+    <ImgExample />
     <Feature />
   </div>
 </div>

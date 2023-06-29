@@ -31,9 +31,8 @@
     <div class="mx-10">
       <ImageUploader />
     </div>
-    <div>
-      <ImgExample />
-    </div>
+
+    <ImgExample />
     <Feature />
   </div>
 </div>

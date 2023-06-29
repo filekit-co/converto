@@ -5,7 +5,7 @@
   }
 </script>
 
-<div class="py-12 md: py-24 overflow-x-clip">
+<div class="py-4 md:py-6 overflow-x-clip">
   <div class="mx-auto w-full px-8 max-w-5xl">
     <div class="py-4 md:py-8">
       <h2

@@ -231,13 +231,14 @@
           class="sr-only"
         />
       </label>
+      <p class="mt-4 text-lg">Maximum file size must be 512MB</p>
     </div>
   </div>
 
   <!-- {#if fileName && progress} -->
   <!-- 드래그앤드롭 or 파일 선택할 시 -->
   {#if fileName && progress}
-    <ul class="my-6 bg-white rounded divide-y divide-gray-200 shadow">
+    <ul class=" mt-6 bg-white rounded divide-y divide-gray-200 shadow">
       <li class="p-3 flex items-center justify-between">
         <div class="w-9 h-9 bg-gray-300">
           <img src={resultImage} alt="image" />
@@ -279,7 +280,7 @@
   <!-- {#if resultImage && urlExist && resultFile && progress} -->
   <!-- url 입력할 시 -->
   {#if resultImage && imageURL && resultFile}
-    <ul class="my-6 bg-white rounded divide-y divide-gray-200 shadow">
+    <ul class="mt-6 bg-white rounded divide-y divide-gray-200 shadow">
       <li class="p-3 flex items-center justify-between">
         <div class="w-9 h-9 bg-gray-300">
           <img src={resultImage} alt="image" />
