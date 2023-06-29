@@ -1,5 +1,6 @@
 <script lang="ts">
   import FileUploader from '@components/common/FileUploader.svelte';
+  import Feature from '@components/home/Feature.svelte';
   import type {FileDropOptions} from 'filedrop-svelte';
   import {_} from 'svelte-i18n';
 
@@ -29,4 +30,6 @@
   <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">
     Reduce file size while optimizing for maximal PDF quality.
   </p>
+
+  <Feature />
 </div>
