@@ -1,6 +1,6 @@
 <!-- svelte-ignore a11y-missing-attribute -->
 <script>
-  import {_} from 'svelte-i18n'
+  import {_} from 'svelte-i18n';
 </script>
 
 <footer class="footer p-10 bg-base-200 text-base-content">
@@ -21,10 +21,10 @@
   </div>
   <div>
     <span class="footer-title">{@html $_('Services')}</span>
-    <a class="link link-hover">{@html $_('Branding')}</a>
-    <a class="link link-hover">{@html $_('Design')}</a>
-    <a class="link link-hover">{@html $_('Marketing')}</a>
-    <a class="link link-hover">{@html $_('Advertisement')}</a>
+    <a class="link link-hover" href="/compress-pdf">Compress-PDF</a>
+    <a class="link link-hover" href="/protect-pdf">Protect-PDF</a>
+    <a class="link link-hover" href="/unlock-pdf">Unlock-PDF</a>
+    <a class="link link-hover" href="/remove-background">Remove-Background</a>
   </div>
   <div>
     <span class="footer-title">{@html $_('Company')}</span>
