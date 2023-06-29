@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { _ } from 'svelte-i18n';
+  import { _ } from 'svelte-i18n';
   import ImageUploader from '@components/common/ImageUploader.svelte';
     import RemoveImageFeature from '@components/pages/RemoveImageFeature.svelte';
 </script>
@@ -27,5 +27,6 @@
     <div class="mx-10">
       <ImageUploader />
     </div>
+    <RemoveImageFeature />
   </div>
 </div>

@@ -1,9 +1,8 @@
+<!-- svelte-ignore a11y-missing-attribute -->
 <script>
-
-    // import { t } from "@store/i18n";
-    import {_} from 'svelte-i18n'
-
+  import {_} from 'svelte-i18n'
 </script>
+
 <footer class="footer p-10 bg-base-200 text-base-content">
   <div>
     <svg

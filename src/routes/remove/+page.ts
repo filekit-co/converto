@@ -1,15 +1,14 @@
-import type { UpdateHeaderProps } from '$lib/types';
-import type { PageLoad } from './$types';
-import {canonicalUrl} from '$lib/utils'
+import type {UpdateHeaderProps} from '$lib/types';
+import type {PageLoad} from './$types';
+import {canonicalUrl} from '$lib/utils';
 
 export const load = (({route}) => {
   const headerProps: UpdateHeaderProps = {
+    title: 'Remove background Image ',
+    keywords:
+      'Remove background from photos, Image background removal, Background removal service, Photo editing tool, Deep learning background removal, Web-based background removal, Image editing service, Background subtraction, Automatic background removal, Online photo editing',
     url: canonicalUrl(route.id),
-    description: `We offer a free online service that allows you to remove the background from any image in just 3 seconds. 
-    Our service is easy to use and requires no registration or sign-in. 
-    Simply upload your image, click the Remove Background button, and your image will be processed instantly. 
-    Your image will be returned with a transparent background, which you can then use for any purpose.
-    Our service is perfect for a variety of tasks, including - Create product mockups - Designing social media graphics - Editing photos - filekit.co`
+    description: `You can successfully remove the background of any type of image file. Utilizing the latest deep learning technology, you can preview the desired result image and download it within 2 minutes.`
   };
-  return {headerProps}
+  return {headerProps};
 }) satisfies PageLoad;

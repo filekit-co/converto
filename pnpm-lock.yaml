@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -64,9 +64,9 @@ devDependencies:
   svelte-check:
     specifier: ^3.0.1
     version: 3.4.4(postcss@8.4.24)(svelte@3.59.2)
-  svelte-spa-router:
-    specifier: ^3.3.0
-    version: 3.3.0
+  svelte-routing:
+    specifier: ^1.10.0
+    version: 1.10.0
   tailwindcss:
     specifier: ^3.3.2
     version: 3.3.2
@@ -2281,11 +2281,6 @@ packages:
       functions-have-names: 1.2.3
     dev: true
 
-  /regexparam@2.0.1:
-    resolution: {integrity: sha512-zRgSaYemnNYxUv+/5SeoHI0eJIgTL/A2pUtXUPLHQxUldagouJ9p+K6IbIZ/JiQuCEv2E2B1O11SjVQy3aMCkw==}
-    engines: {node: '>=8'}
-    dev: true
-
   /resolve-from@4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
     engines: {node: '>=4'}
@@ -2619,10 +2614,8 @@ packages:
       svelte: 3.59.2
       typescript: 5.1.3
 
-  /svelte-spa-router@3.3.0:
-    resolution: {integrity: sha512-cwRNe7cxD43sCvSfEeaKiNZg3FCizGxeMcf7CPiWRP3jKXjEma3vxyyuDtPOam6nWbVxl9TNM3hlE/i87ZlqcQ==}
-    dependencies:
-      regexparam: 2.0.1
+  /svelte-routing@1.10.0:
+    resolution: {integrity: sha512-ZYQEj7FK03iVHpzNg1Uk7svlD8siFks0a+IPUxn7ckaEL7H1uQl17gTdYRMjuEw2f7ZtgE77l6WDjmGql14JbA==}
     dev: true
 
   /svelte@3.59.2:
