@@ -1,7 +1,14 @@
-<script>
+<script lang="ts">
+  import {_, getLocaleFromNavigator} from 'svelte-i18n';
+  const locale = getLocaleFromNavigator();
+  let clientLocale = '';
 
-// import { t } from '@store/i18n';
-  import {_} from 'svelte-i18n'
+  if (locale) {
+    clientLocale = locale.substring(3).toLowerCase();
+  }
+
+  const encodedClientLocale = encodeURIComponent(clientLocale);
+  const airbnbURL = `https://www.airbnb.co.${encodedClientLocale}`
 </script>
 
 <section class="bg-base-200">
@@ -17,7 +24,7 @@
     <div
       class="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 md:grid-cols-3 lg:grid-cols-6 dark:text-gray-400"
     >
-      <a href="#" class="flex justify-center items-center">
+      <a href={airbnbURL} class="flex justify-center items-center">
         <svg
           class="h-9 hover:text-gray-900 dark:hover:text-white"
           viewBox="0 0 125 35"
@@ -32,7 +39,7 @@
           />
         </svg>
       </a>
-      <a href="#" class="flex justify-center items-center">
+      <a href="https://www.google.com" class="flex justify-center items-center">
         <svg
           class="h-9 hover:text-gray-900 dark:hover:text-white"
           viewBox="0 0 86 29"
@@ -47,7 +54,7 @@
           />
         </svg>
       </a>
-      <a href="#" class="flex justify-center items-center">
+      <a href="https://www.microsoft.com" class="flex justify-center items-center">
         <svg
           class="h-8 hover:text-gray-900 dark:hover:text-white"
           viewBox="0 0 151 34"
@@ -72,7 +79,7 @@
         </svg>
       </a>
 
-      <a href="#" class="flex justify-center items-center">
+      <a href="https://www.spotify.com" class="flex justify-center items-center">
         <svg
           class="h-9 hover:text-gray-900 dark:hover:text-white"
           viewBox="0 0 124 38"
@@ -85,7 +92,7 @@
           />
         </svg>
       </a>
-      <a href="#" class="flex justify-center items-center">
+      <a href="https://www.mailchimp.com" class="flex justify-center items-center">
         <svg
           class="h-9 hover:text-gray-900 dark:hover:text-white"
           viewBox="0 0 137 37"
@@ -166,7 +173,7 @@
           />
         </svg>
       </a>
-      <a href="#" class="flex justify-center items-center">
+      <a href="https://www.mashable.com" class="flex justify-center items-center">
         <svg
           class="h-6 hover:text-gray-900 dark:hover:text-white"
           viewBox="0 0 124 21"

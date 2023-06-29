@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { _ } from 'svelte-i18n';
+  import {_} from 'svelte-i18n';
   import ImageUploader from '@components/common/ImageUploader.svelte';
-    import RemoveImageFeature from '@components/pages/RemoveImageFeature.svelte';
+  import Feature from '@components/home/Feature.svelte';
 </script>
 
 <div class="w-full px-2 py-32 lg:px-10">
@@ -18,14 +18,19 @@
       </h2>
     </h2>
     <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">
-      {@html $_('Please')} <span class="underline underline-offset-4">{@html $_('drag & drop')}</span> {@html $_('files')}
+      {@html $_('Please')}
+      <span class="underline underline-offset-4">{@html $_('drag & drop')}</span
+      >
+      {@html $_('files')}
       {@html $_('anywhere on the screen or click the')}
       <span class="underline underline-offset-4">{@html $_('dropzone')}</span>
       {@html $_('below.')}
     </p>
-    
+
     <div class="mx-10">
       <ImageUploader />
     </div>
+
+    <Feature />
   </div>
 </div>

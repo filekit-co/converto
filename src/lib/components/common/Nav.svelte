@@ -31,10 +31,11 @@
       >
         <li><a href="/">{@html $_('Home')}</a></li>
         <li>
-          <a>Parent</a>
+          <a>다른 기능</a>
           <ul class="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
+            <li><a href="/compress-pdf">compress</a></li>
+            <li><a href="/protect-pdf">decrypt</a></li>
+            <li><a href="/unlock-pdf">encrypt</a></li>
           </ul>
         </li>
         <li><a href="/remove-background">{@html $_('Remove')}</a></li>
@@ -56,8 +57,9 @@
         <details>
           <summary>{@html $_('Convert')}</summary>
           <ul class="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
+            <li><a href="/compress-pdf">compress</a></li>
+            <li><a href="/protect-pdf">decrypt</a></li>
+            <li><a href="/unlock-pdf">encrypt</a></li>
           </ul>
         </details>
       </li>

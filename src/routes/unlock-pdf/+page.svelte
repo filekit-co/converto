@@ -1,6 +1,6 @@
 <script lang="ts">
   import FileUploader from '@components/common/FileUploader.svelte';
-    import FileConvertFeature from '@components/pages/FileConvertFeature.svelte';
+  import Feature from '@components/home/Feature.svelte';
   import type {FileDropOptions} from 'filedrop-svelte';
   import {_} from 'svelte-i18n';
 
@@ -33,8 +33,9 @@
     >{@html $_('from PDFs.')}
   </p>
 
-  <section class="pt-4 mx-0 sm:mx-10">
+  <section class="pt-4 mx-0 sm:mx-10 mb-8">
     <FileUploader {fileDropOptions} />
   </section>
-  <FileConvertFeature />
+
+  <Feature />
 </div>

@@ -1,6 +1,6 @@
 <script lang="ts">
   import FileUploader from '@components/common/FileUploader.svelte';
-  import FileConvertFeature from '@components/pages/FileConvertFeature.svelte';
+  import Feature from '@components/home/Feature.svelte';
   import type {FileDropOptions} from 'filedrop-svelte';
   import {_} from 'svelte-i18n';
 
@@ -33,4 +33,6 @@
     >
     with a password.
   </p>
+
+  <Feature />
 </div>

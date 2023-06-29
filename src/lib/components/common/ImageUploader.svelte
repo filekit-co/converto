@@ -1,8 +1,6 @@
 <script lang="ts">
   import {PUBLIC_IMG_API_URL} from '$env/static/public';
   import {_} from 'svelte-i18n';
-  import { writable } from 'svelte/store';
-  import RemoveImageFeature from '@components/pages/RemoveImageFeature.svelte';
 
   let droppedFiles: File[] = [];
   let selectedFile: any = null;
@@ -275,9 +273,6 @@
     </li>
   </ul>
   {/if}
-
-  <RemoveImageFeature />
-
 </div>
 
 
