@@ -47,7 +47,7 @@
         alt="Filekit Logo"
       />
     </a>
-    <a class="btn btn-ghost normal-case text-xl">Filekit</a>
+    <a href="/" class="btn btn-ghost normal-case text-xl">Filekit</a>
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
