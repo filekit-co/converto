@@ -28,7 +28,7 @@
     </h2>
   </div>
   <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">
-    {@html $_('An easy-to-use online tool to')}<span
+    {@html $_('An easy-to-use online tool to')}&nbsp<span
       class="underline underline-offset-4">{@html $_('remove passwords')}</span
     >{@html $_('from PDFs.')}
   </p>

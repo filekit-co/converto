@@ -29,22 +29,39 @@
         tabindex="0"
         class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
       >
-        <li><button>Home</button></li>
-        <li><button>Remove</button></li>
+        <li><a href="/">{@html $_('Home')}</a></li>
+        <li>
+          <a>Parent</a>
+          <ul class="p-2">
+            <li><a>Submenu 1</a></li>
+            <li><a>Submenu 2</a></li>
+          </ul>
+        </li>
+        <li><a href="/remove-background">{@html $_('Remove')}</a></li>
       </ul>
     </div>
-    <img
-      src="/images/paper_folder.png"
-      class="mr-3 h-10 hidden md:block"
-      alt="Converto Logo"
-    />
-    <a class="btn btn-ghost normal-case text-xl">Converto</a>
+    <a href="/" title="filekit">
+      <img
+        src="/images/paper_folder.png"
+        class="mr-3 h-10 hidden md:block"
+        alt="Filekit Logo"
+      />
+    </a>
+    <a class="btn btn-ghost normal-case text-xl">Filekit</a>
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
-      <li><button>Home</button></li>
-
-      <li><button>Remove</button></li>
+      <li><a href="/">{@html $_('Home')}</a></li>
+      <li tabindex="0">
+        <details>
+          <summary>{@html $_('Convert')}</summary>
+          <ul class="p-2">
+            <li><a>Submenu 1</a></li>
+            <li><a>Submenu 2</a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a href="/remove-background">{@html $_('Remove')}</a></li>
     </ul>
   </div>
 

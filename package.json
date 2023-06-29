@@ -8,7 +8,8 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"prepare": "svelte-kit sync"
+		"prepare": "svelte-kit sync",
+		"postbuild": "npx svelte-sitemap --out-dir .vercel/output/static --domain https://www.filekit.co"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
@@ -25,7 +26,8 @@
 		"prettier-plugin-svelte": "^2.10.1",
 		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
-		"svelte-routing": "^1.10.0",
+		"svelte-sitemap": "^2.6.0",
+		"svelte-spa-router": "^3.3.0",
 		"tailwindcss": "^3.3.2",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
@@ -35,6 +37,7 @@
 	"dependencies": {
 		"@sveltejs/adapter-vercel": "^3.0.1",
 		"@tabler/icons-svelte": "^2.23.0",
+		"jszip": "^3.10.1",
 		"svelte-i18n": "^3.6.0",
 		"svelte-loading-spinners": "^0.3.4",
 		"svelte-preprocess": "^5.0.4"

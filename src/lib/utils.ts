@@ -3,6 +3,7 @@ import {DEFAULT_FILE_NAME} from '$lib/consts';
 
 export const canonicalUrl = (route: string) => `${PUBLIC_BASE_URL}${route}`;
 
+// i.g. content-disposition: attachment; filename=file (5).pdf 
 export const fileNameFromHeaders = (headers: Headers) => {
   const contentDisposition = headers.get(
     'content-disposition'
@@ -10,7 +11,8 @@ export const fileNameFromHeaders = (headers: Headers) => {
   return contentDisposition
     ? contentDisposition
         .split(';')
-        .find(part => part.trim().startsWith('filename='))
+        .map(part => part.trim())
+        .find(part => part.startsWith('filename='))
         ?.split('=')[1]
         ?.trim() || DEFAULT_FILE_NAME
     : DEFAULT_FILE_NAME;

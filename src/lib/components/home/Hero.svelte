@@ -1,6 +1,6 @@
 <script>
   // import {t} fro../../store/i18n;
-  import { _ } from 'svelte-i18n'
+  import {_} from 'svelte-i18n';
 </script>
 
 <div class="hero min-h-screen py-32 bg-base-200">
@@ -17,7 +17,7 @@
         {@html $_('Description')}
       </p>
       <a
-        href="/pdf/unlock"
+        href="/unlock-pdf"
         class="btn btn-accent btn-lg btn-wide px-12 normal-case"
       >
         <!-- Convert file -->
