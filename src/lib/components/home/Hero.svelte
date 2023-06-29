@@ -17,7 +17,7 @@
         {@html $_('Description')}
       </p>
       <a
-        href="/files/unlock-pdf"
+        href="/unlock-pdf"
         class="btn btn-accent btn-lg btn-wide px-12 normal-case"
       >
         <!-- Convert file -->
