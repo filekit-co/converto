@@ -8,12 +8,13 @@ export const fetchPdfToDoc = async (data: fileUploadData) =>  await base(`${PUBL
 export const fetchPdfToDocx = async (data: fileUploadData) =>  await base(`${PUBLIC_FILE_API_URL}/pdf-to-docx`, data)
 
 export const fetchEpubToDoc = async (data: fileUploadData) =>  await base(`${PUBLIC_FILE_API_URL}/epub-to-doc`, data)
-export const fetchXpsToDoc = async (data: fileUploadData) =>  await base(`${PUBLIC_FILE_API_URL}/xps-to-doc`, data)
 export const fetchEpubToDocx = async (data: fileUploadData) =>  await base(`${PUBLIC_FILE_API_URL}/epub-to-docx`, data)
-export const fetchXpsToDocx = async (data: fileUploadData) =>  await base(`${PUBLIC_FILE_API_URL}/xps-to-docx`, data)
-
 export const fetchEpubToPdf = async (data: fileUploadData) =>  await base(`${PUBLIC_FILE_API_URL}/epub-to-pdf`, data)
+
+export const fetchXpsToDoc = async (data: fileUploadData) =>  await base(`${PUBLIC_FILE_API_URL}/xps-to-doc`, data)
+export const fetchXpsToDocx = async (data: fileUploadData) =>  await base(`${PUBLIC_FILE_API_URL}/xps-to-docx`, data)
 export const fetchXpsToPdf = async (data: fileUploadData) =>  await base(`${PUBLIC_FILE_API_URL}/xps-to-pdf`, data)
+
 export const fetchOxpsToPdf = async (data: fileUploadData) =>  await base(`${PUBLIC_FILE_API_URL}/oxps-to-pdf`, data)
 export const fetchCbzToPdf = async (data: fileUploadData) =>  await base(`${PUBLIC_FILE_API_URL}/cbz-to-pdf`, data)
 export const fetchFb2ToPdf = async (data: fileUploadData) =>  await base(`${PUBLIC_FILE_API_URL}/fb2-to-pdf`, data)
