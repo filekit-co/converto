@@ -9,7 +9,7 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"prepare": "svelte-kit sync",
-		"postbuild": "npx svelte-sitemap --out-dir .svelte-kit/cloudflare --domain https://www.filekit.co --debug"
+		"postbuild": "npx svelte-sitemap --out-dir .svelte-kit/cloudflare --domain https://filekit.pages.dev --debug"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-cloudflare": "^2.3.0",
