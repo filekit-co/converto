@@ -9,20 +9,21 @@ const config = {
   preprocess: vitePreprocess(),
 
   kit: {
-    adapter: adapter({ routes: { include: ['/*'], exclude: ['<all>', '/sitemap.xml'] } })
+    adapter: adapter({ routes: { include: ['/*'], exclude: ['<all>', '/sitemap.xml'] } }),
+    alias: {
+      '@src': path.resolve('/src'),
+      '@components': path.resolve('src/lib/components'),
+      '@store': path.resolve('src/lib/store'),
+      '@utils': path.resolve('src/utils')
+    },
   },
-  alias: {
-    '@src': path.resolve('/src'),
-    '@components': path.resolve('src/lib/components'),
-    '@store': path.resolve('src/lib/store'),
-    '@utils': path.resolve('src/utils')
-  },
+
   // refs: https://kit.svelte.dev/docs/configuration#env
   env: {
     dir: '.',
     publicPrefix: 'PUBLIC_'
   }
 }
-};
+
 
 export default config;
