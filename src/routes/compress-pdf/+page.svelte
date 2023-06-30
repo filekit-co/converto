@@ -1,5 +1,4 @@
 <script lang="ts">
-  import FileUploader from '@components/common/FileUploader.svelte';
   import type {FileDropOptions} from 'filedrop-svelte';
   import {_} from 'svelte-i18n';
 

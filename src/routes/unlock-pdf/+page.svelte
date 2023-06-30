@@ -1,5 +1,5 @@
 <script lang="ts">
-  import FileUploader from '@components/common/FileUploader.svelte';
+  import UnlockUploader from '@components/FileUploaders/UnlockPdf.svelte';
   import DragDrop from '@components/common/DragDrop.svelte';
   import {onDestroy} from 'svelte';
   import type {FileDropOptions, Files} from 'filedrop-svelte';
@@ -51,7 +51,7 @@
 
   <section class="pt-4 mx-0 sm:mx-10">
     {#if isFileExist}
-      <FileUploader bind:files />
+      <UnlockUploader bind:files />
     {:else}
       <DragDrop bind:files {fileDropOptions} />
     {/if}

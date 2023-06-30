@@ -2,23 +2,16 @@
   import {_} from 'svelte-i18n';
   import type {FileWithPath} from '$lib/types';
   import type {Files} from 'filedrop-svelte';
-
   import {filesize} from 'filesize';
   import {IconPdf, IconX} from '@tabler/icons-svelte';
-
-  import Downloader from './Downloader.svelte';
-  import {onMount} from 'svelte';
+  import {fetchUnlocks} from '$lib/apis';
+  import Downloader from '@components/common/Downloader.svelte';
 
   export let files: Files;
-
   const formId = 'formId';
-  let uploadData: [FileWithPath, string][];
-
+  let uploadData: [FileWithPath, string][] = [];
   $: isDownloading = false;
 
-  onMount(() => {
-    console.log(files);
-  });
   function fileName(filename: string) {
     return filename.length > 10 ? filename.substring(0, 10) + '...' : filename;
   }
@@ -41,6 +34,7 @@
   }
 
   async function submitFiles(e: any) {
+    isDownloading = true;
     if (files.accepted.length <= 0) {
       throw new Error("There's no files to submit");
     }
@@ -51,13 +45,11 @@
       ) as HTMLInputElement;
       return [file, passwordInput.value];
     });
-
-    isDownloading = true;
   }
 </script>
 
 {#if isDownloading}
-  <Downloader {uploadData} />
+  <Downloader fetchFn={fetchUnlocks} {uploadData} />
 {:else}
   <form id={formId} on:submit|once|preventDefault={submitFiles}>
     <div class="border rounded-2xl shadow-2xl shadow-slate-500 overflow-x-auto">

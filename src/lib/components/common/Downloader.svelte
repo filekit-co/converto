@@ -1,86 +1,23 @@
 <script lang="ts">
   import {onMount, onDestroy} from 'svelte';
-  import type {FileWithPath} from '$lib/types';
+
   import {loading} from '@components/common/loading';
-  import {fileNameFromHeaders} from '$lib/utils';
-  import {PUBLIC_FILE_API_URL} from '$env/static/public';
+
   import {IconDownload, IconPdf} from '@tabler/icons-svelte';
   import {filesize} from 'filesize';
-  import JSZip from 'jszip';
-  import {invalidate} from '$app/navigation';
 
+  import {
+    buildDownloadListAndZipLink,
+    type DownloadItem
+  } from '@components/common/downloader';
+
+  export let fetchFn: any;
   export let uploadData: any;
 
   $: $loading;
 
-  interface DownloadItem {
-    fileName: string;
-    fileSize: number;
-    downloadUrl: string;
-  }
-
   let downloadList: DownloadItem[] = [];
   let zipDownloadLink: HTMLAnchorElement | undefined;
-
-  // TODO: seperate it
-  async function fetchUnlocks(data: [FileWithPath, string][]) {
-    const results = await Promise.all(
-      data.map(([file, password]) => {
-        const formData = new FormData();
-        formData.append('file', file);
-        formData.append('password', password);
-
-        return fetch(`${PUBLIC_FILE_API_URL}/pdf/decrypt`, {
-          method: 'POST',
-          headers: {
-            'Access-Control-Expose-Headers': 'Content-Disposition'
-          },
-          body: formData
-        });
-      })
-    );
-    return results;
-  }
-
-  async function buildDownloadList(responses: Response[]) {
-    const downloadItems: DownloadItem[] = [];
-    const blobs: Blob[] = [];
-
-    await Promise.all(
-      responses
-        .filter(response => response.ok)
-        .map(async response => {
-          const {blob, ...downloadItem} = await buildDownloadItem(response);
-          blobs.push(blob);
-          downloadItems.push(downloadItem as DownloadItem);
-        })
-    );
-
-    const zip = new JSZip();
-    downloadItems.forEach(({fileName}, i) => {
-      zip.file(fileName, blobs[i]);
-    });
-
-    const zipContent = await zip.generateAsync({
-      type: 'blob'
-    });
-    zipDownloadLink = document.createElement('a');
-    zipDownloadLink.href = URL.createObjectURL(zipContent);
-    zipDownloadLink.download = 'download.zip';
-
-    return downloadItems;
-  }
-
-  async function buildDownloadItem(response: Response) {
-    const blob = await response.blob();
-
-    return {
-      fileName: fileNameFromHeaders(response.headers),
-      fileSize: blob.size,
-      downloadUrl: URL.createObjectURL(blob),
-      blob
-    };
-  }
 
   function handleDownload(filename: string, url: string) {
     try {
@@ -113,8 +50,10 @@
     $loading = true;
 
     try {
-      const responses = await fetchUnlocks(uploadData);
-      downloadList = await buildDownloadList(responses);
+      const responses = await fetchFn(uploadData);
+      ({downloadList, zipDownloadLink} = await buildDownloadListAndZipLink(
+        responses
+      ));
     } catch (e) {
       console.error(e);
     } finally {
