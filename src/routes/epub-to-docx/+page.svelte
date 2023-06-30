@@ -5,12 +5,12 @@
   import {_} from 'svelte-i18n';
   import Downloader from '@components/common/Downloader.svelte';
 
-  import {fetchEpubToDocx} from '$lib/apis'; // TODO: change
-  import BaseUploader from '@components/FileUploaders/FileUploader.svelte'; // TODO: change
-  import type {fileUploadData} from '@components/FileUploaders/types'; // TODO: change
+  import {fetchEpubToDocx} from '$lib/apis';
+  import BaseUploader from '@components/FileUploaders/FileUploader.svelte';
+  import type {fileUploadData} from '@components/FileUploaders/types';
 
   let fileDropOptions: FileDropOptions = {
-    accept: ['.epub'], // TODO: change
+    accept: ['.epub'],
     hideInput: true,
     multiple: true
   };
@@ -33,7 +33,6 @@
 
 <div class="w-full px-2 py-32 sm:px-20 lg:px-32 text-center mx-auto">
   <div class="join">
-    <!-- TODO: change -->
     <svg
       class="w-14 md-20 lg:w-32 join-item"
       xmlns="http://www.w3.org/2000/svg"
@@ -98,11 +97,9 @@
       </g>
     </svg>
     <h2 class="text-[clamp(2rem,6vw,4.5rem)] font-black join-item">
-      <!-- TODO: change text and color -->
       EPUB to&nbsp<span class="text-[#A4A9AD]">DOCX</span>
     </h2>
   </div>
-  <!-- TODO: change text -->
   <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">
     Convert EPUB to DOCX online for free
   </p>
@@ -110,7 +107,6 @@
   <section class="pt-4 mx-0 sm:mx-10">
     {#if isFileExist}
       {#if isDownloading}
-        <!-- TODO: change -->
         <Downloader fetchFn={fetchEpubToDocx} {uploadData} />
       {:else}
         <BaseUploader bind:files bind:uploadData bind:isDownloading />
