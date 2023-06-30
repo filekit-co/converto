@@ -1,16 +1,14 @@
 import {PUBLIC_FILE_API_URL} from '$env/static/public';
 import type {FileWithPath} from '$lib/types';
 
-
-export async function fetchUnlocks(data: [FileWithPath, string][]) {
-  
-  const results = await Promise.all(
+async function fetchWithPassword(url: string, data: [FileWithPath, string][]) {
+  return Promise.all(
     data.map(([file, password]) => {
       const formData = new FormData();
       formData.append('file', file);
       formData.append('password', password);
 
-      return fetch(`${PUBLIC_FILE_API_URL}/pdf/decrypt`, {
+      return fetch(url, {
         method: 'POST',
         headers: {
           'Access-Control-Expose-Headers': 'Content-Disposition'
@@ -19,11 +17,7 @@ export async function fetchUnlocks(data: [FileWithPath, string][]) {
       });
     })
   );
-  
-  return results;
 }
 
-
-export async function fetchLocks(data: [FileWithPath, string][]) {
-  return undefined
-}
+export const fetchUnlocks = async (data: [FileWithPath, string][]) =>  await fetchWithPassword(`${PUBLIC_FILE_API_URL}/pdf/decrypt`, data)
+export const fetchLocks = async (data: [FileWithPath, string][]) =>  await fetchWithPassword(`${PUBLIC_FILE_API_URL}/pdf/encrypt`, data)
