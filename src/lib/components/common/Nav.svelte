@@ -6,7 +6,7 @@
   import {_} from 'svelte-i18n';
 </script>
 
-<div class="navbar bg-base-300 drop-shadow-lg">
+<div class="navbar bg-base-300 drop-shadow-lg z-30">
   <div class="navbar-start">
     <div class="dropdown">
       <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -30,26 +30,60 @@
         class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
       >
         <li>
-          <a class="text-2xl font-semibold" href="/">{@html $_('Home')}</a>
+          <a class="" href="/">{@html $_('Home')}</a>
         </li>
         <li>
-          <a class="text-2xl font-semibold">{@html $_('Convert')}</a>
+          <a class="">{@html $_('Convert')}</a>
           <ul class="p-2">
             <li>
-              <a class="text-xl font-medium" href="/compress-pdf">compress</a>
+              <a href="/compress-pdf">compress</a>
             </li>
             <li>
-              <a class="text-xl font-medium" href="/protect-pdf">protect</a>
+              <a href="/protect-pdf">protect</a>
             </li>
             <li>
-              <a class="text-xl font-medium" href="/unlock-pdf">unlock</a>
+              <a href="/unlock-pdf">unlock</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/pdf-to-doc">PDF to DOC</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/pdf-to-docx">PDF to DOCX</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/pdf-to-word">PDF to WORD</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/xps-to-doc">XPS to DOC</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/xps-to-docx">XPS to DOCX</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/xps-to-pdf">XPS to PDF</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/cbz-to-pdf">CBZ to PDF</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/epub-to-doc">EPUB to DOC</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/epub-to-docx">EPUB to DOCX</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/epub-to-pdf">EPUB to PDF</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/fb2-to-pdf">FB2 to PDF</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/oxps-to-pdf">OXPS to PDF</a>
             </li>
           </ul>
         </li>
         <li>
-          <a class="text-2xl font-semibold" href="/remove-background"
-            >{@html $_('Remove')}</a
-          >
+          <a class="" href="/remove-background">{@html $_('Remove')}</a>
         </li>
       </ul>
     </div>
@@ -65,28 +99,62 @@
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
       <li>
-        <a class="text-2xl font-bold" href="/">{@html $_('Home')}</a>
+        <a href="/">{@html $_('Home')}</a>
       </li>
       <li tabindex="0">
         <details>
-          <summary class="text-2xl font-bold">{@html $_('Convert')}</summary>
+          <summary>{@html $_('Convert')}</summary>
           <ul class="p-2">
             <li>
-              <a class="text-xl font-semibold" href="/compress-pdf">compress</a>
+              <a href="/compress-pdf">compress</a>
             </li>
             <li>
-              <a class="text-xl font-semibold" href="/protect-pdf">protect</a>
+              <a href="/protect-pdf">protect</a>
             </li>
             <li>
-              <a class="text-xl font-semibold" href="/unlock-pdf">unlock</a>
+              <a href="/unlock-pdf">unlock</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/pdf-to-doc">PDF to DOC</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/pdf-to-docx">PDF to DOCX</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/pdf-to-word">PDF to WORD</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/xps-to-doc">XPS to DOC</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/xps-to-docx">XPS to DOCX</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/xps-to-pdf">XPS to PDF</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/cbz-to-pdf">CBZ to PDF</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/epub-to-doc">EPUB to DOC</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/epub-to-docx">EPUB to DOCX</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/epub-to-pdf">EPUB to PDF</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/fb2-to-pdf">FB2 to PDF</a>
+            </li>
+            <li>
+              <a class="link link-hover" href="/oxps-to-pdf">OXPS to PDF</a>
             </li>
           </ul>
         </details>
       </li>
       <li>
-        <a class="text-2xl font-bold" href="/remove-background"
-          >{@html $_('Remove')}</a
-        >
+        <a href="/remove-background">{@html $_('Remove')}</a>
       </li>
     </ul>
   </div>
