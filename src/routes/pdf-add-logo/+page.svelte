@@ -2,7 +2,7 @@
   import type {FileDropOptions} from 'filedrop-svelte';
   import {_} from 'svelte-i18n';
 
-  let fileDropOptions: FileDropOptions = {',
+  let fileDropOptions: FileDropOptions = {
     accept: ['.pdf'],
     hideInput: true,
     multiple: true
