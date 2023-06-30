@@ -9,10 +9,11 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"prepare": "svelte-kit sync",
-		"postbuild": "npx svelte-sitemap --out-dir .vercel/output/static --domain https://www.filekit.co"
+		"postbuild": "npx svelte-sitemap --out-dir .svelte-kit/cloudflare --domain https://www.filekit.co --debug"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/adapter-cloudflare": "^2.3.0",
 		"@sveltejs/kit": "^1.5.0",
 		"@types/node": "^20.3.1",
 		"autoprefixer": "^10.4.14",
@@ -35,7 +36,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@sveltejs/adapter-vercel": "^3.0.1",
 		"@tabler/icons-svelte": "^2.23.0",
 		"jszip": "^3.10.1",
 		"svelte-i18n": "^3.6.0",
