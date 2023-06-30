@@ -6,13 +6,13 @@
   import FileConvertFeature from '@components/pages/FileConvertFeature.svelte';
 
   import {_} from 'svelte-i18n';
-  import type {FileWithPath} from '$lib/types';
-  import PasswordUploader from '@components/FileUploaders/PasswordUploader.svelte';
+
+  import PasswordUploader from '@components/FileUploaders/FilePasswordUploader.svelte';
   import {fetchUnlocks} from '$lib/apis';
   import Downloader from '@components/common/Downloader.svelte';
+  import type {filePasswordUploadData} from '@components/FileUploaders/types';
 
   let fileDropOptions: FileDropOptions = {
-    id: 'unlockUploader',
     accept: ['.pdf'],
     hideInput: true,
     multiple: true
@@ -21,7 +21,7 @@
     accepted: [],
     rejected: []
   };
-  let uploadData: [FileWithPath, string][] = [];
+  let uploadData: filePasswordUploadData = [];
   $: isDownloading = false;
   $: isFileExist = files.accepted.length > 0;
 

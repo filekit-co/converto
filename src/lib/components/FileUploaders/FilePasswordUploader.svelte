@@ -1,12 +1,13 @@
 <script lang="ts">
   import {_} from 'svelte-i18n';
-  import type {FileWithPath} from '$lib/types';
+
   import type {Files} from 'filedrop-svelte';
   import {filesize} from 'filesize';
   import {IconPdf, IconX} from '@tabler/icons-svelte';
+  import type {filePasswordUploadData} from './types';
 
   export let files: Files;
-  export let uploadData: [FileWithPath, string][];
+  export let uploadData: filePasswordUploadData;
   export let isDownloading: boolean;
 
   const formId = 'formId';
@@ -32,7 +33,6 @@
     } as Files;
   }
 
-  // todo: diff
   async function submitFiles(e: any) {
     isDownloading = true;
     if (files.accepted.length <= 0) {

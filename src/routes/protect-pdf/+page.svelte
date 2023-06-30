@@ -5,11 +5,10 @@
   import {_} from 'svelte-i18n';
   import Downloader from '@components/common/Downloader.svelte';
   import {fetchLocks} from '$lib/apis';
-  import type {FileWithPath} from '$lib/types';
-  import PasswordUploader from '@components/FileUploaders/PasswordUploader.svelte';
+  import PasswordUploader from '@components/FileUploaders/FilePasswordUploader.svelte';
+  import type {filePasswordUploadData} from '@components/FileUploaders/types';
 
   let fileDropOptions: FileDropOptions = {
-    id: 'lockUploader',
     accept: ['.pdf'],
     hideInput: true,
     multiple: true
@@ -19,7 +18,7 @@
     rejected: []
   };
 
-  let uploadData: [FileWithPath, string][] = [];
+  let uploadData: filePasswordUploadData = [];
   $: isDownloading = false;
   $: isFileExist = files.accepted.length > 0;
 

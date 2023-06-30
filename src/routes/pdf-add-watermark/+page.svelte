@@ -3,7 +3,6 @@
   import {_} from 'svelte-i18n';
 
   let fileDropOptions: FileDropOptions = {
-    id: 'watermarkUploader',
     accept: ['.pdf'],
     hideInput: true,
     multiple: true
