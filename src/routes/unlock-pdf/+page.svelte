@@ -3,8 +3,7 @@
   import {onDestroy} from 'svelte';
   import type {FileDropOptions, Files} from 'filedrop-svelte';
 
-  import FileConvertFeature from '@components/pages/FileConvertFeature.svelte';
-
+  import Feature from '@components/home/Feature.svelte';
   import {_} from 'svelte-i18n';
 
   import PasswordUploader from '@components/FileUploaders/FilePasswordUploader.svelte';
@@ -66,5 +65,5 @@
     {/if}
   </section>
 
-  <FileConvertFeature />
+  <Feature />
 </div>

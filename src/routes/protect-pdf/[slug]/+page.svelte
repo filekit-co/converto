@@ -1,9 +1,11 @@
 <script lang="ts">
-  import type {FileDropOptions} from 'filedrop-svelte';
+  import FileUploader from '@components/common/FileUploader.svelte';
   import Feature from '@components/home/Feature.svelte';
+  import type {FileDropOptions} from 'filedrop-svelte';
   import {_} from 'svelte-i18n';
 
   let fileDropOptions: FileDropOptions = {
+    id: 'lockUploader',
     accept: ['.pdf'],
     hideInput: true,
     multiple: true
@@ -22,11 +24,14 @@
       />
     </svg>
     <h2 class="text-[clamp(2rem,6vw,4.5rem)] font-black join-item">
-      Compress&nbsp<span class="text-primary">PDF</span>
+      Protect&nbsp<span class="text-secondary">PDF</span>
     </h2>
   </div>
   <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">
-    Reduce file size while optimizing for maximal PDF quality.
+    An easy-to-use online tool to <span class="underline underline-offset-4"
+      >Protect PDF files</span
+    >
+    with a password.
   </p>
 
   <Feature />

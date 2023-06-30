@@ -33,7 +33,6 @@
     </div>
 
     <ImgExample />
-    <!-- <Carosel /> -->
     <Feature />
   </div>
 </div>

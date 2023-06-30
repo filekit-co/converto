@@ -1,9 +1,11 @@
 <script lang="ts">
-  import type {FileDropOptions} from 'filedrop-svelte';
+  import FileUploader from '@components/common/FileUploader.svelte';
   import Feature from '@components/home/Feature.svelte';
+  import type {FileDropOptions} from 'filedrop-svelte';
   import {_} from 'svelte-i18n';
 
   let fileDropOptions: FileDropOptions = {
+    id: 'unlockUploader',
     accept: ['.pdf'],
     hideInput: true,
     multiple: true
@@ -22,12 +24,18 @@
       />
     </svg>
     <h2 class="text-[clamp(2rem,6vw,4.5rem)] font-black join-item">
-      Compress&nbsp<span class="text-primary">PDF</span>
+      {@html $_('Unlock')} <span class="text-accent">PDF</span>
     </h2>
   </div>
   <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">
-    Reduce file size while optimizing for maximal PDF quality.
+    {@html $_('An easy-to-use online tool to')}&nbsp<span
+      class="underline underline-offset-4">{@html $_('remove passwords')}</span
+    >{@html $_('from PDFs.')}
   </p>
+
+  <section class="pt-4 mx-0 sm:mx-10 mb-8">
+    <FileUploader {fileDropOptions} />
+  </section>
 
   <Feature />
 </div>

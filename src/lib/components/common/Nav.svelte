@@ -29,15 +29,28 @@
         tabindex="0"
         class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
       >
-        <li><a href="/">{@html $_('Home')}</a></li>
         <li>
-          <a>Parent</a>
+          <a class="text-2xl font-semibold" href="/">{@html $_('Home')}</a>
+        </li>
+        <li>
+          <a class="text-2xl font-semibold">{@html $_('Convert')}</a>
           <ul class="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
+            <li>
+              <a class="text-xl font-medium" href="/compress-pdf">compress</a>
+            </li>
+            <li>
+              <a class="text-xl font-medium" href="/protect-pdf">protect</a>
+            </li>
+            <li>
+              <a class="text-xl font-medium" href="/unlock-pdf">unlock</a>
+            </li>
           </ul>
         </li>
-        <li><a href="/remove-background">{@html $_('Remove')}</a></li>
+        <li>
+          <a class="text-2xl font-semibold" href="/remove-background"
+            >{@html $_('Remove')}</a
+          >
+        </li>
       </ul>
     </div>
     <a href="/" title="filekit">
@@ -51,17 +64,30 @@
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
-      <li><a href="/">{@html $_('Home')}</a></li>
+      <li>
+        <a class="text-2xl font-bold" href="/">{@html $_('Home')}</a>
+      </li>
       <li tabindex="0">
         <details>
-          <summary>{@html $_('Convert')}</summary>
+          <summary class="text-2xl font-bold">{@html $_('Convert')}</summary>
           <ul class="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
+            <li>
+              <a class="text-xl font-semibold" href="/compress-pdf">compress</a>
+            </li>
+            <li>
+              <a class="text-xl font-semibold" href="/protect-pdf">protect</a>
+            </li>
+            <li>
+              <a class="text-xl font-semibold" href="/unlock-pdf">unlock</a>
+            </li>
           </ul>
         </details>
       </li>
-      <li><a href="/remove-background">{@html $_('Remove')}</a></li>
+      <li>
+        <a class="text-2xl font-bold" href="/remove-background"
+          >{@html $_('Remove')}</a
+        >
+      </li>
     </ul>
   </div>
 

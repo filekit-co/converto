@@ -14,3 +14,13 @@ export interface FileWithPath extends Blob {
   readonly path?: string;
   readonly webkitRelativePath: string;
 }
+
+export interface FeatureProps {
+  head1: string;
+  head2: string;
+  description: string;
+  subHead: string[];
+  subDescription: string[];
+}
+
+export type UpdateFeatureProps = Partial<FeatureProps>

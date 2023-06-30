@@ -4,9 +4,10 @@ import {canonicalUrl} from '$lib/utils'
 
 export const load = (({route}) => {
   const headerProps: UpdateHeaderProps = {
-    title: 'Add a logo to a PDF. Add text or image into a PDF',
+    title: 'Compress PDF online. Same PDF quality less file size',
     url: canonicalUrl(route.id),
-    description: `Choose an image or text to add logo into your PDF files. Select position, transparency and typography.`,
+    description: `Compress PDF file to get the same PDF quality but less filesize. Compress or optimize PDF files online, easily and free.`,
+    keywords: `compress pdf size, reduce pdf size, compress pdf file, pdf compressor online, reduce size pdf, reduce pdf size, reduce dpi PDF, reduce PDF dpi`,
   };
   const featureProps: UpdateFeatureProps = {
     head1: 'Best file conversion Software',

@@ -1,9 +1,11 @@
 <script lang="ts">
-  import type {FileDropOptions} from 'filedrop-svelte';
+  import FileUploader from '@components/common/FileUploader.svelte';
   import Feature from '@components/home/Feature.svelte';
+  import type {FileDropOptions} from 'filedrop-svelte';
   import {_} from 'svelte-i18n';
 
   let fileDropOptions: FileDropOptions = {
+    id: 'compressUploader',
     accept: ['.pdf'],
     hideInput: true,
     multiple: true
