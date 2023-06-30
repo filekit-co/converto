@@ -1,5 +1,4 @@
 <script lang="ts">
-  import UnlockUploader from '@components/FileUploaders/UnlockPdf.svelte';
   import DragDrop from '@components/common/DragDrop.svelte';
   import {onDestroy} from 'svelte';
   import type {FileDropOptions, Files} from 'filedrop-svelte';
@@ -7,6 +6,10 @@
   import FileConvertFeature from '@components/pages/FileConvertFeature.svelte';
 
   import {_} from 'svelte-i18n';
+  import type {FileWithPath} from '$lib/types';
+  import PasswordUploader from '@components/FileUploaders/PasswordUploader.svelte';
+  import {fetchUnlocks} from '$lib/apis';
+  import Downloader from '@components/common/Downloader.svelte';
 
   let fileDropOptions: FileDropOptions = {
     id: 'unlockUploader',
@@ -18,6 +21,8 @@
     accepted: [],
     rejected: []
   };
+  let uploadData: [FileWithPath, string][] = [];
+  $: isDownloading = false;
   $: isFileExist = files.accepted.length > 0;
 
   onDestroy(() => {
@@ -51,7 +56,11 @@
 
   <section class="pt-4 mx-0 sm:mx-10">
     {#if isFileExist}
-      <UnlockUploader bind:files />
+      {#if isDownloading}
+        <Downloader fetchFn={fetchUnlocks} {uploadData} />
+      {:else}
+        <PasswordUploader bind:files bind:uploadData bind:isDownloading />
+      {/if}
     {:else}
       <DragDrop bind:files {fileDropOptions} />
     {/if}

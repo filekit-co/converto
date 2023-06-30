@@ -1,10 +1,13 @@
 <script lang="ts">
-  import FileUploader from '@components/common/FileUploader.svelte';
   import DragDrop from '@components/common/DragDrop.svelte';
   import {onDestroy} from 'svelte';
   import type {FileDropOptions, Files} from 'filedrop-svelte';
+  import Downloader from '@components/common/Downloader.svelte';
+  import {fetchLocks} from '$lib/apis';
 
   import {_} from 'svelte-i18n';
+  import type {FileWithPath} from '$lib/types';
+  import PasswordUploader from '@components/FileUploaders/PasswordUploader.svelte';
 
   let fileDropOptions: FileDropOptions = {
     id: 'lockUploader',
@@ -16,6 +19,9 @@
     accepted: [],
     rejected: []
   };
+
+  let uploadData: [FileWithPath, string][] = [];
+  $: isDownloading = false;
   $: isFileExist = files.accepted.length > 0;
 
   onDestroy(() => {
@@ -50,7 +56,11 @@
 
   <section class="pt-4 mx-0 sm:mx-10">
     {#if isFileExist}
-      <FileUploader bind:files />
+      {#if isDownloading}
+        <Downloader fetchFn={fetchLocks} {uploadData} />
+      {:else}
+        <PasswordUploader bind:files bind:uploadData bind:isDownloading />
+      {/if}
     {:else}
       <DragDrop bind:files {fileDropOptions} />
     {/if}

@@ -17,3 +17,7 @@ export const fileNameFromHeaders = (headers: Headers) => {
         ?.trim() || DEFAULT_FILE_NAME
     : DEFAULT_FILE_NAME;
 }
+
+export function getMockFile() {
+  return new File([''], 'filename', {type: 'text/pdf'})
+}
