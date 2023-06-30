@@ -1,6 +1,6 @@
 {
 	"name": "converto",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
@@ -12,7 +12,6 @@
 		"postbuild": "npx svelte-sitemap --out-dir .svelte-kit/cloudflare --domain https://www.filekit.co --debug"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/adapter-cloudflare": "^2.3.0",
 		"@sveltejs/kit": "^1.5.0",
 		"@types/node": "^20.3.1",
@@ -39,7 +38,6 @@
 		"@tabler/icons-svelte": "^2.23.0",
 		"jszip": "^3.10.1",
 		"svelte-i18n": "^3.6.0",
-		"svelte-loading-spinners": "^0.3.4",
-		"svelte-preprocess": "^5.0.4"
+		"svelte-loading-spinners": "^0.3.4"
 	}
 }
