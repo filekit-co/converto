@@ -6,15 +6,11 @@
     title: 'Filekit.co - Free Online edit file Tool ',
     author: 'filekit.co',
     keywords:
-      'Merge PDF, split PDF, combine PDF, extract PDF, compress PDF, convert PDF, Word to PDF, Excel to PDF, Powerpoint to PDF, PDF to JPG, JPG to PDF',
+      'Remove Background, Merge PDF, split PDF, combine PDF, extract PDF, compress PDF, convert PDF, Word to PDF, Excel to PDF, Powerpoint to PDF, PDF to JPG, JPG to PDF',
     siteName: 'filekit.co - Online tools for PDF, Images',
     url: 'https://www.filekit.co',
     image: '', // TODO:
-    description: `Best file compression software. File Conversion and Compression Services.
-    Convert documents, images, and PDFs to any format. Compress files to reduce their size. Encrypt and decrypt PDFs. Merge, delete, and arrange PDFs.
-    We offer a wide range of file conversion and compression services to meet your needs. Whether you need to convert a document to PDF, compress a large file, or encrypt a PDF, we can help.
-    Our services are easy to use and affordable. You can convert, compress, and encrypt files online or through our desktop app.
-    Try our file conversion and compression services today and see the difference.`
+    description: `Filekit - Easy tool to convert files online. More than 309 different document, image, spreadsheet, ebook, archive, presentation, audio and video formats supported.`
   };
 
   const pageHeaderProps: UpdateHeaderProps = $page.data?.headerProps || {};
