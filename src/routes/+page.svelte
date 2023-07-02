@@ -8,5 +8,5 @@
 <div class="divider bg-base-200 mb-0 mt-0" />
 <Companies />
 <div class="divider bg-base-200 mb-0 mt-0" />
-<Feature />
+<Feature bgColor="bg-base-200" />
 <div class="divider bg-base-200 mb-0 mt-0" />

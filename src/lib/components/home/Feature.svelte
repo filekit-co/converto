@@ -2,14 +2,9 @@
   import {page} from '$app/stores';
   import type {FeatureProps, UpdateFeatureProps} from '$lib/types';
   import {onMount} from 'svelte';
-  import {
-    IconTransform,
-    IconPhotoEdit,
-    IconBrandSpeedtest,
-    IconCashOff,
-    IconShieldLock,
-    IconDeviceMobile
-  } from '@tabler/icons-svelte';
+  import {IconTransform} from '@tabler/icons-svelte';
+
+  export let bgColor: string = '';
 
   const defaultFeatureProps: FeatureProps = {
     head1: 'File Conversion, Compression, and Background Removal Services',
@@ -48,18 +43,18 @@
   });
 </script>
 
-<section class="bg-base-200">
+<section class={bgColor}>
   <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
     <div class=" mb-8 lg:mb-16">
       <h2 class="mb-4 text-4xl tracking-tight font-extrabold">
         {features.head1}
       </h2>
 
-      <h2 class="mb-4 text-4xl tracking-tight font-extrabold">
-        {features.head2}
+      <h2 class="mb-4 text-2xl underline tracking-tight">
+        "{features.head2}"
       </h2>
 
-      <p class="sm:text-xl">
+      <p class="italic sm:text-xl">
         {features.description}
       </p>
     </div>
