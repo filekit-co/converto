@@ -25,6 +25,9 @@
   <link rel="canonical" href={p.url} />
   <meta name="description" content={p.description} />
 
+  <!-- https://searchadvisor.naver.com/guide/markup-structure -->
+  <meta name="robots" content="index,follow" />
+
   <!-- TODO: upload app key -->
   <meta name="apple-itunes-app" content="" />
   <meta name="google-play-app" content="" />
