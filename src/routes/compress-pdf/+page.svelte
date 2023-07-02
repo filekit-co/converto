@@ -1,13 +1,34 @@
 <script lang="ts">
-  import type {FileDropOptions} from 'filedrop-svelte';
-  import Feature from '@components/home/Feature.svelte';
+  import type {FileDropOptions, Files} from 'filedrop-svelte';
   import {_} from 'svelte-i18n';
+  import type {fileUploadData} from '@components/FileUploaders/types';
+  import {onDestroy} from 'svelte';
+  import DragDrop from '@components/common/DragDrop.svelte';
+  import Downloader from '@components/common/Downloader.svelte';
+  import BaseUploader from '@components/FileUploaders/FileUploader.svelte';
+  import {fetchCompressPdf} from '$lib/apis';
+  import Feature from '@components/home/Feature.svelte';
 
   let fileDropOptions: FileDropOptions = {
     accept: ['.pdf'],
     hideInput: true,
     multiple: true
   };
+  let files: Files = {
+    accepted: [],
+    rejected: []
+  };
+
+  let uploadData: fileUploadData = [];
+  $: isDownloading = false;
+  $: isFileExist = files.accepted.length > 0;
+
+  onDestroy(() => {
+    files = {
+      accepted: [],
+      rejected: []
+    };
+  });
 </script>
 
 <div class="w-full px-2 py-32 sm:px-20 lg:px-32 text-center mx-auto">
@@ -28,6 +49,18 @@
   <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">
     Reduce file size while optimizing for maximal PDF quality.
   </p>
+
+  <section class="pt-4 mx-0 sm:mx-10">
+    {#if isFileExist}
+      {#if isDownloading}
+        <Downloader fetchFn={fetchCompressPdf} {uploadData} />
+      {:else}
+        <BaseUploader bind:files bind:uploadData bind:isDownloading />
+      {/if}
+    {:else}
+      <DragDrop bind:files {fileDropOptions} />
+    {/if}
+  </section>
 
   <Feature />
 </div>

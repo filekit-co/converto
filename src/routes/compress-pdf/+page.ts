@@ -4,29 +4,30 @@ import {canonicalUrl} from '$lib/utils'
 
 export const load = (({route}) => {
   const headerProps: UpdateHeaderProps = {
-    title: 'Add a logo to a PDF. Add text or image into a PDF',
+    title: 'Compress PDF online. Same PDF quality less file size',
     url: canonicalUrl(route.id),
-    description: `Choose an image or text to add logo into your PDF files. Select position, transparency and typography.`,
+    description: `Compress PDF file to get the same PDF quality but less filesize. Compress or optimize PDF files online, easily and free.`,
+    keywords: "PDF compression, compress PDF, advanced compression technology, seamless experience, optimized file size, picture-perfect quality, crystal-clear images, sharp text, lossless compression, effortless efficiency, best compression techniques, enhanced compatibility, lightning-fast performance, trusted reliability, document management, future of PDF compression",
   };
   const featureProps: UpdateFeatureProps = {
-    head1: 'Best file conversion Software',
-    head2: 'Converto removes background images perfectly.',
-    description: 'Converto provides excellent support for removing the background of photos, delivering satisfactory results.',
+    head1: 'Embrace the future of PDF compression with our unparalleled technology.',
+    head2: 'Effortless efficiency, picture-perfect quality, and enhanced compatibility merge to offer you the best PDF compression experience available',
+    description: 'Simplify your document management today and join the ranks of our satisfied users who have already experienced the power of our top-tier compression technology.',
     subHead: [
-      'Flawless Removal',
-      'Online-based',
-      'Support for All Formats',
-      'Easy to Use',
-      'How to Use',
-      'Security'
+      'Seamlessly Streamlined PDFs',
+      'Picture-Perfect Quality',
+      'Effortless Efficiency',
+      'Enhanced File Compatibility',
+      'Lightning-Fast Performance',
+      'Trusted Reliability'
     ],
     subDescription: [
-      'Converto utilizes the latest deep learning technology to flawlessly remove the background of photos.',
-      'You can obtain the desired results directly from your browser without the need to install any software.',
-      'You can remove background images from image files of all formats, including JPEG, PNG, URL, and more.',
-      'Thanks to its user-friendly interface, Converto allows you to remove background images with just one click.',
-      'Select or drag and drop the photo file you want to remove the background image from. Within 2 seconds, you can preview the result image and download it.',
-      'No one can access the files uploaded by users.'
+      'With our advanced compression technology, PDF files are automatically optimized to their smallest possible size without any manual intervention. Say goodbye to bulky documents and enjoy the seamless experience of handling efficiently compressed files.',
+      'Our compression algorithm is designed to preserve every single detail of your documents. Enjoy crystal-clear images and sharp text, as our technology guarantees lossless compression, ensuring the highest quality even after compression.',
+      "Our service takes care of everything behind the scenes, so you don't have to worry about selecting compression options like deflate or deflate_images. Experience effortless efficiency as our technology automatically applies the best compression techniques for you.",
+      'Our compression technology goes the extra mile by automatically expanding images and fonts for better compatibility with various applications. Rest assured that your PDFs will be flawlessly displayed across different platforms and devices.',
+      "You'll be amazed at the lightning-fast performance of our service. Smaller file sizes mean quicker document uploads, downloads, and sharing, saving you valuable time and increasing overall productivity.",
+      'Our compression technology is not only cutting-edge but also trusted and proven to deliver consistent and reliable results. Countless satisfied users have experienced the benefits of our compression service, making it the go-to choice for all your document management needs.'
     ],
 
   }

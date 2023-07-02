@@ -1,6 +1,7 @@
 import {PUBLIC_FILE_API_URL} from '$env/static/public';
 import type { fileUploadData, filePasswordUploadData } from '@components/FileUploaders/types';
 
+export const fetchCompressPdf = async (data: fileUploadData) =>  await base(`${PUBLIC_FILE_API_URL}/pdf/compress`, data)
 export const fetchUnlocks = async (data: filePasswordUploadData) =>  await filePassword(`${PUBLIC_FILE_API_URL}/pdf/decrypt`, data)
 export const fetchLocks = async (data: filePasswordUploadData) =>  await filePassword(`${PUBLIC_FILE_API_URL}/pdf/encrypt`, data)
 
