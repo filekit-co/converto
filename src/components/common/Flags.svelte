@@ -1,7 +1,7 @@
 <script lang="ts">
   import {setLang} from '@store/i18n';
   import {IconWorld} from '@tabler/icons-svelte';
-  import {COUNTRIES} from '$lib/consts';
+  import {COUNTRIES} from '$lib/data';
 </script>
 
 <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
