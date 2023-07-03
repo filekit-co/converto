@@ -4,6 +4,11 @@
 <script>
   import {langs, setLang} from '@store/i18n';
   import {_} from 'svelte-i18n';
+  import {currentLang} from '@store/i18n';
+  let lang = '';
+  currentLang.subscribe(value => {
+    lang = value;
+  });
 </script>
 
 <div class="navbar bg-base-300 drop-shadow-lg z-30">
