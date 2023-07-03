@@ -12,7 +12,7 @@ const config = {
     adapter: adapter({ routes: { include: ['/*'], exclude: ['<all>', '/sitemap.xml'] } }),
     alias: {
       '@src': path.resolve('/src'),
-      '@components': path.resolve('src/lib/components'),
+      '@components': path.resolve('src/components'),
       '@store': path.resolve('src/lib/store'),
       '@utils': path.resolve('src/utils')
     },
