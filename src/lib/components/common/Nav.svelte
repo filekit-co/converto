@@ -5,10 +5,8 @@
   import {langs, setLang} from '@store/i18n';
   import {_} from 'svelte-i18n';
   import {currentLang} from '@store/i18n';
-  let lang = '';
-  currentLang.subscribe(value => {
-    lang = value;
-  });
+  import {page} from '$app/stores';
+  const lang = $page.params.language;
 </script>
 
 <div class="navbar bg-base-300 drop-shadow-lg z-30">
@@ -35,64 +33,90 @@
         class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
       >
         <li>
-          <a class="" href="/">{@html $_('Home')}</a>
+          <a class="" href={`/${lang}`}>{@html $_('Home')}</a>
         </li>
         <li>
           <a class="">{@html $_('Convert')}</a>
           <ul class="p-2">
             <li>
-              <a href="/compress-pdf">compress</a>
+              <a href={`/${lang}/compress-pdf`}>compress</a>
             </li>
             <li>
-              <a href="/protect-pdf">protect</a>
+              <a href={`/${lang}/protect-pdf`}>protect</a>
             </li>
             <li>
-              <a href="/unlock-pdf">unlock</a>
+              <a href={`/${lang}/unlock-pdf`}>unlock</a>
             </li>
             <li>
-              <a class="link link-hover" href="/pdf-to-doc">PDF to DOC</a>
+              <a class="link link-hover" href={`/${lang}/pdf-to-doc`}
+                >PDF to DOC</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/pdf-to-docx">PDF to DOCX</a>
+              <a class="link link-hover" href={`/${lang}/pdf-to-docx`}
+                >PDF to DOCX</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/pdf-to-word">PDF to WORD</a>
+              <a class="link link-hover" href={`/${lang}/pdf-to-word`}
+                >PDF to WORD</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/xps-to-doc">XPS to DOC</a>
+              <a class="link link-hover" href={`/${lang}/xps-to-doc`}
+                >XPS to DOC</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/xps-to-docx">XPS to DOCX</a>
+              <a class="link link-hover" href={`/${lang}/xps-to-docx`}
+                >XPS to DOCX</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/xps-to-pdf">XPS to PDF</a>
+              <a class="link link-hover" href={`/${lang}/xps-to-pdf`}
+                >XPS to PDF</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/cbz-to-pdf">CBZ to PDF</a>
+              <a class="link link-hover" href={`/${lang}/cbz-to-pdf`}
+                >CBZ to PDF</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/epub-to-doc">EPUB to DOC</a>
+              <a class="link link-hover" href={`/${lang}/epub-to-doc`}
+                >EPUB to DOC</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/epub-to-docx">EPUB to DOCX</a>
+              <a class="link link-hover" href={`/${lang}/epub-to-docx`}
+                >EPUB to DOCX</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/epub-to-pdf">EPUB to PDF</a>
+              <a class="link link-hover" href={`/${lang}/epub-to-pdf`}
+                >EPUB to PDF</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/fb2-to-pdf">FB2 to PDF</a>
+              <a class="link link-hover" href={`/${lang}/fb2-to-pdf`}
+                >FB2 to PDF</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/oxps-to-pdf">OXPS to PDF</a>
+              <a class="link link-hover" href={`/${lang}/oxps-to-pdf`}
+                >OXPS to PDF</a
+              >
             </li>
           </ul>
         </li>
         <li>
-          <a class="" href="/remove-background">{@html $_('Remove')}</a>
+          <a class="" href={`/${lang}/remove-background`}
+            >{@html $_('Remove')}</a
+          >
         </li>
       </ul>
     </div>
-    <a href="/" title="filekit">
+    <a href={`/${lang}`} title="filekit">
       <img
         src="/images/paper_folder.png"
         class="mr-3 h-10 hidden md:block"
@@ -104,62 +128,86 @@
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
       <li>
-        <a href="/">{@html $_('Home')}</a>
+        <a href={`/${lang}`}>{@html $_('Home')}</a>
       </li>
       <li tabindex="0">
         <details>
           <summary>{@html $_('Convert')}</summary>
           <ul class="p-2">
             <li>
-              <a href="/compress-pdf">compress</a>
+              <a href={`/${lang}/compress-pdf`}>compress</a>
             </li>
             <li>
-              <a href="/protect-pdf">protect</a>
+              <a href={`/${lang}/protect-pdf`}>protect</a>
             </li>
             <li>
-              <a href="/unlock-pdf">unlock</a>
+              <a href={`/${lang}/unlock-pdf`}>unlock</a>
             </li>
             <li>
-              <a class="link link-hover" href="/pdf-to-doc">PDF to DOC</a>
+              <a class="link link-hover" href={`/${lang}/pdf-to-doc`}
+                >PDF to DOC</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/pdf-to-docx">PDF to DOCX</a>
+              <a class="link link-hover" href={`/${lang}/pdf-to-docx`}
+                >PDF to DOCX</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/pdf-to-word">PDF to WORD</a>
+              <a class="link link-hover" href={`/${lang}/pdf-to-word`}
+                >PDF to WORD</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/xps-to-doc">XPS to DOC</a>
+              <a class="link link-hover" href={`/${lang}/xps-to-doc`}
+                >XPS to DOC</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/xps-to-docx">XPS to DOCX</a>
+              <a class="link link-hover" href={`/${lang}/xps-to-docx`}
+                >XPS to DOCX</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/xps-to-pdf">XPS to PDF</a>
+              <a class="link link-hover" href={`/${lang}/xps-to-pdf`}
+                >XPS to PDF</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/cbz-to-pdf">CBZ to PDF</a>
+              <a class="link link-hover" href={`/${lang}/cbz-to-pdf`}
+                >CBZ to PDF</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/epub-to-doc">EPUB to DOC</a>
+              <a class="link link-hover" href={`/${lang}/epub-to-doc`}
+                >EPUB to DOC</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/epub-to-docx">EPUB to DOCX</a>
+              <a class="link link-hover" href={`/${lang}/epub-to-docx`}
+                >EPUB to DOCX</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/epub-to-pdf">EPUB to PDF</a>
+              <a class="link link-hover" href={`/${lang}/epub-to-pdf`}
+                >EPUB to PDF</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/fb2-to-pdf">FB2 to PDF</a>
+              <a class="link link-hover" href={`/${lang}/fb2-to-pdf`}
+                >FB2 to PDF</a
+              >
             </li>
             <li>
-              <a class="link link-hover" href="/oxps-to-pdf">OXPS to PDF</a>
+              <a class="link link-hover" href={`/${lang}/oxps-to-pdf`}
+                >OXPS to PDF</a
+              >
             </li>
           </ul>
         </details>
       </li>
       <li>
-        <a href="/remove-background">{@html $_('Remove')}</a>
+        <a href={`/${lang}/remove-background`}>{@html $_('Remove')}</a>
       </li>
     </ul>
   </div>
