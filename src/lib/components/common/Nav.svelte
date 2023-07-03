@@ -36,6 +36,8 @@
           <li><a href="/convert">Convert</a></li>
         </ul>
       </div>
+
+      <Flags />
     </div>
   </div>
 
