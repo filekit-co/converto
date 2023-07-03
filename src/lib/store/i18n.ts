@@ -1,7 +1,7 @@
 import {writable} from 'svelte/store';
 import {browser} from '$app/environment';
 import {init, register} from 'svelte-i18n';
-import { COUNTRY_CODES } from '$lib/consts';
+import { COUNTRY_CODES } from '$lib/data';
 
 export const defaultLang = 'us';
 export const currentLang = writable(defaultLang);
