@@ -1,4 +1,13 @@
 <script lang="ts">
+  import humanOrigin from '$lib/assets/images/human-origin.jpg';
+  import humanResult from '$lib/assets/images/human-result.png';
+  import stuffOrigin from '$lib/assets/images/stuff-origin.jpg';
+  import stuffResult from '$lib/assets/images/stuff-result.png';
+  import animalOrigin from '$lib/assets/images/animal-origin.jpg';
+  import animalResult from '$lib/assets/images/animal-result.png';
+  import characterOrigin from '$lib/assets/images/character-origin.jpg';
+  import characterResult from '$lib/assets/images/character-result.png';
+
   let buttonState = 'human';
   function handleClick(event: string) {
     buttonState = event;
@@ -45,36 +54,36 @@
           <div
             class="mx-auto w-full h-full px-8 max-w-7xl overflow-x-scroll md:overflow-auto px-8 scroll-pl-8 md:scroll-p-0 flex flex-nowrap gap-6 md:grid md:grid-cols-2"
           >
-            <img src="images/human-origin.jpg" class="rounded" />
+            <img src={humanOrigin} alt="humanOrigin" class="rounded" />
 
-            <img src="images/human-result.png" class="rounded" />
+            <img src={humanResult} alt="humanResult" class="rounded" />
           </div>
         {/if}
         {#if buttonState === 'stuff'}
           <div
             class="mx-auto w-full px-8 max-w-7xl overflow-x-scroll md:overflow-auto px-8 scroll-pl-8 md:scroll-p-0 flex flex-nowrap gap-6 md:grid md:grid-cols-2"
           >
-            <img src="images/stuff-origin.jpg" class="rounded" />
+            <img src={stuffOrigin} alt="stuffOrigin" class="rounded" />
 
-            <img src="images/stuff-result.png" class="rounded" />
+            <img src={stuffResult} alt="stuffResult" class="rounded" />
           </div>
         {/if}
         {#if buttonState === 'animal'}
           <div
             class="mx-auto w-full px-8 max-w-7xl overflow-x-scroll md:overflow-auto px-8 scroll-pl-8 md:scroll-p-0 flex flex-nowrap gap-6 md:grid md:grid-cols-2"
           >
-            <img src="images/animal-origin.jpg" class="rounded" />
+            <img src={animalOrigin} alt="animalOrigin" class="rounded" />
 
-            <img src="images/animal-result.png" class="rounded" />
+            <img src={animalResult} alt="animalResult" class="rounded" />
           </div>
         {/if}
         {#if buttonState === 'character'}
           <div
             class="mx-auto w-full px-8 max-w-7xl overflow-x-scroll md:overflow-auto px-8 scroll-pl-8 md:scroll-p-0 flex flex-nowrap gap-6 md:grid md:grid-cols-2"
           >
-            <img src="images/character-origin.jpg" class="rounded" />
+            <img src={characterOrigin} alt="characterOrigin" class="rounded" />
 
-            <img src="images/character-result.png" class="rounded" />
+            <img src={characterResult} alt="characterResult" class="rounded" />
           </div>
         {/if}
       </div>
