@@ -1,15 +1,12 @@
 <script>
   // import {t} fro../../store/i18n;
   import {_} from 'svelte-i18n';
+  import logo from '$lib/assets/images/paper_folder.png';
 </script>
 
 <div class="hero min-h-screen py-32 bg-base-200">
   <div class="hero-content flex-col lg:flex-row-reverse">
-    <img
-      src="/images/paper_folder.png"
-      class="rounded-lg sm:max-w-md"
-      alt="hero"
-    />
+    <img src={logo} class="rounded-lg sm:max-w-md" alt="hero" />
 
     <div class="text-center lg:text-left">
       <h1 class="text-5xl font-black">File Converter</h1>

@@ -1,15 +1,23 @@
 <script lang="ts">
   import {scrollIntoView} from './scrollView';
+  import human from '$lib/assets/images/carosel/human.jpg';
+  import humanResult from '$lib/assets/images/carosel/human-result.png';
+  import animal from '$lib/assets/images/carosel/animal.jpg';
+  import animalResult from '$lib/assets/images/carosel/animal-result.png';
+  import stuff from '$lib/assets/images/carosel/stuff.jpg';
+  import stuffResult from '$lib/assets/images/carosel/stuff-result.png';
+  import car from '$lib/assets/images/carosel/car.jpg';
+  import carResult from '$lib/assets/images/carosel/car-result.png';
 
   const images = [
-    {title: 'Person Before', src: '/images/carosel/human.jpg'},
-    {title: 'Person After', src: '/images/carosel/human-result.png'},
-    {title: 'Animal Before', src: '/images/carosel/animal.jpg'},
-    {title: 'Animal After', src: '/images/carosel/animal-result.png'},
-    {title: 'Stuff Before', src: '/images/carosel/stuff.jpg'},
-    {title: 'Stuff After', src: '/images/carosel/stuff-result.png'},
-    {title: 'Car Before', src: '/images/carosel/car.jpg'},
-    {title: 'Car After', src: '/images/carosel/car-result.png'}
+    {title: 'Person Before', src: human},
+    {title: 'Person After', src: humanResult},
+    {title: 'Animal Before', src: animal},
+    {title: 'Animal After', src: animalResult},
+    {title: 'Stuff Before', src: stuff},
+    {title: 'Stuff After', src: stuffResult},
+    {title: 'Car Before', src: car},
+    {title: 'Car After', src: carResult}
   ];
 
   let name = 'carosel';

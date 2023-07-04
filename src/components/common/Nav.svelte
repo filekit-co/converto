@@ -4,6 +4,7 @@
   import Flags from '@components/common/Flags.svelte';
   import Sidebar from '@components/common/Sidebar.svelte';
   import {checked} from '@store/nav';
+  import logo from '$lib/assets/images/paper_folder.png';
 
   const navId = 'filekit-nav';
 </script>
@@ -24,7 +25,7 @@
         </label>
       </div>
       <a class="flex-none btn btn-ghost" href="/" title="filekit">
-        <img src="/images/paper_folder.png" class="h-12" alt="Filekit Logo" />
+        <img src={logo} class="h-12" alt="Filekit Logo" />
         <span class="normal-case text-xl">Filekit</span>
       </a>
       <div id="divider" class="flex-1 px-2 mx-2" />
