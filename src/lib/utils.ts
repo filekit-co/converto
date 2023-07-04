@@ -1,5 +1,5 @@
 import {PUBLIC_BASE_URL} from '$env/static/public';
-import {DEFAULT_FILE_NAME} from '$lib/consts';
+import {DEFAULT_FILE_NAME} from '$lib/data';
 
 export const canonicalUrl = (route: string) => `${PUBLIC_BASE_URL}${route}`;
 

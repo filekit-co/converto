@@ -7,12 +7,11 @@
 
   onMount(() => {
     const url = window.location.href;
-    const lang = window.navigator.language.substring(0, 2);
+    const lang = window.navigator.language.substring(3).toLowerCase();
     const newUrl = `${url}${lang}`;
 
     currentLang.set(lang);
-    // window.location.replace(newUrl);
-    window.location.href = newUrl;
+    window.location.replace(newUrl);
   });
 </script>
 
