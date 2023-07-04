@@ -2,7 +2,7 @@
   import {Circle3} from 'svelte-loading-spinners';
 </script>
 
-<div class="fixed w-full h-full z-10 in:fade={{duration: 150}}">
+<div class="fixed w-full h-full z-20 in:fade={{duration: 150}}">
   <div
     class="absolute w-full h-full bg-white dark:bg-cyan-800 opacity-50 z-10"
   />

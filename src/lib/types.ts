@@ -25,3 +25,5 @@ export interface FeatureProps {
 }
 
 export type UpdateFeatureProps = Partial<FeatureProps>
+
+export type DivFocusEvent = FocusEvent & { currentTarget: HTMLDivElement };

@@ -17,7 +17,7 @@
 
 <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 <!-- svelte-ignore a11y-label-has-associated-control -->
-<div class="drawer-side z-40">
+<div class="drawer-side z-10">
   <label for={navId} class="drawer-overlay" />
   <aside class="bg-base-200 w-80 h-screen">
     <ul class="menu p-4">
