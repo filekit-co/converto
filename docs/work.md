@@ -201,3 +201,37 @@
     - [ ] features 컴포넌트 템플릿으로 변환 -> props에 따라서
     - [ ] 다이나믹 라우팅 -> remove/jgp-to-png 이런식으로
     - [ ] 네비게이션, footer
+
+# 7월
+## 목표
+- [ ] file kit 최적화
+- [ ] 유튜브 to mp3
+- [ ] 이모지 복사, 다운로드 사이트
+- [ ] 케이팝 뉴스 사이트
+- [ ] ai 기사 사이트
+
+- 1쨰주
+    - filekit 사이트 최대한 서비스 품질 향상.
+      - [ ] api 기능 추가
+      - [ ] i18n - pipeline && ssr
+      - [ ] 사이트
+- 2째주 
+    - ytube.to.mp3.com
+    - get emoji.com
+- 3째주 
+    - kpop.new.com
+- 4,5 째주
+    - ai 기사 사이트
+ 
+- 4일
+  - 민욱
+    - [ ] image file converter ( jpg to png ) api 붙이기
+    - [ ] 사이트 퍼포먼스 향상 - 이미지 캐싱
+    - [ ] 에러 해결 - 파일명 깨지는 문제 해결
+    - [ ] 메인페이지 -> convert 사이에 중간 페이지
+  - 세현
+    - [ ] url 바꾸기
+    - [ ] 각 페이지마다 feature 붙이기
+    - [ ] i18n ssr 테스트 및 작동 확인
+    - [ ] feature 각 icon들 추가
+    - [ ] image uploader import 이해하고 적용하기
