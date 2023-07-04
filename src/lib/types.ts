@@ -20,6 +20,7 @@ export interface FeatureProps {
   head2: string;
   description: string;
   subHead: string[];
+  subImage: any[];
   subDescription: string[];
 }
 

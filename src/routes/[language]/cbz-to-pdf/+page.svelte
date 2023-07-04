@@ -8,6 +8,8 @@
   import {fetchCbzToPdf} from '$lib/apis'; // TODO: change
   import BaseUploader from '@components/FileUploaders/FileUploader.svelte';
   import type {fileUploadData} from '@components/FileUploaders/types';
+  import cbzLogo from '$lib/assets/images/cbz.png';
+  import Feature from '@components/home/Feature.svelte';
 
   let fileDropOptions: FileDropOptions = {
     accept: ['.cbz'], // TODO: change
@@ -33,11 +35,7 @@
 
 <div class="w-full px-2 py-32 sm:px-20 lg:px-32 text-center mx-auto">
   <div class="join">
-    <img
-      src="/images/cbz.png"
-      class="w-12 md-16 lg:w-32 join-item"
-      alt="cbz-logo"
-    />
+    <img src={cbzLogo} class="w-12 md-16 lg:w-32 join-item" alt="cbz-logo" />
 
     <h2 class="text-[clamp(2rem,6vw,4.5rem)] font-black join-item">
       <!-- TODO: change text and color -->
@@ -60,4 +58,6 @@
       <DragDrop bind:files {fileDropOptions} />
     {/if}
   </section>
+
+  <Feature />
 </div>

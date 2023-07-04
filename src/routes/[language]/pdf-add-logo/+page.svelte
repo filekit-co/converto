@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Feature from '@components/home/Feature.svelte';
   import type {FileDropOptions} from 'filedrop-svelte';
   import {_} from 'svelte-i18n';
 
@@ -28,3 +29,5 @@
     Stamp an image or text over your PDF in seconds. Add a logo to your pdf.
   </p>
 </div>
+
+<Feature />

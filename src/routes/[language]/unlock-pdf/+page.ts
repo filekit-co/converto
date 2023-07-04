@@ -29,7 +29,6 @@ export const load = (({route}) => {
       'Select or drag and drop the photo file you want to remove the background image from. Within 2 seconds, you can preview the result image and download it.',
       'No one can access the files uploaded by users.'
     ],
-
   }
   return {headerProps, featureProps}
 }) satisfies PageLoad;

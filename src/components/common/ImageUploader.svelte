@@ -241,7 +241,7 @@
     <ul class=" mt-6 bg-white rounded divide-y divide-gray-200 shadow">
       <li class="p-3 flex items-center justify-between">
         <div class="w-9 h-9 bg-gray-300">
-          <img src={resultImage} alt="image" />
+          <img src={resultImage} alt="resultImage" />
         </div>
         <div class="text-sm text-gray-700">{fileName}</div>
         <div
@@ -283,7 +283,7 @@
     <ul class="mt-6 bg-white rounded divide-y divide-gray-200 shadow">
       <li class="p-3 flex items-center justify-between">
         <div class="w-9 h-9 bg-gray-300">
-          <img src={resultImage} alt="image" />
+          <img src={resultImage} alt="resultImage2" />
         </div>
         <div class="text-sm text-gray-700">{imageURL}</div>
         <div

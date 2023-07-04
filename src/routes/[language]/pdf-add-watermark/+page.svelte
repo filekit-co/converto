@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Feature from '@components/home/Feature.svelte';
   import type {FileDropOptions} from 'filedrop-svelte';
   import {_} from 'svelte-i18n';
 
@@ -29,3 +30,5 @@
     pdf.
   </p>
 </div>
+
+<Feature />

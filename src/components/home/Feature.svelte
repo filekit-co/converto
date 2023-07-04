@@ -2,7 +2,14 @@
   import {page} from '$app/stores';
   import type {FeatureProps, UpdateFeatureProps} from '$lib/types';
   import {onMount} from 'svelte';
-  import {IconTransform} from '@tabler/icons-svelte';
+  import {
+    IconTransform,
+    IconSettings,
+    IconLockCheck,
+    IconDeviceDesktop,
+    IconBrandSpeedtest,
+    IconUserHeart
+  } from '@tabler/icons-svelte';
 
   export let bgColor: string = '';
 
@@ -18,6 +25,14 @@
       'Completely Free',
       'Security',
       'Support for All Devices'
+    ],
+    subImage: [
+      IconTransform,
+      IconSettings,
+      IconLockCheck,
+      IconDeviceDesktop,
+      IconBrandSpeedtest,
+      IconUserHeart
     ],
     subDescription: [
       'By simply performing three actions: dragging and dropping files, clicking the conversion button, and checking the resulting file, you can obtain the desired output easily. With these simple steps, you can achieve the desired results.',
@@ -38,7 +53,8 @@
   onMount(() => {
     renderedDivs = features.subHead.map((subHead, index) => {
       const subDescription = features.subDescription[index];
-      return {subHead, subDescription};
+      const subImage = features.subImage[index];
+      return {subHead, subImage, subDescription};
     });
   });
 </script>
@@ -64,9 +80,9 @@
       {#each renderedDivs as { subHead, subImage, subDescription }}
         <div>
           <div
-            class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"
+            class="flex justify-center items-center mb-4 h-10 rounded-full bg-primary-100 lg:h-12 dark:bg-primary-900"
           >
-            <IconTransform size={100} />
+            <svelte:component this={subImage} size={50} />
           </div>
           <h3 class="mb-2 text-xl font-bold dark:text-black">
             {subHead}

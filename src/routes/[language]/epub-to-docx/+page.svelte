@@ -8,6 +8,7 @@
   import {fetchEpubToDocx} from '$lib/apis';
   import BaseUploader from '@components/FileUploaders/FileUploader.svelte';
   import type {fileUploadData} from '@components/FileUploaders/types';
+  import Feature from '@components/home/Feature.svelte';
 
   let fileDropOptions: FileDropOptions = {
     accept: ['.epub'],
@@ -115,4 +116,6 @@
       <DragDrop bind:files {fileDropOptions} />
     {/if}
   </section>
+
+  <Feature />
 </div>
