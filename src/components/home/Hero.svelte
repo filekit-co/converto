@@ -9,16 +9,12 @@
     <img src={logo} class="rounded-lg sm:max-w-md" alt="hero" />
 
     <div class="text-center lg:text-left">
-      <h1 class="text-5xl font-black">File Converter</h1>
+      <h1 class="text-5xl font-black">File Kit</h1>
       <p class="py-6 font-title">
         {@html $_('Description')}
       </p>
-      <a
-        href="/unlock-pdf"
-        class="btn btn-accent btn-lg btn-wide px-12 normal-case"
-      >
-        <!-- Convert file -->
-        {@html $_('Convert file')}
+      <a href="/menu" class="btn btn-accent btn-lg btn-wide px-12 normal-case">
+        Let's kit
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
