@@ -43,3 +43,19 @@ export async function generateUniqueHex(backgroundHex: string, numColors: number
 
   return hexColors;
 }
+
+// x-to-y => [x,y]
+export function extractExtsFromString(s: string): [string, string] {
+  
+  const regex = /(\w+)-to-(\w+)/;
+  const matches = s.match(regex);
+
+  // check 3 group i.g [png, to, jpeg]
+  if (matches && matches.length === 3) {
+    const ext1 = matches[1];
+    const ext2 = matches[2];
+    return [ext1, ext2];
+  }
+
+  throw new Error('Invalid slug format');
+}
