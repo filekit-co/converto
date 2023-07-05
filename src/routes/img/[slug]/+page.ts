@@ -42,15 +42,24 @@ function extractExtsFromSlug(slug: string): [string, string] {
   throw new Error('Invalid slug format');
 }
 
-export const load = (({ params }) => {
-  if (!slugs.includes(params.slug)) throw error(404, 'Not found');
-  const [fromExt, toExt] = extractExtsFromSlug(params.slug)
+export const load = (({ params, route }) => {
+  if (!imgSlugs.includes(params.slug)) throw error(404, 'Not found');
   
+  const [fromExt, toExt] = extractExtsFromSlug(params.slug)
+  const titleAndDescription = `Convert ${fromExt.toUpperCase()} to ${toExt.toUpperCase()} online for free`
   const emphasizeColor: string = imgSlugToHex[params.slug]
+
+  const headerProps: UpdateHeaderProps = {
+    title: titleAndDescription,
+    url: canonicalUrl(route.id),
+    description: titleAndDescription,
+    keywords: `image, convert ${fromExt} to ${toExt}, ${fromExt}, ${toExt}, free, online, File Converter`
+  };
   return {
+    headerProps,
     title: `${fromExt.toUpperCase()} to&nbsp;<span class="text-[${emphasizeColor}]">${toExt.toUpperCase()}</span>`,
-    description: `Convert ${fromExt.toUpperCase()} to ${toExt.toUpperCase()} online for free`,
+    description: titleAndDescription,
     fetchApi: getImgFetchApi(fromExt, toExt),
-    fileDropOptions: imgFileDropOptions ,
-  } as ConvertionProps
+    fileDropOptions: imgFileDropOptions,
+  } as ConversionProps
 }) satisfies PageLoad;
