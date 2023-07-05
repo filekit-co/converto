@@ -3,22 +3,17 @@ import type { PageLoad } from './$types';
 import type { FileDropOptions } from 'filedrop-svelte';
 import type { fileUploadData } from '@components/FileUploaders/types';
 import { getImgFetchApi } from '$lib/apis';
-import { imgSlugToHex } from '$lib/data';
+import { imgExts, imgSlugToHex, imgSlugs } from '$lib/data';
+import type { UpdateHeaderProps } from '$lib/types';
+import { canonicalUrl } from '$lib/utils';
 
-type ConvertionProps = {
+type ConversionProps = {
   title: string;
   description: string;
   fetchApi: (data: fileUploadData) => Promise<any>;
   fileDropOptions: FileDropOptions;
 };
 
-const imgExts = ['ps', 'png', 'pnm', 'pgm', 'ppm', 'pbm', 'pam', 'jpg','jpeg'];
-const slugs = imgExts.flatMap((ext1) => {
-  if (ext1 === 'ps') return [];
-
-  return imgExts.filter((ext2) => ext1 !== ext2)
-    .map((ext2) => `${ext1}-to-${ext2}`);
-});
 
 const fileAccepts = imgExts.filter((x) => x!= 'ps').map((imgExt) => `.${imgExt}`)
 const imgFileDropOptions: FileDropOptions = {
