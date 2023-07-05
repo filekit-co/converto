@@ -3,7 +3,7 @@
   "Convert": "변환",
   "Remove": "제거",
   "File Converter": "파일 변환기",
-  "Description": "Converto는 300개 이상의 형식을 지원하는 브라우저 기반 파일 변환기로, 포괄적인 변환, 빠른 처리 시간, 데이터 보안 및 모든 기기 간의 호환성을 보장하면서 사용자 정의 설정을 제공합니다.",
+  "Description": "Filekit는 300개 이상의 형식을 지원하는 브라우저 기반 파일 변환기로, 포괄적인 변환, 빠른 처리 시간, 데이터 보안 및 모든 기기 간의 호환성을 보장하면서 사용자 정의 설정을 제공합니다.",
   "Convert file": "파일 변환",
   "Trusted by over 1 million users every month": "매월 100만 명 이상의 사용자가 신뢰하는 서비스",
   "Employees of large and small companies all over the world use our service": "전 세계의 대규모 및 소규모 기업 직원들이 저희 서비스를 사용합니다.",
@@ -12,10 +12,8 @@
   "We offer a wide range of file conversion, compression, and background removal services to meet your needs.": "다양한 파일 변환, 압축 및 배경 제거 서비스를 제공하여 귀하의 요구를 충족시켜드립니다.",
   "Whether you need to convert a document to PDF, compress a large file, or remove the background from an image, we can help.": "문서를 PDF로 변환, 큰 파일을 압축 또는 이미지에서 배경을 제거해야 하는지 여부와 관계없이 저희가 도움을 드릴 수 있습니다.",
   "Our services are easy to use and affordable.": "저희 서비스는 사용하기 쉽고 저렴합니다.",
-
   "You can convert, compress, and remove backgrounds online or through our browser": "온라인이나 브라우저를 통해 파일을 변환, 압축 및 배경을 제거할 수 있습니다.",
   "File conversion, file compression, background removal, document to PDF, PDF to document, image to PDF, PDF to image, file compress, PDF encrypt, PDF decrypt, PDF merge, PDF delete, PDF arrange": "파일 변환, 파일 압축, 배경 제거, 문서를 PDF로 변환, PDF를 문서로 변환, 이미지를 PDF로 변환, PDF를 이미지로 변환, 파일 압축, PDF 암호화, PDF 복호화, PDF 병합, PDF 삭제, PDF 정렬",
-
   "Convenient Conversion": "편리한 변환",
   "By simply performing three actions: dragging and dropping files, clicking the conversion button, and checking the resulting file, you can obtain the desired output easily. With these simple steps, you can achieve the desired results.": "파일을 드래그 & 드롭, 변환 버튼 클릭, 결과 파일을 확인하기의 세 가지 동작만 하면 됩니다. 간단한 동작들로 원하는 결과물을 얻을 수 있습니다.",
   "Flawless Background Image Removal": "완벽한 백그라운드 이미지 제거",
@@ -28,7 +26,6 @@
   "We do not use uploaded files for commercial purposes. No one can access the user's files, ensuring complete privacy protection.": "저희는 업로드된 파일을 상업적 용도로 사용하지 않습니다. 어떠한 사람도 사용자의 파일에 접근할 수 없으며 프라이버시가 완벽히 보호됩니다.",
   "Support for All Devices": "모든 기기 지원",
   "Converto works on all platforms, including browsers, tablets, and mobile devices.": "converto는 브라우저, 태블릿, 모바일 모든 플랫폼에서 작동합니다.",
-
   "Best file conversion Software": "최고의 파일 변환 소프트웨어",
   "File conversion, compression, encrypt & decrypt, merge.": "파일 변환, 압축, 암호화 & 복호화, 통합",
   "All types of files are convertible.": "어떤 파일도 변환 가능.",
@@ -41,7 +38,6 @@
   "All file conversions, encryption & decryption, file merging & deletion are completely free.": "모든 파일 변환, 암호화 & 복호화, 파일 결합 & 삭제는 완전히 무료입니다.",
   "We do not store the files uploaded by users in the database, ensuring safety.": "저희는 사용자가 업로드 한 파일을 데이터베이스에 저장하지 않아 안전합니다. ",
   "The software can be used on any operating system.": "어떠한 운영체제에서도 소프트웨어를 이용할 수 있습니다.",
-
   "Remove Background Image": "백그라운드 이미지 지우기",
   "Converto removes background images perfectly.": "Converto는 백그라운드 이미지를 완벽하게 지워드립니다.",
   "Converto provides excellent support for removing the background of photos, delivering satisfactory results.": "사진의 배경화면을 완벽하게 지워 만족스러운 결과물을 제공합니다.",
@@ -56,7 +52,6 @@
   "How to Use": "사용 방법",
   "Select or drag and drop the photo file you want to remove the background image from. Within 2 seconds, you can preview the result image and download it.": "배경 이미지를 제거하고자 하는 사진 파일을 선택하거나 끌어다 놓으세요. 2초 이내에 결과 이미지를 미리보고 다운로드할 수 있습니다.",
   "No one can access the files uploaded by users.": "사용자가 업로드한 파일에는 아무도 접근할 수 없습니다.",
-
   "Services": "서비스",
   "Branding": "브랜딩",
   "Design": "디자인",

@@ -21,3 +21,25 @@ export const fileNameFromHeaders = (headers: Headers) => {
 export function getMockFile() {
   return new File([''], 'filename', {type: 'text/pdf'})
 }
+
+// apple -> Apple
+export const toFristCapital = (word: string) => word.charAt(0).toUpperCase() + word.slice(1)
+
+
+export async function generateUniqueHex(backgroundHex: string, numColors: number) {
+  const hexColors: string[] = [];
+
+  const generator = () => {
+    let hex;
+    do {
+      hex = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    } while (hex === backgroundHex || hexColors.includes(hex));
+    hexColors.push(hex);
+  };
+
+  while (hexColors.length < numColors) {
+    generator();
+  }
+
+  return hexColors;
+}
