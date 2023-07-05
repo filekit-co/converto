@@ -225,13 +225,19 @@
  
 - 4일
   - 민욱
-    - [ ] image file converter ( jpg to png ) api 붙이기
-    - [ ] 사이트 퍼포먼스 향상 - 이미지 캐싱
-    - [ ] 에러 해결 - 파일명 깨지는 문제 해결
-    - [ ] 메인페이지 -> convert 사이에 중간 페이지
+    - [x] image file converter ( jpg to png ) api 붙이기
+    - [x] 사이트 퍼포먼스 향상 - 이미지 캐싱
+    - [x] 에러 해결 - 파일명 깨지는 문제 해결
+    - [x] 메인페이지 -> convert 사이에 중간 페이지
   - 세현
     - [ ] url 바꾸기
     - [ ] 각 페이지마다 feature 붙이기
     - [ ] i18n ssr 테스트 및 작동 확인
     - [ ] feature 각 icon들 추가
     - [ ] image uploader import 이해하고 적용하기
+- 5일
+    - 민욱
+      - [ ] image 변경 마무리 (페이지)
+      - [ ] 자동번역 파이프라인
+    - 세현
+      - [ ] [i18n /ko /en mozila와 같게](https://github.com/kaisermann/svelte-i18n/issues?q=ssr+is%3Aclosed)https://github.com/kaisermann/svelte-i18n/issues?q=ssr+is%3Aclosed
