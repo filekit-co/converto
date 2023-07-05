@@ -26,3 +26,7 @@ export interface FeatureProps {
 export type UpdateFeatureProps = Partial<FeatureProps>
 
 export type DivFocusEvent = FocusEvent & { currentTarget: HTMLDivElement };
+
+export type ImgSlugToHex = {
+  [slug: string]: string;
+};
