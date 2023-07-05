@@ -12,53 +12,14 @@ export const COUNTRIES: { [key: string]: string } = {
 
 export const COUNTRY_CODES = Object.keys(COUNTRIES)
 
-interface Page {
-  key: string;
-  value: PageValue[]
-}
+export const imgExts = ['ps', 'png', 'pnm', 'pgm', 'ppm', 'pbm', 'pam', 'jpg','jpeg'];
+// const imgSlugs = imgExts.flatMap((ext1) => {
+//   if (ext1 === 'ps') return [];
 
-interface PageValue {
-  href: string
-  text: string
-  icon: string
-  description: string  
-}
-
-export let pages: Page[] = [
-  {
-    key: "Format Kit",
-    value: [
-      { href: '/pdf-to-doc', text: 'PDF to DOC', icon: '🥁', description: 'Convert PDF to DOC.' },
-      { href: '/pdf-to-docx', text: 'PDF to DOCX', icon: '📣', description: 'Convert PDF to DOCX.' },
-      { href: '/pdf-to-word', text: 'PDF to WORD', icon: '🍞', description: 'Convert PDF to WORD.' },
-      { href: '/xps-to-doc', text: 'XPS to DOC', icon: '🎹', description: 'Convert XPS to DOC.' },
-      { href: '/xps-to-docx', text: 'XPS to DOCX', icon: '🎷', description: 'Convert XPS to DOCX.' },
-      { href: '/xps-to-pdf', text: 'XPS to PDF', icon: '🎺', description: 'Convert XPS to PDF.' },
-      { href: '/cbz-to-pdf', text: 'CBZ to PDF', icon: '🎻', description: 'Convert CBZ to PDF.' },
-      { href: '/epub-to-doc', text: 'EPUB to DOC', icon: '🪕', description: 'Convert EPUB to DOC.' },
-      { href: '/epub-to-docx', text: 'EPUB to DOCX', icon: '🎸', description: 'Convert EPUB to DOCX.' },
-      { href: '/epub-to-pdf', text: 'EPUB to PDF', icon: '🎵', description: 'Convert EPUB to PDF.' },
-      { href: '/fb2-to-pdf', text: 'FB2 to PDF', icon: '🎶', description: 'Convert FB2 to PDF.' },
-      { href: '/oxps-to-pdf', text: 'OXPS to PDF', icon: '🎼', description: 'Convert OXPS to PDF.' },
-    ]
-  },
-  {
-    key: "PDF Kit",
-    value: [
-      { href: '/compress-pdf', text: 'Compress pdf', icon: '📦', description: 'Compress PDF files.' },
-      { href: '/protect-pdf', text: 'Protect pdf', icon: '🔒', description: 'Protect PDF files with password.' },
-      { href: '/unlock-pdf', text: 'Unlock pdf', icon: '🔓', description: 'Unlock password-protected PDF files.' },
-    ],
-  },
-  {
-    key: "Image Kit",
-    value: [
-      { href: '/remove-background', text: 'Remove Background', icon: '🖼️', description: 'Remove the background from images.' },
-    ],
-  }
-]
-
-
+//   return imgExts.filter((ext2) => ext1 !== ext2)
+//     .map((ext2) => `${ext1}-to-${ext2}`);
+// });
+export const imgSlugs = ['png-to-ps', 'png-to-pnm', 'png-to-pgm', 'png-to-ppm', 'png-to-pbm', 'png-to-pam', 'png-to-jpg', 'png-to-jpeg', 'pnm-to-ps', 'pnm-to-png', 'pnm-to-pgm', 'pnm-to-ppm', 'pnm-to-pbm', 'pnm-to-pam', 'pnm-to-jpg', 'pnm-to-jpeg', 'pgm-to-ps', 'pgm-to-png', 'pgm-to-pnm', 'pgm-to-ppm', 'pgm-to-pbm', 'pgm-to-pam', 'pgm-to-jpg', 'pgm-to-jpeg', 'ppm-to-ps', 'ppm-to-png', 'ppm-to-pnm', 'ppm-to-pgm', 'ppm-to-pbm', 'ppm-to-pam', 'ppm-to-jpg', 'ppm-to-jpeg', 'pbm-to-ps', 'pbm-to-png', 'pbm-to-pnm', 'pbm-to-pgm', 'pbm-to-ppm', 'pbm-to-pam', 'pbm-to-jpg', 'pbm-to-jpeg', 'pam-to-ps', 'pam-to-png', 'pam-to-pnm', 'pam-to-pgm', 'pam-to-ppm', 'pam-to-pbm', 'pam-to-jpg', 'pam-to-jpeg', 'jpg-to-ps', 'jpg-to-png', 'jpg-to-pnm', 'jpg-to-pgm', 'jpg-to-ppm', 'jpg-to-pbm', 'jpg-to-pam', 'jpg-to-jpeg', 'jpeg-to-ps', 'jpeg-to-png', 'jpeg-to-pnm', 'jpeg-to-pgm', 'jpeg-to-ppm', 'jpeg-to-pbm', 'jpeg-to-pam', 'jpeg-to-jpg']
 export const imgSlugToHex: ImgSlugToHex = {
   'png-to-ps' : '#785996',
   'png-to-pnm' : '#e1b007',
@@ -125,3 +86,53 @@ export const imgSlugToHex: ImgSlugToHex = {
   'jpeg-to-pam' : '#6d9d6e',
   'jpeg-to-jpg' : '#285567'
 }
+
+const ImgConversionPages = []
+
+
+interface Page {
+  key: string;
+  value: PageValue[]
+}
+
+interface PageValue {
+  href: string
+  text: string
+  icon: string
+  description: string  
+}
+
+export let pages: Page[] = [
+  {
+    key: "Format Kit",
+    value: [
+      { href: '/pdf-to-doc', text: 'PDF to DOC', icon: '🥁', description: 'Convert PDF to DOC.' },
+      { href: '/pdf-to-docx', text: 'PDF to DOCX', icon: '📣', description: 'Convert PDF to DOCX.' },
+      { href: '/pdf-to-word', text: 'PDF to WORD', icon: '🍞', description: 'Convert PDF to WORD.' },
+      { href: '/xps-to-doc', text: 'XPS to DOC', icon: '🎹', description: 'Convert XPS to DOC.' },
+      { href: '/xps-to-docx', text: 'XPS to DOCX', icon: '🎷', description: 'Convert XPS to DOCX.' },
+      { href: '/xps-to-pdf', text: 'XPS to PDF', icon: '🎺', description: 'Convert XPS to PDF.' },
+      { href: '/cbz-to-pdf', text: 'CBZ to PDF', icon: '🎻', description: 'Convert CBZ to PDF.' },
+      { href: '/epub-to-doc', text: 'EPUB to DOC', icon: '🪕', description: 'Convert EPUB to DOC.' },
+      { href: '/epub-to-docx', text: 'EPUB to DOCX', icon: '🎸', description: 'Convert EPUB to DOCX.' },
+      { href: '/epub-to-pdf', text: 'EPUB to PDF', icon: '🎵', description: 'Convert EPUB to PDF.' },
+      { href: '/fb2-to-pdf', text: 'FB2 to PDF', icon: '🎶', description: 'Convert FB2 to PDF.' },
+      { href: '/oxps-to-pdf', text: 'OXPS to PDF', icon: '🎼', description: 'Convert OXPS to PDF.' },
+    ]
+  },
+  {
+    key: "PDF Kit",
+    value: [
+      { href: '/compress-pdf', text: 'Compress pdf', icon: '📦', description: 'Compress PDF files.' },
+      { href: '/protect-pdf', text: 'Protect pdf', icon: '🔒', description: 'Protect PDF files with password.' },
+      { href: '/unlock-pdf', text: 'Unlock pdf', icon: '🔓', description: 'Unlock password-protected PDF files.' },
+    ],
+  },
+  {
+    key: "Image Kit",
+    value: [
+      { href: '/remove-background', text: 'Remove Background', icon: '🖼️', description: 'Remove the background from images.' },
+      ...ImgConversionPages
+    ],
+  }
+]
