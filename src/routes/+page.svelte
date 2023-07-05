@@ -4,12 +4,14 @@
   import Hero from '@components/home/Hero.svelte';
   import {onMount} from 'svelte';
   import {currentLang} from '@store/i18n';
+  import {locale} from 'svelte-i18n';
 
   onMount(() => {
     const url = window.location.href;
     const lang = window.navigator.language.substring(3).toLowerCase();
     const newUrl = `${url}${lang}`;
 
+    locale.set(lang);
     currentLang.set(lang);
     window.location.replace(newUrl);
   });
