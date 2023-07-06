@@ -1,9 +1,10 @@
 import {sveltekit} from '@sveltejs/kit/vite';
+import inlangPlugin from '@inlang/sdk-js/adapter-sveltekit';
 import {defineConfig} from 'vite';
 import path from 'path';
 
 export default defineConfig({
-  plugins: [sveltekit()],
+  plugins: [inlangPlugin(), sveltekit()],
   resolve: {
     alias: {
       '@src': path.resolve('/src'),

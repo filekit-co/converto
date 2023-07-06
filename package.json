@@ -9,9 +9,12 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"prepare": "svelte-kit sync",
+		"machine-translate": "inlang machine translate -f",
 		"postbuild": "npx svelte-sitemap --out-dir .svelte-kit/cloudflare --domain https://filekit.co --debug"
 	},
 	"devDependencies": {
+		"@inlang/cli": "^0.13.0",
+		"@inlang/sdk-js": "^0.7.0",
 		"@sveltejs/adapter-cloudflare": "^2.3.0",
 		"@sveltejs/kit": "^1.5.0",
 		"@types/node": "^20.3.1",

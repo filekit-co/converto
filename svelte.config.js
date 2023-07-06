@@ -1,5 +1,8 @@
+/* eslint-disable import/namespace */
 import * as path from 'path';
+// eslint-disable-next-line import/default, import/no-named-as-default, import/no-named-as-default-member
 import adapter from '@sveltejs/adapter-cloudflare';
+// eslint-disable-next-line import/no-unresolved
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
 
