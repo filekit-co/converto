@@ -1,5 +1,4 @@
 import type { UpdateHeaderProps } from '$lib/types';
-import type { PageLoad } from './$types';
 import {canonicalUrl} from '$lib/utils'
 
 export const load = (({route}) => {
@@ -12,5 +11,5 @@ export const load = (({route}) => {
     keywords: `${from} to ${to}, convert ${from}, convert ${to}, change, ${from} file, ${to} file`,
   };
   return {headerProps}
-}) satisfies PageLoad;
+})
 

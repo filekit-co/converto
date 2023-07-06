@@ -1,5 +1,4 @@
 import type { UpdateHeaderProps } from '$lib/types';
-import type { PageLoad } from './$types';
 import {canonicalUrl} from '$lib/utils'
 
 export const load = (({route}) => {
@@ -9,5 +8,5 @@ export const load = (({route}) => {
     description: `Choose an image or text to stamp over your PDF files. Select position, transparency and typography.`,
   };
   return {headerProps}
-}) satisfies PageLoad;
+})
 

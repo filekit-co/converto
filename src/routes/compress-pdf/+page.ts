@@ -1,5 +1,4 @@
 import type { UpdateFeatureProps, UpdateHeaderProps } from '$lib/types';
-import type { PageLoad } from './$types';
 import {canonicalUrl} from '$lib/utils'
 
 export const load = (({route}) => {
@@ -32,5 +31,5 @@ export const load = (({route}) => {
 
   }
   return {headerProps, featureProps}
-}) satisfies PageLoad;
+})
 

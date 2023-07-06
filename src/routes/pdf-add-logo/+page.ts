@@ -1,5 +1,4 @@
 import type { UpdateHeaderProps } from '$lib/types';
-import type { PageLoad } from './$types';
 import {canonicalUrl} from '$lib/utils'
 
 export const load = (({route}) => {
@@ -10,5 +9,5 @@ export const load = (({route}) => {
     keywords: `compress pdf size, reduce pdf size, compress pdf file, pdf compressor online, reduce size pdf, reduce pdf size, reduce dpi PDF, reduce PDF dpi`,
   };
   return {headerProps}
-}) satisfies PageLoad;
+})
 

@@ -32,4 +32,4 @@ export const load = (({route}) => {
 
   }
   return {headerProps, featureProps}
-}) satisfies PageLoad;
+})

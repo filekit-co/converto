@@ -1,5 +1,4 @@
 import { error } from '@sveltejs/kit';
-import type { PageLoad } from './$types';
 import { imgSlugToHex, imgSlugs } from '$lib/data';
 import type { UpdateHeaderProps } from '$lib/types';
 import { canonicalUrl, extractExtsFromString } from '$lib/utils';
@@ -30,4 +29,4 @@ export const load = (({ params, route }) => {
     description: titleAndDescription,
     exts: [fromExt, toExt]
   } as ConversionProps
-}) satisfies PageLoad;
+})

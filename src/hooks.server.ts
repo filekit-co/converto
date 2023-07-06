@@ -9,17 +9,17 @@ export const handle: Handle = async ({event, resolve}) => {
   if (lang) {
     locale.set(lang);
   }
-  const runtime = initSvelteKitServerRuntime({ language: lang, referenceLanguage: 'en', languages })
-	addRuntimeToLocals(event.locals, runtime)
+  // const runtime = initSvelteKitServerRuntime({ language: lang, referenceLanguage: 'en', languages })
+	// addRuntimeToLocals(event.locals, runtime)
   return resolve(event);
 };
 
 
-export const handleError = async ({ error, event }) => {
-	console.error(error)
-	const { i } = getRuntimeFromLocals(event.locals)
+// export const handleError = async ({ error, event }) => {
+// 	console.error(error)
+// 	const { i } = getRuntimeFromLocals(event.locals)
 
-	return {
-		message: i('server.error.generic'),
-	};
-};
+// 	return {
+// 		message: i('server.error.generic'),
+// 	};
+// };

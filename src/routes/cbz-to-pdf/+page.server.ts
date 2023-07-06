@@ -1,5 +1,4 @@
 import type { UpdateHeaderProps } from '$lib/types';
-import type { PageLoad } from './$types';
 import {canonicalUrl} from '$lib/utils'
 
 export const load = (({route}) => {
@@ -10,5 +9,4 @@ export const load = (({route}) => {
     keywords: `cbz to pdf, convert cbz, convert pdf, change, pdf file, cbz file`,
   };
   return {headerProps}
-}) satisfies PageLoad;
-
+})
