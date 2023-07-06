@@ -1,7 +1,7 @@
 <!-- TODO: refactro fileUploaders to remove duplicates -->
 <script lang="ts">
   import {_} from 'svelte-i18n';
-
+  import {onDestroy} from 'svelte';
   import type {Files} from 'filedrop-svelte';
   import {filesize} from 'filesize';
   import {IconPdf, IconX} from '@tabler/icons-svelte';
@@ -34,7 +34,6 @@
     } as Files;
   }
 
-  // todo: diff
   async function submitFiles(e: any) {
     isDownloading = true;
     if (files.accepted.length <= 0) {
@@ -45,6 +44,10 @@
       return [file];
     });
   }
+
+  onDestroy(() => {
+    clearFiles();
+  });
 </script>
 
 <form id={formId} on:submit|once|preventDefault={submitFiles}>

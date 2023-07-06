@@ -17,8 +17,13 @@
   };
 
   const [fromExt, toExt] = data.exts;
+
+  const jpgTypes = ['jpg', 'jpeg']; // Because input accept does not recognize between jpg and jpeg.
+  const fileAccept = jpgTypes.includes(fromExt)
+    ? ['.jpg', '.jpeg']
+    : [`.${fromExt}`];
   const imgFileDropOptions: FileDropOptions = {
-    accept: ['.' + fromExt],
+    accept: fileAccept,
     hideInput: true,
     multiple: true
   };
