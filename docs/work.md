@@ -236,8 +236,15 @@
     - [ ] feature 각 icon들 추가
     - [ ] image uploader import 이해하고 적용하기
 - 5일
-    - 민욱
-      - [ ] image 변경 마무리 (페이지)
+    - 민욱
+      - [x] image 변경 마무리 (페이지)
       - [ ] 자동번역 파이프라인
     - 세현
       - [ ] [i18n /ko /en mozila와 같게](https://github.com/kaisermann/svelte-i18n/issues?q=ssr+is%3Aclosed)https://github.com/kaisermann/svelte-i18n/issues?q=ssr+is%3Aclosed
+- 6일
+    - 민욱
+      - [x] fix: image function build error
+      - [ ] i18n merge (세현 PR)
+      - [ ] 자동번역 파이프라인
+    - 세현
+      - [ ] youtube 2 mp3
