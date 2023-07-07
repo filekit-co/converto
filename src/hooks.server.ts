@@ -4,9 +4,9 @@ import type {Handle} from '@sveltejs/kit';
 
 
 export const handle: Handle = ({event, resolve}) => {
-  const lang = event.request.headers.get('accept-language')?.split(',')[0];
-  
-  const runtime = initSvelteKitServerRuntime({ language: lang, referenceLanguage: 'en', languages })
+  const defaultLang = event.request.headers.get('accept-language')?.split(',')[0];
+  const language = defaultLang ? defaultLang: 'en'
+  const runtime = initSvelteKitServerRuntime({ language, referenceLanguage: 'en', languages })
 	addRuntimeToLocals(event.locals, runtime)
   return resolve(event);
 };
