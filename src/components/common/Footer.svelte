@@ -1,6 +1,4 @@
-<!-- svelte-ignore a11y-missing-attribute -->
 <script>
-  import {_} from 'svelte-i18n';
   import {pages} from '$lib/data';
   import logo from '$lib/assets/images/paper_folder.png';
 </script>
@@ -19,19 +17,4 @@
       {/each}
     </div>
   {/each}
-
-  <!-- TODO: update company info -->
-  <div>
-    <span class="footer-title">{@html $_('Company')}</span>
-    <a class="link link-hover">{@html $_('About us')}</a>
-    <a class="link link-hover">{@html $_('Contact')}</a>
-    <a class="link link-hover">{@html $_('Jobs')}</a>
-    <a class="link link-hover">{@html $_('Press kit')}</a>
-  </div>
-  <div>
-    <span class="footer-title">{@html $_('Legal')}</span>
-    <a class="link link-hover">{@html $_('Terms of use')}</a>
-    <a class="link link-hover">{@html $_('Privacy policy')}</a>
-    <a class="link link-hover">{@html $_('Cookie policy')}</a>
-  </div>
 </footer>

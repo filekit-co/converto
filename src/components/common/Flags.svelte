@@ -1,13 +1,13 @@
 <script lang="ts">
-  import {setLang} from '@store/i18n';
   import {IconWorld} from '@tabler/icons-svelte';
-  import {COUNTRIES} from '$lib/data';
   import type {DivFocusEvent} from '$lib/types';
+  import {switchLanguage, loadResource} from '@inlang/sdk-js';
+  import {languageCountryMap} from '$lib/data';
 
   let isDropdownOpen = false;
 
   function handleFlagOnClick(code: string): void {
-    setLang(code);
+    switchLanguage(code);
     isDropdownOpen = false;
   }
 
@@ -42,10 +42,13 @@
     style:visibility={isDropdownOpen ? 'visible' : 'hidden'}
     class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52"
   >
-    {#each Object.entries(COUNTRIES) as [code, value]}
+    {#each Object.entries(languageCountryMap) as [code, value]}
       <li>
-        <button on:click={() => handleFlagOnClick(code)}>
-          <span class="flag flag-country-{code}" />
+        <button
+          on:focus={() => loadResource(code)}
+          on:click={() => handleFlagOnClick(code)}
+        >
+          <span class="flag flag-country-{value}" />
           {value}
         </button>
       </li>
