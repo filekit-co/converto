@@ -1,6 +1,9 @@
 <script lang="ts">
   import {PUBLIC_IMG_API_URL} from '$env/static/public';
+  import {loading} from '@components/common/loading';
   import {i} from '@inlang/sdk-js';
+
+  $: $loading;
 
   let droppedFiles: File[] = [];
   let selectedFile: any = null;
@@ -13,80 +16,25 @@
   let progress: number = 0;
 
   async function handleDrop(event) {
-    event.preventDefault();
-    const fileList = event.dataTransfer.files;
+    $loading = true;
+    try {
+      event.preventDefault();
+      const fileList = event.dataTransfer.files;
 
-    droppedFiles = Array.from(fileList);
-    fileName = droppedFiles[0].name;
-    progress = 0;
+      droppedFiles = Array.from(fileList);
+      fileName = droppedFiles[0].name;
+      progress = 0;
 
-    const formData = new FormData();
-    droppedFiles.forEach(file => {
-      formData.append('image', file);
-    });
-
-    const response = await fetch(`${PUBLIC_IMG_API_URL}/bg/remove`, {
-      method: 'POST',
-      body: formData,
-      mode: 'cors'
-    });
-
-    const totalSize = response.headers.get('content-length');
-    let loadedSize = 0;
-
-    const reader = response.body.getReader();
-    const chunks = [];
-
-    while (true) {
-      const {done, value} = await reader.read();
-
-      if (done) {
-        break;
-      }
-
-      chunks.push(value);
-      loadedSize += value.length;
-
-      // 진행 상황 계산하여 progress 값 업데이트
-      const currentProgress = Math.round((loadedSize / totalSize) * 100);
-      progress = currentProgress;
-    }
-
-    const blob = new Blob(chunks, {type: response.headers.get('content-type')});
-    const file = new File([blob], 'Result_Image', {type: blob.type});
-    resultImage = URL.createObjectURL(blob);
-    resultFile = URL.createObjectURL(file);
-  }
-
-  function handleDragOver(event) {
-    event.preventDefault();
-    dragging = true;
-  }
-
-  function handleDragLeave(event) {
-    event.preventDefault();
-    droppedFiles = [];
-    dragging = false;
-  }
-
-  async function handleFileChange(event) {
-    event.preventDefault();
-    selectedFile = event.target.files[0];
-    fileName = selectedFile.name;
-    progress = 0;
-
-    if (selectedFile) {
       const formData = new FormData();
-      formData.append('image', selectedFile);
+      droppedFiles.forEach(file => {
+        formData.append('image', file);
+      });
 
       const response = await fetch(`${PUBLIC_IMG_API_URL}/bg/remove`, {
         method: 'POST',
-        body: formData,
-        mode: 'cors',
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest'
-        }
+        body: formData
       });
+
       const totalSize = response.headers.get('content-length');
       let loadedSize = 0;
 
@@ -114,6 +62,71 @@
       const file = new File([blob], 'Result_Image', {type: blob.type});
       resultImage = URL.createObjectURL(blob);
       resultFile = URL.createObjectURL(file);
+    } finally {
+      $loading = false;
+    }
+  }
+
+  function handleDragOver(event) {
+    event.preventDefault();
+    dragging = true;
+  }
+
+  function handleDragLeave(event) {
+    event.preventDefault();
+    droppedFiles = [];
+    dragging = false;
+  }
+
+  async function handleFileChange(event) {
+    $loading = true;
+    try {
+      event.preventDefault();
+      selectedFile = event.target.files[0];
+      fileName = selectedFile.name;
+      progress = 0;
+
+      if (selectedFile) {
+        const formData = new FormData();
+        formData.append('image', selectedFile);
+
+        const response = await fetch(`${PUBLIC_IMG_API_URL}/bg/remove`, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+          }
+        });
+        const totalSize = response.headers.get('content-length');
+        let loadedSize = 0;
+
+        const reader = response.body.getReader();
+        const chunks = [];
+
+        while (true) {
+          const {done, value} = await reader.read();
+
+          if (done) {
+            break;
+          }
+
+          chunks.push(value);
+          loadedSize += value.length;
+
+          // 진행 상황 계산하여 progress 값 업데이트
+          const currentProgress = Math.round((loadedSize / totalSize) * 100);
+          progress = currentProgress;
+        }
+
+        const blob = new Blob(chunks, {
+          type: response.headers.get('content-type')
+        });
+        const file = new File([blob], 'Result_Image', {type: blob.type});
+        resultImage = URL.createObjectURL(blob);
+        resultFile = URL.createObjectURL(file);
+      }
+    } finally {
+      $loading = false;
     }
   }
 
@@ -126,42 +139,48 @@
   }
 
   async function handleURLSubmit() {
-    const response = await fetch(
-      `${PUBLIC_IMG_API_URL}/bg/remove?url=${imageURL}`,
-      {
-        method: 'GET',
-        mode: 'cors'
+    isDownloading = true;
+    try {
+      const response = await fetch(
+        `${PUBLIC_IMG_API_URL}/bg/remove?url=${imageURL}`,
+        {
+          method: 'GET'
+        }
+      );
+      const totalSize = response.headers.get('content-length');
+      let loadedSize = 0;
+
+      const reader = response.body.getReader();
+      const chunks = [];
+
+      while (true) {
+        const {done, value} = await reader.read();
+
+        if (done) {
+          break;
+        }
+
+        chunks.push(value);
+        loadedSize += value.length;
+
+        // 진행 상황 계산하여 progress 값 업데이트
+        const currentProgress = Math.round((loadedSize / totalSize) * 100);
+        progress = currentProgress;
       }
-    );
-    const totalSize = response.headers.get('content-length');
-    let loadedSize = 0;
 
-    const reader = response.body.getReader();
-    const chunks = [];
-
-    while (true) {
-      const {done, value} = await reader.read();
-
-      if (done) {
-        break;
-      }
-
-      chunks.push(value);
-      loadedSize += value.length;
-
-      // 진행 상황 계산하여 progress 값 업데이트
-      const currentProgress = Math.round((loadedSize / totalSize) * 100);
-      progress = currentProgress;
+      const blob = new Blob(chunks, {
+        type: response.headers.get('content-type')
+      });
+      const file = new File([blob], 'Result_Image', {type: blob.type});
+      resultImage = URL.createObjectURL(blob);
+      resultFile = URL.createObjectURL(file);
+    } finally {
+      isDownloading = false;
     }
-
-    const blob = new Blob(chunks, {type: response.headers.get('content-type')});
-    const file = new File([blob], 'Result_Image', {type: blob.type});
-    resultImage = URL.createObjectURL(blob);
-    resultFile = URL.createObjectURL(file);
   }
 </script>
 
-<div class="py-12 px-4">
+{#if !$loading}
   <div class=" max-w-8xl mx-auto sm:px-6 lg:px-8">
     <div
       on:drop={handleDrop}
@@ -233,91 +252,91 @@
       <p class="mt-4 text-lg">{i('Maximum file size must be 512MB')}</p>
     </div>
   </div>
+{/if}
 
-  <!-- {#if fileName && progress} -->
-  <!-- 드래그앤드롭 or 파일 선택할 시 -->
-  {#if fileName && progress}
-    <ul class=" mt-6 bg-white rounded divide-y divide-gray-200 shadow">
-      <li class="p-3 flex items-center justify-between">
-        <div class="w-9 h-9 bg-gray-300">
-          <img src={resultImage} alt="resultImage" />
-        </div>
-        <div class="text-sm text-gray-700">{fileName}</div>
+<!-- {#if fileName && progress} -->
+<!-- 드래그앤드롭 or 파일 선택할 시 -->
+{#if fileName && progress}
+  <ul class=" mt-6 bg-white rounded divide-y divide-gray-200 shadow">
+    <li class="p-3 flex items-center justify-between">
+      <div class="w-9 h-9 bg-gray-300">
+        <img src={resultImage} alt="resultImage" />
+      </div>
+      <div class="text-sm text-gray-700">{fileName}</div>
+      <div
+        class="w-40 bg-gray-200 rounded-full h-5 shadow-inner overflow-hidden relative flex items-center justify-center"
+      >
         <div
-          class="w-40 bg-gray-200 rounded-full h-5 shadow-inner overflow-hidden relative flex items-center justify-center"
+          class="inline-block h-full bg-yellow-400 absolute top-0 left-0"
+          style="width: {progress}%"
+        />
+        <div
+          class=" relative z-10 text-xs font-semibold text-center text-white drop-shadow text-shadow"
         >
-          <div
-            class="inline-block h-full bg-yellow-400 absolute top-0 left-0"
-            style="width: {progress}%"
-          />
-          <div
-            class=" relative z-10 text-xs font-semibold text-center text-white drop-shadow text-shadow"
-          >
-            {progress}%
-          </div>
+          {progress}%
         </div>
-        <button
-          class="w-40 bg-cyan-200 rounded-full h-5 shadow-inner overflow-hidden relative flex items-center justify-center"
+      </div>
+      <button
+        class="w-40 bg-cyan-200 rounded-full h-5 shadow-inner overflow-hidden relative flex items-center justify-center"
+      >
+        <div
+          class=" relative z-10 text-xs font-semibold text-center text-white drop-shadow text-shadow"
         >
-          <div
-            class=" relative z-10 text-xs font-semibold text-center text-white drop-shadow text-shadow"
+          <a
+            target="_blank"
+            rel="noopener"
+            href={resultFile}
+            download="Result_Image"
           >
-            <a
-              target="_blank"
-              rel="noopener"
-              href={resultFile}
-              download="Result_Image"
-            >
-              {i('Download')}
-            </a>
-          </div>
-        </button>
-      </li>
-    </ul>
-  {/if}
+            {i('Download')}
+          </a>
+        </div>
+      </button>
+    </li>
+  </ul>
+{/if}
 
-  <!-- {#if resultImage && urlExist && resultFile && progress} -->
-  <!-- url 입력할 시 -->
-  {#if resultImage && imageURL && resultFile}
-    <ul class="mt-6 bg-white rounded divide-y divide-gray-200 shadow">
-      <li class="p-3 flex items-center justify-between">
-        <div class="w-9 h-9 bg-gray-300">
-          <img src={resultImage} alt="resultImage2" />
-        </div>
-        <div class="text-sm text-gray-700">{imageURL}</div>
+<!-- {#if resultImage && urlExist && resultFile && progress} -->
+<!-- url 입력할 시 -->
+{#if resultImage && imageURL && resultFile}
+  <ul class="mt-6 bg-white rounded divide-y divide-gray-200 shadow">
+    <li class="p-3 flex items-center justify-between">
+      <div class="w-9 h-9 bg-gray-300">
+        <img src={resultImage} alt="resultImage2" />
+      </div>
+      <div class="text-sm text-gray-700">{imageURL}</div>
+      <div
+        class="w-40 bg-gray-200 rounded-full h-5 shadow-inner overflow-hidden relative flex items-center justify-center"
+      >
         <div
-          class="w-40 bg-gray-200 rounded-full h-5 shadow-inner overflow-hidden relative flex items-center justify-center"
+          class="inline-block h-full bg-yellow-400 absolute top-0 left-0"
+          style="width: {progress}%"
+        />
+        <div
+          class=" relative z-10 text-xs font-semibold text-center text-white drop-shadow text-shadow"
         >
-          <div
-            class="inline-block h-full bg-yellow-400 absolute top-0 left-0"
-            style="width: {progress}%"
-          />
-          <div
-            class=" relative z-10 text-xs font-semibold text-center text-white drop-shadow text-shadow"
-          >
-            {progress}%
-          </div>
+          {progress}%
         </div>
-        <button
-          class="w-40 bg-cyan-200 rounded-full h-5 shadow-inner overflow-hidden relative flex items-center justify-center"
+      </div>
+      <button
+        class="w-40 bg-cyan-200 rounded-full h-5 shadow-inner overflow-hidden relative flex items-center justify-center"
+      >
+        <div
+          class=" relative z-10 text-xs font-semibold text-center text-white drop-shadow text-shadow"
         >
-          <div
-            class=" relative z-10 text-xs font-semibold text-center text-white drop-shadow text-shadow"
+          <a
+            target="_blank"
+            rel="noopener"
+            href={resultFile}
+            download="Result_Image"
           >
-            <a
-              target="_blank"
-              rel="noopener"
-              href={resultFile}
-              download="Result_Image"
-            >
-              {i('Download')}
-            </a>
-          </div>
-        </button>
-      </li>
-    </ul>
-  {/if}
-</div>
+            {i('Download')}
+          </a>
+        </div>
+      </button>
+    </li>
+  </ul>
+{/if}
 
 <style>
   #app {

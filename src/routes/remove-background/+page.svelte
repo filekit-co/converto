@@ -24,11 +24,11 @@
       )}
     </p>
 
-    <div class="mx-10">
+    <div class="mx-10 py-12 px-4">
       <ImageUploader />
     </div>
-
     <ImgExample />
+
     <!-- <Carosel /> -->
     <Feature />
   </div>
