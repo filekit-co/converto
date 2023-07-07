@@ -19,7 +19,7 @@ export async function defineConfig(env) {
     plugins: [
       jsonPlugin({
         pathPattern,
-        variableReferencePattern: ["{{", "}}"],
+        variableReferencePattern: ["{", "}"],
       }),
       sdkPlugin({ languageNegotiation: { strategies: [{ type: "localStorage" }] } }),
       standardLintRules(),

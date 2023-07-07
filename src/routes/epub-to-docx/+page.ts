@@ -1,14 +1,21 @@
 import type { UpdateHeaderProps } from '$lib/types';
 import {canonicalUrl} from '$lib/utils'
+import { getRuntimeFromLocals } from '@inlang/sdk-js/adapter-sveltekit/server';
 
-export const load = (({route}) => {
+export const load = (({route, locals}) => {
+  const {i} = getRuntimeFromLocals(locals)
   const from = 'epub'
   const to = 'docx'
+
+  const title = i("Convert {from} to {to} | filekit.co", {from, to}) 
+  const description = i("Convert {from} to {to} online for free | filekit.co", {from, to}) 
+  const keywords = i("file, format, convert {fromExt} to {toExt}, {fromExt}, {toExt}, free, online, File Converter, filekit.co", {from, to})
+
   const headerProps: UpdateHeaderProps = {
-    title: `${from.toUpperCase()} to ${to.toUpperCase()} | Filekit.co`,
+    title,
     url: canonicalUrl(route.id),
-    description: `${from} to ${to} Converter - Filekit.co is a free &amp; fast online file conversion service.`,
-    keywords: `${from} to ${to}, convert ${from}, convert ${to}, change, ${from} file, ${to} file`,
+    description,
+    keywords,
   };
   return {headerProps}
 })

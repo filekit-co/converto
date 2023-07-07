@@ -27,21 +27,26 @@ export const load = async ({ params, route, locals }) => {
 
   const { i } = getRuntimeFromLocals(locals)
   
-  const [fromExt, toExt] = extractExtsFromString(params.slug)
-  const titleAndDescription = i("Convert {fromExt} to {toExt} online for free", {fromExt:fromExt.toUpperCase(), toExt:toExt.toUpperCase()})
+  
+  const [from, to] = extractExtsFromString(params.slug)
+
+  const titleAndDescription = i("Convert {fromExt} to {toExt} online for free", {fromExt:from.toUpperCase(), toExt:to.toUpperCase()})
+  console.error(titleAndDescription)
+  console.error(from)
+  console.error(to)
   const fontColor = imgSlugToHex[params.slug]
-  const xToy: string = `${fromExt.toUpperCase()} to&nbsp;<span style=color:${fontColor};>${toExt.toUpperCase()}</span>`
+  const xToy: string = `${from.toUpperCase()} to&nbsp;<span style=color:${fontColor};>${to.toUpperCase()}</span>`
 
   const headerProps: UpdateHeaderProps = {
     title: titleAndDescription,
     url: canonicalUrl(route.id),
     description: titleAndDescription,
-    keywords: i("image, convert {fromExt} to {toExt}, {fromExt}, {toExt}, free, online, File Converter", {fromExt, toExt})
+    keywords: i("image, convert {fromExt} to {toExt}, {fromExt}, {toExt}, free, online, File Converter", {from, to})
   };
   return {
     headerProps,
     xToy, 
     description: titleAndDescription,
-    exts: [fromExt, toExt]
+    exts: [from, to]
   } as ConversionProps
 }

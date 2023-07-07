@@ -4,9 +4,8 @@ import { getRuntimeFromLocals } from '@inlang/sdk-js/adapter-sveltekit/server';
 
 export const load = (({route, locals}) => {
   const {i} = getRuntimeFromLocals(locals)
-
-  const from = 'fb2'
-  const to = 'pdf'
+  const from = 'epub'
+  const to = 'doc'
 
   const title = i("Convert {from} to {to} | filekit.co", {from, to}) 
   const description = i("Convert {from} to {to} online for free | filekit.co", {from, to}) 
@@ -19,4 +18,4 @@ export const load = (({route, locals}) => {
     keywords,
   };
   return {headerProps}
-})
+}) 
