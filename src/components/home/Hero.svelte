@@ -1,7 +1,6 @@
 <script>
-  // import {t} fro../../store/i18n;
-  import {_} from 'svelte-i18n';
   import logo from '$lib/assets/images/paper_folder.png';
+  import {i} from '@inlang/sdk-js';
 </script>
 
 <div class="hero min-h-screen py-32 bg-base-200">
@@ -9,12 +8,14 @@
     <img src={logo} class="rounded-lg sm:max-w-md" alt="hero" />
 
     <div class="text-center lg:text-left">
-      <h1 class="text-5xl font-black">File Kit</h1>
+      <h1 class="text-5xl font-black">{i('File Kit')}</h1>
       <p class="py-6 font-title">
-        {@html $_('Description')}
+        {i(
+          'Filekit is a browser-based file converter with support for over 300 formats, providing extensive conversions, fast processing times, andcustomizable settings while ensuring data security and compatibility across all devices.'
+        )}
       </p>
       <a href="/menu" class="btn btn-accent btn-lg btn-wide px-12 normal-case">
-        Let's kit
+        {i("Let's kit")}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

@@ -1,6 +1,5 @@
 <script>
   import {IconMenu2} from '@tabler/icons-svelte';
-  import {_} from 'svelte-i18n';
   import Flags from '@components/common/Flags.svelte';
   import Sidebar from '@components/common/Sidebar.svelte';
   import {checked} from '@store/nav';

@@ -1,14 +1,5 @@
 <script lang="ts">
-  import {_, getLocaleFromNavigator} from 'svelte-i18n';
-  const locale = getLocaleFromNavigator();
-  let clientLocale = '';
-
-  if (locale) {
-    clientLocale = locale.substring(3).toLowerCase();
-  }
-
-  const encodedClientLocale = encodeURIComponent(clientLocale);
-  const airbnbURL = `https://www.airbnb.co.${encodedClientLocale}`;
+  import {i} from '@inlang/sdk-js';
 </script>
 
 <section class="bg-base-200">
@@ -16,17 +7,20 @@
     <h2
       class="mb-4 lg:mb-10 font-extrabold tracking-tight leading-tight text-center text-gray-900 md:text-4xl"
     >
-      {@html $_('Trusted by over 1 million users every month')}
+      {i('Trusted by over 1 million users every month')}
     </h2>
     <h4 class="leading-tight text-center mb-20 lg:mb-40 text-xl">
-      {@html $_(
-        'Employees of large and small companies all over the world use our service'
+      {i(
+        'Employess of large and small companies all over the world use our service'
       )}
     </h4>
     <div
       class="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 md:grid-cols-3 lg:grid-cols-6 dark:text-gray-400"
     >
-      <a href={airbnbURL} class="flex justify-center items-center">
+      <a
+        href="https://www.airbnb.co.kr"
+        class="flex justify-center items-center"
+      >
         <svg
           class="h-9 hover:text-gray-900 dark:hover:text-white"
           viewBox="0 0 125 35"

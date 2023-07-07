@@ -3,29 +3,43 @@
   import type {FeatureProps, UpdateFeatureProps} from '$lib/types';
   import {onMount} from 'svelte';
   import {IconTransform} from '@tabler/icons-svelte';
+  import {i} from '@inlang/sdk-js';
 
   export let bgColor: string = '';
 
   const defaultFeatureProps: FeatureProps = {
-    head1: 'File Conversion, Compression, and Background Removal Services',
-    head2: 'Best file conversion and Image removal software',
-    description:
-      'We offer a wide range of file conversion, compression, and background removal services to meet your needs. Whether you need to convert a document to PDF, compress a large file, or remove the background from an image, we can help. Our services are easy to use and affordable.',
+    head1: i('File Conversion, Compression, and Background Removal Services'),
+    head2: i('Best file conversion and Image removal software'),
+    description: i(
+      'We offer a wide range of file conversion, compression, and background removal services to meet your needs. Whether you need to convert a document to PDF, compress a large file, or remove the background from an image, we can help. Our services are easy to use and affordable.'
+    ),
     subHead: [
-      'Convenient Conversion',
-      'Flawless Background Image Removal',
-      'Fast Speed',
-      'Completely Free',
-      'Security',
-      'Support for All Devices'
+      i('Convenient Conversion'),
+      i('Flawless Background Image Removal'),
+      i('Fast Speed'),
+      i('Completely Free'),
+      i('Security'),
+      i('Support for All Devices')
     ],
     subDescription: [
-      'By simply performing three actions: dragging and dropping files, clicking the conversion button, and checking the resulting file, you can obtain the desired output easily. With these simple steps, you can achieve the desired results.',
-      'We provide a feature that flawlessly removes the background image from your photos.',
-      'Drag and drop your document or image file and click the button. We aim to provide all results within 2 minutes.',
-      'All file conversions and background image removal are completely free.',
-      "We do not use uploaded files for commercial purposes. No one can access the user's files, ensuring complete privacy protection.",
-      'Converto works on all platforms, including browsers, tablets, and mobile devices.'
+      i(
+        'By simply performing three actions: dragging and dropping files, clicking the conversion button, and checking the resulting file, you can obtain the desired output easily. With these simple steps, you can achieve the desired results.'
+      ),
+      i(
+        'We provide a feature that flawlessly removes the background image from your photos.'
+      ),
+      i(
+        'Drag and drop your document or image file and click the button. We aim to provide all results within 2 minutes.'
+      ),
+      i(
+        'All file conversions and background image removal are completely free.'
+      ),
+      i(
+        "We do not use uploaded files for commercial purposes. No one can access the user's files, ensuring complete privacy protection."
+      ),
+      i(
+        'Converto works on all platforms, including browsers, tablets, and mobile devices.'
+      )
     ]
   };
 
