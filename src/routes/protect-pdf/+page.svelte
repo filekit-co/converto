@@ -3,7 +3,6 @@
   import {onDestroy} from 'svelte';
   import type {FileDropOptions, Files} from 'filedrop-svelte';
   import Feature from '@components/home/Feature.svelte';
-  import {_} from 'svelte-i18n';
   import Downloader from '@components/common/Downloader.svelte';
   import {fetchLocks} from '$lib/apis';
   import PasswordUploader from '@components/FileUploaders/FilePasswordUploader.svelte';

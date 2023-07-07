@@ -1,6 +1,5 @@
 <script lang="ts">
   import type {FileDropOptions} from 'filedrop-svelte';
-  import {_} from 'svelte-i18n';
 
   let fileDropOptions: FileDropOptions = {
     accept: ['.pdf'],

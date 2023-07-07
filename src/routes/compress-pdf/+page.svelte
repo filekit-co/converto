@@ -1,6 +1,5 @@
 <script lang="ts">
   import type {FileDropOptions, Files} from 'filedrop-svelte';
-  import {_} from 'svelte-i18n';
   import type {fileUploadData} from '@components/FileUploaders/types';
   import {onDestroy} from 'svelte';
   import DragDrop from '@components/common/DragDrop.svelte';

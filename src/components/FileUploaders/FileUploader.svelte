@@ -1,11 +1,11 @@
 <!-- TODO: refactro fileUploaders to remove duplicates -->
 <script lang="ts">
-  import {_} from 'svelte-i18n';
   import {onDestroy} from 'svelte';
   import type {Files} from 'filedrop-svelte';
   import {filesize} from 'filesize';
   import {IconPdf, IconX} from '@tabler/icons-svelte';
   import type {fileUploadData} from './types';
+  import {i} from '@inlang/sdk-js';
 
   export let files: Files;
   export let uploadData: fileUploadData;
@@ -53,7 +53,7 @@
 <form id={formId} on:submit|once|preventDefault={submitFiles}>
   <div class="border rounded-2xl shadow-2xl shadow-slate-500 overflow-x-auto">
     <div class="flex flex-col md:px-10">
-      {#each files.accepted as file, i}
+      {#each files.accepted as file, idx}
         <div class="flex flex-row items-center border-b-2 h-20 space-x-4">
           <div class="hidden sm:block">
             <IconPdf size={30} />
@@ -66,7 +66,7 @@
           <button
             class="btn btn-xs sm:btn-md btn-ghost"
             on:click={() => {
-              removeFile(i);
+              removeFile(idx);
             }}
           >
             <IconX />
@@ -79,10 +79,10 @@
           form={formId}
           on:click={clearFiles}
           class="flex-auto btn btn-ghost p-0 uppercase"
-          >Clear
+          >{i('Clear')}
         </button>
         <button form={formId} class="flex-auto btn btn-accent"
-          >{@html $_('Submit')}
+          >{i('Submit')}
         </button>
       </div>
     </div>

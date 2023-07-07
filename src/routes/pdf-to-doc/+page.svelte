@@ -2,12 +2,11 @@
   import DragDrop from '@components/common/DragDrop.svelte';
   import {onDestroy} from 'svelte';
   import type {FileDropOptions, Files} from 'filedrop-svelte';
-  import {_} from 'svelte-i18n';
   import Downloader from '@components/common/Downloader.svelte';
-
   import {fetchPdfToDoc} from '$lib/apis'; // TODO: change
   import BaseUploader from '@components/FileUploaders/FileUploader.svelte';
   import type {fileUploadData} from '@components/FileUploaders/types';
+  import {i} from '@inlang/sdk-js';
 
   let fileDropOptions: FileDropOptions = {
     accept: ['.pdf'],
@@ -49,9 +48,9 @@
   </div>
   <!-- TODO: change text -->
   <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">
-    This free online PDF to DOC converter allows you to save a PDF file as an
-    editable document in Microsoft Word DOC format, ensuring better quality than
-    many other converters.
+    {i(
+      'This free online PDF to DOC converter allows you to save a PDF file as an editable document in Microsoft Word DOC format, ensuring better quality than many other converters.'
+    )}
   </p>
 
   <section class="pt-4 mx-0 sm:mx-10">

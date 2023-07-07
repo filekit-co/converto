@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {_} from 'svelte-i18n';
+  import {i} from '@inlang/sdk-js';
   import type {FileDropOptions, Files} from 'filedrop-svelte';
   import {filedrop} from 'filedrop-svelte';
 
@@ -26,8 +26,8 @@
     />
   </svg>
   <p>
-    {@html $_('Click or Drag & Drop')}
-    {fileDropOptions.multiple ? 'files' : 'file'}
+    {i('Click or Drag & Drop')}
+    {fileDropOptions.multiple ? i('files') : i('file')}
   </p>
   <p>({fileDropOptions.accept})</p>
   <input type="file" hidden />

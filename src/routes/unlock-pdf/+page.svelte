@@ -4,12 +4,12 @@
   import type {FileDropOptions, Files} from 'filedrop-svelte';
 
   import Feature from '@components/home/Feature.svelte';
-  import {_} from 'svelte-i18n';
 
   import PasswordUploader from '@components/FileUploaders/FilePasswordUploader.svelte';
   import {fetchUnlocks} from '$lib/apis';
   import Downloader from '@components/common/Downloader.svelte';
   import type {filePasswordUploadData} from '@components/FileUploaders/types';
+  import {i} from '@inlang/sdk-js';
 
   let fileDropOptions: FileDropOptions = {
     accept: ['.pdf'],
@@ -44,13 +44,11 @@
       />
     </svg>
     <h2 class="text-[clamp(2rem,6vw,4.5rem)] font-black join-item">
-      {@html $_('Unlock')} <span class="text-accent">PDF</span>
+      {i('Unlock')}<span class="text-accent">PDF</span>
     </h2>
   </div>
   <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">
-    {@html $_('An easy-to-use online tool to')}&nbsp<span
-      class="underline underline-offset-4">{@html $_('remove passwords')}</span
-    >{@html $_('from PDFs.')}
+    {i('An easy-to-use online tool to remove passwords from PDFs.')}
   </p>
 
   <section class="pt-4 mx-0 sm:mx-10">

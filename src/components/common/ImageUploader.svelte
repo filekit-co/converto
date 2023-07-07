@@ -1,6 +1,6 @@
 <script lang="ts">
   import {PUBLIC_IMG_API_URL} from '$env/static/public';
-  import {_} from 'svelte-i18n';
+  import {i} from '@inlang/sdk-js';
 
   let droppedFiles: File[] = [];
   let selectedFile: any = null;
@@ -185,20 +185,19 @@
           stroke-width="2"
         />
       </svg>
-      <p class="text-xl text-gray-700">Drop files to upload</p>
+      <p class="text-xl text-gray-700">{i('Drop files to upload')}</p>
       <div class="flex flex-row">
         <p class="mb-2 text-gray-700">
-          or,
           <button
             class="btn btn-active btn-ghost url-button"
             on:click={() => window.modal.showModal()}
           >
-            URL
+            {i('URL')}
           </button>
           <dialog id="modal" class="modal modal-bottom sm:modal-middle">
             <form method="dialog" class="modal-box">
               <h3 class="font-bold text-lg">
-                {@html $_('Type Image URL and Press Submit Button')}
+                {i('Type Image URL and Press Submit Button')}
               </h3>
               <br />
               <input
@@ -209,11 +208,11 @@
               />
               <button
                 on:click={handleURLSubmit}
-                class="btn btn-active btn-primary">{@html $_('Submit')}</button
+                class="btn btn-active btn-primary">{i('Submit')}</button
               >
             </form>
             <form method="dialog" class="modal-backdrop">
-              <button>{@html $_('close')}</button>
+              <button>i("close")</button>
             </form>
           </dialog>
         </p>
@@ -221,7 +220,7 @@
       <label
         class="bg-white px-4 h-9 inline-flex items-center rounded border border-gray-300 shadow-sm text-sm font-medium text-gray-700 focus-within:ring-2 ring-offset-2 ring-yellow-500"
       >
-        Select files
+        {i('Select files')}
         <input
           on:change={handleFileChange}
           bind:this={fileInput}
@@ -231,7 +230,7 @@
           class="sr-only"
         />
       </label>
-      <p class="mt-4 text-lg">Maximum file size must be 512MB</p>
+      <p class="mt-4 text-lg">{i('Maximum file size must be 512MB')}</p>
     </div>
   </div>
 
@@ -269,7 +268,7 @@
               href={resultFile}
               download="Result_Image"
             >
-              {@html $_('Download')}
+              {i('Download')}
             </a>
           </div>
         </button>
@@ -311,7 +310,7 @@
               href={resultFile}
               download="Result_Image"
             >
-              {@html $_('Download')}
+              {i('Download')}
             </a>
           </div>
         </button>

@@ -2,7 +2,6 @@
   import DragDrop from '@components/common/DragDrop.svelte';
   import {onDestroy} from 'svelte';
   import type {FileDropOptions, Files} from 'filedrop-svelte';
-  import {_} from 'svelte-i18n';
   import Downloader from '@components/common/Downloader.svelte';
 
   import {fetchCbzToPdf} from '$lib/apis'; // TODO: change

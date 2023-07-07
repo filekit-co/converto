@@ -2,12 +2,12 @@
   import DragDrop from '@components/common/DragDrop.svelte';
   import {onDestroy} from 'svelte';
   import type {FileDropOptions, Files} from 'filedrop-svelte';
-  import {_} from 'svelte-i18n';
   import Downloader from '@components/common/Downloader.svelte';
 
   import {fetchPdfToDocx} from '$lib/apis'; // TODO: change
   import BaseUploader from '@components/FileUploaders/FileUploader.svelte'; // TODO: change
   import type {fileUploadData} from '@components/FileUploaders/types'; // TODO: change
+  import {i} from '@inlang/sdk-js';
 
   let fileDropOptions: FileDropOptions = {
     accept: ['.pdf'], // TODO: change
@@ -50,9 +50,9 @@
   </div>
   <!-- TODO: change text -->
   <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">
-    This free PDF to DOCX converter allows you to convert PDF documents to
-    Office Open XML files, compatible will all major office software, providing
-    the best possible quality of conversion.
+    {i(
+      'This free PDF to DOCX converter allows you to convert PDF documents to Office Open XML files, compatible will all major office software, providing the best possible quality of conversion.'
+    )}
   </p>
 
   <section class="pt-4 mx-0 sm:mx-10">
