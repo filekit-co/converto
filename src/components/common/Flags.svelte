@@ -39,7 +39,11 @@
   };
 </script>
 
-<div class="dropdown dropdown-end" on:focusout={handleDropdownFocusOut}>
+<div
+  class="dropdown dropdown-end"
+  tabindex="0"
+  on:focusout={handleDropdownFocusOut}
+>
   <button
     class="m-1 btn bg-transparent border-transparent"
     on:click={handleDropdownClick}
