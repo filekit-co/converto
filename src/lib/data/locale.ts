@@ -1,4 +1,7 @@
-export const languageCountryMap: { [languageCode: string]: string } = {
+export type LanguageCode = 'ar' | 'az' | 'bg' | 'ca' | 'cs' | 'da' | 'de' | 'el' | 'en' | 'es' | 'es-419' | 'eu' | 'fr' | 'he' | 'hr' | 'hu' | 'id' | 'it' | 'iw' | 'ja' | 'ko' | 'nl' | 'no' | 'pl' | 'pt' | 'pt-BR' | 'ro' | 'ru' | 'sr' | 'sv' | 'ta' | 'tr' | 'uk' | 'vi' | 'zh-CN' | 'zh-Hans-CN' | 'zh-TW' | 'mr-IN';
+export const languageCodes: LanguageCode[] = ['ar', 'az', 'bg', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'es-419', 'eu', 'fr', 'he', 'hr', 'hu', 'id', 'it', 'iw', 'ja', 'ko', 'nl', 'no', 'pl', 'pt', 'pt-BR', 'ro', 'ru', 'sr', 'sv', 'ta', 'tr', 'uk', 'vi', 'zh-CN', 'zh-Hans-CN', 'zh-TW', 'mr-IN']
+
+export const languageCountryMap: { [languageCode in LanguageCode]: string } = {
   'ar': 'ae',
   'az': 'az',
   'bg': 'bg',
@@ -34,7 +37,48 @@ export const languageCountryMap: { [languageCode: string]: string } = {
   'uk': 'ua',
   'vi': 'vn',
   'zh-CN': 'cn',
+  'zh-Hans-CN': 'cn',
   'zh-TW': 'tw',
+  'mr-IN': 'in',
 };
 
-export const languages = Object.keys(languageCountryMap)
+export const languageTextMap: { [langCode in LanguageCode]: string } = {
+  'ar': 'Arabic',
+  'az': 'Azerbaijani',
+  'bg': 'Bulgarian',
+  'ca': 'Catalan',
+  'cs': 'Czech',
+  'da': 'Danish',
+  'de': 'German',
+  'el': 'Greek',
+  'en': 'English',
+  'es': 'Spanish',
+  'es-419': 'Spanish (Latin America)',
+  'eu': 'Basque',
+  'fr': 'French',
+  'he': 'Hebrew',
+  'hr': 'Croatian',
+  'hu': 'Hungarian',
+  'id': 'Indonesian',
+  'it': 'Italian',
+  'iw': 'Hebrew',
+  'ja': 'Japanese',
+  'ko': 'Korean',
+  'nl': 'Dutch',
+  'no': 'Norwegian',
+  'pl': 'Polish',
+  'pt': 'Portuguese',
+  'pt-BR': 'Portuguese (Brazil)',
+  'ro': 'Romanian',
+  'ru': 'Russian',
+  'sr': 'Serbian',
+  'sv': 'Swedish',
+  'ta': 'Tamil',
+  'tr': 'Turkish',
+  'uk': 'Ukrainian',
+  'vi': 'Vietnamese',
+  'zh-CN': 'Chinese (Simplified)',
+  'zh-Hans-CN': 'Chinese (Simplified)',
+  'zh-TW': 'Chinese (Traditional)',
+  'mr-IN': 'Marathi',
+};

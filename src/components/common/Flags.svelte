@@ -1,8 +1,13 @@
+<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 <script lang="ts">
   import {IconWorld} from '@tabler/icons-svelte';
   import type {DivFocusEvent} from '$lib/types';
   import {switchLanguage, loadResource} from '@inlang/sdk-js';
-  import {languageCountryMap} from '$lib/data';
+  import {
+    languageCountryMap,
+    languageTextMap,
+    type LanguageCode
+  } from '$lib/data';
 
   let isDropdownOpen = false;
 
@@ -10,6 +15,10 @@
     switchLanguage(code);
     isDropdownOpen = false;
   }
+
+  const getFullLanguageText = (code: string) => {
+    return languageTextMap[code as LanguageCode];
+  };
 
   const handleDropdownClick = () => {
     isDropdownOpen = !isDropdownOpen; // togle state on click
@@ -49,7 +58,7 @@
           on:click={() => handleFlagOnClick(code)}
         >
           <span class="flag flag-country-{value}" />
-          {value}
+          {getFullLanguageText(code)}
         </button>
       </li>
     {/each}
