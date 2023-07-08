@@ -40,11 +40,12 @@
 </script>
 
 <div
-  class="dropdown dropdown-end"
   tabindex="0"
+  class="dropdown dropdown-end"
   on:focusout={handleDropdownFocusOut}
 >
   <button
+    tabindex="0"
     class="m-1 btn bg-transparent border-transparent"
     on:click={handleDropdownClick}
   >

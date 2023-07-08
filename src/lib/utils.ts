@@ -1,5 +1,5 @@
 import {PUBLIC_BASE_URL} from '$env/static/public';
-import {DEFAULT_FILE_NAME, languageCodes} from '$lib/data';
+import {DEFAULT_FILE_NAME, languageCodes, type LanguageCode} from '$lib/data';
 import {initAcceptLanguageHeaderDetector, initRootSlugDetector} from '$lib/lang-detectors'
 import { detectLanguage, type Detector } from '@inlang/sdk-js/detectors';
 
@@ -78,6 +78,7 @@ export const detectLanguageOrFallback = async (url: URL |undefined ,headers: Hea
   
   try {
     const language = await detectLanguage({referenceLanguage, languages: languageCodes, allowRelated: true}, ...detectors)
+    console.log(language)
     return languageCodes.includes(language) ? language: referenceLanguage
   } catch (e) {
     console.error(e)  

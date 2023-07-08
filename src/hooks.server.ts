@@ -11,7 +11,6 @@ export const handle: Handle = (async ({ event, resolve }) => {
 		event?.request?.headers, 
 		referenceLanguage
 	)
-
   const runtime = initSvelteKitServerRuntime({ language, referenceLanguage, languages: languageCodes })
 	addRuntimeToLocals(event.locals, runtime)
 
