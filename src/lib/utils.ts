@@ -1,5 +1,8 @@
 import {PUBLIC_BASE_URL} from '$env/static/public';
-import {DEFAULT_FILE_NAME} from '$lib/data';
+import {DEFAULT_FILE_NAME, languageCodes} from '$lib/data';
+import {initAcceptLanguageHeaderDetector, initRootSlugDetector} from '$lib/lang-detectors'
+import { detectLanguage, type Detector } from '@inlang/sdk-js/detectors';
+
 import { parse } from '@tinyhttp/content-disposition'
 
 export const canonicalUrl = (route: string) => `${PUBLIC_BASE_URL}${route}`;
@@ -58,4 +61,27 @@ export function extractExtsFromString(s: string): [string, string] {
   }
 
   throw new Error('Invalid slug format');
+}
+
+export const detectLanguageOrFallback = async (url: URL |undefined ,headers: Headers | undefined, referenceLanguage: string) => {
+  let detectors: Detector[] = [];
+  
+  if (url) {
+    const slugDetector = initRootSlugDetector(url);
+    detectors.push(slugDetector)
+  }
+  if (headers) {
+    const acceptLangDetector = initAcceptLanguageHeaderDetector(headers)
+    detectors.push(acceptLangDetector)
+  }
+
+  
+  try {
+    const language = await detectLanguage({referenceLanguage, languages: languageCodes, allowRelated: true}, ...detectors)
+    return languageCodes.includes(language) ? language: referenceLanguage
+  } catch (e) {
+    console.error(e)  
+  } finally {
+    return referenceLanguage
+  }
 }
