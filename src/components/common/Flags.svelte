@@ -6,14 +6,24 @@
   import {
     languageCountryMap,
     languageTextMap,
-    type LanguageCode
+    type LanguageCode,
+    languageCodes,
+    referenceLanguage
   } from '$lib/data';
+  import {goto} from '$app/navigation';
+  import {page} from '$app/stores';
 
   let isDropdownOpen = false;
 
   function handleFlagOnClick(code: string): void {
+    console.log(code);
     switchLanguage(code);
+    // $page.url.pathname => i.g /menu, /img/remove-background
+
+    const newRoute = newLangRoute(code, $page.url.pathname);
+    console.log(newRoute);
     isDropdownOpen = false;
+    goto(newRoute, {replaceState: false});
   }
 
   const getFullLanguageText = (code: string) => {
@@ -37,6 +47,18 @@
       return;
     isDropdownOpen = false;
   };
+
+  function newLangRoute(givenLang: LanguageCode, route: string) {
+    const routeParts = route.split('/');
+
+    if (languageCodes.includes(routeParts[1])) {
+      // If language code exists in the route, replace it with givenLang
+      routeParts[1] = givenLang;
+    } else {
+      routeParts.splice(1, 0, referenceLanguage);
+    }
+    return routeParts.join('/');
+  }
 </script>
 
 <div

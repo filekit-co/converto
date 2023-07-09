@@ -93,385 +93,385 @@ export const imgSlugToHex: ImgSlugToHex = {
 // });
 export const ImgConversionPages = [
   {
-    href: '/img/png-to-ps',
+    href: 'img/png-to-ps',
     text: 'PNG to PS',
     icon: '🌟',
     description: 'Convert PNG to PS'
   },
   {
-    href: '/img/png-to-pnm',
+    href: 'img/png-to-pnm',
     text: 'PNG to PNM',
     icon: '⚡',
     description: 'Convert PNG to PNM'
   },
   {
-    href: '/img/png-to-pgm',
+    href: 'img/png-to-pgm',
     text: 'PNG to PGM',
     icon: '🎉',
     description: 'Convert PNG to PGM'
   },
   {
-    href: '/img/png-to-ppm',
+    href: 'img/png-to-ppm',
     text: 'PNG to PPM',
     icon: '🔥',
     description: 'Convert PNG to PPM'
   },
   {
-    href: '/img/png-to-pbm',
+    href: 'img/png-to-pbm',
     text: 'PNG to PBM',
     icon: '💡',
     description: 'Convert PNG to PBM'
   },
   {
-    href: '/img/png-to-pam',
+    href: 'img/png-to-pam',
     text: 'PNG to PAM',
     icon: '🌈',
     description: 'Convert PNG to PAM'
   },
   {
-    href: '/img/png-to-jpg',
+    href: 'img/png-to-jpg',
     text: 'PNG to JPG',
     icon: '🌺',
     description: 'Convert PNG to JPG'
   },
   {
-    href: '/img/png-to-jpeg',
+    href: 'img/png-to-jpeg',
     text: 'PNG to JPEG',
     icon: '🍄',
     description: 'Convert PNG to JPEG'
   },
   {
-    href: '/img/pnm-to-ps',
+    href: 'img/pnm-to-ps',
     text: 'PNM to PS',
     icon: '🌻',
     description: 'Convert PNM to PS'
   },
   {
-    href: '/img/pnm-to-png',
+    href: 'img/pnm-to-png',
     text: 'PNM to PNG',
     icon: '🌸',
     description: 'Convert PNM to PNG'
   },
   {
-    href: '/img/pnm-to-pgm',
+    href: 'img/pnm-to-pgm',
     text: 'PNM to PGM',
     icon: '🌼',
     description: 'Convert PNM to PGM'
   },
   {
-    href: '/img/pnm-to-ppm',
+    href: 'img/pnm-to-ppm',
     text: 'PNM to PPM',
     icon: '🍀',
     description: 'Convert PNM to PPM'
   },
   {
-    href: '/img/pnm-to-pbm',
+    href: 'img/pnm-to-pbm',
     text: 'PNM to PBM',
     icon: '🌹',
     description: 'Convert PNM to PBM'
   },
   {
-    href: '/img/pnm-to-pam',
+    href: 'img/pnm-to-pam',
     text: 'PNM to PAM',
     icon: '🍁',
     description: 'Convert PNM to PAM'
   },
   {
-    href: '/img/pnm-to-jpg',
+    href: 'img/pnm-to-jpg',
     text: 'PNM to JPG',
     icon: '🌿',
     description: 'Convert PNM to JPG'
   },
   {
-    href: '/img/pnm-to-jpeg',
+    href: 'img/pnm-to-jpeg',
     text: 'PNM to JPEG',
     icon: '🌴',
     description: 'Convert PNM to JPEG'
   },
   {
-    href: '/img/pgm-to-ps',
+    href: 'img/pgm-to-ps',
     text: 'PGM to PS',
     icon: '🌞',
     description: 'Convert PGM to PS'
   },
   {
-    href: '/img/pgm-to-png',
+    href: 'img/pgm-to-png',
     text: 'PGM to PNG',
     icon: '🌙',
     description: 'Convert PGM to PNG'
   },
   {
-    href: '/img/pgm-to-pnm',
+    href: 'img/pgm-to-pnm',
     text: 'PGM to PNM',
     icon: '🌟',
     description: 'Convert PGM to PNM'
   },
   {
-    href: '/img/pgm-to-ppm',
+    href: 'img/pgm-to-ppm',
     text: 'PGM to PPM',
     icon: '⭐',
     description: 'Convert PGM to PPM'
   },
   {
-    href: '/img/pgm-to-pbm',
+    href: 'img/pgm-to-pbm',
     text: 'PGM to PBM',
     icon: '🌊',
     description: 'Convert PGM to PBM'
   },
   {
-    href: '/img/pgm-to-pam',
+    href: 'img/pgm-to-pam',
     text: 'PGM to PAM',
     icon: '🌍',
     description: 'Convert PGM to PAM'
   },
   {
-    href: '/img/pgm-to-jpg',
+    href: 'img/pgm-to-jpg',
     text: 'PGM to JPG',
     icon: '🌎',
     description: 'Convert PGM to JPG'
   },
   {
-    href: '/img/pgm-to-jpeg',
+    href: 'img/pgm-to-jpeg',
     text: 'PGM to JPEG',
     icon: '🌏',
     description: 'Convert PGM to JPEG'
   },
   {
-    href: '/img/ppm-to-ps',
+    href: 'img/ppm-to-ps',
     text: 'PPM to PS',
     icon: '💦',
     description: 'Convert PPM to PS'
   },
   {
-    href: '/img/ppm-to-png',
+    href: 'img/ppm-to-png',
     text: 'PPM to PNG',
     icon: '💧',
     description: 'Convert PPM to PNG'
   },
   {
-    href: '/img/ppm-to-pnm',
+    href: 'img/ppm-to-pnm',
     text: 'PPM to PNM',
     icon: '🌟',
     description: 'Convert PPM to PNM'
   },
   {
-    href: '/img/ppm-to-pgm',
+    href: 'img/ppm-to-pgm',
     text: 'PPM to PGM',
     icon: '✨',
     description: 'Convert PPM to PGM'
   },
   {
-    href: '/img/ppm-to-pbm',
+    href: 'img/ppm-to-pbm',
     text: 'PPM to PBM',
     icon: '🔑',
     description: 'Convert PPM to PBM'
   },
   {
-    href: '/img/ppm-to-pam',
+    href: 'img/ppm-to-pam',
     text: 'PPM to PAM',
     icon: '🗝',
     description: 'Convert PPM to PAM'
   },
   {
-    href: '/img/ppm-to-jpg',
+    href: 'img/ppm-to-jpg',
     text: 'PPM to JPG',
     icon: '🔒',
     description: 'Convert PPM to JPG'
   },
   {
-    href: '/img/ppm-to-jpeg',
+    href: 'img/ppm-to-jpeg',
     text: 'PPM to JPEG',
     icon: '🔓',
     description: 'Convert PPM to JPEG'
   },
   {
-    href: '/img/pbm-to-ps',
+    href: 'img/pbm-to-ps',
     text: 'PBM to PS',
     icon: '🌟',
     description: 'Convert PBM to PS'
   },
   {
-    href: '/img/pbm-to-png',
+    href: 'img/pbm-to-png',
     text: 'PBM to PNG',
     icon: '📦',
     description: 'Convert PBM to PNG'
   },
   {
-    href: '/img/pbm-to-pnm',
+    href: 'img/pbm-to-pnm',
     text: 'PBM to PNM',
     icon: '🎁',
     description: 'Convert PBM to PNM'
   },
   {
-    href: '/img/pbm-to-pgm',
+    href: 'img/pbm-to-pgm',
     text: 'PBM to PGM',
     icon: '📚',
     description: 'Convert PBM to PGM'
   },
   {
-    href: '/img/pbm-to-ppm',
+    href: 'img/pbm-to-ppm',
     text: 'PBM to PPM',
     icon: '📝',
     description: 'Convert PBM to PPM'
   },
   {
-    href: '/img/pbm-to-pam',
+    href: 'img/pbm-to-pam',
     text: 'PBM to PAM',
     icon: '✏️',
     description: 'Convert PBM to PAM'
   },
   {
-    href: '/img/pbm-to-jpg',
+    href: 'img/pbm-to-jpg',
     text: 'PBM to JPG',
     icon: '🖋️',
     description: 'Convert PBM to JPG'
   },
   {
-    href: '/img/pbm-to-jpeg',
+    href: 'img/pbm-to-jpeg',
     text: 'PBM to JPEG',
     icon: '📐',
     description: 'Convert PBM to JPEG'
   },
   {
-    href: '/img/pam-to-ps',
+    href: 'img/pam-to-ps',
     text: 'PAM to PS',
     icon: '📏',
     description: 'Convert PAM to PS'
   },
   {
-    href: '/img/pam-to-png',
+    href: 'img/pam-to-png',
     text: 'PAM to PNG',
     icon: '🔨',
     description: 'Convert PAM to PNG'
   },
   {
-    href: '/img/pam-to-pnm',
+    href: 'img/pam-to-pnm',
     text: 'PAM to PNM',
     icon: '🧰',
     description: 'Convert PAM to PNM'
   },
   {
-    href: '/img/pam-to-pgm',
+    href: 'img/pam-to-pgm',
     text: 'PAM to PGM',
     icon: '🛠️',
     description: 'Convert PAM to PGM'
   },
   {
-    href: '/img/pam-to-ppm',
+    href: 'img/pam-to-ppm',
     text: 'PAM to PPM',
     icon: '⚙️',
     description: 'Convert PAM to PPM'
   },
   {
-    href: '/img/pam-to-pbm',
+    href: 'img/pam-to-pbm',
     text: 'PAM to PBM',
     icon: '🌟',
     description: 'Convert PAM to PBM'
   },
   {
-    href: '/img/pam-to-jpg',
+    href: 'img/pam-to-jpg',
     text: 'PAM to JPG',
     icon: '🌱',
     description: 'Convert PAM to JPG'
   },
   {
-    href: '/img/pam-to-jpeg',
+    href: 'img/pam-to-jpeg',
     text: 'PAM to JPEG',
     icon: '🌿',
     description: 'Convert PAM to JPEG'
   },
   {
-    href: '/img/jpg-to-ps',
+    href: 'img/jpg-to-ps',
     text: 'JPG to PS',
     icon: '🍃',
     description: 'Convert JPG to PS'
   },
   {
-    href: '/img/jpg-to-png',
+    href: 'img/jpg-to-png',
     text: 'JPG to PNG',
     icon: '🌾',
     description: 'Convert JPG to PNG'
   },
   {
-    href: '/img/jpg-to-pnm',
+    href: 'img/jpg-to-pnm',
     text: 'JPG to PNM',
     icon: '🌵',
     description: 'Convert JPG to PNM'
   },
   {
-    href: '/img/jpg-to-pgm',
+    href: 'img/jpg-to-pgm',
     text: 'JPG to PGM',
     icon: '🌲',
     description: 'Convert JPG to PGM'
   },
   {
-    href: '/img/jpg-to-ppm',
+    href: 'img/jpg-to-ppm',
     text: 'JPG to PPM',
     icon: '🌳',
     description: 'Convert JPG to PPM'
   },
   {
-    href: '/img/jpg-to-pbm',
+    href: 'img/jpg-to-pbm',
     text: 'JPG to PBM',
     icon: '🎄',
     description: 'Convert JPG to PBM'
   },
   {
-    href: '/img/jpg-to-pam',
+    href: 'img/jpg-to-pam',
     text: 'JPG to PAM',
     icon: '🌟',
     description: 'Convert JPG to PAM'
   },
   {
-    href: '/img/jpg-to-jpeg',
+    href: 'img/jpg-to-jpeg',
     text: 'JPG to JPEG',
     icon: '🚀',
     description: 'Convert JPG to JPEG'
   },
   {
-    href: '/img/jpeg-to-ps',
+    href: 'img/jpeg-to-ps',
     text: 'JPEG to PS',
     icon: '🌠',
     description: 'Convert JPEG to PS'
   },
   {
-    href: '/img/jpeg-to-png',
+    href: 'img/jpeg-to-png',
     text: 'JPEG to PNG',
     icon: '🛰️',
     description: 'Convert JPEG to PNG'
   },
   {
-    href: '/img/jpeg-to-pnm',
+    href: 'img/jpeg-to-pnm',
     text: 'JPEG to PNM',
     icon: '💫',
     description: 'Convert JPEG to PNM'
   },
   {
-    href: '/img/jpeg-to-pgm',
+    href: 'img/jpeg-to-pgm',
     text: 'JPEG to PGM',
     icon: '✨',
     description: 'Convert JPEG to PGM'
   },
   {
-    href: '/img/jpeg-to-ppm',
+    href: 'img/jpeg-to-ppm',
     text: 'JPEG to PPM',
     icon: '⚡',
     description: 'Convert JPEG to PPM'
   },
   {
-    href: '/img/jpeg-to-pbm',
+    href: 'img/jpeg-to-pbm',
     text: 'JPEG to PBM',
     icon: '🌟',
     description: 'Convert JPEG to PBM'
   },
   {
-    href: '/img/jpeg-to-pam',
+    href: 'img/jpeg-to-pam',
     text: 'JPEG to PAM',
     icon: '🎈',
     description: 'Convert JPEG to PAM'
   },
   {
-    href: '/img/jpeg-to-jpg',
+    href: 'img/jpeg-to-jpg',
     text: 'JPEG to JPG',
     icon: '🎀',
     description: 'Convert JPEG to JPG'

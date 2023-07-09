@@ -2,7 +2,7 @@
   import {IconHome2, IconX} from '@tabler/icons-svelte';
   import {handleOnClose} from '@store/nav';
   import {pages} from '$lib/data';
-  import {i} from '@inlang/sdk-js';
+  import {i, language} from '@inlang/sdk-js';
 
   export let navId: string;
 </script>
@@ -13,7 +13,7 @@
   <label for={navId} class="drawer-overlay" />
   <aside class="bg-base-200 w-80 h-screen">
     <ul class="menu p-4">
-      <a on:click={handleOnClose} href="/">
+      <a on:click={handleOnClose} href={`/${language}`}>
         <IconHome2 class="w-6 text-gray-400  hover:text-gray-900 " />
       </a>
 
@@ -37,7 +37,9 @@
         <ul class="collapse-content menu menu-md">
           {#each page.value as link}
             <li>
-              <a on:click={handleOnClose} href={link.href}>{link.text}</a>
+              <a on:click={handleOnClose} href={`/${language}/${link.href}`}
+                >{link.text}</a
+              >
             </li>
           {/each}
         </ul>

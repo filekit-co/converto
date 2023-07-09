@@ -1,4 +1,5 @@
-export type LanguageCode = 'ar' | 'az' | 'bg' | 'ca' | 'cs' | 'da' | 'de' | 'el' | 'en' | 'es' | 'es-419' | 'eu' | 'fr' | 'he' | 'hr' | 'hu' | 'id' | 'it' | 'iw' | 'ja' | 'ko' | 'nl' | 'no' | 'pl' | 'pt' | 'pt-BR' | 'ro' | 'ru' | 'sr' | 'sv' | 'ta' | 'tr' | 'uk' | 'vi' | 'zh-CN' | 'zh-Hans-CN' | 'zh-TW' | 'mr-IN';
+export const referenceLanguage = 'en'
+export type LanguageCode = string | 'ar' | 'az' | 'bg' | 'ca' | 'cs' | 'da' | 'de' | 'el' | 'en' | 'es' | 'es-419' | 'eu' | 'fr' | 'he' | 'hr' | 'hu' | 'id' | 'it' | 'iw' | 'ja' | 'ko' | 'nl' | 'no' | 'pl' | 'pt' | 'pt-BR' | 'ro' | 'ru' | 'sr' | 'sv' | 'ta' | 'tr' | 'uk' | 'vi' | 'zh-CN' | 'zh-Hans-CN' | 'zh-TW' | 'mr-IN';
 export const languageCodes: LanguageCode[] = ['ar', 'az', 'bg', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'es-419', 'eu', 'fr', 'he', 'hr', 'hu', 'id', 'it', 'iw', 'ja', 'ko', 'nl', 'no', 'pl', 'pt', 'pt-BR', 'ro', 'ru', 'sr', 'sv', 'ta', 'tr', 'uk', 'vi', 'zh-CN', 'zh-Hans-CN', 'zh-TW', 'mr-IN']
 
 export const languageCountryMap: { [languageCode in LanguageCode]: string } = {

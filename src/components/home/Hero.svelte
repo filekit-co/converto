@@ -1,6 +1,6 @@
 <script>
   import logo from '$lib/assets/images/paper_folder.png';
-  import {i} from '@inlang/sdk-js';
+  import {i, language} from '@inlang/sdk-js';
 </script>
 
 <div class="hero min-h-screen py-32 bg-base-200">
@@ -14,7 +14,10 @@
           'Filekit is a browser-based file converter with support for over 300 formats, providing extensive conversions, fast processing times, andcustomizable settings while ensuring data security and compatibility across all devices.'
         )}
       </p>
-      <a href="/menu" class="btn btn-accent btn-lg btn-wide px-12 normal-case">
+      <a
+        href={`/${language}/menu`}
+        class="btn btn-accent btn-lg btn-wide px-12 normal-case"
+      >
         {i("Let's kit")}
         <svg
           xmlns="http://www.w3.org/2000/svg"

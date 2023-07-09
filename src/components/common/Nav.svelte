@@ -4,6 +4,7 @@
   import Sidebar from '@components/common/Sidebar.svelte';
   import {checked} from '@store/nav';
   import logo from '$lib/assets/images/paper_folder.png';
+  import {language} from '@inlang/sdk-js';
 
   const navId = 'filekit-nav';
 </script>
@@ -23,7 +24,7 @@
           <IconMenu2 class="inline-block w-6 h-6 stroke-current" />
         </label>
       </div>
-      <a class="flex-none btn btn-ghost" href="/" title="filekit">
+      <a class="flex-none btn btn-ghost" href={`/${language}`} title="filekit">
         <img src={logo} class="h-12" alt="Filekit Logo" />
         <span class="normal-case text-xl">Filekit</span>
       </a>
