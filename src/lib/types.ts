@@ -30,3 +30,10 @@ export type DivFocusEvent = FocusEvent & { currentTarget: HTMLDivElement };
 export type ImgSlugToHex = {
   [slug: string]: string;
 };
+
+export interface ImageType extends File {
+  readonly name: string;
+  readonly size: number;
+  readonly type: string;
+  readonly webkitRelativePath: string;
+}
