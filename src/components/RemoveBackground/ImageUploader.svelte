@@ -1,5 +1,4 @@
 <script lang="ts">
-  import {PUBLIC_IMG_API_URL} from '$env/static/public';
   import {loading} from '@components/common/loading';
   import {i} from '@inlang/sdk-js';
   import ResultImage from './ResultImage.svelte';
@@ -14,6 +13,7 @@
   let fileInput: any = null;
   let imageURL: string;
   let dragging: boolean;
+  let clicked: boolean = false;
   let fileName: string;
 
   async function handleDrop(event) {
@@ -35,12 +35,12 @@
     }
   }
 
-  function handleDragOver(event) {
+  function handleDragOver(event: Event) {
     event.preventDefault();
     dragging = true;
   }
 
-  function handleDragLeave(event) {
+  function handleDragLeave(event: Event) {
     event.preventDefault();
     droppedFile = null;
     dragging = false;
@@ -65,12 +65,18 @@
     }
   }
 
-  function handleClick(event) {
+  function handleClick(event: Event) {
     fileInput.click();
+    clicked = true;
+
+    setTimeout(() => {
+      clicked = false;
+    }, 1000);
   }
 
-  function handleURLChange(event) {
-    imageURL = event.target.value;
+  function handleURLChange(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    imageURL = inputElement.value;
   }
 
   async function handleURLSubmit() {
@@ -111,14 +117,33 @@
           stroke-width="2"
         />
       </svg>
-      <p class="text-xl text-gray-700">{i('Drop files to upload')}</p>
+
+      <button on:click={handleClick}>
+        <p
+          class=" text-sm sm:text-2xl md:text-3xl lg:text-4xl my-4 text font-semibold font-sans {clicked
+            ? ' text-cyan-200'
+            : ' text-violet-200'}"
+        >
+          {i('Click or Drag & Drop')}
+        </p>
+        <input
+          on:change={handleFileChange}
+          bind:this={fileInput}
+          type="file"
+          name="file"
+          multiple
+          class="sr-only"
+        />
+      </button>
+
       <div class="flex flex-row">
-        <p class="mb-2 text-gray-700">
-          <button
-            class="btn btn-active btn-ghost url-button"
-            on:click={() => window.modal.showModal()}
-          >
-            {i('URL')}
+        <p class=" text-gray-700">
+          <button class="mt-2" on:click={() => window.modal.showModal()}>
+            <p
+              class=" text-sm sm:text-xl md:text-xl lg:text-2xl font-bold font-sans underline"
+            >
+              {i('URL')}
+            </p>
           </button>
           <dialog id="modal" class="modal modal-bottom sm:modal-middle">
             <form method="dialog" class="modal-box">
@@ -143,20 +168,12 @@
           </dialog>
         </p>
       </div>
-      <label
-        class="bg-white px-4 h-9 inline-flex items-center rounded border border-gray-300 shadow-sm text-sm font-medium text-gray-700 focus-within:ring-2 ring-offset-2 ring-yellow-500"
+
+      <p
+        class="mt-4 text-sm sm:text-sm md:text-base lg:text-lg font-bold font-sans"
       >
-        {i('Select files')}
-        <input
-          on:change={handleFileChange}
-          bind:this={fileInput}
-          type="file"
-          name="file"
-          multiple
-          class="sr-only"
-        />
-      </label>
-      <p class="mt-4 text-lg">{i('Maximum file size must be 512MB')}</p>
+        {i('Maximum file size must be 512MB')}
+      </p>
     </div>
   </div>
 {/if}
