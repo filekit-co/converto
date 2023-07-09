@@ -4,7 +4,6 @@ import { getRuntimeFromLocals, addRuntimeToLocals, initSvelteKitServerRuntime } 
 import type { Handle } from '@sveltejs/kit';
 
 
-
 export const handle: Handle = (async ({ event, resolve }) => {
 	if (!(event?.url?.pathname.split('/').at(1) === 'inlang')) {
 		const language = await detectLanguageOrFallback(

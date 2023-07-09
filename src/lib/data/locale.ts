@@ -1,6 +1,6 @@
 export const referenceLanguage = 'en'
-export type LanguageCode = string | 'ar' | 'az' | 'bg' | 'ca' | 'cs' | 'da' | 'de' | 'el' | 'en' | 'es' | 'es-419' | 'eu' | 'fr' | 'he' | 'hr' | 'hu' | 'id' | 'it' | 'iw' | 'ja' | 'ko' | 'nl' | 'no' | 'pl' | 'pt' | 'pt-BR' | 'ro' | 'ru' | 'sr' | 'sv' | 'ta' | 'tr' | 'uk' | 'vi' | 'zh-CN' | 'zh-Hans-CN' | 'zh-TW' | 'mr-IN';
-export const languageCodes: LanguageCode[] = ['ar', 'az', 'bg', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'es-419', 'eu', 'fr', 'he', 'hr', 'hu', 'id', 'it', 'iw', 'ja', 'ko', 'nl', 'no', 'pl', 'pt', 'pt-BR', 'ro', 'ru', 'sr', 'sv', 'ta', 'tr', 'uk', 'vi', 'zh-CN', 'zh-Hans-CN', 'zh-TW', 'mr-IN']
+export type LanguageCode = string | 'ar' | 'az' | 'bg' | 'ca' | 'cs' | 'da' | 'de' | 'el' | 'en' | 'es' | 'es-419' | 'eu' | 'fr' | 'he' | 'hr' | 'hu' | 'id' | 'it' | 'iw' | 'ja' | 'ko' | 'nl' | 'no' | 'pl' | 'pt' | 'ro' | 'ru' | 'sr' | 'sv' | 'ta' | 'tr' | 'uk' | 'vi' | 'zh-CN' | 'zh-TW' | 'mr-IN';
+export const languageCodes: LanguageCode[] = ['ar', 'az', 'bg', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'es-419', 'eu', 'fr', 'he', 'hr', 'hu', 'id', 'it', 'iw', 'ja', 'ko', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sr', 'sv', 'ta', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW', 'mr-IN']
 
 export const languageCountryMap: { [languageCode in LanguageCode]: string } = {
   'ar': 'ae',
@@ -28,7 +28,6 @@ export const languageCountryMap: { [languageCode in LanguageCode]: string } = {
   'no': 'no',
   'pl': 'pl',
   'pt': 'pt',
-  'pt-BR': 'br',
   'ro': 'ro',
   'ru': 'ru',
   'sr': 'rs',
@@ -38,7 +37,6 @@ export const languageCountryMap: { [languageCode in LanguageCode]: string } = {
   'uk': 'ua',
   'vi': 'vn',
   'zh-CN': 'cn',
-  'zh-Hans-CN': 'cn',
   'zh-TW': 'tw',
   'mr-IN': 'in',
 };
@@ -68,7 +66,6 @@ export const languageTextMap: { [langCode in LanguageCode]: string } = {
   'no': 'norsk',
   'pl': 'polski',
   'pt': 'português',
-  'pt-BR': 'português (Brasil)',
   'ro': 'română',
   'ru': 'русский',
   'sr': 'српски',
@@ -78,7 +75,6 @@ export const languageTextMap: { [langCode in LanguageCode]: string } = {
   'uk': 'українська',
   'vi': 'Tiếng Việt',
   'zh-CN': '简体中文',
-  'zh-Hans-CN': '简体中文',
   'zh-TW': '繁體中文',
   'mr-IN': 'मराठी',
 };
