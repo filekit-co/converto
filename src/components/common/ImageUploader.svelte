@@ -339,18 +339,6 @@
 {/if}
 
 <style>
-  #app {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column;
-  }
-
-  .text-2xl {
-    font-size: 2.5rem;
-    line-height: 2rem;
-  }
-
   .text-xl {
     font-size: 2rem;
     line-height: 1.75rem;
