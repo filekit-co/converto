@@ -20,7 +20,7 @@
       <h2
         class="font-display font-bold text-typo m-0 text-4xl md:text-5xl text-center"
       >
-        Removed Background Image Example
+        Sample Images
       </h2>
     </div>
   </div>

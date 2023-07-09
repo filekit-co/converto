@@ -1,7 +1,7 @@
 <script lang="ts">
-  import ImageUploader from '@components/common/ImageUploader.svelte';
+  import ImageUploader from '@components/RemoveBackground/ImageUploader.svelte';
   import Feature from '@components/home/Feature.svelte';
-  import ImgExample from '@components/common/ImgExample.svelte';
+  import ImgExample from '@components/RemoveBackground/ImgExample.svelte';
   import {i} from '@inlang/sdk-js';
 </script>
 
