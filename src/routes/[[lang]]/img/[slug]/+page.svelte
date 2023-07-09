@@ -27,10 +27,12 @@
   const fileAccept = jpgTypes.includes(fromExt)
     ? ['.jpg', '.jpeg']
     : [`.${fromExt}`];
+
   const imgFileDropOptions: FileDropOptions = {
     accept: fileAccept,
     hideInput: true,
-    multiple: true
+    multiple: true,
+    maxSize: 30 * 1024 * 1024
   };
 
   let uploadData: fileUploadData = [];

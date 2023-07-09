@@ -30,6 +30,7 @@
     {fileDropOptions.multiple ? i('files') : i('file')}
   </p>
   <p>({fileDropOptions.accept})</p>
+  <p>{i('Maximum file size must be 30MB')}</p>
   <input type="file" hidden />
 </div>
 

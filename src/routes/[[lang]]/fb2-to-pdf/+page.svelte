@@ -11,7 +11,8 @@
   let fileDropOptions: FileDropOptions = {
     accept: ['.fb2'],
     hideInput: true,
-    multiple: true
+    multiple: true,
+    maxSize: 30 * 1024 * 1024
   };
   let files: Files = {
     accepted: [],

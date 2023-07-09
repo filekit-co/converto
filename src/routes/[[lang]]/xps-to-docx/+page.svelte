@@ -13,7 +13,8 @@
   let fileDropOptions: FileDropOptions = {
     accept: ['.xps'],
     hideInput: true,
-    multiple: true
+    multiple: true,
+    maxSize: 30 * 1024 * 1024
   };
   let files: Files = {
     accepted: [],

@@ -15,7 +15,8 @@
   const fileDropOptions: FileDropOptions = {
     accept: [`.${fromExt}`],
     hideInput: true,
-    multiple: true
+    multiple: true,
+    maxSize: 30 * 1024 * 1024
   };
 
   let files: Files = {
