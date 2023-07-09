@@ -8,6 +8,7 @@
 
   import type {PageData} from './$types';
   import {fetchToY} from '$lib/apis';
+  import {i} from '@inlang/sdk-js';
 
   export let data: PageData;
   let files: Files = {
@@ -16,6 +17,10 @@
   };
 
   const [fromExt, toExt] = data.exts;
+  const description = i('Convert {fromExt} to {toExt} online for free', {
+    fromExt: fromExt.toUpperCase(),
+    toExt: toExt.toUpperCase()
+  });
 
   const jpgTypes = ['jpg', 'jpeg']; // Because input accept does not recognize between jpg and jpeg.
   const fileAccept = jpgTypes.includes(fromExt)
@@ -49,7 +54,7 @@
     </h2>
   </div>
   <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">
-    {data.description}
+    {description}
   </p>
 
   <section class="pt-4 mx-0 sm:mx-10">

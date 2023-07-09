@@ -7,16 +7,24 @@
   import {fetchCbzToPdf} from '$lib/apis'; // TODO: change
   import BaseUploader from '@components/FileUploaders/FileUploader.svelte';
   import type {fileUploadData} from '@components/FileUploaders/types';
-  import cbzLogo from '$lib/assets/images/cbz.png';
+  import type {PageData} from './$types';
+  import {i} from '@inlang/sdk-js';
 
-  let fileDropOptions: FileDropOptions = {
-    accept: ['.cbz'], // TODO: change
-    hideInput: true,
-    multiple: true
-  };
+  export let data: PageData;
   let files: Files = {
     accepted: [],
     rejected: []
+  };
+
+  const [fromExt, toExt] = data.exts;
+  const description = i('Convert {fromExt} to {toExt} online for free', {
+    fromExt: fromExt.toUpperCase(),
+    toExt: toExt.toUpperCase()
+  });
+  const fileDropOptions: FileDropOptions = {
+    accept: [`.${fromExt}`],
+    hideInput: true,
+    multiple: true
   };
 
   let uploadData: fileUploadData = [];
@@ -33,21 +41,18 @@
 
 <div class="w-full px-2 py-32 sm:px-20 lg:px-32 text-center mx-auto">
   <div class="join">
-    <img src={cbzLogo} class="w-12 md-16 lg:w-32 join-item" alt="cbz-logo" />
-
     <h2 class="text-[clamp(2rem,6vw,4.5rem)] font-black join-item">
-      <!-- TODO: change text and color -->
-      CBZ to&nbsp<span class="text-[#ab7827]">PDF</span>
+      {@html data.xToy}
     </h2>
   </div>
-  <!-- TODO: change text -->
   <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">
-    Convert CBZ to PDF online for free
+    {description}
   </p>
 
   <section class="pt-4 mx-0 sm:mx-10">
     {#if isFileExist}
       {#if isDownloading}
+        <!-- TODO: api encapsulation -->
         <Downloader fetchFn={fetchCbzToPdf} {uploadData} />
       {:else}
         <BaseUploader bind:files bind:uploadData bind:isDownloading />
