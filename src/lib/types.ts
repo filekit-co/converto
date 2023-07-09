@@ -10,6 +10,13 @@ export interface HeaderProps {
 
 export type UpdateHeaderProps = Partial<HeaderProps>
 
+export type ConversionProps = {
+  headerProps: UpdateHeaderProps;
+  xToy?: string;
+  exts: [string, string];
+};
+
+
 export interface FileWithPath extends Blob {
   readonly path?: string;
   readonly webkitRelativePath: string;

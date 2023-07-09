@@ -33,11 +33,9 @@
 <div class="w-full px-2 py-32 sm:px-20 lg:px-32 text-center mx-auto">
   <div class="join">
     <h2 class="text-[clamp(2rem,6vw,4.5rem)] font-black join-item">
-      <!-- TODO: change text and color -->
       XPS to&nbsp<span class="text-[#37CDBE]">DOC</span>
     </h2>
   </div>
-  <!-- TODO: change text -->
   <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">
     Convert XPS to DOC online for free
   </p>

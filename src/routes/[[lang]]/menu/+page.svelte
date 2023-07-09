@@ -1,5 +1,6 @@
 <script lang="ts">
   import {pages} from '$lib/data';
+  import {i} from '@inlang/sdk-js';
 </script>
 
 <div class="w-full px-2 py-20 sm:px-20 lg:px-32 text-center mx-auto">
@@ -10,10 +11,9 @@
   <p
     class="text-base-content/60 font-title py-4 font-light md:text-xl lg:text-2xl"
   >
-    Your <span class="underline underline-offset-4"
-      >all-in-one file toolkit</span
-    > for seamless file management, including format conversions, image editing,
-    compression, and protection.
+    {i(
+      'Your all-in-one file toolkit for seamless file management, including format     conversions, image editing, compression, and protection.'
+    )}
   </p>
 
   <div class="mx-auto max-w-screen-xl px-4 pt-10 pb-8 lg:pb-12">

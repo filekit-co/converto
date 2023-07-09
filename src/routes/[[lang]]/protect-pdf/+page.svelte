@@ -7,6 +7,7 @@
   import {fetchLocks} from '$lib/apis';
   import PasswordUploader from '@components/FileUploaders/FilePasswordUploader.svelte';
   import type {filePasswordUploadData} from '@components/FileUploaders/types';
+  import {i} from '@inlang/sdk-js';
 
   let fileDropOptions: FileDropOptions = {
     accept: ['.pdf'],
@@ -46,10 +47,7 @@
     </h2>
   </div>
   <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">
-    An easy-to-use online tool to <span class="underline underline-offset-4"
-      >Protect PDF files</span
-    >
-    with a password.
+    {i('An easy-to-use online tool to Protect PDF files with a password.')}
   </p>
 
   <section class="pt-4 mx-0 sm:mx-10">

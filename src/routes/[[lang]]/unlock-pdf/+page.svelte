@@ -44,7 +44,7 @@
       />
     </svg>
     <h2 class="text-[clamp(2rem,6vw,4.5rem)] font-black join-item">
-      {i('Unlock')}<span class="text-accent">PDF</span>
+      Unlock<span class="text-accent">PDF</span>
     </h2>
   </div>
   <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">

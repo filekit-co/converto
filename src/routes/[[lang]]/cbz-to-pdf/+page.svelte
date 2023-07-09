@@ -4,7 +4,7 @@
   import type {FileDropOptions, Files} from 'filedrop-svelte';
   import Downloader from '@components/common/Downloader.svelte';
 
-  import {fetchCbzToPdf} from '$lib/apis'; // TODO: change
+  import {fetchCbzToPdf} from '$lib/apis';
   import BaseUploader from '@components/FileUploaders/FileUploader.svelte';
   import type {fileUploadData} from '@components/FileUploaders/types';
   import type {PageData} from './$types';
@@ -17,10 +17,6 @@
   };
 
   const [fromExt, toExt] = data.exts;
-  const description = i('Convert {fromExt} to {toExt} online for free', {
-    fromExt: fromExt.toUpperCase(),
-    toExt: toExt.toUpperCase()
-  });
   const fileDropOptions: FileDropOptions = {
     accept: [`.${fromExt}`],
     hideInput: true,
@@ -42,17 +38,19 @@
 <div class="w-full px-2 py-32 sm:px-20 lg:px-32 text-center mx-auto">
   <div class="join">
     <h2 class="text-[clamp(2rem,6vw,4.5rem)] font-black join-item">
-      {@html data.xToy}
+      CBZ to&nbsp<span class="text-[#ab7827]">PDF</span>
     </h2>
   </div>
   <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">
-    {description}
+    {i('Convert {fromExt} to {toExt} online for free', {
+      fromExt: fromExt.toUpperCase(),
+      toExt: toExt.toUpperCase()
+    })}
   </p>
 
   <section class="pt-4 mx-0 sm:mx-10">
     {#if isFileExist}
       {#if isDownloading}
-        <!-- TODO: api encapsulation -->
         <Downloader fetchFn={fetchCbzToPdf} {uploadData} />
       {:else}
         <BaseUploader bind:files bind:uploadData bind:isDownloading />

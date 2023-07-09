@@ -8,7 +8,7 @@
     <img src={logo} class="rounded-lg sm:max-w-md" alt="hero" />
 
     <div class="text-center lg:text-left">
-      <h1 class="text-5xl font-black">{i('File Kit')}</h1>
+      <h1 class="text-5xl font-black">File Kit</h1>
       <p class="py-6 font-title">
         {i(
           'Filekit is a browser-based file converter with support for over 300 formats, providing extensive conversions, fast processing times, andcustomizable settings while ensuring data security and compatibility across all devices.'
@@ -18,7 +18,7 @@
         href={`/${language}/menu`}
         class="btn btn-accent btn-lg btn-wide px-12 normal-case"
       >
-        {i("Let's kit")}
+        {i('Start')}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
