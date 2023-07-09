@@ -46,3 +46,8 @@ export let pages: Page[] = [
     ],
   }
 ]
+
+
+const extractedHrefs = pages.flatMap((page) => page.value.map((item) => item.href))
+export const allHrefs = ['', 'menu'].concat(extractedHrefs);
+

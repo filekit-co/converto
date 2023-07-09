@@ -16,12 +16,10 @@
   let isDropdownOpen = false;
 
   function handleFlagOnClick(code: string): void {
-    console.log(code);
     switchLanguage(code);
-    // $page.url.pathname => i.g /menu, /img/remove-background
 
+    // $page.url.pathname => i.g /menu, /img/remove-background
     const newRoute = newLangRoute(code, $page.url.pathname);
-    console.log(newRoute);
     isDropdownOpen = false;
     goto(newRoute, {replaceState: false});
   }
