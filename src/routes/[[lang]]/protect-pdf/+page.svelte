@@ -61,5 +61,7 @@
       <DragDrop bind:files {fileDropOptions} />
     {/if}
   </section>
+
+  <div class="mt-10" />
   <Feature />
 </div>

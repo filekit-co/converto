@@ -8,6 +8,7 @@
   import type {fileUploadData} from '@components/FileUploaders/types';
   import {i} from '@inlang/sdk-js';
   import type {PageData} from './$types';
+  import Feature from '@components/home/Feature.svelte';
 
   export let data: PageData;
   const [fromExt, toExt] = data.exts;
@@ -59,4 +60,7 @@
       <DragDrop bind:files {fileDropOptions} />
     {/if}
   </section>
+
+  <div class="mt-10" />
+  <Feature />
 </div>

@@ -6,6 +6,7 @@
   import {fetchFb2ToPdf} from '$lib/apis';
   import BaseUploader from '@components/FileUploaders/FileUploader.svelte';
   import type {fileUploadData} from '@components/FileUploaders/types';
+  import Feature from '@components/home/Feature.svelte';
 
   let fileDropOptions: FileDropOptions = {
     accept: ['.fb2'],
@@ -50,4 +51,6 @@
       <DragDrop bind:files {fileDropOptions} />
     {/if}
   </section>
+  <div class="mt-10" />
+  <Feature />
 </div>

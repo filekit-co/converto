@@ -8,6 +8,7 @@
   import BaseUploader from '@components/FileUploaders/FileUploader.svelte'; // TODO: change
   import type {fileUploadData} from '@components/FileUploaders/types'; // TODO: change
   import {i} from '@inlang/sdk-js';
+  import Feature from '@components/home/Feature.svelte';
 
   let fileDropOptions: FileDropOptions = {
     accept: ['.pdf'], // TODO: change
@@ -68,4 +69,7 @@
       <DragDrop bind:files {fileDropOptions} />
     {/if}
   </section>
+
+  <div class="mt-10" />
+  <Feature />
 </div>

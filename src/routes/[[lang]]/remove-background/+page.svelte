@@ -29,7 +29,7 @@
     </div>
     <ImgExample />
 
-    <!-- <Carosel /> -->
+    <div class="mt-10" />
     <Feature />
   </div>
 </div>

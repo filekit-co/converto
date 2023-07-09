@@ -1,8 +1,10 @@
 import type { UpdateHeaderProps, UpdateFeatureProps } from '$lib/types';
 import {canonicalUrl} from '$lib/utils'
-import { i } from '@inlang/sdk-js';
+import { getRuntimeFromLocals } from '@inlang/sdk-js/adapter-sveltekit/server';
 
-export const load = (({route}) => {
+export const load = (({route, locals}) => {
+  const { i } = getRuntimeFromLocals(locals)
+  
   const headerProps: UpdateHeaderProps = {
     url: canonicalUrl(route.id),
     title: i("Image Background Remover | Remove Bg from Image for Free"),

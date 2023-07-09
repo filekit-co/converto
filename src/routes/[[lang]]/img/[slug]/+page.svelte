@@ -9,6 +9,7 @@
   import type {PageData} from './$types';
   import {fetchToY} from '$lib/apis';
   import {i} from '@inlang/sdk-js';
+  import Feature from '@components/home/Feature.svelte';
 
   export let data: PageData;
   let files: Files = {
@@ -68,4 +69,7 @@
       <DragDrop bind:files fileDropOptions={imgFileDropOptions} />
     {/if}
   </section>
+
+  <div class="mt-10" />
+  <Feature />
 </div>

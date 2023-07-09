@@ -2,7 +2,14 @@
   import {page} from '$app/stores';
   import type {FeatureProps, UpdateFeatureProps} from '$lib/types';
   import {onMount} from 'svelte';
-  import {IconTransform} from '@tabler/icons-svelte';
+  import {
+    IconTransform,
+    IconSettings,
+    IconLockCheck,
+    IconDeviceDesktop,
+    IconBrandSpeedtest,
+    IconUserHeart
+  } from '@tabler/icons-svelte';
   import {i} from '@inlang/sdk-js';
 
   export let bgColor: string = '';
@@ -20,6 +27,14 @@
       i('Completely Free'),
       i('Security'),
       i('Support for All Devices')
+    ],
+    subImage: [
+      IconTransform,
+      IconSettings,
+      IconLockCheck,
+      IconDeviceDesktop,
+      IconBrandSpeedtest,
+      IconUserHeart
     ],
     subDescription: [
       i(
@@ -52,23 +67,26 @@
   onMount(() => {
     renderedDivs = features.subHead.map((subHead, index) => {
       const subDescription = features.subDescription[index];
-      return {subHead, subDescription};
+      const subImage = features.subImage[index];
+      return {subHead, subImage, subDescription};
     });
   });
 </script>
 
 <section class={bgColor}>
-  <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 text-center">
     <div class=" mb-8 lg:mb-16">
-      <h2 class="mb-4 text-4xl tracking-tight font-extrabold">
+      <h2
+        class="mb-4 text-2xl md:text-3xl lg:text-4xl tracking-tight font-extrabold"
+      >
         {features.head1}
       </h2>
 
-      <h2 class="mb-4 text-2xl underline tracking-tight">
+      <h2 class="mb-4 text-md md:text-xl underline tracking-tight">
         "{features.head2}"
       </h2>
 
-      <p class="italic sm:text-xl">
+      <p class="italic text-sm md:text-md">
         {features.description}
       </p>
     </div>
@@ -78,9 +96,9 @@
       {#each renderedDivs as { subHead, subImage, subDescription }}
         <div>
           <div
-            class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"
+            class="flex justify-center items-center mb-4 h-10 rounded-full bg-primary-100 lg:h-12 dark:bg-primary-900"
           >
-            <IconTransform size={100} />
+            <svelte:component this={subImage} size={30} />
           </div>
           <h3 class="mb-2 text-xl font-bold dark:text-black">
             {subHead}
