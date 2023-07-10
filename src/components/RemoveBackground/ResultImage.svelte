@@ -8,11 +8,39 @@
   const progress = 100;
 </script>
 
-<ul class=" mt-6 bg-white rounded divide-y divide-gray-200 shadow">
+<div class="mt-6 bg-white rounded divide-y divide-gray-200 shadow">
+  <div class="lg: grid lg:grid-rows-1 lg:grid-cols-4 items-center">
+    <img src={resultImage} />
+
+    <div
+      class="lg: grid lg:grid-rows-2 lg:grid-cols-1 md: grid-cols-2 md: items-center"
+    >
+      <p>File Name</p>
+      <div>{fileName}</div>
+    </div>
+
+    <div
+      class="lg: grid lg:grid-rows-2 lg:grid-cols-1 md: grid-cols-2 items-center"
+    >
+      <p>File Status</p>
+      {progress}
+    </div>
+
+    <div
+      class="lg: grid lg:grid-rows-2 lg:grid-cols-1 md: grid-cols-2 items-center"
+    >
+      <p>Download</p>
+      <button>click!</button>
+    </div>
+  </div>
+</div>
+
+<!-- <ul class=" mt-6 bg-white rounded divide-y divide-gray-200 shadow">
   <li class="p-3 flex items-center justify-between">
     <div class="w-9 h-9 bg-gray-300">
       <img src={resultImage} alt="resultImage" />
     </div>
+
     {#if fileName}
       <div class="text-sm text-gray-700">{fileName}</div>
     {:else}
@@ -32,6 +60,7 @@
         {progress}%
       </div>
     </div>
+
     <button
       class="w-40 bg-cyan-200 rounded-full h-5 shadow-inner overflow-hidden relative flex items-center justify-center"
     >
@@ -49,4 +78,20 @@
       </div>
     </button>
   </li>
-</ul>
+</ul> -->
+
+<style>
+  @media (max-width: 768px) {
+    .img-container {
+      width: 50px;
+      height: auto;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .img-container {
+      width: 200px;
+      height: auto;
+    }
+  }
+</style>

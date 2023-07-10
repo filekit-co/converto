@@ -94,7 +94,7 @@
 </script>
 
 {#if !$loading}
-  <div class=" max-w-8xl mx-auto sm:px-6 lg:px-8">
+  <div class=" max-w-8xl mx-auto sm:px-6 lg:px-6">
     <div
       on:drop={handleDrop}
       on:dragover={handleDragOver}
