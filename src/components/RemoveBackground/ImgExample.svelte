@@ -1,4 +1,6 @@
 <script lang="ts">
+  import {i} from '@inlang/sdk-js';
+
   import humanOrigin from '$lib/assets/images/human-origin.jpg';
   import humanResult from '$lib/assets/images/human-result.png';
   import stuffOrigin from '$lib/assets/images/stuff-origin.jpg';
@@ -20,26 +22,26 @@
       <h2
         class="font-display font-bold text-typo m-0 text-4xl md:text-5xl text-center"
       >
-        Sample Images
+        {i('Sample Images')}
       </h2>
     </div>
   </div>
   <div class="flex lg:gap-2 sm:gap-0 justify-center">
     <button
       on:click={() => handleClick('human')}
-      class="btn btn-primary btn-ghost">human</button
+      class="btn btn-primary btn-ghost">{i('Human')}</button
     >
     <button
       on:click={() => handleClick('stuff')}
-      class="btn btn-primary btn-ghost">stuff</button
+      class="btn btn-primary btn-ghost">{i('Stuff')}</button
     >
     <button
       on:click={() => handleClick('animal')}
-      class="btn btn-primary btn-ghost">animal</button
+      class="btn btn-primary btn-ghost">{i('Animal')}</button
     >
     <button
       on:click={() => handleClick('character')}
-      class="btn btn-primary btn-ghost">character</button
+      class="btn btn-primary btn-ghost">{i('Character')}</button
     >
   </div>
 

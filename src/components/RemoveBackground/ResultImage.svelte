@@ -17,31 +17,34 @@
 </script>
 
 <div class="mt-6 bg-white rounded divide-y divide-gray-200 shadow">
-  <div class="lg: grid lg:grid-rows-1 lg:grid-cols-4 lg:gap-2 items-center">
+  <div
+    class="lg: grid lg:grid-rows-1 lg:grid-cols-4 lg:gap-2 md:gap-2 sm:gap-2 items-center"
+  >
     <div on:click={handleImgClick}>
       <img src={resultImage} alt="result_image" />
     </div>
 
     {#if fileName}
       <div
-        class="lg: grid lg:grid-rows-2 lg:grid-cols-1 md: grid-cols-2 md: items-center"
+        class="lg: grid lg:grid-rows-2 lg:grid-cols-1 lg:gap-5 md: grid-cols-2 md:items-center"
       >
         <p
           class="text-base sm:text-lg md:text-xl lg:text-2xl font-sans font-medium"
         >
-          File Name
+          {i('File Name')}
         </p>
         <p class="text-xs sm:text-sm md:text-base lg:text-lg">{fileName}</p>
       </div>
     {:else if imageURL}
       <div
-        class="lg: grid lg:grid-rows-2 lg:grid-cols-1 md: grid-cols-2 md: items-center"
+        class="lg: grid lg:grid-rows-2 lg:grid-cols-1 md: grid-cols-2 md:items-center"
       >
         <p
           class="text-base sm:text-lg md:text-xl lg:text-2xl font-sans font-medium"
         >
-          Image URL
+          {i('Image URL')}
         </p>
+
         <p class="text-xs sm:text-sm md:text-base lg:text-lg">{imageURL}</p>
       </div>
     {/if}
@@ -52,10 +55,10 @@
       <p
         class="text-base sm:text-lg md:text-xl lg:text-2xl font-sans font-medium"
       >
-        File Status
+        {i('File Status')}
       </p>
       <div
-        class="bg-gray-200 rounded-full h-5 shadow-inner overflow-hidden relative flex items-center justify-center"
+        class="bg-gray-200 rounded-full md:h-10 lg:h-14 shadow-inner overflow-hidden relative flex items-center justify-center"
       >
         <div
           class="inline-block h-full bg-yellow-400 absolute top-0 left-0"
@@ -75,13 +78,13 @@
       <p
         class="text-base sm:text-lg md:text-xl lg:text-2xl font-sans font-medium"
       >
-        Download
+        {i('Download')}
       </p>
       <button
-        class=" bg-cyan-200 rounded-full h-5 shadow-inner overflow-hidden relative flex items-center justify-center"
+        class=" bg-cyan-200 rounded-full md:h-10 lg:h-14 shadow-inner overflow-hidden relative flex items-center justify-center"
       >
         <div
-          class=" relative z-10 text-xs font-semibold text-center text-white drop-shadow text-shadow"
+          class="relative z-10 text-xs font-semibold text-center text-white drop-shadow text-shadow"
         >
           <a
             target="_blank"
@@ -90,7 +93,7 @@
             download="Result_Image"
           >
             <p class="text-xs sm:text-sm md:text-base lg:text-lg">
-              {i('Download')}
+              {i('Click')}
             </p>
           </a>
         </div>
