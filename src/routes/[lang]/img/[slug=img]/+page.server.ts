@@ -2,17 +2,7 @@ import { error } from '@sveltejs/kit';
 import { imgSlugToHex, imgSlugs } from '$lib/data';
 import type { UpdateHeaderProps, ConversionProps } from '$lib/types';
 import { canonicalUrl, extractExtsFromString } from '$lib/utils';
-import type { EntryGenerator } from './$types';
 import { getRuntimeFromLocals } from '@inlang/sdk-js/adapter-sveltekit/server';
-
-
-// fix: Error: The following routes were marked as prerenderable, but were not prerendered because they were not found while crawling your app
-// https://kit.svelte.dev/docs/page-options#entries
-// export const entries = (() => {
-//   return imgSlugs.map((s) => {
-//     return {slug: s}
-//   })
-// }) satisfies EntryGenerator;
 
 
 export const load = async ({ params, route, locals }) => {
