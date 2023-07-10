@@ -21,7 +21,6 @@ const config = {
       '@utils': path.resolve('src/utils')
     },
   },
-
   // refs: https://kit.svelte.dev/docs/configuration#env
   env: {
     dir: '.',

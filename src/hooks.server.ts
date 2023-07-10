@@ -5,16 +5,19 @@ import type { Handle } from '@sveltejs/kit';
 
 
 export const handle: Handle = (async ({ event, resolve }) => {
-	if (!(event?.url?.pathname.split('/').at(1) === 'inlang')) {
-		const language = await detectLanguageOrFallback(
+	// top level route
+	const tlr = event?.url?.pathname.split('/').at(1)
+	const language = await detectLanguageOrFallback(
 			event?.url, 
 			event?.request?.headers, 
 			referenceLanguage
-		)
-		const runtime = initSvelteKitServerRuntime({ language, referenceLanguage, languages: languageCodes })
-		addRuntimeToLocals(event.locals, runtime)	
-	}
+	)
 	
+	if (!tlr) {
+		return new Response('Redirect', {status: 302, headers: { Location: `/${language}` }});
+	}
+	const runtime = initSvelteKitServerRuntime({ language, referenceLanguage, languages: languageCodes })
+	addRuntimeToLocals(event.locals, runtime)		
 	const response = await resolve(event);
   return response;
 })

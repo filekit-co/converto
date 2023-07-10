@@ -21,7 +21,11 @@ export async function defineConfig(env) {
         pathPattern,
         variableReferencePattern: ["{", "}"],
       }),
-      sdkPlugin({ languageNegotiation: { strategies: [{ type: "localStorage" }] } }),
+      sdkPlugin({
+        languageNegotiation: {
+          strategies: [{ type: "localStorage" }]
+        }
+      }),
       standardLintRules(),
     ]
   };
