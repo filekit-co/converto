@@ -24,7 +24,7 @@
   };
 </script>
 
-<div class="flex min-h-screen items-center justify-start">
+<div class="flex min-h-screen items-center justify-start px-10 sm:px-2">
   <div class="mx-auto w-full max-w-lg">
     {#if status}
       <div class="text-center lg:text-left">
@@ -66,6 +66,7 @@
               name="name"
               class="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
               placeholder=" "
+              required
             />
             <label
               for="name"
@@ -80,6 +81,7 @@
               name="email"
               class="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
               placeholder=" "
+              required
             />
             <label
               for="email"
@@ -94,6 +96,7 @@
               rows="5"
               class="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
               placeholder=" "
+              required
             />
             <label
               for="message"
@@ -102,11 +105,13 @@
             >
           </div>
         </div>
-        <button
-          type="submit"
-          class="mt-5 rounded-md bg-black px-10 py-2 text-white"
-          >Send Message</button
-        >
+        <div class="text-center sm:text-justify">
+          <button
+            type="submit"
+            class="mt-10 rounded-md bg-black px-10 py-2 text-white"
+            >Send Message</button
+          >
+        </div>
       </form>
     {/if}
   </div>
