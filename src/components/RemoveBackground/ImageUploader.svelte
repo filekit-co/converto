@@ -120,7 +120,7 @@
 
       <button on:click={handleClick}>
         <p
-          class=" text-sm sm:text-2xl md:text-3xl lg:text-4xl my-4 text font-semibold font-sans {clicked
+          class=" text-lg sm:text-2xl md:text-3xl lg:text-4xl my-4 text font-semibold font-sans {clicked
             ? ' text-cyan-200'
             : ' text-violet-200'}"
         >
@@ -157,9 +157,8 @@
                 placeholder="Type here"
                 class="input input-bordered input-accent w-full max-w-xs"
               />
-              <button
-                on:click={handleURLSubmit}
-                class="btn btn-active btn-primary">{i('Submit')}</button
+              <button class="px-2 py-2" on:click={handleURLSubmit}
+                >{i('Submit')}</button
               >
             </form>
             <form method="dialog" class="modal-backdrop">
@@ -169,9 +168,7 @@
         </p>
       </div>
 
-      <p
-        class="mt-4 text-sm sm:text-sm md:text-base lg:text-lg font-bold font-sans"
-      >
+      <p class=" text-sm lg:text-base mt-4 font-sans">
         {i('Maximum file size must be 512MB')}
       </p>
     </div>

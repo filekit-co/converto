@@ -50,7 +50,8 @@ export async function fetchRemoveresultImageURL(imageURL: string) {
       const response = await fetch(
         `${PUBLIC_IMG_API_URL}/bg/remove?url=${imageURL}`,
         {
-          method: 'GET'
+          method: 'GET',
+          mode: 'cors'
         }
       );
 
