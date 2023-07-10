@@ -2,6 +2,7 @@
 import { allHrefs, languageCodes } from '$lib/data';
 import type { RequestHandler } from './$types';
 
+export const prerender = true;
 const fallbackSite = 'https://filekit.co'
 
 export const GET = (({ url }) => {
@@ -20,13 +21,7 @@ export const GET = (({ url }) => {
 
 const getAllUrls = (site: string) => {
   const urls: string[] = [];
-
-  // 기본 언어 코드로 생성하는 URL
-  for (const href of allHrefs) {
-    const url = href ? `${site}/${href}` : site;
-    urls.push(url);
-  }
-
+  
   // 각 언어 코드로 생성하는 URL
   for (const lang of languageCodes) {
     for (const href of allHrefs) {
