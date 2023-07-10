@@ -1,5 +1,6 @@
 <script lang="ts">
   import '../app.css';
+  import {page} from '$app/stores';
   import Nav from '@components/common/Nav.svelte';
   import Footer from '@components/common/Footer.svelte';
 
@@ -14,15 +15,19 @@
   $: $imgClicked;
 </script>
 
-{#if $loading}
-  <Loader />
-{/if}
+{#if $page.error}
+  <slot />
+{:else}
+  {#if $loading}
+    <Loader />
+  {/if}
 
-{#if $imgClicked}
-  <ImagePreview />
-{/if}
+  {#if $imgClicked}
+    <ImagePreview />
+  {/if}
 
-<Header />
-<Nav />
-<slot />
-<Footer />
+  <Header />
+  <Nav />
+  <slot />
+  <Footer />
+{/if}

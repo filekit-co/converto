@@ -8,6 +8,12 @@
   <div>
     <img src={logo} alt="logo" style="width: 100px" />
     <p>filekit.co<br />All Rights are reserved</p>
+    <a
+      href={`/${language}/send-email`}
+      class="btn btn-outline btn-sm md:btn-md"
+    >
+      Contact us
+    </a>
   </div>
 
   {#each pages as page}
