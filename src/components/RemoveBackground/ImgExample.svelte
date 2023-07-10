@@ -24,11 +24,7 @@
       </h2>
     </div>
   </div>
-  <div
-    role="tablist"
-    aria-orientation="horizontal"
-    class=" hide-scrollbars flex space-x-2 -my-2 py-2 justify-start md:justify-center overflow-x-scroll md:overflow-auto px-8 scroll-pl-8 md:scroll-p-0"
-  >
+  <div class="flex lg:gap-2 sm:gap-0 justify-center">
     <button
       on:click={() => handleClick('human')}
       class="btn btn-primary btn-ghost">human</button
