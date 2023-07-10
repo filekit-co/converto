@@ -3,17 +3,16 @@ import { allHrefs, languageCodes } from '$lib/data';
 import type { RequestHandler } from './$types';
 
 export const prerender = true;
-const fallbackSite = 'https://filekit.co'
+const baseSite = 'https://filekit.co'
 
-export const GET = (({ url }) => {
-  const site = url?.origin || fallbackSite
+export const GET = (() => {
   const options: ResponseInit = {
     headers: {
       'Cache-Control': 'max-age=0, s-maxage=3600',
       'Content-Type': 'application/xml',
     }
   }
-  const urls = getAllUrls(site);
+  const urls = getAllUrls(baseSite);
   const body = sitemap(urls);
   return new Response(body, options);
 }) satisfies RequestHandler;
