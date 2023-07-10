@@ -2,7 +2,8 @@
   import {loading} from '@components/common/loading';
   import {i} from '@inlang/sdk-js';
   import ResultImage from './ResultImage.svelte';
-  import {fetchRemoveImageFile, fetchRemoveresultImageURL} from '$lib/apis';
+  import {fetchRemoveImgBgByFile, fetchRemoveImgBgByUrl} from '$lib/apis';
+  import {onDestroy} from 'svelte';
 
   $: $loading;
 
@@ -13,27 +14,7 @@
   let fileInput: any = null;
   let imageURL: string;
   let dragging: boolean;
-  let clicked: boolean = false;
   let fileName: string;
-
-  async function handleDrop(event) {
-    $loading = true;
-    try {
-      event.preventDefault();
-      droppedFile = event.dataTransfer.files[0];
-      fileName = droppedFile.name;
-
-      if (droppedFile) {
-        const {resultImageURL, resultFileURL} = await fetchRemoveImageFile(
-          droppedFile
-        );
-        resultImage = resultImageURL;
-        resultFile = resultFileURL;
-      }
-    } finally {
-      $loading = false;
-    }
-  }
 
   function handleDragOver(event: Event) {
     event.preventDefault();
@@ -46,6 +27,34 @@
     dragging = false;
   }
 
+  function handleClick(event: Event) {
+    fileInput.click();
+  }
+
+  function handleURLChange(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    imageURL = inputElement.value;
+  }
+
+  async function handleDrop(event) {
+    $loading = true;
+    try {
+      event.preventDefault();
+      droppedFile = event.dataTransfer.files[0];
+      fileName = droppedFile.name;
+
+      if (droppedFile) {
+        const {resultImageURL, resultFileURL} = await fetchRemoveImgBgByFile(
+          droppedFile
+        );
+        resultImage = resultImageURL;
+        resultFile = resultFileURL;
+      }
+    } finally {
+      $loading = false;
+    }
+  }
+
   async function handleFileChange(event) {
     $loading = true;
     try {
@@ -54,7 +63,7 @@
       fileName = selectedFile.name;
 
       if (selectedFile) {
-        const {resultImageURL, resultFileURL} = await fetchRemoveImageFile(
+        const {resultImageURL, resultFileURL} = await fetchRemoveImgBgByFile(
           selectedFile
         );
         resultImage = resultImageURL;
@@ -65,24 +74,10 @@
     }
   }
 
-  function handleClick(event: Event) {
-    fileInput.click();
-    clicked = true;
-
-    setTimeout(() => {
-      clicked = false;
-    }, 1000);
-  }
-
-  function handleURLChange(event: Event) {
-    const inputElement = event.target as HTMLInputElement;
-    imageURL = inputElement.value;
-  }
-
   async function handleURLSubmit() {
     $loading = true;
     try {
-      const {resultImageURL, resultFileURL} = await fetchRemoveresultImageURL(
+      const {resultImageURL, resultFileURL} = await fetchRemoveImgBgByUrl(
         imageURL
       );
       resultImage = resultImageURL;
@@ -91,10 +86,16 @@
       $loading = false;
     }
   }
+
+  onDestroy(() => {
+    [resultImage, resultFile]
+      .filter(Boolean)
+      .forEach(i => URL.revokeObjectURL(i));
+  });
 </script>
 
 {#if !$loading}
-  <div class=" max-w-8xl mx-auto sm:px-6 lg:px-6">
+  <div class=" max-w-8xl mx-auto sm:px-6 lg:px-8">
     <div
       on:drop={handleDrop}
       on:dragover={handleDragOver}
@@ -120,9 +121,7 @@
 
       <button on:click={handleClick}>
         <p
-          class=" text-lg sm:text-2xl md:text-3xl lg:text-4xl my-4 text font-semibold font-sans {clicked
-            ? ' text-cyan-200'
-            : ' text-violet-200'}"
+          class=" text-sm sm:text-2xl md:text-3xl lg:text-4xl my-4 text font-semibold font-sans text-gray-500 hover:text-cyan-500"
         >
           {i('Click or Drag & Drop')}
         </p>
@@ -157,8 +156,9 @@
                 placeholder="Type here"
                 class="input input-bordered input-accent w-full max-w-xs"
               />
-              <button class="px-2 py-2" on:click={handleURLSubmit}
-                >{i('Submit')}</button
+              <button
+                on:click={handleURLSubmit}
+                class="btn btn-active btn-primary">{i('Submit')}</button
               >
             </form>
             <form method="dialog" class="modal-backdrop">
@@ -168,7 +168,9 @@
         </p>
       </div>
 
-      <p class=" text-sm lg:text-base mt-4 font-sans">
+      <p
+        class="mt-4 text-sm sm:text-sm md:text-base lg:text-lg font-bold font-sans"
+      >
         {i('Maximum file size must be 512MB')}
       </p>
     </div>

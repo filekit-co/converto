@@ -19,8 +19,8 @@ export async function fetchToY(data: fileUploadData, outType: string) {
     })
   );
 }
- 
-export async function fetchRemoveImageFile(imgFile: ImageType) {
+
+export async function fetchRemoveImgBgByFile(imgFile: ImageType) {
   const formData = new FormData();
   formData.append('image', imgFile);
 
@@ -45,7 +45,7 @@ export async function fetchRemoveImageFile(imgFile: ImageType) {
   }
 }
 
-export async function fetchRemoveresultImageURL(imageURL: string) {
+export async function fetchRemoveImgBgByUrl(imageURL: string) {
   try {
       const response = await fetch(
         `${PUBLIC_IMG_API_URL}/bg/remove?url=${imageURL}`,
