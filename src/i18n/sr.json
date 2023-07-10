@@ -93,5 +93,14 @@
   "Password protect a PDF": "Заштитите ПДФ лозинком",
   "Remove PDF passwords online for free. No size limits or ad watermarks. Easily and quickly remove passwords from your PDF files so you can edit and share them.": "Уклоните ПДФ лозинке на мрежи бесплатно. Нема ограничења величине или водених жигова огласа. Лако и брзо уклоните лозинке из својих ПДФ датотека како бисте могли да их уређујете и делите.",
   "online pdf unlock, pdf unlock online, pdf file unlock, remove pdf password online, pdf remove password protection": "онлајн пдф откључавање, пдф откључавање онлајн, откључавање пдф датотеке, уклањање пдф лозинке на мрежи, пдф уклањање заштите лозинком",
-  "Maximum file size must be 30MB": "Максимална величина датотеке мора бити 30 МБ"
+  "Maximum file size must be 30MB": "Максимална величина датотеке мора бити 30 МБ",
+  "File Name": "Назив документа",
+  "Image URL": "УРЛ слике",
+  "File Status": "Статус датотеке",
+  "Click": "Кликните",
+  "Sample Images": "Примери слика",
+  "Human": "Хуман",
+  "Stuff": "Ствари",
+  "Animal": "Анимал",
+  "Character": "карактер"
 }

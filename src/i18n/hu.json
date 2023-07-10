@@ -93,5 +93,14 @@
   "Password protect a PDF": "Védje jelszóval a PDF fájlt",
   "Remove PDF passwords online for free. No size limits or ad watermarks. Easily and quickly remove passwords from your PDF files so you can edit and share them.": "Ingyenesen távolítsa el a PDF jelszavakat online. Nincsenek méretkorlátok vagy vízjelek a hirdetésekben. Könnyen és gyorsan távolítsa el a jelszavakat PDF-fájljaiból, így szerkesztheti és megoszthatja azokat.",
   "online pdf unlock, pdf unlock online, pdf file unlock, remove pdf password online, pdf remove password protection": "online pdf feloldás, pdf feloldás online, pdf fájl feloldása, pdf jelszó eltávolítása online, pdf jelszavas védelem eltávolítása",
-  "Maximum file size must be 30MB": "A maximális fájlméret 30 MB lehet"
+  "Maximum file size must be 30MB": "A maximális fájlméret 30 MB lehet",
+  "File Name": "Fájl név",
+  "Image URL": "Kép URL-je",
+  "File Status": "Fájl állapota",
+  "Click": "Kattintson",
+  "Sample Images": "Mintaképek",
+  "Human": "Emberi",
+  "Stuff": "Dolog",
+  "Animal": "Állat",
+  "Character": "karakter"
 }

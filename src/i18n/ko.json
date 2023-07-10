@@ -93,5 +93,14 @@
   "Password protect a PDF": "PDF를 암호로 보호",
   "Remove PDF passwords online for free. No size limits or ad watermarks. Easily and quickly remove passwords from your PDF files so you can edit and share them.": "온라인에서 무료로 PDF 암호를 제거하세요. 크기 제한이나 광고 워터마크가 없습니다. PDF 파일에서 암호를 쉽고 빠르게 제거하여 편집하고 공유할 수 있습니다.",
   "online pdf unlock, pdf unlock online, pdf file unlock, remove pdf password online, pdf remove password protection": "온라인 PDF 잠금 해제, 온라인 PDF 잠금 해제, PDF 파일 잠금 해제, 온라인 PDF 암호 제거, PDF 암호 보호 제거",
-  "Maximum file size must be 30MB": "최대 파일 크기는 30MB여야 합니다."
+  "Maximum file size must be 30MB": "최대 파일 크기는 30MB여야 합니다.",
+  "File Name": "파일 이름",
+  "Image URL": "이미지 URL",
+  "File Status": "파일 상태",
+  "Click": "클릭하세요",
+  "Sample Images": "샘플 이미지",
+  "Human": "인간",
+  "Stuff": "물건",
+  "Animal": "동물",
+  "Character": "성격"
 }

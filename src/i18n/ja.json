@@ -93,5 +93,14 @@
   "Password protect a PDF": "PDF をパスワードで保護する",
   "Remove PDF passwords online for free. No size limits or ad watermarks. Easily and quickly remove passwords from your PDF files so you can edit and share them.": "PDF パスワードをオンラインで無料で削除します。サイズ制限や広告の透かしはありません。 PDF ファイルからパスワードを簡単かつ迅速に削除して、編集したり共有したりできるようにします。",
   "online pdf unlock, pdf unlock online, pdf file unlock, remove pdf password online, pdf remove password protection": "オンライン pdf ロック解除, オンライン pdf ロック解除, pdf ファイル ロック解除, オンラインで pdf パスワードを削除, pdf パスワード保護を削除",
-  "Maximum file size must be 30MB": "最大ファイルサイズは30MBである必要があります"
+  "Maximum file size must be 30MB": "最大ファイルサイズは30MBである必要があります",
+  "File Name": "ファイル名",
+  "Image URL": "画像URL",
+  "File Status": "ファイルステータス",
+  "Click": "クリック",
+  "Sample Images": "サンプル画像",
+  "Human": "人間",
+  "Stuff": "もの",
+  "Animal": "動物",
+  "Character": "キャラクター"
 }

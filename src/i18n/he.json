@@ -93,5 +93,14 @@
   "Password protect a PDF": "הגן באמצעות סיסמה על PDF",
   "Remove PDF passwords online for free. No size limits or ad watermarks. Easily and quickly remove passwords from your PDF files so you can edit and share them.": "הסר סיסמאות PDF באינטרנט בחינם. אין מגבלות גודל או סימני מים למודעות. הסר בקלות ובמהירות סיסמאות מקובצי ה-PDF שלך כדי שתוכל לערוך ולשתף אותן.",
   "online pdf unlock, pdf unlock online, pdf file unlock, remove pdf password online, pdf remove password protection": "ביטול נעילה של PDF, ביטול נעילה מקוון של PDF, ביטול נעילה של קובץ PDF, הסרת סיסמת PDF באופן מקוון, הגנה מפני סיסמה של PDF",
-  "Maximum file size must be 30MB": "גודל הקובץ המרבי חייב להיות 30MB"
+  "Maximum file size must be 30MB": "גודל הקובץ המרבי חייב להיות 30MB",
+  "File Name": "שם קובץ",
+  "Image URL": "כתובת אתר של תמונה",
+  "File Status": "סטטוס קובץ",
+  "Click": "נְקִישָׁה",
+  "Sample Images": "תמונות לדוגמה",
+  "Human": "בן אנוש",
+  "Stuff": "דברים",
+  "Animal": "בעל חיים",
+  "Character": "אופי"
 }

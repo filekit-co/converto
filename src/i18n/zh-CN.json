@@ -93,5 +93,14 @@
   "Password protect a PDF": "密码保护 PDF",
   "Remove PDF passwords online for free. No size limits or ad watermarks. Easily and quickly remove passwords from your PDF files so you can edit and share them.": "免费在线删除 PDF 密码。没有大小限制或广告水印。轻松快速地从 PDF 文件中删除密码，以便您可以编辑和共享它们。",
   "online pdf unlock, pdf unlock online, pdf file unlock, remove pdf password online, pdf remove password protection": "在线pdf解锁, pdf在线解锁, pdf文件解锁, 在线删除pdf密码, pdf删除密码保护",
-  "Maximum file size must be 30MB": "最大文件大小必须为 30MB"
+  "Maximum file size must be 30MB": "最大文件大小必须为 30MB",
+  "File Name": "文件名",
+  "Image URL": "图片网址",
+  "File Status": "文件状态",
+  "Click": "点击",
+  "Sample Images": "示例图片",
+  "Human": "人类",
+  "Stuff": "东西",
+  "Animal": "动物",
+  "Character": "特点"
 }

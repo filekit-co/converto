@@ -93,5 +93,14 @@
   "Password protect a PDF": "Bir PDF'yi parolayla koruyun",
   "Remove PDF passwords online for free. No size limits or ad watermarks. Easily and quickly remove passwords from your PDF files so you can edit and share them.": "PDF şifrelerini çevrimiçi olarak ücretsiz olarak kaldırın. Boyut sınırı veya reklam filigranı yok. Düzenleyebilmek ve paylaşabilmek için PDF dosyalarınızdaki parolaları kolay ve hızlı bir şekilde kaldırın.",
   "online pdf unlock, pdf unlock online, pdf file unlock, remove pdf password online, pdf remove password protection": "çevrimiçi pdf kilidini açma, pdf çevrimiçi kilidini açma, pdf dosyasının kilidini açma, pdf şifresini çevrimiçi kaldırma, pdf şifre korumasını kaldırma",
-  "Maximum file size must be 30MB": "Maksimum dosya boyutu 30 MB olmalıdır"
+  "Maximum file size must be 30MB": "Maksimum dosya boyutu 30 MB olmalıdır",
+  "File Name": "Dosya adı",
+  "Image URL": "Resim URL'si",
+  "File Status": "Dosya Durumu",
+  "Click": "Tıklamak",
+  "Sample Images": "Örnek Görseller",
+  "Human": "İnsan",
+  "Stuff": "Şey",
+  "Animal": "Hayvan",
+  "Character": "Karakter"
 }

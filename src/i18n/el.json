@@ -93,5 +93,14 @@
   "Password protect a PDF": "Προστασία ενός PDF με κωδικό πρόσβασης",
   "Remove PDF passwords online for free. No size limits or ad watermarks. Easily and quickly remove passwords from your PDF files so you can edit and share them.": "Καταργήστε δωρεάν κωδικούς πρόσβασης PDF στο διαδίκτυο. Χωρίς περιορισμούς μεγέθους ή υδατογραφήματα διαφημίσεων. Καταργήστε εύκολα και γρήγορα τους κωδικούς πρόσβασης από τα αρχεία PDF σας, ώστε να μπορείτε να τους επεξεργαστείτε και να τους μοιραστείτε.",
   "online pdf unlock, pdf unlock online, pdf file unlock, remove pdf password online, pdf remove password protection": "σε απευθείας σύνδεση ξεκλείδωμα pdf, ξεκλείδωμα pdf σε απευθείας σύνδεση, ξεκλείδωμα αρχείου pdf, κατάργηση κωδικού πρόσβασης pdf σε απευθείας σύνδεση, προστασία pdf κατάργηση κωδικού πρόσβασης",
-  "Maximum file size must be 30MB": "Το μέγιστο μέγεθος αρχείου πρέπει να είναι 30MB"
+  "Maximum file size must be 30MB": "Το μέγιστο μέγεθος αρχείου πρέπει να είναι 30MB",
+  "File Name": "Ονομα αρχείου",
+  "Image URL": "Διεύθυνση URL εικόνας",
+  "File Status": "Κατάσταση αρχείου",
+  "Click": "Κάντε κλικ",
+  "Sample Images": "Δείγματα εικόνων",
+  "Human": "Ο άνθρωπος",
+  "Stuff": "Υλικό",
+  "Animal": "Ζώο",
+  "Character": "Χαρακτήρας"
 }

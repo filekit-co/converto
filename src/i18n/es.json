@@ -93,5 +93,14 @@
   "Password protect a PDF": "Proteger con contraseña un PDF",
   "Remove PDF passwords online for free. No size limits or ad watermarks. Easily and quickly remove passwords from your PDF files so you can edit and share them.": "Elimine las contraseñas de PDF en línea de forma gratuita. Sin límites de tamaño ni marcas de agua publicitarias. Elimine fácil y rápidamente las contraseñas de sus archivos PDF para que pueda editarlos y compartirlos.",
   "online pdf unlock, pdf unlock online, pdf file unlock, remove pdf password online, pdf remove password protection": "desbloqueo de pdf en línea, desbloqueo de pdf en línea, desbloqueo de archivos pdf, eliminación de contraseña de pdf en línea, eliminación de protección de contraseña de pdf",
-  "Maximum file size must be 30MB": "El tamaño máximo del archivo debe ser de 30 MB"
+  "Maximum file size must be 30MB": "El tamaño máximo del archivo debe ser de 30 MB",
+  "File Name": "Nombre del archivo",
+  "Image URL": "URL de la imagen",
+  "File Status": "Estado del archivo",
+  "Click": "Hacer clic",
+  "Sample Images": "Imágenes de muestra",
+  "Human": "Humano",
+  "Stuff": "Cosa",
+  "Animal": "Animal",
+  "Character": "Personaje"
 }
