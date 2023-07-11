@@ -44,6 +44,12 @@ export let pages: Page[] = [
       { href: 'remove-background', text: 'Remove Background', icon: '🖼️', description: 'Remove the background from images.' },
       ...ImgConversionPages
     ],
+  },
+  {
+    key: 'Company',
+    value: [
+      {href: 'terms', text: 'Terms', icon: '📜', description: 'Service Legal & Privacy'}
+    ]
   }
 ]
 
