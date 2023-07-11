@@ -1,9 +1,15 @@
-<div>
+<script lang="ts">
+  import {i} from '@inlang/sdk-js';
+</script>
+
+<div class="mx-8 my-6 justify-center">
   <div class=" my-6">
-    <h1 class="title0">Terms and Conditions</h1>
+    <h1 class=" mb-12 text-left text-4xl font-extrabold">
+      Terms and Conditions
+    </h1>
 
     <p>
-      Welcome to filekit (from this point onwards "the Service.") The Service
+      Welcome to filekit (from this point onwards "filekit.co") The Service
       offers its users solely a web and mobile application which allows users to
       manipulate documents and/or images through online software.
     </p>
@@ -12,339 +18,356 @@
       between Yourself (the "User") and the websites, services, and applications
       of filekit (from this point forward, filekit).
     </p>
-    <p>filekit brands are property of filekit S.L.</p>
-    <p>filekit address:</p>
-    <p />
+    <p>filekit brands are property of filekit.co</p>
     <p>
-      Sabino Arana 60, Local 2<br />
-      08028, Barcelona, Spain<br />
-      VAT EU ID (VIES) ESB66921552.
+      filekit address: 5, Jukjeon-ro 15beon-gil, Giheung-gu, Yongin-si,
+      Gyeonggi-do, Republic of Korea
     </p>
 
-    <div class="sideinfo">
-      <p>
-        The text in the summary boxes aim to give a plain summary of our Terms
-        and Conditions. Please make sure to read our Terms and Conditions
-        carefully, because the summary doesn't cover all the important details.
+    <div class="sideinfo bg-gray-200 border-none">
+      <p class=" text-base font-normal">
+        Please take the time to carefully review our Terms and Conditions as the
+        brief summaries provided in the boxes are not comprehensive and may not
+        include all essential information. It is important to read the complete
+        Terms and Conditions for a full understanding of our policies.
       </p>
     </div>
 
     <!-- 1. Use of Our Service -->
-    <h2 class="title2" id="t1">
-      <a class="anchor" name="use-of-service" />1. Use of Our Service
+    <h2 class="mt-12 mb-6 font-semibold text-2xl" id="t1">
+      <a class=" relative" />1. Use of Our Service
     </h2>
 
-    <h3 class="title3">
-      <a class="anchor" name="use-of-service-general" />1.1 General
+    <h3 class="mt-12 mb-6 font-semibold text-xl">
+      <a class="anchor" />1.1 General
     </h3>
+
     <p>
-      This page explains the terms by which you may use our online and/or mobile
-      services, website, and software provided on or in connection with our
-      services. By accessing or using filekit you agree to be conformant to this
-      Terms and Conditions agreement ("Agreement") whether or not you are
-      registered on our services. In the case of disagreement with all or part
-      of these Terms and Conditions, you should abstain from using the Service.
+      By accessing or utilizing our online and/or mobile services, website, and
+      associated software, collectively referred to as "filekit," you are
+      acknowledging and agreeing to comply with the terms outlined in this Terms
+      and Conditions agreement ("Agreement"). This agreement applies to all
+      users, whether registered or not, and governs your use of the Service. If
+      you do not agree with any or all of these Terms and Conditions, we kindly
+      request that you refrain from using the Service.
     </p>
+
     <p>
-      By means of acceptance of the current Terms and Conditions, the User
-      agrees to comply with the following service rules:
+      By accepting the present Terms and Conditions, the User acknowledges and
+      agrees to adhere to the following rules governing the use of the service:
     </p>
-    <ul>
-      <li><div>To have read and understood what is explained here.</div></li>
-      <li>
-        <div>To have assumed all of the obligations that are stated here.</div>
-      </li>
-      <li>
-        <div>
-          To use the service solely for purposes permitted by law and which do
-          not violate the rights of a third-party.
+
+    <ul class="ml-6 mb-6">
+      <li class="ml-6 mb-6">
+        <div class="inline-flex">
+          Please read and understood what is explained here.
         </div>
       </li>
-      <li>
-        <div>
-          To not use this website for any unlawful activity. You are prohibited
-          to break any term and condition to not generate content dedicated to
-          creating SPAM or which could provide instructions about how to engage
-          in illegal activities.
+      <li class="ml-6 mb-6">
+        <div class="inline-flex">
+          The User agrees to fulfill all obligations outlined herein.
         </div>
       </li>
-      <li>
-        <div>
-          To not gather, handle, or store personal information about other Users
-          or third-parties without complying with the current legislation
-          regarding the protection of information.
+      <li class="ml-6 mb-6">
+        <div class="inline-flex">
+          The User shall utilize the service strictly for lawful purposes,
+          without infringing upon the rights of third parties.
+        </div>
+      </li>
+      <li class="ml-6 mb-6">
+        <div class="inline-flex">
+          Engaging in any unlawful activities on this website is strictly
+          prohibited. Users are prohibited from violating any term or condition,
+          generating spam content, or providing instructions on engaging in
+          illegal activities.
+        </div>
+      </li>
+      <li class="ml-6 mb-6">
+        <div class="inline-flex">
+          The User shall not collect, process, or store personal information of
+          other Users or third parties without complying with the applicable
+          data protection laws.
         </div>
       </li>
     </ul>
+
     <p>
-      If the regulations in the Terms and Conditions are in contradiction with
-      the privacy policy, Terms and Conditions will prevail.
+      In the event of any inconsistencies between the regulations stated in the
+      Terms and Conditions and the provisions of the privacy policy, the Terms
+      and Conditions shall take precedence.
     </p>
     <p>
-      Failure to comply with these obligations may result in the cancellation of
-      the Contract, as is established in Clause 9.
+      Failure to comply with these obligations may result in the termination of
+      the Contract, as specified in Clause 9.
     </p>
 
-    <div class="sideinfo">
+    <div class="sideinfo bg-gray-200">
       <p>
-        Please be nice. Don't try to hack our servers, send spam or break any
-        other rules, regulations, or laws. We love working with you, but please
-        don't use our Brand to do anything malicious. These are the things you
-        just can't do.
+        We kindly request that you maintain a respectful approach. It is
+        prohibited to attempt hacking our servers, send spam, or violate any
+        other rules, regulations, or laws. We greatly value our collaboration
+        with you, but we kindly ask that you refrain from engaging in any
+        malicious activities using our Brand. The following are actions that are
+        strictly prohibited.
       </p>
     </div>
 
     <h3 class="title3">
-      <a class="anchor" name="service-rules" />1.2 Service Rules
+      <a class="anchor" />1.2 Service Rules
     </h3>
     <p>
-      Your use of the Service and filekit Desktop is subject to this Reasonable
-      Use Policy, which has been created to ensure that our service is fair for
-      both users and developers.
+      This Reasonable Use Policy has been established to ensure fairness for
+      both users and developers when utilizing the Service and filekit Desktop.
     </p>
     <p>
-      The following is not permitted in connection with filekit Services and
+      The following actions are prohibited when using filekit Services and
       Desktop App:
     </p>
-    <ul>
-      <li>
-        <div>
-          using any automated or non-automated scraping process (including bots,
-          scrapers, and spiders) in conjunction with filekit Desktop;
+    <ul class="ml-6 mb-6">
+      <li class="ml-6 mb-6">
+        <div class="inline-flex">
+          Engaging in automated or manual scraping processes (including bots,
+          scrapers, and spiders) while using filekit Desktop.
         </div>
       </li>
-      <li>
-        <div>
-          converting or otherwise editing documents with filekit Desktop at a
-          rate that exceeds what a human can reasonably do by using manual means
-          and a conventional device;
+      <li class="ml-6 mb-6">
+        <div class="inline-flex">
+          Performing document conversions or edits with filekit Desktop at a
+          rate that exceeds what can be reasonably achieved by a human using
+          manual methods and a conventional device.
         </div>
       </li>
-      <li>
-        <div>
-          providing your password to any other person or using any other persons
-          username and password to access filekit Desktop;
+      <li class="ml-6 mb-6">
+        <div class="inline-flex">
+          Sharing your password with others or using someone else's username and
+          password to access filekit Desktop.
         </div>
       </li>
-      <li>
-        <div>
-          abusing filekit Desktop in excess of what is reasonably needed or
-          required for legitimate business or personal purposes. filekit may
-          investigate any account that registers over 1000 tasks in a month to
-          determine compliance with this requirement.
+      <li class="ml-6 mb-6">
+        <div class="inline-flex">
+          Abusing filekit Desktop beyond what is reasonably necessary for
+          legitimate business or personal purposes. In cases where an account
+          registers over 1000 tasks in a month, filekit reserves the right to
+          investigate for compliance with this requirement.
         </div>
       </li>
     </ul>
     <p>
-      If filekit determines that you are in breach of this policy, we may
-      temporarily or permanently suspend or terminate your account or your
-      subscription to the Service.
+      If filekit determines that you have violated this policy, your account or
+      subscription to the service may be temporarily or permanently suspended or
+      terminated.
     </p>
 
-    <h3 class="title3"><a class="anchor" name="cookies" />1.3 Cookies</h3>
+    <h3 class="title3"><a>1.3 Cookies</a></h3>
     <p>
-      filekit websites are a Software as a Service (SaaS), and use cookies,
-      which are essential for the operations of the service and for its correct
-      functionality. A minimal number of other non-essential cookies will be
-      placed under your consent. In case you do not accept, manage or reject the
-      use of cookies, consent will be granted by using our software; yet you can
-      give or withdraw consent to these from our <a href="/help/cookies"
-        >Cookie Policy</a
-      > page anytime.
+      filekit websites operate as a Software as a Service (SaaS) and utilize
+      cookies to ensure the proper functioning of the service. Essential cookies
+      are necessary for the service to operate correctly. Additionally, a
+      minimal number of non-essential cookies will be used with your consent. If
+      you do not accept, manage, or reject the use of cookies, consent will be
+      assumed through the use of our software. However, you can give or withdraw
+      consent for these cookies on our webpage at any time.
     </p>
 
     <!-- 2. Accounts -->
     <hr />
     <h2 class="title2" id="t2">2. Accounts</h2>
-    <h3 class="title3"><a class="anchor" name="accounts" />2.1 General</h3>
+    <h3 class="title3"><a />2.1 General</h3>
     <p>
-      filekit accounts give the user access to the services and functionality
-      that we may establish and maintain from time to time and in our sole
-      discretion. We may maintain different types of accounts for different
-      types of Users. The different account types allow the user to work within
-      different file size and file number limitations. Our Service users' types
-      are as follows:
+      filekit accounts offer users the opportunity to utilize the services and
+      capabilities that we introduce and maintain at our discretion. We maintain
+      multiple account types to accommodate different user profiles, allowing
+      them to operate within designated boundaries concerning the size and
+      number of files. The user types available for our service are as follows:
     </p>
-    <ul>
-      <li><div>Not registered</div></li>
-      <li><div>Registered</div></li>
-      <li><div>Premium</div></li>
+    <ul class="ml-6 mb-6">
+      <li class="ml-6 mb-6"><div class="inline-flex">Not registered</div></li>
+      <li class="ml-6 mb-6"><div class="inline-flex">Registered</div></li>
+      <li class="ml-6 mb-6"><div class="inline-flex">Premium</div></li>
     </ul>
     <p>
       User is solely responsible for the activity that occurs on his account and
       must keep his account password secure.
     </p>
     <p>
-      filekit owns the right to totally or partially stop providing any of its
-      Services whenever it considers it appropriate and would only give prior
-      notification to Premium Users. In the previous operations, the
-      corresponding taxes will be applied to the Users, assuming payment
-      whomever, in conformity with the current regulation, is considered a
-      passive subject of these operations.
+      filekit retains the right to completely or partially discontinue the
+      provision of any of its services at its sole discretion. Advance
+      notification will be exclusively provided to Premium Users. In such
+      instances, users will be subject to applicable taxes in accordance with
+      the prevailing regulations, assuming payment responsibility as passive
+      subjects of these operations.
     </p>
 
     <div class="sideinfo">
       <p>
-        You are responsible for whatever is done on your Account, so make sure
-        you have a strong password and don't let anyone else use it.
+        You hold the responsibility for any actions performed using your
+        Account, therefore it is essential to ensure the strength of your
+        password and refrain from allowing unauthorized usage.
       </p>
     </div>
 
     <!-- 3. User Content -->
     <hr />
-    <h2 class="title2" id="t3">
-      <a class="anchor" name="user-content" />3. User Content
+    <h2 class="title2">
+      <a />3. User Content
     </h2>
 
     <h3 class="title3">
-      <a class="anchor" name="user-content-general" />3.1 General
+      <a />3.1 General
     </h3>
     <p>
-      filekit does not analyse the content of files whilst processing them and
-      only Users will have access to the edited files once filekit has processed
-      them. If chosen by the user, this link can be shared with someone else.
-      filekit will automatically delete processed files from their servers after
-      a defined period of time depending on the tool used:
+      filekit does not examine the content of files during the processing phase,
+      and once filekit has completed the processing, only the Users will have
+      access to the modified files. If desired, Users can share the
+      corresponding link with others. Depending on the specific tool utilized,
+      filekit will automatically remove processed files from their servers after
+      a designated period.
     </p>
 
-    <div class="row" style="margin-top: 24px">
-      <div class="col-md-6">
-        <table>
-          <tbody>
-            <tr>
-              <td>Merge PDF</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>Split PDF</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>Remove Pages</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>Extract Pages</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>Organize PDF</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>Compress PDF</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>Repair PDF</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>Word to PDF</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>Excel to PDF</td>
-              <td>2 hours</td>
-            </tr>
-          </tbody>
-        </table>
+    <div
+      class="mt-6 sm:grid sm:grid-rows-3 sm:grid-cols-1 md:grid md:grid-cols-3 md:grid-rows-1"
+    >
+      <div class="w-full">
+        <div class="flex-col">
+          <div class="flex justify-left gap-6">
+            <div>PDF to DOC</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>PDF to DOCX</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>PDF to WORD</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>XPS to DOC</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>XPS to DOCX</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>CBZ to PDF</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>EPUB to DOC</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>EPUB to DOCX</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>EPUB to PDF</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>FB2 to PDF</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>mPDF to WROD</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>mOXPS to PDF</div>
+            <div>2 hours</div>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6">
-        <table>
-          <tbody>
-            <tr>
-              <td>PDF to Word</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>PDF to Excel</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>PDF to PowerPoint</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>PowerPoint to PDF</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>JPG to PDF</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>HTML to PDF</td>
-              <td>2 hours</td>
-            </tr>
-          </tbody>
-          <tbody
-            ><tr>
-              <td>PDF to JPG</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>PDF to PDF/A</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>Rotate PDF</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>Page Numbers</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>Watermark</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>Unlock PDF</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>Protect PDF</td>
-              <td>2 hours</td>
-            </tr>
-            <tr>
-              <td>Sign PDF</td>
-              <td>As required by law*</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="w-full">
+        <div class="flex-col">
+          <div class="flex justify-left gap-6">
+            <div>Compress PDF</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>Protect PDF</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>Unlock PDF</div>
+            <div>2 hours</div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full">
+        <div class="flex-col">
+          <div class="flex justify-left gap-6">
+            <div>Remove Background</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>PNG to image(*)</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>PNM to image(*)</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>PGM to image(*)</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>PPM to image(*)</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>PBM to image(*)</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>PAM to image(*)</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>JPG to image(*)</div>
+            <div>2 hours</div>
+          </div>
+          <div class="flex justify-left gap-6">
+            <div>JPEG to image(*)</div>
+            <div>2 hours</div>
+          </div>
+        </div>
       </div>
     </div>
 
     <p>
-      <small
-        >* Certified signatures and signature requests will be saved for as long
-        as required by law, whilst simple signatures will be deleted
-        automatically after 2 hours.</small
+      <small>
+        Certified signatures and signature requests will be retained for the
+        duration mandated by applicable laws, whereas simple signatures will be
+        automatically erased after a period of 2 hours.</small
       >
     </p>
-    <p>Users bear the sole responsibility for the usage of their own files.</p>
     <p>
-      filekit is limited to offer users access to their own processed files.
-      These files will only remain stored on our servers during the time that
-      the download link is available.
+      Users have the sole responsibility for the utilization of their own files
+    </p>
+    <p>
+      filekit's role is restricted to providing users with access to their
+      processed files. These files will be stored on our servers only for the
+      duration that the download link remains available.
     </p>
 
     <h3 class="title3">
-      <a class="anchor" name="content-manipulation" />3.2 Content manipulation
+      <a />3.2 Content manipulation
     </h3>
     <p>
-      filekit provides all the necessary information to assist the user in
-      processing files, and only the User is responsible for contacting filekit
-      in case of technical problems. filekit is highly concerned about file
-      security, thus its servers have limited access, are secured and
-      strategically placed. User will be able to modify his User type or cancel
-      his account at any time, by means of the contact form.
+      filekit ensures the provision of comprehensive information to aid users in
+      file processing. However, the user alone bears the responsibility for
+      reaching out to filekit in case of any technical issues. filekit places
+      great emphasis on file security, as evidenced by its strategically
+      positioned servers with limited access and robust safeguards. Users retain
+      the flexibility to modify their User type or cancel their account at any
+      time using the contact form.
     </p>
 
     <h3 class="title3">
-      <a class="anchor" name="responsibility" />3.3 Responsibility for the
-      content of the files
+      <a />3.3 Responsibility for the content of the files
     </h3>
     <p>
       filekit does not analyze the content of processed files and thus is not
@@ -355,229 +378,234 @@
       this Agreement.
     </p>
     <p>
-      In particular, users agree to use the Service in conformity with current
-      laws and conformant to the rules aforementioned in section 1.1.
+      Specifically, users are obligated to utilize the Service in compliance
+      with prevailing laws and adhere to the aforementioned rules outlined in
+      section 1.1.
     </p>
 
     <div class="sideinfo">
       <p>
-        We don't access nor analyze your content. Before any technical issue,
-        it's your responsibility to contact us. We are not responsible for the
-        content of your files. You are the only person responsible for whatever
-        they may contain.
+        We do not access or analyze the content of your files. If you encounter
+        any technical issues, it is your responsibility to contact us. We do not
+        assume liability for the content of your files, as you are solely
+        accountable for their contents.
       </p>
     </div>
 
     <!-- 4. Signature -->
     <hr />
     <h2 class="title2" id="t4">
-      <a class="anchor" name="signature" />4. Signature
+      <a />4. Signature
     </h2>
 
     <h3 class="title3">
-      <a class="anchor" name="how-it-works" />4.1 How it works
+      <a />4.1 How it works
     </h3>
     <p>
-      filekit Signature permits documents to be signed by one’s self or one can
-      request for signatures from other users by means of email delivery.
-      Signers will have the ability to review the document before proceeding
-      with the application of a signature.
+      filekit Signature enables users to sign their own documents or request
+      signatures from other users via email delivery. Signers are given the
+      opportunity to review the document before applying their signature.
     </p>
     <p>
-      The requester has the option to send a simple electronic signature request
-      or can activate the certified signature option in order to place an EIDAS
-      listed TimeStamp for added legal validity.
+      The requester can choose to send a simple electronic signature request or
+      activate the certified signature option, which includes an EIDAS listed
+      TimeStamp to enhance legal validity.
     </p>
     <p>
-      In addition to the final version of the document, we provide an Audit
-      Trail that includes details gathered from the requester as well as the
-      signers in order to provide greater transparency to the entire process.
+      Additionally, along with the final version of the document, we offer an
+      Audit Trail that captures details from the requester and signers, ensuring
+      transparency throughout the entire process.
     </p>
     <p>
-      All documents containing certified signatures are stored in filekit’s
-      servers for safekeeping for procurement purposes.
+      All documents containing certified signatures are securely stored on
+      filekit's servers for procurement purposes.
     </p>
     <p>
-      Please note that once the signature process is complete, it is you who
-      have the sole authority to safeguard the document/s.
+      Please be aware that once the signature process is completed, you are
+      solely responsible for safeguarding the document(s).
     </p>
 
     <h3 class="title3">
-      <a class="anchor" name="legal-guarantees" />4.2 Legal Guarantees
+      <a />4.2 Legal Guarantees
     </h3>
     <p>
-      filekit strives to make sure that it’s services comply with the
-      requirements of the U.S. Electronic Signature in Global and National
-      Commerce Act of 2000 (ESIGN), the Uniform Electronic Transactions Act
-      (UETA), and the European Union eIDAS (EU No.910/2014).
+      filekit endeavors to ensure that its services adhere to the requirements
+      outlined in the U.S. Electronic Signature in Global and National Commerce
+      Act of 2000 (ESIGN), the Uniform Electronic Transactions Act (UETA), and
+      the European Union eIDAS (EU No.910/2014).
     </p>
     <p>
-      filekit provides a detailed audit trail, certified signatures, timestamps,
-      and signature biometric tracing which are held into account in legal
-      proceedings around the world.
+      We offer a comprehensive audit trail, certified signatures, timestamps,
+      and signature biometric tracing, all of which hold legal significance in
+      jurisdictions worldwide.
     </p>
     <p>
-      filekit is at disposition to provide the certified document as well as
-      audit trail if required by a court of law, yet exempts itself from
-      prosecution if the document is not upheld or found lacking.
+      If necessary, filekit is prepared to provide the certified document and
+      audit trail as mandated by a court of law. However, we cannot be held
+      liable if the document is not upheld or deemed insufficient.
     </p>
 
-    <h3 class="title3"><a class="anchor" name="pricing" />4.3 Pricing</h3>
+    <h3 class="title3"><a />4.3 Pricing</h3>
     <p>
-      filekit offers two different kinds of signatures: e-signatures and
-      certified signatures. e-Signatures are free of use and may be subject to
-      size or quantity limitations of processing (see pricing for more
-      information). We offer a certain number of certified signatures at no
-      extra cost for our Premium users each month and we also provide prepaid
-      packs which can be purchased. Certificates sold in packs can be used on
-      top of those obtained with your subscription or other packs you have
-      previously purchased.
+      filekit provides two distinct types of signatures: e-signatures and
+      certified signatures. e-Signatures are available for free, but may be
+      subject to limitations on processing size or quantity (refer to pricing
+      for additional information). Premium users receive a predetermined number
+      of certified signatures each month at no extra cost, and we also offer
+      prepaid packs for additional purchase. These packs allow the use of
+      certificates beyond those included with your subscription or previously
+      acquired packs.
     </p>
 
     <h3 class="title3">
-      <a class="anchor" name="collected-information" />4.4 Collected Information
+      <a />4.4 Collected Information
     </h3>
     <p>
-      For the sake of full transparency throughout the signature process,
-      filekit may collect the following information for the audit trail and
-      would be visible by all parties involved:
+      To ensure complete transparency during the signature process, filekit may
+      gather the following information for the audit trail, which will be
+      accessible to all relevant parties:
     </p>
-    <ul>
-      <li><div>Name of requester, signer, validator, and witness.</div></li>
-      <li><div>Email of requester, signer, validator, and witness.</div></li>
-      <li>
-        <div>Phone number of signer which needs SMS code validation.</div>
+    <ul class="ml-6 mb-6">
+      <li class="ml-6 mb-6">
+        <div class="inline-flex">
+          Name of requester, signer, validator, and witness.
+        </div>
       </li>
-      <li><div>Name of file(s) being signed.</div></li>
-      <li><div>IP of requester, signer, validator, and witness.</div></li>
-      <li>
-        <div>Biometric data of requester, signer, validator, and witness.</div>
+      <li class="ml-6 mb-6">
+        <div class="inline-flex">
+          Email of requester, signer, validator, and witness.
+        </div>
+      </li>
+      <li class="ml-6 mb-6">
+        <div class="inline-flex">
+          Phone number of signer which needs SMS code validation.
+        </div>
+      </li>
+      <li class="ml-6 mb-6">
+        <div class="inline-flex">Name of file(s) being signed.</div>
+      </li>
+      <li class="ml-6 mb-6">
+        <div class="inline-flex">
+          IP of requester, signer, validator, and witness.
+        </div>
+      </li>
+      <li class="ml-6 mb-6">
+        <div class="inline-flex">
+          Biometric data of requester, signer, validator, and witness.
+        </div>
       </li>
     </ul>
 
     <div class="sideinfo">
       <p>
-        filekit's signature tool, ("Sign PDF") has additional attributes in
-        terms of usage and legal status. filekit offers these services to you to
-        sign documents electronically. filekit is not responsible for and will
-        not be liable for determining whether you may use an eSignature or not
-        to complete any legal requirement that you may use the services for.
-        Please read this entire section carefully before proceeding to use the
-        Sign PDF tool.
+        filekit's signature tool, known as "Sign PDF," provides additional
+        features and considerations regarding usage and legal implications.
+        These services enable you to electronically sign documents. However, it
+        is important to note that filekit is not responsible for and cannot
+        guarantee the suitability of an eSignature for fulfilling any specific
+        legal requirements. Before using the Sign PDF tool, we strongly advise
+        you to carefully read this entire section.
       </p>
     </div>
 
     <!-- 5. Paid Services -->
     <hr />
     <h2 class="title2" id="t5">
-      <a class="anchor" name="paid-services" />5. Paid Services
+      <a />5. Paid Services
     </h2>
 
     <h3 class="title3">
-      <a class="anchor" name="billing-policies" />5.1 Billing Policies
+      <a />5.1 Billing Policies
     </h3>
     <p>
-      Becoming Premium is only possible by paid subscription. Subscriptions
-      start when first payment is made. These are recurring billing
-      transactions. Unless otherwise stated, your subscription and the relevant
-      billing authorization will continue indefinitely until canceled by you. By
-      paid subscription, you authorize us to bill you for the service purchased
-      at the acquisition Price. The billing rate is subject to change during the
-      subscription period. However, existent Premium users would pay the same
-      amount that the billing rate subscribed. Payment will be charged to your
-      payment method until you cancel your subscription unless stated otherwise.
-      Your service will be billed each period based on the acquisition date and
-      cost. You may cancel your subscription at any time, but the cancellation
-      will not become effective until the end of the current billing period. You
-      will not receive a refund for the current billing period. Any unused
-      portion of a free Premium trial period, if offered, will be forfeited when
-      purchasing a subscription. We reserve the right to issue refunds or at our
-      sole discretion. If we issue a refund or credit, we are under no
-      obligation to issue the same or similar refund in the future.
+      Becoming a Premium user is only possible through a paid subscription. Once
+      the first payment is made, the subscription starts, and it is a recurring
+      billing transaction. Unless stated otherwise, your subscription and
+      billing authorization will continue indefinitely until you cancel it. By
+      subscribing and authorizing the payment, you allow us to bill you for the
+      purchased service at the agreed price. The billing rate may change during
+      the subscription period, but existing Premium users will continue to pay
+      the same amount they subscribed to. Your payment method will be charged
+      until you cancel your subscription, unless specified otherwise. The
+      service will be billed based on the acquisition date and cost. You have
+      the option to cancel your subscription at any time, but the cancellation
+      will be effective at the end of the current billing period, and no refund
+      will be provided for the remaining period. If you have availed a free
+      Premium trial period, any unused portion of it will be forfeited upon
+      purchasing a subscription. We reserve the right to issue refunds at our
+      sole discretion, and the decision to do so does not create an obligation
+      for future refunds or credits.
     </p>
 
-    <h3 class="title3"><a class="anchor" name="refunds" />5.2 Refunds</h3>
+    <h3 class="title3"><a />5.2 Refunds</h3>
     <p>
-      You may cancel your Premium account at any time; however, there are no
-      refunds for cancellation. In the event that filekit suspends or terminates
-      your account or this Agreement, you understand and agree that you shall
-      receive no refund or exchange for any credits, any unused time on a
-      subscription and any license or subscription fees for any portion of the
-      Service.
+      You can cancel your Premium account at any time; however, there will be no
+      refunds for cancellations. In the event that filekit suspends or
+      terminates your account or this Agreement, you acknowledge and agree that
+      you will not receive a refund or exchange for any unused time on a
+      subscription or any fees associated with the Service.
     </p>
 
     <h3 class="title3">
-      <a class="anchor" name="payment-information" />5.3 Payment information,
-      taxes
+      <a />5.3 Payment information, taxes
     </h3>
     <p>
-      All information provided by the User in connection with a purchase or
-      transaction with the Service must be accurate, complete, and current. You
-      agree to pay all charges incurred by users of your payment method used in
-      connection with a purchase or with the Service. You will pay applicable
-      taxes, if any, relating to your purchases.
+      It is essential to provide accurate, complete, and current information for
+      any purchase or transaction with the Service. You are responsible for all
+      charges incurred using your payment method. Applicable taxes related to
+      your purchases are your responsibility.
     </p>
 
-    <h3 class="title3"><a class="anchor" name="free-trial" />5.4 Free Trial</h3>
+    <h3 class="title3"><a />5.4 Free Trial</h3>
     <p>
-      This offer (the "Offer"), which is made to you by filekit (as defined in
-      the filekit Terms and Conditions of Use), entitles you access to the
-      filekit Premium Service (as defined in the filekit Terms and Conditions of
-      Use) for a period of seven (7) days from the moment that you activate such
-      trial period by submitting your payment details (the "Free Trial Period").
-      By submitting your payment details, (i) you accept the Offer, (ii) consent
-      to us using your payment details in accordance with our Privacy Policy,
-      (iii) acknowledge and agree to filekit Terms and Conditions of Use and
-      these Offer Terms and Conditions. If you decide that you do not want to
-      become a paying user of the filekit Premium Service, you have to cancel
-      your subscription to the Premium Service by logging into your filekit
-      account prior to the end of your Free Trial Period. Otherwise, at the end
-      of your Free Trial Period, you will automatically become a paying user of
-      the filekit Premium Service, and the payment method you provided will
-      automatically be charged the current filekit Premium subscription fee each
-      month/year until you cancel your Premium Service subscription. It is very
-      important to understand that you will receive a confirmation notice from
-      filekit that your free trial is expiring and that payment for your
-      subscription is due in 7-Days. Payments are nonrefundable. If you cancel,
-      you will not receive a refund, including for partially used periods of
-      Service. There are circumstances where filekit may provide refunds on a
-      case by case basis. The decision to provide them is at filekit's sole and
-      absolute discretion. If you cancel your subscription during a free trial,
-      the cancellation will be effective immediately, and you will automatically
-      convert to the Free Service. You may only use this Offer once. If you have
-      subscribed to the Premium service or have taken a trial offer previously,
-      you are ineligible for this Offer. filekit reserves the right, in its
-      absolute discretion, to modify this Offer at any time without prior notice
-      and with no liability.
+      This Offer, provided by filekit, grants you access to the filekit Premium
+      Service for a seven (7) day Free Trial Period upon activating it by
+      submitting your payment details. By submitting your payment details, you
+      accept the Offer, consent to the use of your payment details in accordance
+      with our Privacy Policy, and agree to the filekit Terms and Conditions of
+      Use and these Offer Terms and Conditions. If you decide not to become a
+      paying user after the Free Trial Period, you must cancel your subscription
+      before the end of the trial. Otherwise, you will automatically become a
+      paying user, and your payment method will be charged the current filekit
+      Premium subscription fee monthly/yearly until you cancel your
+      subscription. Please note that you will receive a confirmation notice from
+      filekit prior to the end of the Free Trial Period, reminding you of the
+      upcoming payment. Payments are nonrefundable, and no refunds will be
+      provided for partially used periods of Service, unless otherwise
+      determined by filekit on a case-by-case basis. If you cancel your
+      subscription during a free trial, the cancellation will take effect
+      immediately, and you will be switched to the Free Service. This Offer can
+      only be used once, and if you have previously subscribed to the Premium
+      service or availed a trial offer, you are ineligible for this Offer.
+      filekit reserves the right to modify this Offer at any time without prior
+      notice.
     </p>
 
     <div class="sideinfo">
       <p>
-        Unless otherwise stated, your subscription will continue indefinitely
-        until cancelled by you. Refunds won't have a retroactive effect. You are
-        responsible to pay your taxes associated with our services.
+        Unless stated otherwise, your subscription will continue until you
+        cancel it. Refunds will not have a retroactive effect, and you are
+        responsible for paying any applicable taxes associated with our
+        services.
       </p>
     </div>
 
     <!-- 6. No warranty -->
     <hr />
     <h2 class="title2" id="t6">6. No warranty</h2>
-    <h3 class="title3"><a class="anchor" name="no-warranty" />6.1 General</h3>
+    <h3 class="title3"><a />6.1 General</h3>
     <p>
-      Use of the service is at your own risk. To the maximum extent permitted by
-      applicable law, the service is provided without warranties of any kind.
-      filekit does not warrant that the service will meet your requirements;
-      that the service will be available at any particular time or location,
-      uninterrupted or secure; that any defects or errors will be corrected; or
-      that the service is free of viruses or other harmful components. Any
-      content downloaded or otherwise obtained through the use of the service is
-      downloaded at your own risk and you will be solely responsible for any
-      damage to your computer system or mobile device or loss of data that
-      results from such download or your use of the service. filekit does not
-      warrant, endorse, guarantee, or assume responsibility for any product or
-      service advertised or offered by a third party through the filekit service
-      or any hyperlinked website or service, and filekit will not be a party to
-      monitor any transaction between you and third-party providers.
+      The use of the service is at your own risk, and to the extent permitted by
+      applicable law, it is provided without warranties of any kind. filekit
+      does not guarantee that the service will meet your requirements, be
+      available at all times or locations, uninterrupted or secure, or free of
+      viruses or other harmful components. Any content downloaded or obtained
+      through the service is done at your own risk, and you are solely
+      responsible for any damage to your devices or loss of data resulting from
+      such download or use of the service. filekit does not endorse or guarantee
+      any products or services advertised or offered by third parties through
+      the filekit service, and filekit will not be involved in any transaction
+      between you and third-party providers.
     </p>
 
     <div class="sideinfo">
@@ -591,17 +619,16 @@
     <hr />
     <h2 class="title2" id="t7">7. Limitation of liability</h2>
     <h3 class="title3">
-      <a class="anchor" name="limitation-of-liability" />7.1 General
+      <a />7.1 General
     </h3>
     <p>
-      To the maximum extent permitted by applicable law, in no event shall
-      filekit or its employees be liable for any direct, indirect, punitive,
-      incidental, special, consequential or exemplary damages, including without
-      limitation damages for use, data or other intangible losses, arising from
-      or relating to any breach of this agreement. Under no circumstances will
-      filekit be responsible for any damage, loss or injury resulting from
-      hacking, tampering or other unauthorized access or use of the service or
-      your account or the information contained therein
+      To the maximum extent permitted by applicable law, filekit and its
+      employees shall not be liable for any direct, indirect, punitive,
+      incidental, special, consequential, or exemplary damages arising from or
+      related to any breach of this agreement. filekit shall not be responsible
+      for any damages, loss, or injury resulting from unauthorized access or use
+      of the service, your account, or the information contained therein,
+      including hacking or tampering.
     </p>
 
     <div class="sideinfo">
@@ -615,37 +642,27 @@
     <hr />
     <h2 class="title2" id="t8">8. License of limited use</h2>
     <h3 class="title3">
-      <a class="anchor" name="license-of-limited-use" />8.1 General
+      <a />8.1 General
     </h3>
     <p>
-      filekit is the exclusive owner of all of the rights to the web application
-      which allows the functionalities offered online and, in particular, the
-      right to total or partial reproduction, by any means, and in any form; the
-      translation, adaptation, arrangement, or any other transformation of the
-      program and the reproduction of the results of such acts; the distribution
-      in any of the forms admitted by law; the right to publish through all
-      types of media: analog and digital, online and offline; and the right to
-      the program's use. The program's license of use for users does not refer
-      to the Intellectual Property rights of the Service, the users remain
-      solely authorized to use Service software. For any distinct uses, filekit
-      S.L. must authorize their exploitation, as in ceding those rights to
-      third-parties. Therefore, the execution, reproduction, exploitation,
-      alteration, distribution, or public communication of the totality of the
-      copyright property of filekit remain prohibited for uses distinct from
-      those authorized by the current Agreement. In particular, it is not
-      permitted to: make copies of the program, translate its source code,
-      transform it, or distribute it without the precise authorization of
-      filekit. The breach of these obligations for the Users may lead to, at the
-      discretion of filekit, the relevant claims established by the relevant
-      copyright regulations, the suspension of Service, or the termination of
-      the Contract, as established in Clause 9.
+      filekit exclusively owns all the rights to the web application and its
+      functionalities, including reproduction, translation, adaptation,
+      distribution, and publication through various media. The license granted
+      to users does not extend to the intellectual property rights of the
+      Service. Users are authorized to use the Service software, and any other
+      use requires explicit authorization from filekit. Unauthorized execution,
+      reproduction, exploitation, alteration, distribution, or public
+      communication of the copyright property of filekit is strictly prohibited.
+      Breach of these obligations may result in claims, suspension of Service,
+      or termination of the Contract at the discretion of filekit, as outlined
+      in Clause 9.
     </p>
 
     <div class="sideinfo">
       <p>
-        We own all of the rights to the website and mobile app. We are the only
-        authorized party to exploit our services. A lot of effort has gone into
-        creating all of this.
+        We hold exclusive rights to the website and mobile app, and we are the
+        only authorized entity to utilize our services. Considerable effort has
+        been invested in their creation.
       </p>
     </div>
 
@@ -655,48 +672,45 @@
       9. Intellectual and industrial property rights
     </h2>
     <h3 class="title3">
-      <a class="anchor" name="property-rights" />9.1 General
+      <a />9.1 General
     </h3>
     <p>
-      The contents of this site, including the contents, brands, logos,
-      drawings, texts, images, databases, codes, and any other material belong
-      to filekit or to third- parties who have authorized their use. In a
-      general manner, their utilization with commercial ends, their public
-      communication or distribution, or any other form of exploitation by any
-      process, such as transformation or alteration, all remains prohibited. We
-      expressly disclaim liability for consequential damages resulting from
-      using or misusing our services.
+      All contents on this site, including brands, logos, drawings, texts,
+      images, databases, codes, and other materials, belong to filekit or third
+      parties who have granted permission for their use. Any commercial use,
+      public communication, distribution, or exploitation of these materials,
+      including transformation or alteration, is strictly prohibited. We
+      expressly disclaim liability for any consequential damages resulting from
+      the proper or improper use of our services.
     </p>
     <p>filekit & are registered trademarks.</p>
 
     <div class="sideinfo">
       <p>
-        Same as the previous point. We are a registered trademark, so you can’t
-        copy our brand identity.
+        Similarly, we are a registered trademark, and copying our brand identity
+        is prohibited.
       </p>
     </div>
 
     <!-- 10. Termination -->
     <hr />
     <h2 class="title2" id="t10">10. Termination</h2>
-    <h3 class="title3"><a class="anchor" name="termination" />10.1 General</h3>
+    <h3 class="title3"><a />10.1 General</h3>
     <p>
-      filekit will be capable of unilaterally and, at any point, resolving the
-      current Contract in the following cases. a) In the event that the User
-      breaches any of the obligations and guarantees established in this
-      Agreement. b) If intellectual property rights or any other third-party
-      rights are infringed upon. c) If User fails to make the timely payment of
-      fees for the Software or the Services. d) If we are required to do so by
-      law (for example, if providing software to a specific region becomes
-      unlawful) e) If we choose to discontinue the Services or Software, in
-      whole or in part, (such as if it becomes impractical for us to provide
-      Service or our website becomes censored in a region).
+      filekit reserves the right to unilaterally terminate the current Contract
+      under the following circumstances: a) User's breach of any obligations or
+      warranties stated in this Agreement. b) Infringement of intellectual
+      property rights or any other third-party rights. c) Failure to make timely
+      payment of fees for the Software or Services. d) Legal requirements that
+      mandate termination (e.g., if providing software to a specific region
+      becomes unlawful). e) Discontinuation of Services or Software, in whole or
+      in part, due to practical or regional constraints.
     </p>
     <p>
-      The resolution of the Contract will not affect the ability of filekit to
-      claim the corresponding damages and losses. Users will be qualified to
-      cancel their account, at any point, from their Account page or through the
-      contact form available online.
+      The termination of the Contract does not affect filekit's ability to claim
+      corresponding damages and losses. Users have the option to cancel their
+      account at any time through their Account page or the available online
+      contact form.
     </p>
 
     <div class="sideinfo">
@@ -706,80 +720,112 @@
     <!-- 11. Claims -->
     <hr />
     <h2 class="title2" id="t11">11. Claims</h2>
-    <h3 class="title3"><a class="anchor" name="claims" />11.1 General</h3>
-    <p>
-      In case of claims and complaints stemming from the current Contract, or to
-      request information about the Service, the User will be able to contact
-      filekit through the online form.
-    </p>
-
-    <!-- 12. Miscellaneous -->
-    <hr />
-    <h2 class="title2" id="t12">12. Miscellaneous</h2>
     <h3 class="title3">
-      <a class="anchor" name="miscellaneous" />12.1 General
-    </h3>
-
-    <p>
-      The User will not be able to cede, subrogate, or transmit the rights
-      contained in the current Contract to third parties without the previous
-      written consent of filekit. Same as the previous point. We are a
-      registered trademark, you can't copy our brand identity.
-    </p>
-    <p>
-      The offense or delay in the exercise of any right or in the demand for the
-      completion of any of the obligations arising from this Contract will not
-      constitute a renunciation of that right or demand for the completion of
-      the obligation, nor the renunciation of any other rights or demands for
-      the completion of obligations. This Contract, including the Privacy Policy
-      which will be incorporated for reference into the current Contract,
-      constitutes the final, complete, and exclusive agreement between the
-      parties in relation to the object of the Contract, and substitutes any of
-      the previous agreements or negotiations between said parties. If any of
-      the clauses of the present Contract might become null due to a
-      contravention of the applicable legislation, said clause will be assumed
-      not to be in effect, but will not affect the rest of the Contract, which
-      will be assumed to be in full effectivity and validity between the
-      parties.
-    </p>
-
-    <div class="sideinfo">
+      <a />
       <p>
-        These Terms and Conditions are the only agreement between both parties
-        (yourself and us), and will be the only one taken into consideration.
+        For any claims, complaints, or inquiries related to the Contract or the
+        Service, Users can contact filekit via the online form.
       </p>
-    </div>
 
-    <!-- 13. Applicable legislation and jurisdiction -->
-    <hr />
-    <h2 class="title2" id="t13">13. Applicable legislation and jurisdiction</h2>
-    <h3 class="title3">
-      <a class="anchor" name="applicable-legislation" />13.1 General
-    </h3>
-    <p>
-      The current Contract has a commercial character and should be interpreted
-      and complied with according to its terms, and, in case of the unexpected,
-      will be regulated by Spanish law. In the steps permitted by governing
-      laws, for the resolution of any controversies deriving from the validity,
-      interpretation, completion, or execution of this Contract, the parties,
-      with express resignation to any other jurisdiction to which they may
-      correspond, expressly subject themselves to the jurisdiction and power of
-      the judges and courts of the city of Barcelona.
-    </p>
+      <!-- 12. Miscellaneous -->
+      <hr />
+      <h2 class="title2" id="t12">12. Miscellaneous</h2>
+      <h3 class="title3">
+        <a />12.1 General
+      </h3>
 
-    <div class="sideinfo">
       <p>
-        This contract has to be interpreted according to its own terms. In case
-        of dispute, it will be regulated according with the Spanish Law.
-        Honestly, this is the last thing we’d like to happen so let’s have a
-        good time here.
+        Users are not permitted to assign, subrogate, or transfer the rights
+        under the current Contract to third parties without prior written
+        consent from filekit. Similarly, copying our brand identity as a
+        registered trademark is prohibited.
       </p>
-    </div>
+      <p>
+        The omission or delay in exercising any right or demanding the
+        fulfillment of any obligation under this Contract shall not constitute a
+        waiver of such right or demand, nor shall it waive any other rights or
+        demands for the fulfillment of obligations. This Contract, including the
+        incorporated Privacy Policy, constitutes the final, complete, and
+        exclusive agreement between the parties regarding the subject matter and
+        supersedes any prior agreements or negotiations between them. If any
+        clause of this Contract is deemed null due to a violation of applicable
+        legislation, such clause shall be considered ineffective but shall not
+        affect the remaining provisions, which shall remain fully valid and
+        enforceable between the parties.
+      </p>
+
+      <div class="sideinfo">
+        <p>
+          These Terms and Conditions constitute the sole agreement between the
+          parties (you and us) and shall be the only agreement considered.
+        </p>
+      </div>
+
+      <!-- 13. Applicable legislation and jurisdiction -->
+      <hr />
+      <h2 class="title2" id="t13">
+        13. Applicable legislation and jurisdiction
+      </h2>
+      <h3 class="title3">
+        <a />13.1 General
+      </h3>
+      <p>
+        This Contract is of a commercial nature and shall be interpreted and
+        enforced according to its terms. In unforeseen circumstances, it shall
+        be governed by South Korean law. To the extent permitted by law, any
+        disputes arising from the validity, interpretation, performance, or
+        execution of this Contract shall be subject to the jurisdiction and
+        authority of the courts in the city of Seoul, with express waiver of any
+        other jurisdiction that may correspond.
+      </p>
+
+      <div class="sideinfo">
+        <p>
+          It is our sincere hope that we never reach a point where disputes
+          arise. Let's make the most of our time here.
+        </p>
+      </div>
+    </h3>
   </div>
 </div>
 
 <style>
-  .new-block_container {
-    position: relative;
+  .title2 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 34px;
+    margin: 48px 0 24px;
+    letter-spacing: 0;
+  }
+  .title3 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0;
+    margin: 48px 0 24px;
+  }
+  ul li::before {
+    content: '\2022';
+    color: #ff6a58;
+    font-weight: 700;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    font-size: 24px;
+    margin-left: -1.4em;
+  }
+  .sideinfo {
+    width: 100%;
+    display: inline-block;
+    border: 1px;
+    padding: 12px;
+    margin-top: 32px;
+    font-weight: 500;
+  }
+  p {
+    letter-spacing: 0.3px;
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 12px;
   }
 </style>
