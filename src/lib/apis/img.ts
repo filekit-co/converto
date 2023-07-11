@@ -40,7 +40,6 @@ export async function fetchRemoveImageFile(imgFile: ImageType) {
 
     return { resultImageURL, resultFileURL };
   } catch (error) {
-    console.error(error);
     throw error;
   }
 }
@@ -62,7 +61,6 @@ export async function fetchRemoveresultImageURL(imageURL: string) {
 
     return { resultImageURL, resultFileURL };
   } catch(error) {
-    console.error(error);
     throw error;
   }
 }

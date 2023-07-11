@@ -87,6 +87,8 @@
       );
       resultImage = resultImageURL;
       resultFile = resultFileURL;
+    } catch (error) {
+      throw new Error('Wrong URL inputed');
     } finally {
       $loading = false;
     }
@@ -133,6 +135,7 @@
           name="file"
           multiple
           class="sr-only"
+          accept="image/*"
         />
       </button>
 
