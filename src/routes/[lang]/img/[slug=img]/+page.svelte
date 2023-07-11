@@ -35,7 +35,7 @@
   };
 
   let uploadData: fileUploadData = [];
-  $: isDownloading = false;
+  let isDownloading = false;
   $: isFileExist = files.accepted.length > 0;
 
   const handleDownload = async (data: fileUploadData) =>
@@ -60,12 +60,10 @@
   </p>
 
   <section class="pt-4 mx-0 sm:mx-10">
-    {#if isFileExist}
-      {#if isDownloading}
-        <Downloader fetchFn={handleDownload} {uploadData} />
-      {:else}
-        <BaseUploader bind:files bind:uploadData bind:isDownloading />
-      {/if}
+    {#if isDownloading}
+      <Downloader fetchFn={handleDownload} {uploadData} />
+    {:else if isFileExist}
+      <BaseUploader bind:files bind:uploadData bind:isDownloading />
     {:else}
       <DragDrop bind:files fileDropOptions={imgFileDropOptions} />
     {/if}

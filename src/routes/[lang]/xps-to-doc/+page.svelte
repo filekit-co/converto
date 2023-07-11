@@ -20,7 +20,7 @@
   };
 
   let uploadData: fileUploadData = [];
-  $: isDownloading = false;
+  let isDownloading = false;
   $: isFileExist = files.accepted.length > 0;
 
   onDestroy(() => {
@@ -42,13 +42,10 @@
   </p>
 
   <section class="pt-4 mx-0 sm:mx-10">
-    {#if isFileExist}
-      {#if isDownloading}
-        <!-- TODO: change -->
-        <Downloader fetchFn={fetchXpsToDoc} {uploadData} />
-      {:else}
-        <BaseUploader bind:files bind:uploadData bind:isDownloading />
-      {/if}
+    {#if isDownloading}
+      <Downloader fetchFn={fetchXpsToDoc} {uploadData} />
+    {:else if isFileExist}
+      <BaseUploader bind:files bind:uploadData bind:isDownloading />
     {:else}
       <DragDrop bind:files {fileDropOptions} />
     {/if}

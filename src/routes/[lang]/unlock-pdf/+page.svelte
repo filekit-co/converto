@@ -21,7 +21,7 @@
     rejected: []
   };
   let uploadData: filePasswordUploadData = [];
-  $: isDownloading = false;
+  let isDownloading = false;
   $: isFileExist = files.accepted.length > 0;
 
   onDestroy(() => {
@@ -52,12 +52,10 @@
   </p>
 
   <section class="pt-4 mx-0 sm:mx-10">
-    {#if isFileExist}
-      {#if isDownloading}
-        <Downloader fetchFn={fetchUnlocks} {uploadData} />
-      {:else}
-        <PasswordUploader bind:files bind:uploadData bind:isDownloading />
-      {/if}
+    {#if isDownloading}
+      <Downloader fetchFn={fetchUnlocks} {uploadData} />
+    {:else if isFileExist}
+      <PasswordUploader bind:files bind:uploadData bind:isDownloading />
     {:else}
       <DragDrop bind:files {fileDropOptions} />
     {/if}
