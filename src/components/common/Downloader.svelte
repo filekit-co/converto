@@ -16,8 +16,11 @@
 
   $: $loading;
 
-  let downloadList: DownloadItem[] = [];
+  let downloadList: DownloadItem[];
+  $: downloadList = [];
+
   let zipDownloadLink: HTMLAnchorElement | undefined;
+  $: zipDownloadLink = undefined;
 
   function handleDownload(filename: string, url: string) {
     try {
@@ -34,7 +37,9 @@
     location.reload();
   }
 
-  async function handleDownloadAll() {
+  async function handleDownloadAll(
+    zipDownloadLink: HTMLAnchorElement | undefined
+  ) {
     try {
       if (zipDownloadLink) {
         zipDownloadLink.click();
@@ -100,8 +105,9 @@
         >Retry
       </button>
 
-      <button on:click={handleDownloadAll} class="flex-auto btn btn-accent"
-        >Download All</button
+      <button
+        on:click={() => handleDownloadAll(zipDownloadLink)}
+        class="flex-auto btn btn-accent">Download All</button
       >
     </div>
   </div>

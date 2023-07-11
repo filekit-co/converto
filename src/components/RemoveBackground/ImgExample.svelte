@@ -45,46 +45,46 @@
     >
   </div>
 
-  <div class="mx-auto w-full px-8 max-w-5xl hide-scrollbars">
-    <div class="relative group bg-gray-100 mb-8 rounded-2xl">
-      <div class=" py-4 md:py-8">
-        {#if buttonState === 'human'}
-          <div
-            class="mx-auto w-full h-full px-8 max-w-7xl overflow-x-scroll md:overflow-auto px-8 scroll-pl-8 md:scroll-p-0 flex flex-nowrap gap-6 md:grid md:grid-cols-2"
-          >
-            <img src={humanOrigin} alt="humanOrigin" class="rounded" />
-
-            <img src={humanResult} alt="humanResult" class="rounded" />
-          </div>
-        {/if}
-        {#if buttonState === 'stuff'}
-          <div
-            class="mx-auto w-full px-8 max-w-7xl overflow-x-scroll md:overflow-auto px-8 scroll-pl-8 md:scroll-p-0 flex flex-nowrap gap-6 md:grid md:grid-cols-2"
-          >
-            <img src={stuffOrigin} alt="stuffOrigin" class="rounded" />
-
-            <img src={stuffResult} alt="stuffResult" class="rounded" />
-          </div>
-        {/if}
-        {#if buttonState === 'animal'}
-          <div
-            class="mx-auto w-full px-8 max-w-7xl overflow-x-scroll md:overflow-auto px-8 scroll-pl-8 md:scroll-p-0 flex flex-nowrap gap-6 md:grid md:grid-cols-2"
-          >
-            <img src={animalOrigin} alt="animalOrigin" class="rounded" />
-
-            <img src={animalResult} alt="animalResult" class="rounded" />
-          </div>
-        {/if}
-        {#if buttonState === 'character'}
-          <div
-            class="mx-auto w-full px-8 max-w-7xl overflow-x-scroll md:overflow-auto px-8 scroll-pl-8 md:scroll-p-0 flex flex-nowrap gap-6 md:grid md:grid-cols-2"
-          >
-            <img src={characterOrigin} alt="characterOrigin" class="rounded" />
-
-            <img src={characterResult} alt="characterResult" class="rounded" />
-          </div>
-        {/if}
+  <div class="carousel rounded-box mx-auto w-full px-8 max-w-5xl">
+    {#if buttonState === 'human'}
+      <div class="carousel-item w-1/2">
+        <img src={humanOrigin} alt="humanOrigin" class="rounded-2xl" />
       </div>
-    </div>
+      <div class="carousel-item w-1/2">
+        <img src={humanResult} alt="humanResult" class="rounded-2xl" />
+      </div>
+    {/if}
+    {#if buttonState === 'stuff'}
+      <div class="carousel-item w-1/2">
+        <img src={stuffOrigin} alt="stuffOrigin" class="rounded-2xl" />
+      </div>
+      <div class="carousel-item w-1/2">
+        <img src={stuffResult} alt="stuffResult" class="rounded-2xl" />
+      </div>
+    {/if}
+    {#if buttonState === 'animal'}
+      <div class="carousel-item w-1/2">
+        <img src={animalOrigin} alt="animalOrigin" class="rounded-2xl" />
+      </div>
+      <div class="carousel-item w-1/2">
+        <img src={animalResult} alt="animalResult" class="rounded-2xl" />
+      </div>
+    {/if}
+    {#if buttonState === 'character'}
+      <div class="carousel-item w-1/2">
+        <img
+          src={characterOrigin}
+          alt="characterOrigin"
+          class="w-full rounded"
+        />
+      </div>
+      <div class="carousel-item w-1/2">
+        <img
+          src={characterResult}
+          alt="characterResult"
+          class="w-full rounded"
+        />
+      </div>
+    {/if}
   </div>
 </div>
