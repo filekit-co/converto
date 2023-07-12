@@ -4,12 +4,16 @@
   import {IconPdf, IconX} from '@tabler/icons-svelte';
   import type {filePasswordUploadData} from './types';
   import {i} from '@inlang/sdk-js';
+  import {errorStatus, errorMessage} from '@components/common/error';
 
   export let files: Files;
   export let uploadData: filePasswordUploadData;
   export let isDownloading: boolean;
 
   const formId = 'formId';
+
+  $: $errorStatus;
+  $: $errorMessage;
 
   function fileName(filename: string) {
     return filename.length > 10 ? filename.substring(0, 10) + '...' : filename;
@@ -35,7 +39,9 @@
   async function submitFiles(e: any) {
     isDownloading = true;
     if (files.accepted.length <= 0) {
-      throw new Error("There's no files to submit");
+      // throw new Error("There's no files to submit");
+      $errorStatus = true;
+      $errorMessage = "There's no Files to Submit";
     }
 
     uploadData = files.accepted.map((file, i) => {

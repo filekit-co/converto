@@ -33,7 +33,7 @@
                     class="group relative block h-full bg-white before:absolute before:inset-0 before:rounded-lg before:border-2 before:border-dashed before:border-gray-900"
                   >
                     <div
-                      class="rounded-lg border-2 border-gray-900 bg-white transition group-hover:-translate-y-2 ltr:group-hover:-translate-x-2 rtl:group-hover:translate-x-2"
+                      class="rounded-lg border-2 h-full border-gray-900 bg-white transition group-hover:-translate-y-2 ltr:group-hover:-translate-x-2 rtl:group-hover:translate-x-2"
                     >
                       <div class="p-4 sm:p-6">
                         <div class="flex flex-col items-center">

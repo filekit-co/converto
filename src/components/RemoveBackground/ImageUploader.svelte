@@ -1,11 +1,15 @@
 <script lang="ts">
   import {loading} from '@components/common/loading';
+  import {errorStatus, errorMessage} from '@components/common/error';
   import {i} from '@inlang/sdk-js';
   import ResultImage from './ResultImage.svelte';
   import {fetchRemoveImgBgByFile, fetchRemoveImgBgByUrl} from '$lib/apis';
   import {onDestroy} from 'svelte';
+  import Alert from '@components/common/Alert.svelte';
 
   $: $loading;
+  $: $errorStatus;
+  $: $errorMessage;
 
   let droppedFile;
   let selectedFile: any = null;
@@ -83,7 +87,8 @@
       resultImage = resultImageURL;
       resultFile = resultFileURL;
     } catch (error) {
-      throw new Error('Wrong URL inputed');
+      $errorStatus = true;
+      $errorMessage = error.message;
     } finally {
       $loading = false;
     }
