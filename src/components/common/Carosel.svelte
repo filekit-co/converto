@@ -1,5 +1,4 @@
 <script lang="ts">
-  import {scrollIntoView} from './scrollView';
   import human from '$lib/assets/images/carosel/human.jpg';
   import humanResult from '$lib/assets/images/carosel/human-result.png';
   import animal from '$lib/assets/images/carosel/animal.jpg';

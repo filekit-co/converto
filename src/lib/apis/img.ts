@@ -33,6 +33,13 @@ export async function fetchRemoveImgBgByFile(imgFile: ImageType) {
       }
     });
 
+    if (!response.ok) {
+      const error = {
+        status: response.status,
+        message: response.statusText ? response.statusText : 'The File you selected is incorrect. Please reupload image file.'
+      }
+    }
+
     const blob = await response.blob();
     const file = new File([blob], 'Result_Image', {type: blob.type});
     const resultImageURL = URL.createObjectURL(blob);
@@ -54,12 +61,21 @@ export async function fetchRemoveImgBgByUrl(imageURL: string) {
         }
       );
 
-    const blob = await response.blob();
-    const file = new File([blob], 'Result_Image', {type: blob.type});
-    const resultImageURL = URL.createObjectURL(blob);
-    const resultFileURL = URL.createObjectURL(file);
+      if (!response.ok) {
+        const error = {
+          status: response.status,
+          message: response.statusText ? response.statusText : 'The URL information you entered is incorrect. Please retype the URL.',
+        }
 
-    return { resultImageURL, resultFileURL };
+        throw error;
+      }
+
+      const blob = await response.blob();
+      const file = new File([blob], 'Result_Image', {type: blob.type});
+      const resultImageURL = URL.createObjectURL(blob);
+      const resultFileURL = URL.createObjectURL(file);
+
+      return { resultImageURL, resultFileURL };
   } catch(error) {
     throw error;
   }
