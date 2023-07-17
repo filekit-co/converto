@@ -14,6 +14,13 @@ interface PageValue {
 
 export let pages: Page[] = [
   {
+    key: "Video Kit",
+    value: [
+      { href: 'youtube-to-mp3', text: 'Youtube to MP3', icon: '🧃', description: 'Convert Youtube to mp3' },
+      { href: 'youtube-to-mp4', text: 'Youtube to MP4', icon: '🍺', description: 'Convert Youtube to mp4' },
+    ]
+  },
+  {
     key: "Format Kit",
     value: [
       { href: 'pdf-to-doc', text: 'PDF to DOC', icon: '🥁', description: 'Convert PDF to DOC.' },
@@ -46,7 +53,7 @@ export let pages: Page[] = [
     ],
   },
   {
-    key: 'Company',
+    key: 'Help',
     value: [
       {href: 'terms', text: 'Terms', icon: '📜', description: 'Service Legal & Privacy'}
     ]

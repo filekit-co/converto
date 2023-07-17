@@ -13,6 +13,7 @@
   import {i} from '@inlang/sdk-js';
 
   export let bgColor: string = '';
+  export let csrProps: UpdateFeatureProps;
 
   const defaultFeatureProps: FeatureProps = {
     head1: i('File Conversion, Compression, and Background Removal Services'),
@@ -58,7 +59,8 @@
     ]
   };
 
-  const featureProps: UpdateFeatureProps = $page.data?.featureProps || {};
+  const featureProps: UpdateFeatureProps =
+    $page.data?.featureProps || csrProps || {};
 
   const features = {...defaultFeatureProps, ...featureProps};
 
@@ -75,18 +77,18 @@
 
 <section class={bgColor}>
   <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 text-center">
-    <div class=" mb-8 lg:mb-16">
+    <div class=" mb-16 lg:mb-32">
       <h2
-        class="mb-4 text-2xl md:text-3xl lg:text-4xl tracking-tight font-extrabold"
+        class="mb-4 text-2xl md:text-3xl lg:text-4xl tracking-wide font-extrabold"
       >
         {features.head1}
       </h2>
 
-      <h2 class="mb-4 text-md md:text-xl underline tracking-tight">
+      <h2 class="mb-8 text-md md:text-xl underline tracking-wide text-gray-500">
         "{features.head2}"
       </h2>
 
-      <p class="italic text-sm md:text-md">
+      <p class="italic text-md md:text-md tracking-wide">
         {features.description}
       </p>
     </div>
@@ -98,7 +100,7 @@
           <div
             class="flex justify-center items-center mb-4 h-10 rounded-full bg-primary-100 lg:h-12 dark:bg-primary-900"
           >
-            <svelte:component this={subImage} size={30} />
+            <svelte:component this={subImage} size={30} color="#EDAE3A" />
           </div>
           <h3 class="mb-2 text-xl font-bold dark:text-black">
             {subHead}
