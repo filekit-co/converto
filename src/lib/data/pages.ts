@@ -14,18 +14,22 @@ interface PageValue {
 
 export let pages: Page[] = [
   {
-    key: "Video Kit",
+    key: "Hottest Kit",
     value: [
+      { href: 'pdf-to-doc', text: 'PDF to DOC', icon: '🥁', description: 'Convert PDF to DOC.' },
+      { href: 'pdf-to-docx', text: 'PDF to DOCX', icon: '📣', description: 'Convert PDF to DOCX.' },
+      { href: 'pdf-to-word', text: 'PDF to WORD', icon: '🍞', description: 'Convert PDF to WORD.' },
+      { href: 'compress-pdf', text: 'Compress pdf', icon: '📦', description: 'Compress PDF files.' },
+      { href: 'protect-pdf', text: 'Protect pdf', icon: '🔒', description: 'Protect PDF files with password.' },
+      { href: 'unlock-pdf', text: 'Unlock pdf', icon: '🔓', description: 'Unlock password-protected PDF files.' },
       { href: 'youtube-to-mp3', text: 'Youtube to MP3', icon: '🧃', description: 'Convert Youtube to mp3' },
       { href: 'youtube-to-mp4', text: 'Youtube to MP4', icon: '🍺', description: 'Convert Youtube to mp4' },
+      { href: 'remove-background', text: 'Remove Background', icon: '🖼️', description: 'Remove the background from images.' },
     ]
   },
   {
     key: "Format Kit",
     value: [
-      { href: 'pdf-to-doc', text: 'PDF to DOC', icon: '🥁', description: 'Convert PDF to DOC.' },
-      { href: 'pdf-to-docx', text: 'PDF to DOCX', icon: '📣', description: 'Convert PDF to DOCX.' },
-      { href: 'pdf-to-word', text: 'PDF to WORD', icon: '🍞', description: 'Convert PDF to WORD.' },
       { href: 'xps-to-doc', text: 'XPS to DOC', icon: '🎹', description: 'Convert XPS to DOC.' },
       { href: 'xps-to-docx', text: 'XPS to DOCX', icon: '🎷', description: 'Convert XPS to DOCX.' },
       { href: 'xps-to-pdf', text: 'XPS to PDF', icon: '🎺', description: 'Convert XPS to PDF.' },
@@ -38,17 +42,8 @@ export let pages: Page[] = [
     ]
   },
   {
-    key: "PDF Kit",
-    value: [
-      { href: 'compress-pdf', text: 'Compress pdf', icon: '📦', description: 'Compress PDF files.' },
-      { href: 'protect-pdf', text: 'Protect pdf', icon: '🔒', description: 'Protect PDF files with password.' },
-      { href: 'unlock-pdf', text: 'Unlock pdf', icon: '🔓', description: 'Unlock password-protected PDF files.' },
-    ],
-  },
-  {
     key: "Image Kit",
     value: [
-      { href: 'remove-background', text: 'Remove Background', icon: '🖼️', description: 'Remove the background from images.' },
       ...ImgConversionPages
     ],
   },

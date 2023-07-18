@@ -1,4 +1,4 @@
-import { imgSlugs, languageCodes } from '$lib/data';
+import { imgSlugs } from '$lib/data';
 import type { ParamMatcher } from '@sveltejs/kit';
 
 export const match = ((param) => {

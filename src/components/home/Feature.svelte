@@ -13,7 +13,7 @@
   import {i} from '@inlang/sdk-js';
 
   export let bgColor: string = '';
-  export let csrProps: UpdateFeatureProps;
+  export let csrProps: UpdateFeatureProps = undefined;
 
   const defaultFeatureProps: FeatureProps = {
     head1: i('File Conversion, Compression, and Background Removal Services'),

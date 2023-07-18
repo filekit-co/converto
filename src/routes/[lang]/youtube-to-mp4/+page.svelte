@@ -5,7 +5,7 @@
   import {i} from '@inlang/sdk-js';
   import {IconArrowNarrowRight} from '@tabler/icons-svelte';
 
-  const url = `${PUBLIC_YOUTUBE_TO_URL}/youtube-to-mp3`;
+  const url = `${PUBLIC_YOUTUBE_TO_URL}/youtube-to-mp4`;
   const csrProps: UpdateFeatureProps = {
     head1: i('The best YouTube to MP3 Converter & Downloader'),
     head2: i(
@@ -44,15 +44,15 @@
 <div class="w-full px-2 py-32 sm:px-20 lg:px-32 text-center mx-auto">
   <div class="join">
     <h2 class="text-[clamp(2rem,6vw,4.5rem)] font-black join-item">
-      <span class="text-[#FF0000]">Youtube</span> to&nbspMP3
+      <span class="text-[#DB3D26]">Youtube</span> to&nbspMP4
     </h2>
   </div>
   <p class="text-base-content/60 font-title py-4 font-light md:text-2xl">
-    {i('The best YouTube to MP3 Converter & Downloader')}
+    {i('The best YouTube to MP4 Converter & Downloader')}
   </p>
   <a
     href={url}
-    class="btn bg-[#FF0000] text-white btn-lg btn-wide px-12 normal-case"
+    class="btn bg-[#DB3D26] text-white btn-lg btn-wide px-12 normal-case"
   >
     {i('Start')}
     <IconArrowNarrowRight />

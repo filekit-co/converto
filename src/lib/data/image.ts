@@ -93,6 +93,30 @@ export const imgSlugToHex: ImgSlugToHex = {
 // });
 export const ImgConversionPages = [
   {
+    href: 'img/png-to-jpg',
+    text: 'PNG to JPG',
+    icon: '🌺',
+    description: 'Convert PNG to JPG'
+  },
+  {
+    href: 'img/png-to-jpeg',
+    text: 'PNG to JPEG',
+    icon: '🍄',
+    description: 'Convert PNG to JPEG'
+  },
+  {
+    href: 'img/jpg-to-png',
+    text: 'JPG to PNG',
+    icon: '🌾',
+    description: 'Convert JPG to PNG'
+  },
+  {
+    href: 'img/jpeg-to-png',
+    text: 'JPEG to PNG',
+    icon: '🛰️',
+    description: 'Convert JPEG to PNG'
+  },
+  {
     href: 'img/png-to-ps',
     text: 'PNG to PS',
     icon: '🌟',
@@ -127,18 +151,6 @@ export const ImgConversionPages = [
     text: 'PNG to PAM',
     icon: '🌈',
     description: 'Convert PNG to PAM'
-  },
-  {
-    href: 'img/png-to-jpg',
-    text: 'PNG to JPG',
-    icon: '🌺',
-    description: 'Convert PNG to JPG'
-  },
-  {
-    href: 'img/png-to-jpeg',
-    text: 'PNG to JPEG',
-    icon: '🍄',
-    description: 'Convert PNG to JPEG'
   },
   {
     href: 'img/pnm-to-ps',
@@ -387,12 +399,6 @@ export const ImgConversionPages = [
     description: 'Convert JPG to PS'
   },
   {
-    href: 'img/jpg-to-png',
-    text: 'JPG to PNG',
-    icon: '🌾',
-    description: 'Convert JPG to PNG'
-  },
-  {
     href: 'img/jpg-to-pnm',
     text: 'JPG to PNM',
     icon: '🌵',
@@ -433,12 +439,6 @@ export const ImgConversionPages = [
     text: 'JPEG to PS',
     icon: '🌠',
     description: 'Convert JPEG to PS'
-  },
-  {
-    href: 'img/jpeg-to-png',
-    text: 'JPEG to PNG',
-    icon: '🛰️',
-    description: 'Convert JPEG to PNG'
   },
   {
     href: 'img/jpeg-to-pnm',
