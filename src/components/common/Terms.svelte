@@ -1,13 +1,8 @@
-<script lang="ts">
-  import {i} from '@inlang/sdk-js';
-</script>
-
 <div class="mx-8 my-6 justify-center">
   <div class=" my-6">
     <h1 class=" mb-12 text-left text-4xl font-extrabold">
       Terms and Conditions
     </h1>
-
     <p>
       Welcome to filekit (from this point onwards "filekit.co") The Service
       offers its users solely a web and mobile application which allows users to
@@ -35,12 +30,10 @@
 
     <!-- 1. Use of Our Service -->
     <h2 class="mt-12 mb-6 font-semibold text-2xl" id="t1">
-      <a class=" relative" />1. Use of Our Service
+      1. Use of Our Service
     </h2>
 
-    <h3 class="mt-12 mb-6 font-semibold text-xl">
-      <a class="anchor" />1.1 General
-    </h3>
+    <h3 class="mt-12 mb-6 font-semibold text-xl">1.1 General</h3>
 
     <p>
       By accessing or utilizing our online and/or mobile services, website, and
@@ -112,9 +105,7 @@
       </p>
     </div>
 
-    <h3 class="title3">
-      <a class="anchor" />1.2 Service Rules
-    </h3>
+    <h3 class="title3">1.2 Service Rules</h3>
     <p>
       This Reasonable Use Policy has been established to ensure fairness for
       both users and developers when utilizing the Service and filekit Desktop.
@@ -158,7 +149,7 @@
       terminated.
     </p>
 
-    <h3 class="title3"><a>1.3 Cookies</a></h3>
+    <h3 class="title3">1.3 Cookies</h3>
     <p>
       filekit websites operate as a Software as a Service (SaaS) and utilize
       cookies to ensure the proper functioning of the service. Essential cookies
@@ -172,7 +163,7 @@
     <!-- 2. Accounts -->
     <hr />
     <h2 class="title2" id="t2">2. Accounts</h2>
-    <h3 class="title3"><a />2.1 General</h3>
+    <h3 class="title3">2.1 General</h3>
     <p>
       filekit accounts offer users the opportunity to utilize the services and
       capabilities that we introduce and maintain at our discretion. We maintain
@@ -208,13 +199,9 @@
 
     <!-- 3. User Content -->
     <hr />
-    <h2 class="title2">
-      <a />3. User Content
-    </h2>
+    <h2 class="title2">3. User Content</h2>
 
-    <h3 class="title3">
-      <a />3.1 General
-    </h3>
+    <h3 class="title3">3.1 General</h3>
     <p>
       filekit does not examine the content of files during the processing phase,
       and once filekit has completed the processing, only the Users will have
@@ -353,9 +340,7 @@
       duration that the download link remains available.
     </p>
 
-    <h3 class="title3">
-      <a />3.2 Content manipulation
-    </h3>
+    <h3 class="title3">3.2 Content manipulation</h3>
     <p>
       filekit ensures the provision of comprehensive information to aid users in
       file processing. However, the user alone bears the responsibility for
@@ -366,9 +351,7 @@
       time using the contact form.
     </p>
 
-    <h3 class="title3">
-      <a />3.3 Responsibility for the content of the files
-    </h3>
+    <h3 class="title3">3.3 Responsibility for the content of the files</h3>
     <p>
       filekit does not analyze the content of processed files and thus is not
       responsible for its tools misuse nor copyright infringements which may
@@ -394,13 +377,9 @@
 
     <!-- 4. Signature -->
     <hr />
-    <h2 class="title2" id="t4">
-      <a />4. Signature
-    </h2>
+    <h2 class="title2" id="t4">4. Signature</h2>
 
-    <h3 class="title3">
-      <a />4.1 How it works
-    </h3>
+    <h3 class="title3">4.1 How it works</h3>
     <p>
       filekit Signature enables users to sign their own documents or request
       signatures from other users via email delivery. Signers are given the
@@ -425,9 +404,7 @@
       solely responsible for safeguarding the document(s).
     </p>
 
-    <h3 class="title3">
-      <a />4.2 Legal Guarantees
-    </h3>
+    <h3 class="title3">4.2 Legal Guarantees</h3>
     <p>
       filekit endeavors to ensure that its services adhere to the requirements
       outlined in the U.S. Electronic Signature in Global and National Commerce
@@ -445,7 +422,7 @@
       liable if the document is not upheld or deemed insufficient.
     </p>
 
-    <h3 class="title3"><a />4.3 Pricing</h3>
+    <h3 class="title3">4.3 Pricing</h3>
     <p>
       filekit provides two distinct types of signatures: e-signatures and
       certified signatures. e-Signatures are available for free, but may be
@@ -457,9 +434,7 @@
       acquired packs.
     </p>
 
-    <h3 class="title3">
-      <a />4.4 Collected Information
-    </h3>
+    <h3 class="title3">4.4 Collected Information</h3>
     <p>
       To ensure complete transparency during the signature process, filekit may
       gather the following information for the audit trail, which will be
@@ -510,13 +485,9 @@
 
     <!-- 5. Paid Services -->
     <hr />
-    <h2 class="title2" id="t5">
-      <a />5. Paid Services
-    </h2>
+    <h2 class="title2" id="t5">5. Paid Services</h2>
 
-    <h3 class="title3">
-      <a />5.1 Billing Policies
-    </h3>
+    <h3 class="title3">5.1 Billing Policies</h3>
     <p>
       Becoming a Premium user is only possible through a paid subscription. Once
       the first payment is made, the subscription starts, and it is a recurring
@@ -537,7 +508,7 @@
       for future refunds or credits.
     </p>
 
-    <h3 class="title3"><a />5.2 Refunds</h3>
+    <h3 class="title3">5.2 Refunds</h3>
     <p>
       You can cancel your Premium account at any time; however, there will be no
       refunds for cancellations. In the event that filekit suspends or
@@ -546,9 +517,7 @@
       subscription or any fees associated with the Service.
     </p>
 
-    <h3 class="title3">
-      <a />5.3 Payment information, taxes
-    </h3>
+    <h3 class="title3">5.3 Payment information, taxes</h3>
     <p>
       It is essential to provide accurate, complete, and current information for
       any purchase or transaction with the Service. You are responsible for all
@@ -556,7 +525,7 @@
       your purchases are your responsibility.
     </p>
 
-    <h3 class="title3"><a />5.4 Free Trial</h3>
+    <h3 class="title3">5.4 Free Trial</h3>
     <p>
       This Offer, provided by filekit, grants you access to the filekit Premium
       Service for a seven (7) day Free Trial Period upon activating it by
@@ -593,7 +562,7 @@
     <!-- 6. No warranty -->
     <hr />
     <h2 class="title2" id="t6">6. No warranty</h2>
-    <h3 class="title3"><a />6.1 General</h3>
+    <h3 class="title3">6.1 General</h3>
     <p>
       The use of the service is at your own risk, and to the extent permitted by
       applicable law, it is provided without warranties of any kind. filekit
@@ -618,9 +587,7 @@
     <!-- 7. Limitation of liability -->
     <hr />
     <h2 class="title2" id="t7">7. Limitation of liability</h2>
-    <h3 class="title3">
-      <a />7.1 General
-    </h3>
+    <h3 class="title3">7.1 General</h3>
     <p>
       To the maximum extent permitted by applicable law, filekit and its
       employees shall not be liable for any direct, indirect, punitive,
@@ -641,9 +608,7 @@
     <!-- 8. License of limited use -->
     <hr />
     <h2 class="title2" id="t8">8. License of limited use</h2>
-    <h3 class="title3">
-      <a />8.1 General
-    </h3>
+    <h3 class="title3">8.1 General</h3>
     <p>
       filekit exclusively owns all the rights to the web application and its
       functionalities, including reproduction, translation, adaptation,
@@ -671,9 +636,7 @@
     <h2 class="title2" id="t9">
       9. Intellectual and industrial property rights
     </h2>
-    <h3 class="title3">
-      <a />9.1 General
-    </h3>
+    <h3 class="title3">9.1 General</h3>
     <p>
       All contents on this site, including brands, logos, drawings, texts,
       images, databases, codes, and other materials, belong to filekit or third
@@ -695,7 +658,7 @@
     <!-- 10. Termination -->
     <hr />
     <h2 class="title2" id="t10">10. Termination</h2>
-    <h3 class="title3"><a />10.1 General</h3>
+    <h3 class="title3">10.1 General</h3>
     <p>
       filekit reserves the right to unilaterally terminate the current Contract
       under the following circumstances: a) User's breach of any obligations or
@@ -721,7 +684,6 @@
     <hr />
     <h2 class="title2" id="t11">11. Claims</h2>
     <h3 class="title3">
-      <a />
       <p>
         For any claims, complaints, or inquiries related to the Contract or the
         Service, Users can contact filekit via the online form.
@@ -730,9 +692,7 @@
       <!-- 12. Miscellaneous -->
       <hr />
       <h2 class="title2" id="t12">12. Miscellaneous</h2>
-      <h3 class="title3">
-        <a />12.1 General
-      </h3>
+      <h3 class="title3">12.1 General</h3>
 
       <p>
         Users are not permitted to assign, subrogate, or transfer the rights
@@ -766,9 +726,7 @@
       <h2 class="title2" id="t13">
         13. Applicable legislation and jurisdiction
       </h2>
-      <h3 class="title3">
-        <a />13.1 General
-      </h3>
+      <h3 class="title3">13.1 General</h3>
       <p>
         This Contract is of a commercial nature and shall be interpreted and
         enforced according to its terms. In unforeseen circumstances, it shall
