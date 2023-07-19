@@ -2,12 +2,12 @@ import type { UpdateFeatureProps, UpdateHeaderProps } from '$lib/types';
 import {canonicalUrl} from '$lib/utils'
 import { getRuntimeFromLocals } from '@inlang/sdk-js/adapter-sveltekit/server';
 
-export const load = (({route, locals}) => {
+export const load = (({url, locals}) => {
   const {i} = getRuntimeFromLocals(locals)
 
   const headerProps: UpdateHeaderProps = {
     title: i("Compress PDF online. Same PDF quality less file size"),
-    url: canonicalUrl(route.id),
+    url: canonicalUrl(url?.pathname ?? ''),
     description: i("Compress PDF file to get the same PDF quality but less filesize. Compress or optimize PDF files online, easily and free."),
     keywords: i("PDF compression, compress PDF, advanced compression technology, seamless experience, optimized file size, picture-perfect quality, crystal-clear images, sharp text, lossless compression, effortless efficiency, best compression techniques, enhanced compatibility, lightning-fast performance, trusted reliability, document management, future of PDF compression"),
   };

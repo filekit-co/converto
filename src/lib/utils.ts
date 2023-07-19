@@ -5,7 +5,7 @@ import { detectLanguage, type Detector } from '@inlang/sdk-js/detectors';
 
 import { parse } from '@tinyhttp/content-disposition'
 
-export const canonicalUrl = (route: string) => `${PUBLIC_BASE_URL}${route}`;
+export const canonicalUrl = (pathname: string) => pathname ? `${PUBLIC_BASE_URL}${pathname}`: `${PUBLIC_BASE_URL}`;
 
 // i.g. content-disposition: attachment; filename=file (5).pdf 
 export const fileNameFromHeaders = (headers: Headers) => {

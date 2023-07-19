@@ -2,7 +2,7 @@ import type { UpdateHeaderProps } from '$lib/types';
 import {canonicalUrl} from '$lib/utils'
 import { getRuntimeFromLocals } from '@inlang/sdk-js/adapter-sveltekit/server';
 
-export const load = (({route, locals}) => {
+export const load = (({url, locals}) => {
   const { i } = getRuntimeFromLocals(locals)
   const from = 'youtube'
   const to = 'mp4'
@@ -11,7 +11,7 @@ export const load = (({route, locals}) => {
   const description = i("Online download videos from YouTube for FREE to PC, mobile. Supports downloading all formats: MP4, 3GP, WebM, HD videos, convert YouTube to MP3, M4A")
   const headerProps: UpdateHeaderProps = {
     title,
-    url: canonicalUrl(route.id),
+    url: canonicalUrl(url?.pathname ?? ''),
     description,
     keywords: i("YouTube to MP3, YouTube download, YouTube free, convert YouTube to MP3, download YouTube videos, Filekit.co")
   };

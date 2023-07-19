@@ -2,7 +2,7 @@ import type { UpdateHeaderProps } from '$lib/types';
 import {canonicalUrl} from '$lib/utils'
 import { getRuntimeFromLocals } from '@inlang/sdk-js/adapter-sveltekit/server';
 
-export const load = (({route, locals}) => {
+export const load = (({url, locals}) => {
   const { i } = getRuntimeFromLocals(locals)
   const from = 'pdf'
   const to = 'doc'
@@ -12,7 +12,7 @@ export const load = (({route, locals}) => {
 
   const headerProps: UpdateHeaderProps = {
     title,
-    url: canonicalUrl(route.id),
+    url: canonicalUrl(url?.pathname ?? ''),
     description,
     keywords: i("{fromExt} to {toExt}, convert {fromExt}, convert {toExt}, change, {toExt} file, {fromExt} file", {fromExt:from, toExt:to}),
   };
