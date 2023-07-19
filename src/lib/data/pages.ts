@@ -22,9 +22,16 @@ export let pages: Page[] = [
       { href: 'compress-pdf', text: 'Compress pdf', icon: '📦', description: 'Compress PDF files.' },
       { href: 'protect-pdf', text: 'Protect pdf', icon: '🔒', description: 'Protect PDF files with password.' },
       { href: 'unlock-pdf', text: 'Unlock pdf', icon: '🔓', description: 'Unlock password-protected PDF files.' },
+      { href: 'remove-background', text: 'Remove Background', icon: '🖼️', description: 'Remove the background from images.' },
+    ]
+  },
+  {
+    key: "Video Kit",
+    value: [
       { href: 'youtube-to-mp3', text: 'Youtube to MP3', icon: '🧃', description: 'Convert Youtube to mp3' },
       { href: 'youtube-to-mp4', text: 'Youtube to MP4', icon: '🍺', description: 'Convert Youtube to mp4' },
-      { href: 'remove-background', text: 'Remove Background', icon: '🖼️', description: 'Remove the background from images.' },
+      { href: 'tiktok-to-mp3', text: 'Tiktok to MP3', icon: '🖼️', description: 'Convert Tiktok to mp3' },
+      { href: 'tiktok-to-mp4', text: 'Tiktok to MP4', icon: '🖼️', description: 'Convert Tiktok to mp4' },
     ]
   },
   {
