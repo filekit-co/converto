@@ -5,7 +5,6 @@
   import {i} from '@inlang/sdk-js';
   import {IconArrowNarrowRight} from '@tabler/icons-svelte';
 
-  const url = `${PUBLIC_YOUTUBE_TO_URL}/youtube-to-mp3`;
   const csrProps: UpdateFeatureProps = {
     head1: i('The best YouTube to MP3 Converter & Downloader'),
     head2: i(
@@ -51,7 +50,7 @@
     {i('The best YouTube to MP3 Converter & Downloader')}
   </p>
   <a
-    href={url}
+    href={PUBLIC_YOUTUBE_TO_URL}
     class="btn bg-[#FF0000] text-white btn-lg btn-wide px-12 normal-case"
   >
     {i('Start')}
