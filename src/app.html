@@ -28,22 +28,6 @@
     <!-- yandex russia -->
     <meta name="yandex-verification" content="e68d4b4215cfd17e" />
 
-    <!-- google analytics -->
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-W5YYD2YMJZ"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-
-      gtag('config', 'G-W5YYD2YMJZ');
-    </script>
-
     %sveltekit.head%
 
     <link rel="icon" href="%sveltekit.assets%/favicon.ico" />
@@ -132,6 +116,21 @@
   <body data-sveltekit-preload-data="hover">
     <div style="display: contents">%sveltekit.body%</div>
   </body>
+  <!-- google analytics -->
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-W5YYD2YMJZ"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-W5YYD2YMJZ');
+  </script>
 
   <script type="text/javascript" charset="UTF-8">
     const inAppDenyExecVanillaJS = callback => {
