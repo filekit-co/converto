@@ -45,3 +45,8 @@ export interface ImageType extends File {
   readonly type: string;
   readonly webkitRelativePath: string;
 }
+
+export interface Faq {
+  question: string;
+  answer: string;
+}

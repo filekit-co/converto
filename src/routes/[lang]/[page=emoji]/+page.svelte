@@ -6,6 +6,10 @@
   import {onDestroy} from 'svelte';
   import {IconSearch} from '@tabler/icons-svelte';
   import {copy} from 'svelte-copy';
+  import FaQ from '@components/common/FaQ.svelte';
+  import type {PageData} from './$types';
+
+  export let data: PageData;
 
   const versions: ue.Version[] = [
     '15.0',
@@ -92,6 +96,60 @@
   });
 </script>
 
+{#if clickedEmoji}
+  <dialog open class="modal flex items-center justify-center">
+    <form
+      method="dialog"
+      class="modal-box flex flex-col items-center p-8 bg-white rounded-lg shadow-lg relative"
+    >
+      <button
+        type="button"
+        class="btn btn-sm btn-circle btn-ghost absolute top-2 right-2"
+        on:click={clearClicked}>✕</button
+      >
+      <div class="relative">
+        <button
+          class="text-9xl mb-4 cursor-pointer"
+          use:copy={clickedEmoji?.emoji}
+          on:svelte-copy={() => {
+            alert(`Copied to clipboard: ${clickedEmoji?.emoji}`);
+            clearClicked();
+          }}
+        >
+          {clickedEmoji.emoji}
+        </button>
+        <div class="absolute top-2 right-0 badge badge-secondary">copy</div>
+      </div>
+      <table class="table-auto text-left w-full mb-2">
+        <tr>
+          <td class="font-bold">Description</td>
+          <td>{clickedEmoji.description}</td>
+        </tr>
+        <tr>
+          <td class="font-bold">Keywords</td>
+          <td>{clickedEmoji.keywords?.join(', ') ?? 'emoji'}</td>
+        </tr>
+        <tr>
+          <td class="font-bold">Category</td>
+          <td>{clickedEmoji.category}</td>
+        </tr>
+        <tr>
+          <td class="font-bold">Group</td>
+          <td>{clickedEmoji.group}</td>
+        </tr>
+        <tr>
+          <td class="font-bold">Subgroup</td>
+          <td>{clickedEmoji.subgroup}</td>
+        </tr>
+        <tr>
+          <td class="font-bold">Version</td>
+          <td>{clickedEmoji.version}</td>
+        </tr>
+      </table>
+    </form>
+  </dialog>
+{/if}
+
 <div class="mt-5 lg:mt-14 text-center">
   <h2 class="text-[clamp(2rem,6vw,4.5rem)] font-black pb-8">
     Let's&nbsp<span class="text-accent">Emoji</span>
@@ -167,56 +225,9 @@
   {/if}
 </div>
 
-{#if clickedEmoji}
-  <dialog open class="modal flex items-center justify-center">
-    <form
-      method="dialog"
-      class="modal-box flex flex-col items-center p-8 bg-white rounded-lg shadow-lg relative"
-    >
-      <button
-        type="button"
-        class="btn btn-sm btn-circle btn-ghost absolute top-2 right-2"
-        on:click={clearClicked}>✕</button
-      >
-      <div class="relative">
-        <button
-          class="text-9xl mb-4 cursor-pointer"
-          use:copy={clickedEmoji?.emoji}
-          on:svelte-copy={() => {
-            alert(`Copied to clipboard: ${clickedEmoji?.emoji}`);
-            clearClicked();
-          }}
-        >
-          {clickedEmoji.emoji}
-        </button>
-        <div class="absolute top-2 right-0 badge badge-secondary">copy</div>
-      </div>
-      <table class="table-auto text-left w-full mb-2">
-        <tr>
-          <td class="font-bold">Description</td>
-          <td>{clickedEmoji.description}</td>
-        </tr>
-        <tr>
-          <td class="font-bold">Keywords</td>
-          <td>{clickedEmoji.keywords?.join(', ') ?? 'emoji'}</td>
-        </tr>
-        <tr>
-          <td class="font-bold">Category</td>
-          <td>{clickedEmoji.category}</td>
-        </tr>
-        <tr>
-          <td class="font-bold">Group</td>
-          <td>{clickedEmoji.group}</td>
-        </tr>
-        <tr>
-          <td class="font-bold">Subgroup</td>
-          <td>{clickedEmoji.subgroup}</td>
-        </tr>
-        <tr>
-          <td class="font-bold">Version</td>
-          <td>{clickedEmoji.version}</td>
-        </tr>
-      </table>
-    </form>
-  </dialog>
-{/if}
+<div class="divider my-10">
+  <span class="text-4xl text-bold">FAQs</span>
+</div>
+<div class="mx-auto max-w-screen-xl px-4 pb-8 lg:pb-12">
+  <FaQ faqs={data.faqs} />
+</div>
