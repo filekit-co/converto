@@ -1,4 +1,5 @@
 import { ImgConversionPages } from "./image";
+import { EmojiPages } from "./emoji";
 
 interface Page {
   key: string;
@@ -24,6 +25,12 @@ export let pages: Page[] = [
       { href: 'unlock-pdf', text: 'Unlock pdf', icon: '🔓', description: 'Unlock password-protected PDF files.' },
       { href: 'remove-background', text: 'Remove Background', icon: '🖼️', description: 'Remove the background from images.' },
     ]
+  },
+  {
+    key: "Emoji Kit",
+    value: [
+      ...EmojiPages
+    ],
   },
   {
     key: "Video Kit",

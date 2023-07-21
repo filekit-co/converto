@@ -5,7 +5,6 @@
   import ResultImage from './ResultImage.svelte';
   import {fetchRemoveImgBgByFile, fetchRemoveImgBgByUrl} from '$lib/apis';
   import {onDestroy} from 'svelte';
-  import Alert from '@components/common/Alert.svelte';
 
   $: $loading;
   $: $errorStatus;
