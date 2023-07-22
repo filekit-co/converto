@@ -47,4 +47,4 @@ const sitemap = (urls: string[]) => `<?xml version="1.0" encoding="UTF-8" ?>
     <priority>0.7</priority>
   </url>
   `).join('')}  
-  </urlset>`;
+  </urlset>`.trim();
