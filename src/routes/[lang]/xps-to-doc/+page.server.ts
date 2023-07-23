@@ -11,7 +11,6 @@ export const load = (({url, locals}) => {
   const description = i("{fromExt} to {toExt} Converter - Filekit.co is a free and fast online file conversion service.",  {fromExt:from.toUpperCase(), toExt:to.toUpperCase()})
   const headerProps: UpdateHeaderProps = {
     title,
-    url: canonicalUrl(url?.pathname ?? ''),
     description,
     keywords: i("{fromExt} to {toExt}, convert {fromExt}, convert {toExt}, change, {toExt} file, {fromExt} file", {fromExt:from, toExt:to}),
   };

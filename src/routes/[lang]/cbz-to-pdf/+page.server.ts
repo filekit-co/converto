@@ -12,7 +12,6 @@ export const load = (({url, locals}) => {
   
   const headerProps: UpdateHeaderProps = {
     title,
-    url: canonicalUrl(url?.pathname ?? ''),
     description,
     keywords: i("{fromExt} to {toExt}, convert {fromExt}, convert {toExt}, change, {toExt} file, {fromExt} file", {fromExt:from, toExt:to}),
   };

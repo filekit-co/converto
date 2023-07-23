@@ -1,6 +1,7 @@
 <script lang="ts">
   import {page} from '$app/stores';
   import type {HeaderProps, UpdateHeaderProps} from '$lib/types';
+  import {canonicalUrl} from '$lib/utils';
 
   const defaultHeaderProps: HeaderProps = {
     title: 'Filekit.co - Free Online edit file Tool ',
@@ -8,13 +9,12 @@
     keywords:
       'Remove Background, Merge PDF, split PDF, combine PDF, extract PDF, compress PDF, convert PDF, Word to PDF, Excel to PDF, Powerpoint to PDF, PDF to JPG, JPG to PDF',
     siteName: 'filekit.co - Online tools for PDF, Images',
-    url: 'https://www.filekit.co',
-    image: '', // TODO:
+    url: canonicalUrl($page.url?.pathname ?? ''),
+    image: '',
     description: `Filekit - Easy tool to convert files online. More than 309 different document, image, spreadsheet, ebook, archive, presentation, audio and video formats supported.`
   };
 
   const pageHeaderProps: UpdateHeaderProps = $page.data?.headerProps || {};
-
   const p = {...defaultHeaderProps, ...pageHeaderProps};
 </script>
 

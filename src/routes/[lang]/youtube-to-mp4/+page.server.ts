@@ -11,7 +11,6 @@ export const load = (({url, locals}) => {
   const description = i("Online download videos from YouTube for FREE to PC, mobile. Supports downloading all formats: MP4, 3GP, WebM, HD videos, convert YouTube to MP3, M4A")
   const headerProps: UpdateHeaderProps = {
     title,
-    url: canonicalUrl(url?.pathname ?? ''),
     description,
     keywords: i("YouTube to MP3, YouTube download, YouTube free, convert YouTube to MP3, download YouTube videos, Filekit.co")
   };

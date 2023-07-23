@@ -6,7 +6,6 @@ export const load = (({url, locals}) => {
   const { i } = getRuntimeFromLocals(locals)
   
   const headerProps: UpdateHeaderProps = {
-    url: canonicalUrl(url?.pathname ?? ''),
     title: i("Image Background Remover | Remove Bg from Image for Free"),
     description: i("Remove the background from images online with our free background eraser. Download your transparent background image and change the background."),
     keywords: i("remove bg, remove background from image, background eraser, transparent background, white background"),

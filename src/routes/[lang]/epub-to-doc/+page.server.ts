@@ -13,7 +13,6 @@ export const load = (({url, locals}) => {
 
   const headerProps: UpdateHeaderProps = {
     title,
-    url: canonicalUrl(url?.pathname ?? ''),
     description,
     keywords,
   };

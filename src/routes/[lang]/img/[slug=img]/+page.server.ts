@@ -14,12 +14,12 @@ export const load = async ({ params, route, locals }) => {
   const titleAndDescription = i("Convert {fromExt} to {toExt} online for free", {fromExt:from.toUpperCase(), toExt:to.toUpperCase()})
   const fontColor = imgSlugToHex[params.slug]
   const xToy: string = `${from.toUpperCase()} to&nbsp;<span style=color:${fontColor};>${to.toUpperCase()}</span>`
+  const keywords: string = i("image, convert {fromExt} to {toExt}, {fromExt}, {toExt}, free, online, File Converter", {fromExt:from, toExt:to})
 
   const headerProps: UpdateHeaderProps = {
     title: titleAndDescription,
-    url: canonicalUrl(route.id),
     description: titleAndDescription,
-    keywords: i("image, convert {fromExt} to {toExt}, {fromExt}, {toExt}, free, online, File Converter", {from, to})
+    keywords,
   };
   return {
     headerProps,

@@ -11,7 +11,6 @@ export const load = (({url, locals}) => {
   const description = i("Online download videos from Tiktok for FREE to PC, mobile. Supports downloading all formats: MP4, 3GP, WebM, HD videos, convert Tiktok to MP4, M4A")
   const headerProps: UpdateHeaderProps = {
     title,
-    url: canonicalUrl(url?.pathname ?? ''),
     description,
     keywords: i("Tiktok to MP4, Tiktok download, Tiktok free, convert Tiktok to MP4, download Tiktok videos, Filekit.co")
   };

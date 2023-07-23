@@ -19,6 +19,8 @@
   $: $errorMessage;
 </script>
 
+<Header />
+
 {#if $page.error}
   <slot />
 {:else}
@@ -33,8 +35,6 @@
   {#if $imgClicked}
     <ImagePreview />
   {/if}
-
-  <Header />
   <Nav />
   <slot />
   <Footer />
