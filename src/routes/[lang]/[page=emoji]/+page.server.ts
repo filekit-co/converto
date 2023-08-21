@@ -1,5 +1,5 @@
 import type { Faq, UpdateHeaderProps } from '$lib/types';
-import {canonicalUrl} from '$lib/utils'
+
 import { getRuntimeFromLocals } from '@inlang/sdk-js/adapter-sveltekit/server';
 
 export const load = (({url, locals}) => {
