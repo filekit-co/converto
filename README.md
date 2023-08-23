@@ -70,7 +70,7 @@ Experience every type of file with `FileKit`.
     <td><img src="./docs/pdf_to_word2.png" alt="pdf_to_word2"></td>
   </tr>
   <tr>
-    <td><img src="./docs/nav.png" alt="nav"></td>
+    <td><img src="./docs/rmbg.png" alt="nav"></td>
     <td><img src="./docs/youtube.png" alt="youtube"></td>
   </tr>
   <tr>
