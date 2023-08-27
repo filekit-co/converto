@@ -135,16 +135,3 @@ npx tailwindcss init -p
 ```bash
 pn run dev
 ```
-
-## References
-
-- [DaisyUI website](https://github.com/saadeghi/daisyui/tree/master/src/docs)
-- [SvelteKit website](https://github.com/sveltejs/kit/tree/master/sites/kit.svelte.dev)
-- [RealWorld Example with SvelteKit](https://github.com/sveltejs/realworld)
-- [devjaewon.com](https:github.com/devjaewon/devjaewon.com)
-
-- file uploader
-    - [filedrop-svelte](https://github.com/chanced/filedrop-svelte)
-    - [tailwind component 1](https://tailwindcomponents.com/component/file-upload-with-drop-on-and-preview)
-    - [tailwind component 2](https://tailwindcomponents.com/component/dragdrop-sortable-file-upload)
-    
