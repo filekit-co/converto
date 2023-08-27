@@ -1,30 +1,45 @@
 # `Filekit`
-> https://filekit.co
+> Welcome to FileKit, the ultimate toolkit for file and media processing. Designed to simplify complex tasks, FileKit provides a suite of tools for file conversion, image processing, media downloads, and more. With a global reach and a commitment to performance, FileKit is the go-to solution for users worldwide.
+
+<p align="center">
+
+<img src="./docs/landing.png" height="400px" />
+
+</p>
+
+- Websites:
+    - https://filekit.co
+    - https://youtubetomp3.pages.dev
+- Source codes:
+    - [Filekit-front](https://github.com/filekit-co/converto)
+    - [Youtube-to-mp3-front](https://github.com/filekit-co/youTubetoMP3)
+    - [Image Server](https://github.com/filekit-co/api-bg-remove/tree/main)
+    - [Text Server](https://github.com/filekit-co/api-text/tree/main)
+    - [Video Server](https://github.com/filekit-co/api-video/tree/main)
+- Swagger:
+    1. [Video API Server](https://api-video-xgnu4lf2ea-uc.a.run.app/docs)
+    2. [Image API Server](https://api-bg-remove-xgnu4lf2ea-de.a.run.app/docs)
+    3. [Text API Server](https://api-file-xgnu4lf2ea-de.a.run.app/docs)
+
+## Stack
+
+- Design: Tailwind css
+- Framework: Svelte / Sveltekit
+- Deploy: Vite / Cloudflare pages
 
 
-Experience every type of file with `FileKit`.
+## 🌍 Global Engagement
 
-- Web frontend:
-    - [`filekit.co` frontend](https://github.com/filekit-co/converto)
-    - [`youtube to mp3` frontend](https://github.com/filekit-co/youTubetoMP3)
-- Api servers:
-    1. [Video server (youtube to mp3/mp4)](https://github.com/filekit-co/api-video)
-    2. [Image background removal server](https://github.com/filekit-co/api-bg-remove)
-    3. [File handling api server](https://github.com/filekit-co/api-file/tree/main)
+FileKit's commitment to international users is evident in its extensive localization, supporting **36 languages**. Our platform has seen engagement from users spanning continents, from the bustling streets of India to the serene landscapes of Norway.
 
+just a month 23.07 ~ 23.08, we've had:
 
-<center>
+- Over 1,200 active users from **Türkiye**.
+- A remarkable engagement rate of 72% from **Ukraine**.
+- An average session time of over 262 minutes from users in **South Korea**.
+- Active users from diverse regions like **Uzbekistan**, **Kazakhstan**, **India**, and the **United States**.
 
-<img src="./docs/landing.png" height="50%" />
-
-</center>
-
-## Analytics
-> 23.07.01 ~ 23.08.23
-
-- Users: 3.8k
-- Views: 10.6k
-
+These metrics are a testament to FileKit's universal appeal and its ability to cater to diverse user needs.
 
 <center>
 
@@ -39,6 +54,26 @@ Experience every type of file with `FileKit`.
 </table>
 
 </center>
+
+## 🚀 Features
+
+### 📄 Document Conversion
+Effortlessly convert between popular document formats like PDF, DOC, DOCX, and more.
+
+### 🎥 Media Processing
+Download and convert media from platforms like YouTube and TikTok.
+
+### 🎨 Image Manipulation
+From background removal to format conversion, FileKit's image tools have you covered.
+
+### 😊 Emoji & Icon Library
+Discover and utilize a vast collection of emojis and icons for your projects.
+
+## 🛠️ Technical Highlights
+
+- **SvelteKit**: Experience lightning-fast performance with SvelteKit's server-side rendering (SSR).
+- **SEO Optimized**: With meticulously crafted meta data, FileKit ensures optimal search engine visibility.
+- **i18n**: Our platform speaks your language, with support for 36 languages ensuring a seamless user experience.
 
 ## Pages
 
@@ -82,16 +117,9 @@ Experience every type of file with `FileKit`.
 </center>
 
 
+## Commands
 
-#### Stack
-
-- Tailwind css
-- Sveltekit
-- Vercel
-- DaisyUI
-
-## Init
-
+### Init
 ```bash
 # alias pn=pnpm
 pn create svelte@latest converto
@@ -102,13 +130,13 @@ npx tailwindcss init -p
 - [Docs: Install Tailwind CSS with SvelteKit](https://tailwindcss.com/docs/guides/sveltekit)
 - [Docs: Install daisyUI as a Tailwind CSS plugin](https://daisyui.com/docs/install/)
 
-## dev
+### Deploy
 
 ```bash
 pn run dev
 ```
 
-## refs
+## References
 
 - [DaisyUI website](https://github.com/saadeghi/daisyui/tree/master/src/docs)
 - [SvelteKit website](https://github.com/sveltejs/kit/tree/master/sites/kit.svelte.dev)
