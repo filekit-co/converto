@@ -38,7 +38,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@tabler/icons-svelte": "^2.23.0",
+		"@tabler/icons-svelte": "2.23.0",
 		"@tinyhttp/content-disposition": "^2.1.0",
 		"jszip": "^3.10.1",
 		"svelte-loading-spinners": "^0.3.4",
